@@ -277,10 +277,16 @@
 				<connect2 to="energy_demand.switch_energy_damage" from="Climate.switch_energy_damage"/>
 				<connect to="energy_demand.switch_energy_demand_policy" from="Behavioral_Choices.switch_energy_demand_policy"/>
 				<connect2 to="energy_demand.switch_energy_demand_policy" from="Behavioral_Choices.switch_energy_demand_policy"/>
+				<connect to="energy_demand.switch_use_exogenous_energy_demand" from="Energy_Units.switch_use_exogenous_energy_demand"/>
+				<connect2 to="energy_demand.switch_use_exogenous_energy_demand" from="Energy_Units.switch_use_exogenous_energy_demand"/>
 				<connect to="energy_demand.today" from="Climate.climate_impact_stoptime"/>
 				<connect2 to="energy_demand.today" from="Climate.climate_impact_stoptime"/>
+				<connect to="energy_demand.UNIT_EJ_to_GJ" from="Energy_Units.UNIT_EJ_to_GJ"/>
+				<connect2 to="energy_demand.UNIT_EJ_to_GJ" from="Energy_Units.UNIT_EJ_to_GJ"/>
 				<connect to="energy_demand.UNIT_GJ_to_MWh" from="Energy_Units.UNIT_GJ_to_MWh"/>
 				<connect2 to="energy_demand.UNIT_GJ_to_MWh" from="Energy_Units.UNIT_GJ_to_MWh"/>
+				<connect to="energy_demand.UNIT_Mp_to_p" from="Energy_Units.UNIT_Mp_to_p"/>
+				<connect2 to="energy_demand.UNIT_Mp_to_p" from="Energy_Units.UNIT_Mp_to_p"/>
 			</module>
 			<module name="energy investments" isee:label="">
 				<format scale_by="auto"/>
@@ -398,6 +404,8 @@
 				<connect2 to="energy_investments.stranded_capital_1" from="fossil_energy_gas.stranded_capital"/>
 				<connect to="energy_investments.stranded_capital_2" from="fossil_energy_oil.stranded_capital"/>
 				<connect2 to="energy_investments.stranded_capital_2" from="fossil_energy_oil.stranded_capital"/>
+				<connect to="energy_investments.switch_use_exogenous_maximum_energy_capacity_additions" from="Energy_Units.switch_use_exogenous_maximum_energy_capacity_additions"/>
+				<connect2 to="energy_investments.switch_use_exogenous_maximum_energy_capacity_additions" from="Energy_Units.switch_use_exogenous_maximum_energy_capacity_additions"/>
 				<connect to="energy_investments.tax_revenue_on_investments_in_bio_fuel_energy_capacity" from="Government.tax_revenue_on_investments_in_bio_fuel_energy_capacity"/>
 				<connect2 to="energy_investments.tax_revenue_on_investments_in_bio_fuel_energy_capacity" from="Government.tax_revenue_on_investments_in_bio_fuel_energy_capacity"/>
 				<connect to="energy_investments.tax_revenue_on_investments_in_coal_extraction" from="Government.tax_revenue_on_investments_in_coal_extraction"/>
@@ -447,6 +455,8 @@
 				<connect2 to="efficiency_reduction_in_power_plants.Surface_Temperature_Anomaly" from="Energy_Balance_Model.Surface_Temperature_Anomaly"/>
 				<connect to="efficiency_reduction_in_power_plants.switch_energy_damage" from="Climate.switch_energy_damage"/>
 				<connect2 to="efficiency_reduction_in_power_plants.switch_energy_damage" from="Climate.switch_energy_damage"/>
+				<connect to="efficiency_reduction_in_power_plants.switch_use_exogenous_energy_efficiency_damages" from="Energy_Units.switch_use_exogenous_energy_efficiency_damages"/>
+				<connect2 to="efficiency_reduction_in_power_plants.switch_use_exogenous_energy_efficiency_damages" from="Energy_Units.switch_use_exogenous_energy_efficiency_damages"/>
 				<connect to="efficiency_reduction_in_power_plants.today" from="Climate.climate_impact_stoptime"/>
 				<connect2 to="efficiency_reduction_in_power_plants.today" from="Climate.climate_impact_stoptime"/>
 				<connect to="Finance.stranded_capital" from="fossil_energy.stranded_capital"/>
@@ -477,6 +487,8 @@
 				<connect2 to="fossil_energy_coal.coupling_factor_of_fossil_fuels_and_N2O_emissions" from="Emissions.coupling_factor_of_fossil_fuels_and_N2O_emissions"/>
 				<connect to="fossil_energy_coal.coupling_factor_of_fossil_fuels_and_SO2_emissions" from="Emissions.coupling_factor_of_fossil_fuels_and_SO2_emissions"/>
 				<connect2 to="fossil_energy_coal.coupling_factor_of_fossil_fuels_and_SO2_emissions" from="Emissions.coupling_factor_of_fossil_fuels_and_SO2_emissions"/>
+				<connect to="fossil_energy_coal.damaged_capital_cost_factor" from="Energy_Units.damaged_capital_cost_factor"/>
+				<connect2 to="fossil_energy_coal.damaged_capital_cost_factor" from="Energy_Units.damaged_capital_cost_factor"/>
 				<connect to="fossil_energy_coal.GtC_to_MtCO2" from="Emissions.GtC_to_MtCO2"/>
 				<connect2 to="fossil_energy_coal.GtC_to_MtCO2" from="Emissions.GtC_to_MtCO2"/>
 				<connect to="fossil_energy_coal.Investments_in_Fossil_Energy_Capital" from="energy_investments.Coal_Gross_Investments_in_Fossil_Energy_Capital"/>
@@ -493,6 +505,8 @@
 				<connect2 to="fossil_energy_coal.rate_of_decommissioning_fossil_fuel_extraction_capital" from="Government_Regulations.rate_of_decommissioning_coal_fossil_fuel_extraction_capital"/>
 				<connect to="fossil_energy_coal.share_of_coal_emissions_stored" from="Government_Regulations.share_of_coal_emissions_stored"/>
 				<connect2 to="fossil_energy_coal.share_of_coal_emissions_stored" from="Government_Regulations.share_of_coal_emissions_stored"/>
+				<connect to="fossil_energy_coal.switch_use_exogenous_energy_capital_cost_increase" from="Energy_Units.switch_use_exogenous_capital_cost_increase"/>
+				<connect2 to="fossil_energy_coal.switch_use_exogenous_energy_capital_cost_increase" from="Energy_Units.switch_use_exogenous_capital_cost_increase"/>
 				<connect to="fossil_energy_coal.tax_for_newly_installed_coal_energy_production_capacity" from="Government_Regulations.tax_rate_on_newly_installed_coal_energy_production_capacity"/>
 				<connect2 to="fossil_energy_coal.tax_for_newly_installed_coal_energy_production_capacity" from="Government_Regulations.tax_rate_on_newly_installed_coal_energy_production_capacity"/>
 				<connect to="fossil_energy_coal.tax_for_newly_installed_coal_extraction_capacity" from="Government_Regulations.tax_rate_on_newly_installed_coal_extraction_capacity"/>
@@ -533,6 +547,8 @@
 				<connect2 to="fossil_energy_gas.coupling_factor_of_fossil_fuels_and_N2O_emissions" from="Emissions.coupling_factor_of_fossil_fuels_and_N2O_emissions"/>
 				<connect to="fossil_energy_gas.coupling_factor_of_fossil_fuels_and_SO2_emissions" from="Emissions.coupling_factor_of_fossil_fuels_and_SO2_emissions"/>
 				<connect2 to="fossil_energy_gas.coupling_factor_of_fossil_fuels_and_SO2_emissions" from="Emissions.coupling_factor_of_fossil_fuels_and_SO2_emissions"/>
+				<connect to="fossil_energy_gas.damaged_capital_cost_factor" from="Energy_Units.damaged_capital_cost_factor"/>
+				<connect2 to="fossil_energy_gas.damaged_capital_cost_factor" from="Energy_Units.damaged_capital_cost_factor"/>
 				<connect to="fossil_energy_gas.GtC_to_MtCO2" from="Emissions.GtC_to_MtCO2"/>
 				<connect2 to="fossil_energy_gas.GtC_to_MtCO2" from="Emissions.GtC_to_MtCO2"/>
 				<connect to="fossil_energy_gas.Investments_in_Fossil_Energy_Capital" from="energy_investments.Gas_Gross_Investments_in_Fossil_Energy_Capital"/>
@@ -555,6 +571,8 @@
 				<connect2 to="fossil_energy_gas.rate_of_decommissioning_fossil_fuel_extraction_capital" from="Government_Regulations.rate_of_decommissioning_gas_fossil_fuel_extraction_capital"/>
 				<connect to="fossil_energy_gas.share_of_coal_emissions_stored" from="Government_Regulations.share_of_gas_emissions_stored"/>
 				<connect2 to="fossil_energy_gas.share_of_coal_emissions_stored" from="Government_Regulations.share_of_gas_emissions_stored"/>
+				<connect to="fossil_energy_gas.switch_use_exogenous_energy_capital_cost_increase" from="Energy_Units.switch_use_exogenous_capital_cost_increase"/>
+				<connect2 to="fossil_energy_gas.switch_use_exogenous_energy_capital_cost_increase" from="Energy_Units.switch_use_exogenous_capital_cost_increase"/>
 				<connect to="fossil_energy_gas.tax_for_newly_installed_gas_extraction_capacity" from="Government_Regulations.tax_rate_on_newly_installed_gas_extraction_capacity"/>
 				<connect2 to="fossil_energy_gas.tax_for_newly_installed_gas_extraction_capacity" from="Government_Regulations.tax_rate_on_newly_installed_gas_extraction_capacity"/>
 				<connect to="fossil_energy_gas.tax_for_newly_installed_gas_energy_production_capacity" from="Government_Regulations.tax_rate_on_newly_installed_gas_energy_production_capacity"/>
@@ -591,6 +609,8 @@
 				<connect2 to="fossil_energy_oil.coupling_factor_of_fossil_fuels_and_N2O_emissions" from="Emissions.coupling_factor_of_fossil_fuels_and_N2O_emissions"/>
 				<connect to="fossil_energy_oil.coupling_factor_of_fossil_fuels_and_SO2_emissions" from="Emissions.coupling_factor_of_fossil_fuels_and_SO2_emissions"/>
 				<connect2 to="fossil_energy_oil.coupling_factor_of_fossil_fuels_and_SO2_emissions" from="Emissions.coupling_factor_of_fossil_fuels_and_SO2_emissions"/>
+				<connect to="fossil_energy_oil.damaged_capital_cost_factor" from="Energy_Units.damaged_capital_cost_factor"/>
+				<connect2 to="fossil_energy_oil.damaged_capital_cost_factor" from="Energy_Units.damaged_capital_cost_factor"/>
 				<connect to="fossil_energy_oil.GtC_to_MtCO2" from="Emissions.GtC_to_MtCO2"/>
 				<connect2 to="fossil_energy_oil.GtC_to_MtCO2" from="Emissions.GtC_to_MtCO2"/>
 				<connect to="fossil_energy_oil.Investments_in_Fossil_Energy_Capital" from="energy_investments.Oil_Gross_Investments_in_Fossil_Energy_Capital"/>
@@ -613,6 +633,8 @@
 				<connect2 to="fossil_energy_oil.rate_of_decommissioning_fossil_fuel_extraction_capital" from="Government_Regulations.rate_of_decommissioning_oil_fossil_fuel_extraction_capital"/>
 				<connect to="fossil_energy_oil.share_of_coal_emissions_stored" from="Government_Regulations.share_of_oil_emissions_stored"/>
 				<connect2 to="fossil_energy_oil.share_of_coal_emissions_stored" from="Government_Regulations.share_of_oil_emissions_stored"/>
+				<connect to="fossil_energy_oil.switch_use_exogenous_energy_capital_cost_increase" from="Energy_Units.switch_use_exogenous_capital_cost_increase"/>
+				<connect2 to="fossil_energy_oil.switch_use_exogenous_energy_capital_cost_increase" from="Energy_Units.switch_use_exogenous_capital_cost_increase"/>
 				<connect to="fossil_energy_oil.tax_for_newly_installed_oil_extraction_capacity" from="Government_Regulations.tax_rate_on_newly_installed_oil_extraction_capacity"/>
 				<connect2 to="fossil_energy_oil.tax_for_newly_installed_oil_extraction_capacity" from="Government_Regulations.tax_rate_on_newly_installed_oil_extraction_capacity"/>
 				<connect to="fossil_energy_oil.tax_for_newly_installed_oil_energy_production_capacity" from="Government_Regulations.tax_rate_on_newly_installed_oil_energy_production_capacity"/>
@@ -629,12 +651,16 @@
 				<connect2 to="energy_investments.Cost_of_Extra_Energy_Output_through_Capital_per_Unit_6" from="nuclear_energy.Cost_net_of_taxes_of_Extra_Energy_Output_through_Capital_per_Unit"/>
 				<connect to="Government.tax_rate_4" from="nuclear_energy.tax_rate"/>
 				<connect2 to="Government.tax_rate_4" from="nuclear_energy.tax_rate"/>
+				<connect to="nuclear_energy.general_capital_cost_factor" from="Energy_Units.general_capital_cost_factor"/>
+				<connect2 to="nuclear_energy.general_capital_cost_factor" from="Energy_Units.general_capital_cost_factor"/>
 				<connect to="nuclear_energy.Investments_in_Nuclear_Capacity" from="energy_investments.Investments_in_Nuclear_Capacity"/>
 				<connect2 to="nuclear_energy.Investments_in_Nuclear_Capacity" from="energy_investments.Investments_in_Nuclear_Capacity"/>
 				<connect to="nuclear_energy.kW_to_GW" from="Energy_Units.UNIT_kW_to_GW"/>
 				<connect2 to="nuclear_energy.kW_to_GW" from="Energy_Units.UNIT_kW_to_GW"/>
 				<connect to="nuclear_energy.start_year" from="Government_Regulations.start_year"/>
 				<connect2 to="nuclear_energy.start_year" from="Government_Regulations.start_year"/>
+				<connect to="nuclear_energy.switch_use_exogenous_capital_cost_increase" from="Energy_Units.switch_use_exogenous_capital_cost_increase"/>
+				<connect2 to="nuclear_energy.switch_use_exogenous_capital_cost_increase" from="Energy_Units.switch_use_exogenous_capital_cost_increase"/>
 				<connect to="nuclear_energy.tax_for_newly_installed_nuclear" from="Government_Regulations.tax_rate_on_newly_installed_nuclear_energy_capacity"/>
 				<connect2 to="nuclear_energy.tax_for_newly_installed_nuclear" from="Government_Regulations.tax_rate_on_newly_installed_nuclear_energy_capacity"/>
 				<connect to="nuclear_energy.TWh_to_kWh" from="Energy_Units.UNIT_TWh_to_kWh"/>
@@ -669,6 +695,8 @@
 				<connect2 to="bio_fuel_energy.crop_demand" from="Food_Demand.crop_demand"/>
 				<connect to="bio_fuel_energy.crops_for_energy" from="Food_Demand.crops_for_energy"/>
 				<connect2 to="bio_fuel_energy.crops_for_energy" from="Food_Demand.crops_for_energy"/>
+				<connect to="bio_fuel_energy.general_capital_cost_factor" from="Energy_Units.general_capital_cost_factor"/>
+				<connect2 to="bio_fuel_energy.general_capital_cost_factor" from="Energy_Units.general_capital_cost_factor"/>
 				<connect to="bio_fuel_energy.GtC_to_MtCO2" from="Emissions.GtC_to_MtCO2"/>
 				<connect2 to="bio_fuel_energy.GtC_to_MtCO2" from="Emissions.GtC_to_MtCO2"/>
 				<connect to="bio_fuel_energy.Investments_in_Other_Capacity" from="energy_investments.Gross_Investments_in_Biofuel_Capacity"/>
@@ -685,6 +713,8 @@
 				<connect2 to="bio_fuel_energy.Policy_Start_Year" from="Government_Regulations.start_year"/>
 				<connect to="bio_fuel_energy.share_of_biofuel_emissions_stored" from="Government_Regulations.share_of_biofuel_emissions_stored"/>
 				<connect2 to="bio_fuel_energy.share_of_biofuel_emissions_stored" from="Government_Regulations.share_of_biofuel_emissions_stored"/>
+				<connect to="bio_fuel_energy.switch_use_exogenous_capital_cost_increase" from="Energy_Units.switch_use_exogenous_capital_cost_increase"/>
+				<connect2 to="bio_fuel_energy.switch_use_exogenous_capital_cost_increase" from="Energy_Units.switch_use_exogenous_capital_cost_increase"/>
 				<connect to="bio_fuel_energy.tax_for_newly_installed_other_energy_capacity" from="Government_Regulations.tax_rate_on_newly_installed_bio_energy_capacity"/>
 				<connect2 to="bio_fuel_energy.tax_for_newly_installed_other_energy_capacity" from="Government_Regulations.tax_rate_on_newly_installed_bio_energy_capacity"/>
 				<connect to="bio_fuel_energy.tax_on_CO2e_emissions" from="Government_Regulations.tax_on_CO2e_emissions"/>
@@ -699,6 +729,8 @@
 				<connect2 to="Sea_Level.Installation_of_Hydropower_Capacity" from="hydropower_energy.Installation_of_Hydropower_Capacity"/>
 				<connect to="Government.tax_rate_1" from="hydropower_energy.tax_rate"/>
 				<connect2 to="Government.tax_rate_1" from="hydropower_energy.tax_rate"/>
+				<connect to="hydropower_energy.damaged_capital_cost_factor" from="Energy_Units.damaged_capital_cost_factor"/>
+				<connect2 to="hydropower_energy.damaged_capital_cost_factor" from="Energy_Units.damaged_capital_cost_factor"/>
 				<connect to="hydropower_energy.GW_to_TW" from="Energy_Units.UNIT_GW_to_TW"/>
 				<connect2 to="hydropower_energy.GW_to_TW" from="Energy_Units.UNIT_GW_to_TW"/>
 				<connect to="hydropower_energy.Investments_in_Hydropower_Energy_Capcity" from="energy_investments.Gross_Investments_in_Hydropower_Energy_capacity"/>
@@ -709,6 +741,8 @@
 				<connect2 to="hydropower_energy.kW_to_TW" from="Energy_Units.UNIT_kW_to_TW"/>
 				<connect to="hydropower_energy.start_year" from="Government_Regulations.start_year"/>
 				<connect2 to="hydropower_energy.start_year" from="Government_Regulations.start_year"/>
+				<connect to="hydropower_energy.switch_use_exogenous_capital_cost_increase" from="Energy_Units.switch_use_exogenous_capital_cost_increase"/>
+				<connect2 to="hydropower_energy.switch_use_exogenous_capital_cost_increase" from="Energy_Units.switch_use_exogenous_capital_cost_increase"/>
 				<connect to="hydropower_energy.tax_for_newly_installed_hydropower_capacity" from="Government_Regulations.tax_rate_on_newly_installed_hydropower_capacity"/>
 				<connect2 to="hydropower_energy.tax_for_newly_installed_hydropower_capacity" from="Government_Regulations.tax_rate_on_newly_installed_hydropower_capacity"/>
 				<connect to="hydropower_energy.TWh_to_kWh" from="Energy_Units.UNIT_TWh_to_kWh"/>
@@ -717,6 +751,8 @@
 				<connect2 to="energy_investments.Cost_of_Extra_Energy_Output_through_Capital_per_Unit_8" from="solar_energy.Cost_of_Extra_Energy_Output_through_Capital_per_Unit_net_of_Tax_and_Subsidies"/>
 				<connect to="Government.tax_rate_5" from="solar_energy.tax_rate"/>
 				<connect2 to="Government.tax_rate_5" from="solar_energy.tax_rate"/>
+				<connect to="solar_energy.general_capital_cost_factor" from="Energy_Units.general_capital_cost_factor"/>
+				<connect2 to="solar_energy.general_capital_cost_factor" from="Energy_Units.general_capital_cost_factor"/>
 				<connect to="solar_energy.gWh_to_TWh" from="Energy_Units.UNIT_gWh_to_TWh"/>
 				<connect2 to="solar_energy.gWh_to_TWh" from="Energy_Units.UNIT_gWh_to_TWh"/>
 				<connect to="solar_energy.Investments_in_Solar_and_Wind_Energy_Capacity" from="energy_investments.Gross_Investments_in_Solar_Energy_Capacity"/>
@@ -729,12 +765,16 @@
 				<connect2 to="solar_energy.start_year" from="Government_Regulations.start_year"/>
 				<connect to="solar_energy.subsidy_for_newly_installed_solar_and_wind_energy_capacity" from="Government_Regulations.tax_rate_on_newly_installed_solar_energy_capacity"/>
 				<connect2 to="solar_energy.subsidy_for_newly_installed_solar_and_wind_energy_capacity" from="Government_Regulations.tax_rate_on_newly_installed_solar_energy_capacity"/>
+				<connect to="solar_energy.switch_use_exogenous_capital_cost_increase" from="Energy_Units.switch_use_exogenous_capital_cost_increase"/>
+				<connect2 to="solar_energy.switch_use_exogenous_capital_cost_increase" from="Energy_Units.switch_use_exogenous_capital_cost_increase"/>
 				<connect to="solar_energy.TWh_to_kWh" from="Energy_Units.UNIT_TWh_to_kWh"/>
 				<connect2 to="solar_energy.TWh_to_kWh" from="Energy_Units.UNIT_TWh_to_kWh"/>
 				<connect to="energy_investments.Cost_of_Extra_Energy_Output_through_Capital_per_Unit_9" from="wind_energy.Cost_of_Extra_Energy_Output_through_Capital_per_Unit_net_of_Tax_and_Subsidies"/>
 				<connect2 to="energy_investments.Cost_of_Extra_Energy_Output_through_Capital_per_Unit_9" from="wind_energy.Cost_of_Extra_Energy_Output_through_Capital_per_Unit_net_of_Tax_and_Subsidies"/>
 				<connect to="Government.tax_rate_6" from="wind_energy.tax_rate"/>
 				<connect2 to="Government.tax_rate_6" from="wind_energy.tax_rate"/>
+				<connect to="wind_energy.general_capital_cost_factor" from="Energy_Units.general_capital_cost_factor"/>
+				<connect2 to="wind_energy.general_capital_cost_factor" from="Energy_Units.general_capital_cost_factor"/>
 				<connect to="wind_energy.gWh_to_TWh" from="Energy_Units.UNIT_gWh_to_TWh"/>
 				<connect2 to="wind_energy.gWh_to_TWh" from="Energy_Units.UNIT_gWh_to_TWh"/>
 				<connect to="wind_energy.Investments_in_Solar_and_Wind_Energy_Capacity" from="energy_investments.Gross_Investments_in_wind_Energy_Capacity"/>
@@ -747,6 +787,8 @@
 				<connect2 to="wind_energy.start_year" from="Government_Regulations.start_year"/>
 				<connect to="wind_energy.subsidy_for_newly_installed_solar_and_wind_energy_capacity" from="Government_Regulations.tax_rate_on_newly_installed_wind_energy_capacity"/>
 				<connect2 to="wind_energy.subsidy_for_newly_installed_solar_and_wind_energy_capacity" from="Government_Regulations.tax_rate_on_newly_installed_wind_energy_capacity"/>
+				<connect to="wind_energy.switch_use_exogenous_capital_cost_increase" from="Energy_Units.switch_use_exogenous_capital_cost_increase"/>
+				<connect2 to="wind_energy.switch_use_exogenous_capital_cost_increase" from="Energy_Units.switch_use_exogenous_capital_cost_increase"/>
 				<connect to="wind_energy.TWh_to_kWh" from="Energy_Units.UNIT_TWh_to_kWh"/>
 				<connect2 to="wind_energy.TWh_to_kWh" from="Energy_Units.UNIT_TWh_to_kWh"/>
 			</module>
@@ -761,10 +803,50 @@
 			</module>
 			<module name="Energy Units" isee:label="">
 				<format scale_by="auto"/>
+				<connect to="fossil_energy_coal.damaged_capital_cost_factor" from="Energy_Units.damaged_capital_cost_factor"/>
+				<connect2 to="fossil_energy_coal.damaged_capital_cost_factor" from="Energy_Units.damaged_capital_cost_factor"/>
+				<connect to="fossil_energy_gas.damaged_capital_cost_factor" from="Energy_Units.damaged_capital_cost_factor"/>
+				<connect2 to="fossil_energy_gas.damaged_capital_cost_factor" from="Energy_Units.damaged_capital_cost_factor"/>
+				<connect to="fossil_energy_oil.damaged_capital_cost_factor" from="Energy_Units.damaged_capital_cost_factor"/>
+				<connect2 to="fossil_energy_oil.damaged_capital_cost_factor" from="Energy_Units.damaged_capital_cost_factor"/>
+				<connect to="hydropower_energy.damaged_capital_cost_factor" from="Energy_Units.damaged_capital_cost_factor"/>
+				<connect2 to="hydropower_energy.damaged_capital_cost_factor" from="Energy_Units.damaged_capital_cost_factor"/>
+				<connect to="bio_fuel_energy.general_capital_cost_factor" from="Energy_Units.general_capital_cost_factor"/>
+				<connect2 to="bio_fuel_energy.general_capital_cost_factor" from="Energy_Units.general_capital_cost_factor"/>
+				<connect to="nuclear_energy.general_capital_cost_factor" from="Energy_Units.general_capital_cost_factor"/>
+				<connect2 to="nuclear_energy.general_capital_cost_factor" from="Energy_Units.general_capital_cost_factor"/>
+				<connect to="solar_energy.general_capital_cost_factor" from="Energy_Units.general_capital_cost_factor"/>
+				<connect2 to="solar_energy.general_capital_cost_factor" from="Energy_Units.general_capital_cost_factor"/>
+				<connect to="wind_energy.general_capital_cost_factor" from="Energy_Units.general_capital_cost_factor"/>
+				<connect2 to="wind_energy.general_capital_cost_factor" from="Energy_Units.general_capital_cost_factor"/>
+				<connect to="bio_fuel_energy.switch_use_exogenous_capital_cost_increase" from="Energy_Units.switch_use_exogenous_capital_cost_increase"/>
+				<connect2 to="bio_fuel_energy.switch_use_exogenous_capital_cost_increase" from="Energy_Units.switch_use_exogenous_capital_cost_increase"/>
+				<connect to="fossil_energy_coal.switch_use_exogenous_energy_capital_cost_increase" from="Energy_Units.switch_use_exogenous_capital_cost_increase"/>
+				<connect2 to="fossil_energy_coal.switch_use_exogenous_energy_capital_cost_increase" from="Energy_Units.switch_use_exogenous_capital_cost_increase"/>
+				<connect to="fossil_energy_gas.switch_use_exogenous_energy_capital_cost_increase" from="Energy_Units.switch_use_exogenous_capital_cost_increase"/>
+				<connect2 to="fossil_energy_gas.switch_use_exogenous_energy_capital_cost_increase" from="Energy_Units.switch_use_exogenous_capital_cost_increase"/>
+				<connect to="fossil_energy_oil.switch_use_exogenous_energy_capital_cost_increase" from="Energy_Units.switch_use_exogenous_capital_cost_increase"/>
+				<connect2 to="fossil_energy_oil.switch_use_exogenous_energy_capital_cost_increase" from="Energy_Units.switch_use_exogenous_capital_cost_increase"/>
+				<connect to="hydropower_energy.switch_use_exogenous_capital_cost_increase" from="Energy_Units.switch_use_exogenous_capital_cost_increase"/>
+				<connect2 to="hydropower_energy.switch_use_exogenous_capital_cost_increase" from="Energy_Units.switch_use_exogenous_capital_cost_increase"/>
+				<connect to="nuclear_energy.switch_use_exogenous_capital_cost_increase" from="Energy_Units.switch_use_exogenous_capital_cost_increase"/>
+				<connect2 to="nuclear_energy.switch_use_exogenous_capital_cost_increase" from="Energy_Units.switch_use_exogenous_capital_cost_increase"/>
+				<connect to="solar_energy.switch_use_exogenous_capital_cost_increase" from="Energy_Units.switch_use_exogenous_capital_cost_increase"/>
+				<connect2 to="solar_energy.switch_use_exogenous_capital_cost_increase" from="Energy_Units.switch_use_exogenous_capital_cost_increase"/>
+				<connect to="wind_energy.switch_use_exogenous_capital_cost_increase" from="Energy_Units.switch_use_exogenous_capital_cost_increase"/>
+				<connect2 to="wind_energy.switch_use_exogenous_capital_cost_increase" from="Energy_Units.switch_use_exogenous_capital_cost_increase"/>
+				<connect to="energy_demand.switch_use_exogenous_energy_demand" from="Energy_Units.switch_use_exogenous_energy_demand"/>
+				<connect2 to="energy_demand.switch_use_exogenous_energy_demand" from="Energy_Units.switch_use_exogenous_energy_demand"/>
+				<connect to="efficiency_reduction_in_power_plants.switch_use_exogenous_energy_efficiency_damages" from="Energy_Units.switch_use_exogenous_energy_efficiency_damages"/>
+				<connect2 to="efficiency_reduction_in_power_plants.switch_use_exogenous_energy_efficiency_damages" from="Energy_Units.switch_use_exogenous_energy_efficiency_damages"/>
+				<connect to="energy_investments.switch_use_exogenous_maximum_energy_capacity_additions" from="Energy_Units.switch_use_exogenous_maximum_energy_capacity_additions"/>
+				<connect2 to="energy_investments.switch_use_exogenous_maximum_energy_capacity_additions" from="Energy_Units.switch_use_exogenous_maximum_energy_capacity_additions"/>
 				<connect to='energy_investments."UNIT_Bc$_to_c$"' from='Energy_Units."UNIT_Bc$_to_c$"'/>
 				<connect2 to='energy_investments."UNIT_Bc$_to_c$"' from='Energy_Units."UNIT_Bc$_to_c$"'/>
 				<connect to="Damages.UNIT_deg_C_to_dmnl" from="Energy_Units.UNIT_deg_C_to_dmnl"/>
 				<connect2 to="Damages.UNIT_deg_C_to_dmnl" from="Energy_Units.UNIT_deg_C_to_dmnl"/>
+				<connect to="energy_demand.UNIT_EJ_to_GJ" from="Energy_Units.UNIT_EJ_to_GJ"/>
+				<connect2 to="energy_demand.UNIT_EJ_to_GJ" from="Energy_Units.UNIT_EJ_to_GJ"/>
 				<connect to="energy_demand.UNIT_GJ_to_MWh" from="Energy_Units.UNIT_GJ_to_MWh"/>
 				<connect2 to="energy_demand.UNIT_GJ_to_MWh" from="Energy_Units.UNIT_GJ_to_MWh"/>
 				<connect to="hydropower_energy.GW_to_TW" from="Energy_Units.UNIT_GW_to_TW"/>
@@ -791,6 +873,8 @@
 				<connect2 to="solar_energy.kW_to_TW" from="Energy_Units.UNIT_kW_to_TW"/>
 				<connect to="wind_energy.kW_to_TW" from="Energy_Units.UNIT_kW_to_TW"/>
 				<connect2 to="wind_energy.kW_to_TW" from="Energy_Units.UNIT_kW_to_TW"/>
+				<connect to="energy_demand.UNIT_Mp_to_p" from="Energy_Units.UNIT_Mp_to_p"/>
+				<connect2 to="energy_demand.UNIT_Mp_to_p" from="Energy_Units.UNIT_Mp_to_p"/>
 				<connect to="fossil_energy_coal.Qbtu_to_zJ" from="Energy_Units.UNIT_Qbtu_to_zJ"/>
 				<connect2 to="fossil_energy_coal.Qbtu_to_zJ" from="Energy_Units.UNIT_Qbtu_to_zJ"/>
 				<connect to="fossil_energy_gas.Qbtu_to_zJ" from="Energy_Units.UNIT_Qbtu_to_zJ"/>
@@ -871,7 +955,7 @@
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="1123" page_height="793" isee:page_cols="12" isee:page_rows="7" zoom="80" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="768" page_height="588" isee:page_cols="12" isee:page_rows="7" zoom="80" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -1910,7 +1994,11 @@ Based on GCM output of the past</doc>
 				<dimensions>
 					<dim name="Run"/>
 				</dimensions>
-				<eqn>energy_use_per_CDD*CDD_change_to_preindustrial</eqn>
+				<eqn>IF switch_use_exogenous_energy_demand 
+THEN
+exogenous_Change_in_energy_used_for_cooling_due_to_climate_change
+ELSE
+energy_use_per_CDD*CDD_change_to_preindustrial</eqn>
 				<units>GJ/(Person*Year)</units>
 			</aux>
 			<aux name="Change in energy used for\ncooling due to climate change in MWh" access="output" isee:autocreated="true">
@@ -2096,6 +2184,29 @@ Change_in_energy_used_for_Heating_due_to_climate_change_in_MWh + Change_in_energ
 				<eqn>0.277778</eqn>
 				<units>MWh/GJ</units>
 			</aux>
+			<aux name="exogenous total Change in energy used for\ncooling due to climate change">
+				<eqn>0</eqn>
+				<units>EJ/year</units>
+			</aux>
+			<aux name="UNIT EJ to GJ" access="input">
+				<eqn>1e9</eqn>
+				<units>GJ/EJ</units>
+			</aux>
+			<aux name="UNIT Mp to p" access="input">
+				<eqn>1e6</eqn>
+				<units>p/Mp</units>
+			</aux>
+			<aux name="exogenous Change in energy used for\ncooling due to climate change">
+				<dimensions>
+					<dim name="Run"/>
+				</dimensions>
+				<eqn>exogenous_total_Change_in_energy_used_for_cooling_due_to_climate_change*UNIT_EJ_to_GJ/(Population*UNIT_Mp_to_p)</eqn>
+				<units>GJ/(Person*Year)</units>
+			</aux>
+			<aux name="switch use exogenous energy\ndemand" access="input">
+				<eqn>0</eqn>
+				<units>dmnl</units>
+			</aux>
 		</variables>
 		<views>
 			<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
@@ -2145,7 +2256,7 @@ Change_in_energy_used_for_Heating_due_to_climate_change_in_MWh + Change_in_energ
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="1123" page_height="793" isee:page_cols="2" isee:page_rows="3" zoom="180" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="768" page_height="588" isee:page_cols="3" isee:page_rows="3" isee:scroll_y="120" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="11pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -2235,20 +2346,20 @@ Change_in_energy_used_for_Heating_due_to_climate_change_in_MWh + Change_in_energ
 					<from>effect_of_GDP_on_per_person_use_of_energy_beta</from>
 					<to>effect_of_GDP_per_person_on_per_person_energy_demand</to>
 				</connector>
-				<aux x="544.786" y="249.143" name="CDD"/>
-				<aux x="679.286" y="249.143" name="HDD"/>
-				<aux x="469.099" y="190.429" name="CDD linear coefficient"/>
+				<aux x="857.786" y="153.143" name="CDD"/>
+				<aux x="992.286" y="153.143" name="HDD"/>
+				<aux x="782.099" y="94.429" name="CDD linear coefficient"/>
 				<connector uid="58" angle="320.243">
 					<from>CDD_linear_coefficient</from>
 					<to>CDD</to>
 				</connector>
-				<aux x="421.429" y="231.143" name="CDD historical"/>
+				<aux x="734.429" y="135.143" name="CDD historical"/>
 				<connector uid="59" angle="352.694">
 					<from>CDD_historical</from>
 					<to>CDD</to>
 				</connector>
-				<aux x="819.429" y="249.143" name="HDD historical"/>
-				<aux x="801.429" y="180.143" name="HDD exponential coefficient"/>
+				<aux x="1132.43" y="153.143" name="HDD historical"/>
+				<aux x="1114.43" y="84.143" name="HDD exponential coefficient"/>
 				<connector uid="60" angle="180">
 					<from>HDD_historical</from>
 					<to>HDD</to>
@@ -2257,17 +2368,17 @@ Change_in_energy_used_for_Heating_due_to_climate_change_in_MWh + Change_in_energ
 					<from>HDD_exponential_coefficient</from>
 					<to>HDD</to>
 				</connector>
-				<aux x="530.706" y="323.857" name="CDD change to preindustrial"/>
+				<aux x="843.706" y="227.857" name="CDD change to preindustrial"/>
 				<connector uid="62" angle="259.328">
 					<from>CDD</from>
 					<to>CDD_change_to_preindustrial</to>
 				</connector>
-				<aux x="405.831" y="290.875" name="CDD preindustrial"/>
+				<aux x="718.831" y="194.875" name="CDD preindustrial"/>
 				<connector uid="63" angle="245.625">
 					<from>CDD_historical</from>
 					<to>CDD_preindustrial</to>
 				</connector>
-				<aux x="812.089" y="323.857" name="HDD preindustrial"/>
+				<aux x="1125.09" y="227.857" name="HDD preindustrial"/>
 				<connector uid="64" angle="264.389">
 					<from>HDD_historical</from>
 					<to>HDD_preindustrial</to>
@@ -2276,7 +2387,7 @@ Change_in_energy_used_for_Heating_due_to_climate_change_in_MWh + Change_in_energ
 					<from>CDD_preindustrial</from>
 					<to>CDD_change_to_preindustrial</to>
 				</connector>
-				<aux x="679.286" y="323.857" name="HDD change to preindustrial"/>
+				<aux x="992.286" y="227.857" name="HDD change to preindustrial"/>
 				<connector uid="66" angle="271.245">
 					<from>HDD</from>
 					<to>HDD_change_to_preindustrial</to>
@@ -2285,8 +2396,8 @@ Change_in_energy_used_for_Heating_due_to_climate_change_in_MWh + Change_in_energ
 					<from>HDD_preindustrial</from>
 					<to>HDD_change_to_preindustrial</to>
 				</connector>
-				<aux x="687" y="434" name="Change in energy used for Heating due to climate change"/>
-				<aux x="801.429" y="405.25" name="Energy use per HDD"/>
+				<aux x="1000" y="338" name="Change in energy used for Heating due to climate change"/>
+				<aux x="1114.43" y="309.25" name="Energy use per HDD"/>
 				<connector uid="68" angle="265.927">
 					<from>HDD_change_to_preindustrial</from>
 					<to>Change_in_energy_used_for_Heating_due_to_climate_change</to>
@@ -2295,8 +2406,8 @@ Change_in_energy_used_for_Heating_due_to_climate_change_in_MWh + Change_in_energ
 					<from>Energy_use_per_HDD</from>
 					<to>Change_in_energy_used_for_Heating_due_to_climate_change</to>
 				</connector>
-				<aux x="451.099" y="352.571" name="energy use per CDD"/>
-				<aux x="518.25" y="430.875" name="Change in energy used for\ncooling due to climate change"/>
+				<aux x="764.099" y="256.571" name="energy use per CDD"/>
+				<aux x="831.25" y="334.875" name="Change in energy used for\ncooling due to climate change"/>
 				<connector uid="70" angle="310.615">
 					<from>energy_use_per_CDD</from>
 					<to>Change_in_energy_used_for_cooling_due_to_climate_change</to>
@@ -2305,8 +2416,8 @@ Change_in_energy_used_for_Heating_due_to_climate_change_in_MWh + Change_in_energ
 					<from>CDD_change_to_preindustrial</from>
 					<to>Change_in_energy_used_for_cooling_due_to_climate_change</to>
 				</connector>
-				<aux x="511.599" y="524.625" name="Change in energy used for\ncooling due to climate change in MWh"/>
-				<aux x="687" y="524.625" name="Change in energy used for\nHeating due to climate change in MWh"/>
+				<aux x="824.599" y="428.625" name="Change in energy used for\ncooling due to climate change in MWh"/>
+				<aux x="1000" y="428.625" name="Change in energy used for\nHeating due to climate change in MWh"/>
 				<connector uid="73" angle="276.17">
 					<from>Change_in_energy_used_for_cooling_due_to_climate_change</from>
 					<to>Change_in_energy_used_for_cooling_due_to_climate_change_in_MWh</to>
@@ -2315,8 +2426,8 @@ Change_in_energy_used_for_Heating_due_to_climate_change_in_MWh + Change_in_energ
 					<from>Change_in_energy_used_for_Heating_due_to_climate_change</from>
 					<to>Change_in_energy_used_for_Heating_due_to_climate_change_in_MWh</to>
 				</connector>
-				<aux x="595.286" y="595.25" name="total change in energy used for\nheating and cooling\ndue to climate change"/>
-				<connector uid="76" angle="311.83">
+				<aux x="908.286" y="499.25" name="total change in energy used for\nheating and cooling\ndue to climate change"/>
+				<connector uid="76" angle="319.838">
 					<from>Change_in_energy_used_for_cooling_due_to_climate_change_in_MWh</from>
 					<to>total_change_in_energy_used_for_heating_and_cooling_due_to_climate_change</to>
 				</connector>
@@ -2324,7 +2435,7 @@ Change_in_energy_used_for_Heating_due_to_climate_change_in_MWh + Change_in_energ
 					<from>Change_in_energy_used_for_Heating_due_to_climate_change_in_MWh</from>
 					<to>total_change_in_energy_used_for_heating_and_cooling_due_to_climate_change</to>
 				</connector>
-				<aux x="607.625" y="377.75" name="total change in energy used for\nheating and cooling\ndue to climate change in GJ"/>
+				<aux x="920.625" y="281.75" name="total change in energy used for\nheating and cooling\ndue to climate change in GJ"/>
 				<connector uid="81" angle="0">
 					<from>Change_in_energy_used_for_cooling_due_to_climate_change</from>
 					<to>total_change_in_energy_used_for_heating_and_cooling_due_to_climate_change_in_GJ</to>
@@ -2333,12 +2444,12 @@ Change_in_energy_used_for_Heating_due_to_climate_change_in_MWh + Change_in_energ
 					<from>Change_in_energy_used_for_Heating_due_to_climate_change</from>
 					<to>total_change_in_energy_used_for_heating_and_cooling_due_to_climate_change_in_GJ</to>
 				</connector>
-				<text_box uid="84" x="922" y="92.3333" width="526.667" height="93.8333">Energy demand change with temperature change has differing total effects in the literature.
+				<text_box uid="84" x="1186" y="70.3097" width="526.667" height="93.8333">Energy demand change with temperature change has differing total effects in the literature.
 Clarke et al (on the left) estimate and over all increase in Energy Demand while Rode et al. estimate a reduction in over all demand.
 
 This affects the energy use per CCD, energy use per HDD variables. Any change in the energy demand for heating cooling requires a recalibration of per person use of energy.</text_box>
-				<text_box uid="87" x="981.17" y="240.143" width="260" height="18">Figure of Clarke is for RCP 8.5</text_box>
-				<aux x="619.286" y="162.143" name="Surface Temperature Anomaly"/>
+				<text_box uid="87" x="1163.17" y="233.143" width="260" height="18">Figure of Clarke is for RCP 8.5</text_box>
+				<aux x="932.286" y="66.143" name="Surface Temperature Anomaly"/>
 				<connector uid="88" angle="236.31">
 					<from>Surface_Temperature_Anomaly</from>
 					<to>CDD</to>
@@ -2352,8 +2463,8 @@ This affects the energy use per CCD, energy use per HDD variables. Any change in
 					<from>Population</from>
 					<to>demand_for_energy</to>
 				</connector>
-				<aux font_style="italic" font_weight="bold" x="771.429" y="667.857" name="today"/>
-				<aux x="444.992" y="658.817" name="previous total change in energy used for\nheating and cooling\ndue to climate change"/>
+				<aux font_style="italic" font_weight="bold" x="1084.43" y="571.857" name="today"/>
+				<aux x="757.992" y="562.817" name="previous total change in energy used for\nheating and cooling\ndue to climate change"/>
 				<connector uid="97" angle="155.558">
 					<from>today</from>
 					<to>total_change_in_energy_used_for_heating_and_cooling_due_to_climate_change</to>
@@ -2363,7 +2474,7 @@ This affects the energy use per CCD, energy use per HDD variables. Any change in
 					<from>real_GDP_per_person</from>
 					<to>relative_GDP_per_person</to>
 				</connector>
-				<aux font_style="italic" font_weight="bold" x="662.857" y="667.857" name="switch energy damage"/>
+				<aux font_style="italic" font_weight="bold" x="975.857" y="571.857" name="switch energy damage"/>
 				<connector uid="99" angle="138.013">
 					<from>switch_energy_damage</from>
 					<to>total_change_in_energy_used_for_heating_and_cooling_due_to_climate_change</to>
@@ -2376,7 +2487,7 @@ This affects the energy use per CCD, energy use per HDD variables. Any change in
 					<from>previous_total_change_in_energy_used_for_heating_and_cooling_due_to_climate_change</from>
 					<to>total_change_in_energy_used_for_heating_and_cooling_due_to_climate_change</to>
 				</connector>
-				<connector uid="102" angle="264.972">
+				<connector uid="102" angle="223.606">
 					<from>total_change_in_energy_used_for_heating_and_cooling_due_to_climate_change</from>
 					<to>per_person_energy_demand</to>
 				</connector>
@@ -2453,7 +2564,7 @@ This affects the energy use per CCD, energy use per HDD variables. Any change in
 					<from>relative_change_in_energy_prices</from>
 					<to>effect_of_energy_prices_on_demand</to>
 				</connector>
-				<aux font_style="italic" font_weight="bold" x="600" y="502" name="UNIT GJ to MWh"/>
+				<aux font_style="italic" font_weight="bold" x="913" y="406" name="UNIT GJ to MWh"/>
 				<connector uid="131" angle="196.39">
 					<from>UNIT_GJ_to_MWh</from>
 					<to>Change_in_energy_used_for_cooling_due_to_climate_change_in_MWh</to>
@@ -2469,6 +2580,40 @@ This affects the energy use per CCD, energy use per HDD variables. Any change in
 						</plot>
 					</graph>
 				</stacked_container>
+				<aux x="538.706" y="323.143" name="exogenous total Change in energy used for\ncooling due to climate change"/>
+				<aux font_style="italic" font_weight="bold" x="478" y="393" name="UNIT EJ to GJ"/>
+				<aux font_style="italic" font_weight="bold" x="505.286" y="462.875" name="UNIT Mp to p"/>
+				<aux x="634.857" y="407.875" name="exogenous Change in energy used for\ncooling due to climate change"/>
+				<connector uid="135" angle="355.801">
+					<from>exogenous_total_Change_in_energy_used_for_cooling_due_to_climate_change</from>
+					<to>exogenous_Change_in_energy_used_for_cooling_due_to_climate_change</to>
+				</connector>
+				<connector uid="136" angle="17.8787">
+					<from>UNIT_EJ_to_GJ</from>
+					<to>exogenous_Change_in_energy_used_for_cooling_due_to_climate_change</to>
+				</connector>
+				<connector uid="137" angle="23.0001">
+					<from>UNIT_Mp_to_p</from>
+					<to>exogenous_Change_in_energy_used_for_cooling_due_to_climate_change</to>
+				</connector>
+				<aux font_style="italic" font_weight="bold" x="649" y="499.25" name="switch use exogenous energy\ndemand"/>
+				<connector uid="138" angle="317.345">
+					<from>
+						<alias uid="139"/>
+					</from>
+					<to>exogenous_Change_in_energy_used_for_cooling_due_to_climate_change</to>
+				</connector>
+				<connector uid="140" angle="29.261">
+					<from>switch_use_exogenous_energy_demand</from>
+					<to>Change_in_energy_used_for_cooling_due_to_climate_change</to>
+				</connector>
+				<connector uid="141" angle="356.245">
+					<from>exogenous_Change_in_energy_used_for_cooling_due_to_climate_change</from>
+					<to>Change_in_energy_used_for_cooling_due_to_climate_change</to>
+				</connector>
+				<alias font_style="italic" font_weight="bold" uid="139" x="633" y="254.75" width="18" height="18">
+					<of>Population</of>
+				</alias>
 			</view>
 		</views>
 	</model>
@@ -2763,7 +2908,7 @@ adaptive_energy_investments_differntiating_factor * Differentiating_Relative_Ene
 					<dim name="Run"/>
 					<dim name="EnergySource"/>
 				</dimensions>
-				<eqn>ALLOCATE(All_Gross_Energy_Investments[Run], EnergySource, desired_investment_by_source[Run,*],  priority_by_source[Run,*], priority_spread[Run], shape)</eqn>
+				<eqn>second_allocation + initial_allocation_kept</eqn>
 				<units>c$/year</units>
 			</aux>
 			<aux name="cost to build\nper unit">
@@ -2784,50 +2929,6 @@ ELSE IF EnergySource = EnergySource.Nuclear THEN Cost_of_Extra_Energy_Output_thr
 ELSE IF EnergySource = EnergySource.Bio THEN Cost_of_Extra_Energy_Output_through_Capital_per_Unit_7[Run]
 ELSE NAN</eqn>
 				<units>c$*Years/kWh</units>
-			</aux>
-			<aux name="priority spread">
-				<doc>${Internal Calibration Parameter}
-</doc>
-				<dimensions>
-					<dim name="Run"/>
-				</dimensions>
-				<eqn>33.4346914588317</eqn>
-				<range min="10" max="50"/>
-				<units>kWh/(c$*Years)</units>
-			</aux>
-			<aux name="shape">
-				<doc>${Internal Calibration Parameter,No Sensi}
-</doc>
-				<eqn>1 {1 or 2 or 3}</eqn>
-				<format precision="1"/>
-				<range min="1" max="3"/>
-				<units>dmnl</units>
-			</aux>
-			<aux name="desired investment\nby source">
-				<dimensions>
-					<dim name="Run"/>
-					<dim name="EnergySource"/>
-				</dimensions>
-				<eqn>All_Gross_Energy_Investments[Run]
--
-(IF (EnergySource = EnergySource.Coal_fuel_extraction 
-OR EnergySource = EnergySource.Oil_fuel_extraction
-OR EnergySource = EnergySource.Gas_fuel_extraction 
-OR EnergySource = EnergySource.Coal_energy_conversion
-OR EnergySource = EnergySource.Oil_energy_conversion 
-OR EnergySource = EnergySource.Gas_energy_conversion ) AND TIME &gt; Moratorium_on_fossil_energy_year THEN
-All_Gross_Energy_Investments[Run]
-ELSE 
-0)</eqn>
-				<units>c$/year</units>
-			</aux>
-			<aux name="priority by source">
-				<dimensions>
-					<dim name="Run"/>
-					<dim name="EnergySource"/>
-				</dimensions>
-				<eqn>MIN(1e6,1/adjusted_cost*investment_priority_adjustment_from_stranded_capital)</eqn>
-				<units>kWh/(c$*Years)</units>
 			</aux>
 			<aux name="cost of extra energy output through fuel extraction per unit" access="input">
 				<dimensions>
@@ -3871,6 +3972,197 @@ ELSE
 				<eqn>1000000000</eqn>
 				<units>c$/bc$</units>
 			</aux>
+			<aux name="priority spread">
+				<doc>${Internal Calibration Parameter}
+</doc>
+				<dimensions>
+					<dim name="Run"/>
+				</dimensions>
+				<eqn>33.4346914588317</eqn>
+				<range min="10" max="50"/>
+				<units>kWh/(c$*Years)</units>
+			</aux>
+			<aux name="shape">
+				<doc>${Internal Calibration Parameter,No Sensi}
+</doc>
+				<eqn>1 {1 or 2 or 3}</eqn>
+				<format precision="1"/>
+				<range min="1" max="3"/>
+				<units>dmnl</units>
+			</aux>
+			<aux name="desired investment\nby source">
+				<dimensions>
+					<dim name="Run"/>
+					<dim name="EnergySource"/>
+				</dimensions>
+				<eqn>IF TIME &lt;= 2025
+THEN
+All_Gross_Energy_Investments[Run]
+ELSE
+
+(All_Gross_Energy_Investments[Run]
+-
+(IF (EnergySource = EnergySource.Coal_fuel_extraction 
+OR EnergySource = EnergySource.Oil_fuel_extraction
+OR EnergySource = EnergySource.Gas_fuel_extraction 
+OR EnergySource = EnergySource.Coal_energy_conversion
+OR EnergySource = EnergySource.Oil_energy_conversion 
+OR EnergySource = EnergySource.Gas_energy_conversion ) AND TIME &gt; Moratorium_on_fossil_energy_year THEN
+All_Gross_Energy_Investments[Run]
+ELSE 
+0))</eqn>
+				<units>c$/year</units>
+			</aux>
+			<aux name="priority by source initial allocation">
+				<dimensions>
+					<dim name="Run"/>
+					<dim name="EnergySource"/>
+				</dimensions>
+				<eqn>MIN(1e6,1/adjusted_cost*investment_priority_adjustment_from_stranded_capital)</eqn>
+				<units>kWh/(c$*Years)</units>
+			</aux>
+			<aux name="maximum investments in Coal\nfuel extraction">
+				<eqn>0</eqn>
+				<units>c$/year</units>
+			</aux>
+			<aux name="maximum investments in Hydropower">
+				<eqn>0</eqn>
+				<units>c$/year</units>
+			</aux>
+			<aux name="maximum investments in Coal\nenergy conversion">
+				<eqn>0</eqn>
+				<units>c$/year</units>
+			</aux>
+			<aux name="switch use exogenous maximum\nenergy capacity additions" access="input">
+				<eqn>0</eqn>
+				<units>dmnl</units>
+			</aux>
+			<aux name="initial allocation">
+				<dimensions>
+					<dim name="Run"/>
+					<dim name="EnergySource"/>
+				</dimensions>
+				<eqn>ALLOCATE(All_Gross_Energy_Investments[Run], EnergySource, desired_investment_by_source[Run,*],  priority_by_source_initial_allocation[Run,*], priority_spread[Run], shape)</eqn>
+				<units>c$/year</units>
+			</aux>
+			<aux name="second allocation">
+				<dimensions>
+					<dim name="Run"/>
+					<dim name="EnergySource"/>
+				</dimensions>
+				<eqn>ALLOCATE(reallocated_investment[Run], EnergySource, desired_investment_by_source[Run,*],  priority_by_source_second_allocation[Run,*], priority_spread[Run], shape)</eqn>
+				<units>c$/year</units>
+			</aux>
+			<aux name="reallocated investment">
+				<dimensions>
+					<dim name="Run"/>
+				</dimensions>
+				<eqn>initial_allocation_to_be_reallocated[Run,Coal_fuel_extraction] + initial_allocation_to_be_reallocated[Run,Coal_energy_conversion] + initial_allocation_to_be_reallocated[Run,Oil_fuel_extraction] + initial_allocation_to_be_reallocated[Run,Oil_energy_conversion] +
+initial_allocation_to_be_reallocated[Run,Gas_fuel_extraction] + initial_allocation_to_be_reallocated[Run,Gas_energy_conversion] +
+initial_allocation_to_be_reallocated[Run,Hydropower] + initial_allocation_to_be_reallocated[Run,Nuclear]</eqn>
+				<units>c$/year</units>
+			</aux>
+			<aux name="initial allocation kept">
+				<dimensions>
+					<dim name="Run"/>
+					<dim name="EnergySource"/>
+				</dimensions>
+				<eqn>initial_allocation - initial_allocation_to_be_reallocated</eqn>
+				<units>c$/year</units>
+			</aux>
+			<aux name="initial allocation\nto be reallocated">
+				<dimensions>
+					<dim name="Run"/>
+					<dim name="EnergySource"/>
+				</dimensions>
+				<eqn>IF TIME &gt;= 2025
+THEN
+(IF switch_use_exogenous_maximum_energy_capacity_additions
+THEN 
+(IF EnergySource = EnergySource.Coal_fuel_extraction 
+THEN
+MAX(initial_allocation[Run,Coal_fuel_extraction] - maximum_investments_in_Coal_fuel_extraction,  0)
+ELSE IF EnergySource = EnergySource.Coal_energy_conversion
+THEN
+MAX(initial_allocation[Run,Coal_energy_conversion] - maximum_investments_in_Coal_energy_conversion,  0)
+
+ELSE IF EnergySource = EnergySource.Gas_fuel_extraction 
+THEN
+MAX(initial_allocation[Run,Gas_fuel_extraction] - maximum_investments_in_Gas_fuel_extraction,  0)
+ELSE IF EnergySource = EnergySource.Gas_energy_conversion
+THEN
+MAX(initial_allocation[Run,Gas_energy_conversion] - maximum_investments_in_Gas_energy_conversion,  0)
+
+
+ELSE IF EnergySource = EnergySource.Oil_fuel_extraction 
+THEN
+MAX(initial_allocation[Run,Oil_fuel_extraction] - maximum_investments_in_Oil_fuel_extraction,  0)
+ELSE IF EnergySource = EnergySource.Oil_energy_conversion
+THEN
+MAX(initial_allocation[Run,Oil_energy_conversion] - maximum_investments_in_Oil_energy_conversion,  0)
+
+
+ELSE IF EnergySource = EnergySource.Nuclear 
+THEN
+MAX(initial_allocation[Run,Nuclear] - maximum_investments_in_Nuclear,  0)
+
+ELSE IF EnergySource = EnergySource.Hydropower 
+THEN
+MAX(initial_allocation[Run,Hydropower] - maximum_investments_in_Hydropower,  0)
+
+
+ELSE
+0)
+ELSE
+0)
+ELSE 
+0</eqn>
+				<units>c$/year</units>
+			</aux>
+			<aux name="priority by source second allocation">
+				<dimensions>
+					<dim name="Run"/>
+					<dim name="EnergySource"/>
+				</dimensions>
+				<eqn>IF EnergySource = EnergySource.Coal_fuel_extraction OR 
+EnergySource = EnergySource.Coal_energy_conversion OR EnergySource = EnergySource.Gas_fuel_extraction OR 
+EnergySource = EnergySource.Gas_energy_conversion OR EnergySource = EnergySource.Oil_fuel_extraction OR 
+EnergySource = EnergySource.Oil_energy_conversion
+OR EnergySource = EnergySource.Hydropower 
+THEN
+0
+ELSE
+priority_by_source_initial_allocation</eqn>
+				<units>kWh/(c$*Years)</units>
+			</aux>
+			<aux name="maximum investments\nin Nuclear">
+				<eqn>0</eqn>
+				<units>c$/year</units>
+			</aux>
+			<aux name="maximum investments in Gas\nfuel extraction">
+				<eqn>0</eqn>
+				<units>c$/year</units>
+			</aux>
+			<aux name="maximum investments in Gas\nenergy conversion">
+				<eqn>0</eqn>
+				<units>c$/year</units>
+			</aux>
+			<aux name="maximum investments in Oil\nfuel extraction">
+				<eqn>0</eqn>
+				<units>c$/year</units>
+			</aux>
+			<aux name="maximum investments in Oil\nenergy conversion">
+				<eqn>0</eqn>
+				<units>c$/year</units>
+			</aux>
+			<aux name="priority scale factor">
+				<dimensions>
+					<dim name="Run"/>
+				</dimensions>
+				<eqn>(priority_by_source_initial_allocation[Run,Bio]+ priority_by_source_initial_allocation[Run,Solar] + priority_by_source_initial_allocation[Run,Wind])/
+SUM(priority_by_source_initial_allocation[Run,*])</eqn>
+				<units>dmnl</units>
+			</aux>
 		</variables>
 		<views>
 			<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
@@ -3920,7 +4212,7 @@ ELSE
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="768" page_height="588" isee:page_cols="8" isee:page_rows="8" isee:scroll_x="783" isee:scroll_y="1087.5" zoom="200" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="768" page_height="588" isee:page_cols="8" isee:page_rows="8" zoom="40" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="11pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -3959,7 +4251,7 @@ ELSE
 					</graph>
 					<table color="black" background="#E0E0E0" text_align="right" font_size="12pt" orientation="vertical" wrap_text="false" isee:auto_fit="true" isee:use_alternate_row_colors="false" isee:unlimited_table_length="false" blank_column_width="80" column_width="160" interval="1" report_balances="beginning" report_flows="instantaneous" header_font_style="normal" header_font_weight="normal" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="12pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 				</style>
-				<aux x="197.857" y="1958.11" name="adaptive energy\ninvestments proportional factor"/>
+				<aux x="176.19" y="2821.44" name="adaptive energy\ninvestments proportional factor"/>
 				<aux background="#FFAAFF" x="3035.07" y="856.933" name="Investments in\nNuclear Capacity"/>
 				<aux background="#FFAAFF" x="2449.45" y="856.346" name="Gross Investments in\nHydropower\nEnergy capacity"/>
 				<aux x="1397.16" y="311.095" name="World GDP"/>
@@ -4047,16 +4339,13 @@ ELSE
 					<from>share_of_GDP_invested_in_fossil_energy</from>
 					<to>share_of_GDP_invested_in_Energy_without_fuel</to>
 				</connector>
-				<aux font_style="italic" font_weight="bold" x="204.29" y="1751.56" name="Relative Energy Supply Missmatch"/>
-				<aux x="658.291" y="1965.2" name="adaptive energy\ninvestments integrating factor"/>
-				<aux x="393.916" y="1958.95" name="adaptive energy\ninvestments differntiating factor"/>
-				<aux x="399.941" y="1889.87" name="Differentiating Relative Energy Supply Missmatch"/>
-				<text_box uid="239" x="291.874" y="2122.68" width="260" height="58">This is a PID controler
-https://en.wikipedia.org/wiki/Proportional%E2%80%93integral%E2%80%93derivative_controller</text_box>
-				<text_box uid="240" x="291.874" y="2080.48" width="260" height="29.6667">PID factors. Negative values dampen deviations, positive values amplify</text_box>
-				<text_box uid="241" x="128.981" y="2010.93" width="131.667" height="15">Proportional control</text_box>
-				<text_box uid="242" x="320.952" y="2017.86" width="145.928" height="16.875">differentiating control, smoothes </text_box>
-				<text_box uid="243" x="591.161" y="2017.8" width="145.928" height="58.6666">integrating control, responds to continuing deviations</text_box>
+				<aux font_style="italic" font_weight="bold" x="182.623" y="2614.89" name="Relative Energy Supply Missmatch"/>
+				<aux x="636.624" y="2828.53" name="adaptive energy\ninvestments integrating factor"/>
+				<aux x="372.249" y="2822.28" name="adaptive energy\ninvestments differntiating factor"/>
+				<aux x="378.274" y="2753.2" name="Differentiating Relative Energy Supply Missmatch"/>
+				<text_box uid="241" x="107.314" y="2874.26" width="131.667" height="15">Proportional control</text_box>
+				<text_box uid="242" x="299.285" y="2881.19" width="145.928" height="16.875">differentiating control, smoothes </text_box>
+				<text_box uid="243" x="569.494" y="2881.13" width="145.928" height="58.6666">integrating control, responds to continuing deviations</text_box>
 				<aux x="176.486" y="1047.19" name="Share of Gross Energy Expenditure\ninvested in fuel\nextraction, coal"/>
 				<aux x="436.358" y="1037.53" name="Share of Gross Energy Expenditure\ninvested in fossil energy, coal"/>
 				<aux x="732.571" y="1040.07" name="Share of Energy Gross Expenditure\ninvested in fuel extraction, oil"/>
@@ -4082,8 +4371,8 @@ https://en.wikipedia.org/wiki/Proportional%E2%80%93integral%E2%80%93derivative_c
 					<to>Investments_in_Fossil_Energy</to>
 				</connector>
 				<aux background="#FFAAFF" label_side="bottom" x="763.073" y="512.715" name="Gross Investments in Fossil\nEnergy Capital oil and gas"/>
-				<aux x="497.773" y="1558.48" name="adaptive change\nin investments"/>
-				<aux x="499.327" y="1676.32" name="raw adaptive\nchange in investments"/>
+				<aux x="476.106" y="2421.81" name="adaptive change\nin investments"/>
+				<aux x="477.66" y="2539.65" name="raw adaptive\nchange in investments"/>
 				<connector uid="320" angle="43.0675">
 					<from>adaptive_energy_investments_proportional_factor</from>
 					<to>raw_adaptive_change_in_investments</to>
@@ -4104,55 +4393,16 @@ https://en.wikipedia.org/wiki/Proportional%E2%80%93integral%E2%80%93derivative_c
 					<from>raw_adaptive_change_in_investments</from>
 					<to>adaptive_change_in_investments</to>
 				</connector>
-				<text_box font_size="72pt" uid="331" x="153.913" y="2516.55" width="771.667" height="90.5">Energy Supply Balance</text_box>
-				<stacked_container uid="334" x="662.663" y="2623.38" width="557" height="314.048">
-					<graph width="557" height="314.048" type="time_series" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" isee:show_pie_borders="true" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="3" isee:fill_intensity="0.1" isee:allow_zero_axis="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
-						<plot color="red" pen_style="dot_dashed" isee:keep_zero_visible="false" pen_width="1" index="0" show_y_axis="true">
-							<scale min="0.7" max="1.3"/>
-						</plot>
-						<plot color="blue" isee:keep_zero_visible="true" pen_width="1" index="1" show_y_axis="true">
-							<entity name="energy_supply_vs_demand.Energy_Balance[*]"/>
-						</plot>
-					</graph>
-				</stacked_container>
-				<stacked_container uid="335" x="1236.33" y="2623.37" width="554.666" height="314.054">
-					<graph width="554.666" height="314.054" comparative="true" type="time_series" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" isee:show_pie_borders="true" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="3" isee:fill_intensity="0.1" isee:allow_zero_axis="true" left_axis_multi_scale="false" left_axis_auto_scale="false" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
-						<plot color="blue" isee:keep_zero_visible="false" pen_width="1" index="0" show_y_axis="true">
-							<entity name="energy_supply_vs_demand.Energy_Balance[*]"/>
-							<scale min="0.7" max="1.3"/>
-						</plot>
-					</graph>
-				</stacked_container>
-				<aux x="1252.67" y="1237.72" name="investment by\nsource"/>
-				<aux x="1284.17" y="1546.98" name="cost to build\nper unit"/>
-				<aux x="1364.92" y="1266.97" name="priority spread"/>
-				<connector uid="342" angle="165.395">
-					<from>priority_spread</from>
-					<to>investment_by_source</to>
-				</connector>
-				<aux x="1327.92" y="1331.48" name="shape"/>
-				<connector uid="343" angle="128.753">
-					<from>shape</from>
-					<to>investment_by_source</to>
-				</connector>
-				<aux x="1204.42" y="1334.98" name="desired investment\nby source"/>
-				<connector uid="345" angle="63.612">
-					<from>desired_investment_by_source</from>
-					<to>investment_by_source</to>
-				</connector>
-				<aux x="1277.42" y="1402.31" name="priority by source"/>
-				<connector uid="347" angle="98.5522">
-					<from>priority_by_source</from>
-					<to>investment_by_source</to>
-				</connector>
-				<aux font_style="italic" font_weight="bold" x="856.083" y="1697.24" name="cost of extra energy output through fuel extraction per unit"/>
-				<aux font_style="italic" font_weight="bold" x="856.083" y="1777.24" name="Cost of Extra Energy Output through Capital per Unit"/>
-				<aux font_style="italic" font_weight="bold" x="1277.42" y="1697.24" name="cost of extra energy output through fuel extraction per unit 1"/>
-				<aux font_style="italic" font_weight="bold" x="1277.42" y="1777.24" name="Cost of Extra Energy Output through Capital per Unit 1"/>
-				<aux font_style="italic" font_weight="bold" x="1066.75" y="1697.24" name="cost of extra energy output through fuel extraction per unit 2"/>
-				<aux font_style="italic" font_weight="bold" x="1066.75" y="1777.24" name="Cost of Extra Energy Output through Capital per Unit 2"/>
-				<aux font_style="italic" font_weight="bold" x="1568.13" y="1777.8" name="Cost of Extra Energy Output\nthrough Capital per Unit 4"/>
-				<aux font_style="italic" font_weight="bold" x="1833.91" y="1697.8" name="Cost of Extra Energy Output\nthrough Capital per Unit 6"/>
+				<aux x="1259.34" y="1264.39" name="investment by\nsource"/>
+				<aux x="1262.5" y="2410.31" name="cost to build\nper unit"/>
+				<aux font_style="italic" font_weight="bold" x="834.416" y="2560.57" name="cost of extra energy output through fuel extraction per unit"/>
+				<aux font_style="italic" font_weight="bold" x="834.416" y="2640.57" name="Cost of Extra Energy Output through Capital per Unit"/>
+				<aux font_style="italic" font_weight="bold" x="1255.75" y="2560.57" name="cost of extra energy output through fuel extraction per unit 1"/>
+				<aux font_style="italic" font_weight="bold" x="1255.75" y="2640.57" name="Cost of Extra Energy Output through Capital per Unit 1"/>
+				<aux font_style="italic" font_weight="bold" x="1045.08" y="2560.57" name="cost of extra energy output through fuel extraction per unit 2"/>
+				<aux font_style="italic" font_weight="bold" x="1045.08" y="2640.57" name="Cost of Extra Energy Output through Capital per Unit 2"/>
+				<aux font_style="italic" font_weight="bold" x="1546.46" y="2641.13" name="Cost of Extra Energy Output\nthrough Capital per Unit 4"/>
+				<aux font_style="italic" font_weight="bold" x="1812.24" y="2561.13" name="Cost of Extra Energy Output\nthrough Capital per Unit 6"/>
 				<connector uid="348" angle="19.7351">
 					<from>cost_of_extra_energy_output_through_fuel_extraction_per_unit</from>
 					<to>cost_to_build_per_unit</to>
@@ -4231,48 +4481,40 @@ https://en.wikipedia.org/wiki/Proportional%E2%80%93integral%E2%80%93derivative_c
 					<from>Gas_Gross_Investments_in_Fossil_Energy_Capital</from>
 					<to>Gross_Investments_in_Fossil_Energy_Capital_oil_and_gas</to>
 				</connector>
-				<connector uid="409" angle="43.0527">
+				<connector uid="409" angle="72.6625">
 					<from>adaptive_change_in_investments</from>
 					<to>All_Gross_Energy_Investments</to>
 				</connector>
-				<aux x="672.263" y="1233.81" name="baseline energy investments"/>
-				<connector uid="411" angle="0.725096">
+				<aux x="650.596" y="2097.14" name="baseline energy investments"/>
+				<connector uid="411" angle="77.173">
 					<from>baseline_energy_investments</from>
 					<to>All_Gross_Energy_Investments</to>
 				</connector>
-				<connector uid="425" angle="359.133">
-					<from>All_Gross_Energy_Investments</from>
-					<to>investment_by_source</to>
-				</connector>
-				<connector uid="426" angle="343.838">
-					<from>All_Gross_Energy_Investments</from>
-					<to>desired_investment_by_source</to>
-				</connector>
-				<connector uid="427" angle="162.045">
+				<connector uid="427" angle="160.883">
 					<from>investment_by_source</from>
 					<to>Coal_Gross_Investments_in_Fossil_Fuel_Extraction_Capital</to>
 				</connector>
-				<connector uid="428" angle="155.935">
+				<connector uid="428" angle="154.588">
 					<from>investment_by_source</from>
 					<to>Coal_Gross_Investments_in_Fossil_Energy_Capital</to>
 				</connector>
-				<connector uid="429" angle="146.024">
+				<connector uid="429" angle="144.408">
 					<from>investment_by_source</from>
 					<to>Oil_Gross_Investments_in_Fossil_Fuel_Extraction_Capital</to>
 				</connector>
-				<connector uid="430" angle="121.034">
+				<connector uid="430" angle="120.084">
 					<from>investment_by_source</from>
 					<to>Oil_Gross_Investments_in_Fossil_Energy_Capital</to>
 				</connector>
-				<connector uid="431" angle="82.405">
+				<connector uid="431" angle="83.9236">
 					<from>investment_by_source</from>
 					<to>Gas_Gross_Investments_in_Fossil_Fuel_Extraction_Capital</to>
 				</connector>
-				<connector uid="432" angle="47.7728">
+				<connector uid="432" angle="50.303">
 					<from>investment_by_source</from>
 					<to>Gas_Gross_Investments_in_Fossil_Energy_Capital</to>
 				</connector>
-				<connector uid="434" angle="17.6754">
+				<connector uid="434" angle="18.9247">
 					<from>investment_by_source</from>
 					<to>Gross_Investments_in_Hydropower_Energy_capacity</to>
 				</connector>
@@ -4284,38 +4526,10 @@ https://en.wikipedia.org/wiki/Proportional%E2%80%93integral%E2%80%93derivative_c
 					<from>All_Gross_Energy_Investments</from>
 					<to>&quot;Share_of_Gross_Energy_Expenditure_invested_in_fossil_energy,_coal&quot;</to>
 				</connector>
-				<connector uid="448" angle="12.0592">
+				<connector uid="448" angle="12.9232">
 					<from>investment_by_source</from>
 					<to>Investments_in_Nuclear_Capacity</to>
 				</connector>
-				<stacked_container uid="450" x="975.797" y="2018.43">
-					<graph width="350" height="250" comparative="true" type="time_series" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" isee:show_pie_borders="true" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="3" isee:fill_intensity="0.1" isee:allow_zero_axis="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
-						<plot color="red" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
-							<entity name="adaptive_change_in_investments[1]"/>
-						</plot>
-					</graph>
-				</stacked_container>
-				<stacked_container uid="451" x="235.512" y="2322.05">
-					<graph width="350" height="250" comparative="true" type="time_series" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" isee:show_pie_borders="true" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="3" isee:fill_intensity="0.1" isee:allow_zero_axis="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
-						<plot color="blue" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
-							<entity name="energy_supply_vs_demand.Relative_Energy_Supply_Missmatch[1]"/>
-						</plot>
-					</graph>
-				</stacked_container>
-				<stacked_container uid="452" x="616.429" y="2322.05">
-					<graph width="350" height="250" comparative="true" type="time_series" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" isee:show_pie_borders="true" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="3" isee:fill_intensity="0.1" isee:allow_zero_axis="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
-						<plot color="blue" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
-							<entity name="Differentiating_Relative_Energy_Supply_Missmatch[1]"/>
-						</plot>
-					</graph>
-				</stacked_container>
-				<stacked_container uid="453" x="1006.14" y="2322.05">
-					<graph width="350" height="250" comparative="true" type="time_series" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" isee:show_pie_borders="true" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="3" isee:fill_intensity="0.1" isee:allow_zero_axis="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
-						<plot color="blue" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
-							<entity name="Cumulative_Relative_Energy_Supply_Missmatch[1]"/>
-						</plot>
-					</graph>
-				</stacked_container>
 				<stacked_container uid="454" x="4532.68" y="140.04">
 					<graph width="350" height="250" comparative="true" type="time_series" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" isee:show_pie_borders="true" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="3" isee:fill_intensity="0.1" isee:allow_zero_axis="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
 						<plot color="blue" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
@@ -4323,25 +4537,25 @@ https://en.wikipedia.org/wiki/Proportional%E2%80%93integral%E2%80%93derivative_c
 						</plot>
 					</graph>
 				</stacked_container>
-				<stock label_side="bottom" x="188.571" y="2089.91" name="cumulative squared relative\nenergy supply missmatch"/>
-				<stock label_side="top" x="706.487" y="1894.2" name="Cumulative Relative Energy Supply Missmatch"/>
-				<flow x="633.946" y="1894.2" name="Acc Cum Rel En Sup Missmatch">
+				<stock label_side="bottom" x="166.904" y="2953.24" name="cumulative squared relative\nenergy supply missmatch"/>
+				<stock label_side="top" x="684.82" y="2757.53" name="Cumulative Relative Energy Supply Missmatch"/>
+				<flow x="612.279" y="2757.53" name="Acc Cum Rel En Sup Missmatch">
 					<pts>
-						<pt x="571.904" y="1894.2"/>
-						<pt x="683.987" y="1894.2"/>
+						<pt x="550.237" y="2757.53"/>
+						<pt x="662.32" y="2757.53"/>
 					</pts>
 				</flow>
 				<connector uid="457" angle="133.556">
 					<from>Cumulative_Relative_Energy_Supply_Missmatch</from>
 					<to>raw_adaptive_change_in_investments</to>
 				</connector>
-				<flow label_side="bottom" x="112.172" y="2091.23" name="Acc cumulative squared relative\nenergy supply missmatch">
+				<flow label_side="bottom" x="90.5057" y="2954.56" name="Acc cumulative squared relative\nenergy supply missmatch">
 					<pts>
-						<pt x="58.2737" y="2091.23"/>
-						<pt x="166.071" y="2091.23"/>
+						<pt x="36.607" y="2954.56"/>
+						<pt x="144.404" y="2954.56"/>
 					</pts>
 				</flow>
-				<aux x="741.337" y="1934.7" name="initial relative supply missmatch"/>
+				<aux x="719.67" y="2798.03" name="initial relative supply missmatch"/>
 				<stacked_container uid="460" x="4251.75" y="410.78">
 					<graph width="350" height="250" comparative="true" type="time_series" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" isee:show_pie_borders="true" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="3" isee:fill_intensity="0.1" isee:allow_zero_axis="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
 						<plot color="blue" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
@@ -4432,18 +4646,10 @@ https://en.wikipedia.org/wiki/Proportional%E2%80%93integral%E2%80%93derivative_c
 						</plot>
 					</graph>
 				</stacked_container>
-				<aux x="1084.31" y="1445.28" name="historical cost adjustment"/>
-				<aux x="1295.42" y="1465.78" name="adjusted cost"/>
-				<connector uid="478" angle="86.7927">
-					<from>cost_to_build_per_unit</from>
-					<to>adjusted_cost</to>
-				</connector>
-				<connector uid="479" angle="104.718">
-					<from>adjusted_cost</from>
-					<to>priority_by_source</to>
-				</connector>
-				<aux x="977.29" y="1490.48" name="pct of history"/>
-				<aux x="1071.75" y="1503.52" name="interpolated historical cost adjustment"/>
+				<aux x="1126.21" y="2263.85" name="historical cost adjustment"/>
+				<aux x="1262.5" y="2315.3" name="adjusted cost"/>
+				<aux x="1019.19" y="2309.05" name="pct of history"/>
+				<aux x="1113.65" y="2322.09" name="interpolated historical cost adjustment"/>
 				<connector uid="485" angle="284.859">
 					<from>historical_cost_adjustment</from>
 					<to>interpolated_historical_cost_adjustment</to>
@@ -4452,20 +4658,17 @@ https://en.wikipedia.org/wiki/Proportional%E2%80%93integral%E2%80%93derivative_c
 					<from>pct_of_history</from>
 					<to>interpolated_historical_cost_adjustment</to>
 				</connector>
-				<connector uid="487" angle="5.68292">
+				<connector uid="487" angle="2.61093">
 					<from>interpolated_historical_cost_adjustment</from>
 					<to>adjusted_cost</to>
 				</connector>
-				<stacked_container uid="484" x="4253.1" y="1816.93" width="518.571" height="460">
-					<graph width="518.571" height="460" type="time_series" isee:points_only="true" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" isee:show_pie_borders="true" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="3" isee:fill_intensity="0.1" isee:allow_zero_axis="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true"/>
-				</stacked_container>
-				<aux x="981.33" y="1557.96" name="historical cost adjustment smoothing time"/>
+				<aux x="1023.23" y="2376.53" name="historical cost adjustment smoothing time"/>
 				<connector uid="488" angle="9.46232">
 					<from>historical_cost_adjustment_smoothing_time</from>
 					<to>interpolated_historical_cost_adjustment</to>
 				</connector>
-				<aux x="197.857" y="1889.03" name="Relative Energy Supply Mismatch with Buffer"/>
-				<aux x="94.1722" y="1808.73" name="Relative Energy Supply Mismatch Buffer"/>
+				<aux x="176.19" y="2752.36" name="Relative Energy Supply Mismatch with Buffer"/>
+				<aux x="72.5055" y="2672.06" name="Relative Energy Supply Mismatch Buffer"/>
 				<connector uid="490" angle="322.241">
 					<from>Relative_Energy_Supply_Mismatch_Buffer</from>
 					<to>Relative_Energy_Supply_Mismatch_with_Buffer</to>
@@ -4499,11 +4702,7 @@ https://en.wikipedia.org/wiki/Proportional%E2%80%93integral%E2%80%93derivative_c
 					<from>Investments_in_Nuclear_Capacity</from>
 					<to>Total_Gross_Investments_in_Energy</to>
 				</connector>
-				<aux font_style="italic" font_weight="bold" x="1427.79" y="1352.98" name="Moratorium on fossil energy year"/>
-				<connector uid="499" angle="181.877">
-					<from>Moratorium_on_fossil_energy_year</from>
-					<to>desired_investment_by_source</to>
-				</connector>
+				<aux font_style="italic" font_weight="bold" x="1265.89" y="2135.84" name="Moratorium on fossil energy year"/>
 				<aux background="#FFAAFF" label_side="bottom" x="2670.35" y="852.775" name="Gross Investments in\nBiofuel Capacity"/>
 				<aux x="2670.35" y="978.329" name="Share of Energy Gross Expenditure\ninvested in bio energy"/>
 				<aux x="1504.62" y="580.53" name="share of GDP invested\nin bio power"/>
@@ -4523,11 +4722,11 @@ https://en.wikipedia.org/wiki/Proportional%E2%80%93integral%E2%80%93derivative_c
 					<from>World_GDP</from>
 					<to>share_of_GDP_invested_in_bio_power</to>
 				</connector>
-				<connector uid="505" angle="15.1913">
+				<connector uid="505" angle="16.2627">
 					<from>investment_by_source</from>
 					<to>Gross_Investments_in_Biofuel_Capacity</to>
 				</connector>
-				<aux font_style="italic" font_weight="bold" x="1564.44" y="1939.52" name="Cost of Extra Energy Output\nthrough Capital per Unit 7"/>
+				<aux font_style="italic" font_weight="bold" x="1542.77" y="2802.85" name="Cost of Extra Energy Output\nthrough Capital per Unit 7"/>
 				<connector uid="507" angle="122.784">
 					<from>Cost_of_Extra_Energy_Output_through_Capital_per_Unit_7</from>
 					<to>cost_to_build_per_unit</to>
@@ -4569,40 +4768,58 @@ https://en.wikipedia.org/wiki/Proportional%E2%80%93integral%E2%80%93derivative_c
 					<from>Investments_in_Nuclear_Capacity</from>
 					<to>average_marginal_net_cost_of_energy_without_historical_cost_adjustment</to>
 				</connector>
-				<connector uid="519" angle="19.569">
-					<from>cost_of_extra_energy_output_through_fuel_extraction_per_unit</from>
+				<connector uid="519" angle="40.6013">
+					<from>
+						<alias uid="673"/>
+					</from>
 					<to>average_marginal_net_cost_of_energy_without_historical_cost_adjustment</to>
 				</connector>
-				<connector uid="520" angle="23.4234">
-					<from>Cost_of_Extra_Energy_Output_through_Capital_per_Unit</from>
+				<connector uid="520" angle="69.1455">
+					<from>
+						<alias uid="679"/>
+					</from>
 					<to>average_marginal_net_cost_of_energy_without_historical_cost_adjustment</to>
 				</connector>
-				<connector uid="521" angle="24.0843">
-					<from>cost_of_extra_energy_output_through_fuel_extraction_per_unit_2</from>
+				<connector uid="521" angle="68.1986">
+					<from>
+						<alias uid="674"/>
+					</from>
 					<to>average_marginal_net_cost_of_energy_without_historical_cost_adjustment</to>
 				</connector>
-				<connector uid="522" angle="28.5797">
-					<from>Cost_of_Extra_Energy_Output_through_Capital_per_Unit_2</from>
+				<connector uid="522" angle="161.539">
+					<from>
+						<alias uid="675"/>
+					</from>
 					<to>average_marginal_net_cost_of_energy_without_historical_cost_adjustment</to>
 				</connector>
-				<connector uid="523" angle="31.0469">
-					<from>cost_of_extra_energy_output_through_fuel_extraction_per_unit_1</from>
+				<connector uid="523" angle="5.44033">
+					<from>
+						<alias uid="676"/>
+					</from>
 					<to>average_marginal_net_cost_of_energy_without_historical_cost_adjustment</to>
 				</connector>
-				<connector uid="524" angle="36.2653">
-					<from>Cost_of_Extra_Energy_Output_through_Capital_per_Unit_1</from>
+				<connector uid="524" angle="145.006">
+					<from>
+						<alias uid="677"/>
+					</from>
 					<to>average_marginal_net_cost_of_energy_without_historical_cost_adjustment</to>
 				</connector>
-				<connector uid="526" angle="54.625">
-					<from>Cost_of_Extra_Energy_Output_through_Capital_per_Unit_4</from>
+				<connector uid="526" angle="34.3803">
+					<from>
+						<alias uid="669"/>
+					</from>
 					<to>average_marginal_net_cost_of_energy_without_historical_cost_adjustment</to>
 				</connector>
-				<connector uid="528" angle="62.2002">
-					<from>Cost_of_Extra_Energy_Output_through_Capital_per_Unit_7</from>
+				<connector uid="528" angle="128.991">
+					<from>
+						<alias uid="670"/>
+					</from>
 					<to>average_marginal_net_cost_of_energy_without_historical_cost_adjustment</to>
 				</connector>
-				<connector uid="529" angle="82.0572">
-					<from>Cost_of_Extra_Energy_Output_through_Capital_per_Unit_6</from>
+				<connector uid="529" angle="106.699">
+					<from>
+						<alias uid="678"/>
+					</from>
 					<to>average_marginal_net_cost_of_energy_without_historical_cost_adjustment</to>
 				</connector>
 				<connector uid="530" angle="316.636">
@@ -4610,7 +4827,7 @@ https://en.wikipedia.org/wiki/Proportional%E2%80%93integral%E2%80%93derivative_c
 					<to>average_marginal_net_cost_of_energy_without_historical_cost_adjustment</to>
 				</connector>
 				<aux x="1622.74" y="1334.98" name="average marginal\nnet cost of energy with historical cost adjustment"/>
-				<connector uid="532" angle="21.7819">
+				<connector uid="532" angle="69.8233">
 					<from>adjusted_cost</from>
 					<to>average_marginal_net_cost_of_energy_with_historical_cost_adjustment</to>
 				</connector>
@@ -4626,7 +4843,7 @@ https://en.wikipedia.org/wiki/Proportional%E2%80%93integral%E2%80%93derivative_c
 					<from>Oil_Gross_Investments_in_Fossil_Fuel_Extraction_Capital</from>
 					<to>average_marginal_net_cost_of_energy_with_historical_cost_adjustment</to>
 				</connector>
-				<connector uid="536" angle="321.064">
+				<connector uid="536" angle="321.063">
 					<from>Oil_Gross_Investments_in_Fossil_Energy_Capital</from>
 					<to>average_marginal_net_cost_of_energy_with_historical_cost_adjustment</to>
 				</connector>
@@ -4866,8 +5083,8 @@ https://en.wikipedia.org/wiki/Proportional%E2%80%93integral%E2%80%93derivative_c
 					<from>&quot;Real_GDP_in_2021c$&quot;</from>
 					<to>World_GDP</to>
 				</connector>
-				<aux x="534.496" y="1958.95" name="time to perceive energy supply missmatch"/>
-				<connector uid="612" angle="33.0674">
+				<aux x="512.829" y="2822.28" name="time to perceive energy supply missmatch"/>
+				<connector uid="612" angle="33.0675">
 					<from>time_to_perceive_energy_supply_missmatch</from>
 					<to>Acc_Cum_Rel_En_Sup_Missmatch</to>
 				</connector>
@@ -4879,34 +5096,24 @@ https://en.wikipedia.org/wiki/Proportional%E2%80%93integral%E2%80%93derivative_c
 					<from>Relative_Energy_Supply_Mismatch_with_Buffer</from>
 					<to>raw_adaptive_change_in_investments</to>
 				</connector>
-				<stacked_container uid="616" x="1370" y="2120" width="790" height="472.5">
-					<graph width="790" height="472.5" type="time_series" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" isee:show_pie_borders="true" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="3" isee:fill_intensity="0.1" isee:allow_zero_axis="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
-						<plot color="blue" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
-							<entity name="Relative_Energy_Supply_Mismatch_with_Buffer[1]"/>
-						</plot>
-						<plot color="red" isee:keep_zero_visible="true" pen_width="1" index="1" show_y_axis="true">
-							<entity name="Differentiating_Relative_Energy_Supply_Missmatch[1]"/>
-						</plot>
-					</graph>
-				</stacked_container>
-				<aux x="741.337" y="1520.22" name="perceived energy supply\nmargins"/>
-				<aux x="766.67" y="1618.05" name="cost perception time"/>
+				<aux x="719.67" y="2383.55" name="perceived energy supply\nmargins"/>
+				<aux x="745.003" y="2481.38" name="cost perception time"/>
 				<connector uid="619" angle="104.518">
 					<from>cost_perception_time</from>
 					<to>perceived_energy_supply_margins</to>
 				</connector>
-				<aux x="776.635" y="1269.22" name="effect of margins on\ninvestment"/>
-				<aux label_side="bottom" x="603.889" y="1283.33" name="sensitivity of effect of perceived marginal\nenergy supply cost\non investment"/>
+				<aux x="754.968" y="2132.55" name="effect of margins on\ninvestment"/>
+				<aux label_side="bottom" x="582.222" y="2146.66" name="sensitivity of effect of perceived marginal\nenergy supply cost\non investment"/>
 				<connector uid="623" angle="4.66959">
 					<from>sensitivity_of_effect_of_perceived_marginal_energy_supply_cost_on_investment</from>
 					<to>effect_of_margins_on_investment</to>
 				</connector>
-				<aux font_style="italic" font_weight="bold" x="680.337" y="1618.05" name="average energy margins"/>
+				<aux font_style="italic" font_weight="bold" x="658.67" y="2481.38" name="average energy margins"/>
 				<connector uid="625" angle="58.0552">
 					<from>average_energy_margins</from>
 					<to>perceived_energy_supply_margins</to>
 				</connector>
-				<aux x="779.833" y="1372.44" name="relative margins"/>
+				<aux x="758.166" y="2235.77" name="relative margins"/>
 				<connector uid="626" angle="76.0493">
 					<from>perceived_energy_supply_margins</from>
 					<to>relative_margins</to>
@@ -4915,11 +5122,11 @@ https://en.wikipedia.org/wiki/Proportional%E2%80%93integral%E2%80%93derivative_c
 					<from>relative_margins</from>
 					<to>effect_of_margins_on_investment</to>
 				</connector>
-				<connector uid="629" angle="38.8504">
+				<connector uid="629" angle="95.065">
 					<from>effect_of_margins_on_investment</from>
 					<to>All_Gross_Energy_Investments</to>
 				</connector>
-				<aux x="838.083" y="1437.78" name="initial perceived marginal energy supply cost"/>
+				<aux x="816.416" y="2301.11" name="initial perceived marginal energy supply cost"/>
 				<connector uid="627" angle="131.717">
 					<from>initial_perceived_marginal_energy_supply_cost</from>
 					<to>relative_margins</to>
@@ -4978,34 +5185,38 @@ https://en.wikipedia.org/wiki/Proportional%E2%80%93integral%E2%80%93derivative_c
 					<from>All_Gross_Energy_Investments</from>
 					<to>Share_of_Energy_Gross_Expenditure_invested_in_wind</to>
 				</connector>
-				<connector uid="640" angle="50.2812">
+				<connector uid="640" angle="52.0916">
 					<from>investment_by_source</from>
 					<to>Gross_Investments_in_Solar_Energy_Capacity</to>
 				</connector>
-				<connector uid="641" angle="45.7751">
+				<connector uid="641" angle="47.2942">
 					<from>investment_by_source</from>
 					<to>Gross_Investments_in_wind_Energy_Capacity</to>
 				</connector>
-				<aux font_style="italic" font_weight="bold" x="1564.44" y="2018.43" name="Cost of Extra Energy Output\nthrough Capital per Unit 8"/>
-				<aux font_style="italic" font_weight="bold" x="1564.44" y="2090.1" name="Cost of Extra Energy Output\nthrough Capital per Unit 9"/>
-				<connector uid="642" angle="145.731">
+				<aux font_style="italic" font_weight="bold" x="1542.77" y="2881.76" name="Cost of Extra Energy Output\nthrough Capital per Unit 8"/>
+				<aux font_style="italic" font_weight="bold" x="1542.77" y="2953.43" name="Cost of Extra Energy Output\nthrough Capital per Unit 9"/>
+				<connector uid="642" angle="123.284">
 					<from>Cost_of_Extra_Energy_Output_through_Capital_per_Unit_8</from>
 					<to>cost_to_build_per_unit</to>
 				</connector>
-				<connector uid="643" angle="142.296">
+				<connector uid="643" angle="123.271">
 					<from>Cost_of_Extra_Energy_Output_through_Capital_per_Unit_9</from>
 					<to>cost_to_build_per_unit</to>
 				</connector>
-				<connector uid="644" angle="89.9829">
-					<from>Cost_of_Extra_Energy_Output_through_Capital_per_Unit_8</from>
+				<connector uid="644" angle="151.189">
+					<from>
+						<alias uid="671"/>
+					</from>
 					<to>average_marginal_net_cost_of_energy_without_historical_cost_adjustment</to>
 				</connector>
 				<connector uid="645" angle="278.611">
 					<from>Gross_Investments_in_Solar_Energy_Capacity</from>
 					<to>average_marginal_net_cost_of_energy_without_historical_cost_adjustment</to>
 				</connector>
-				<connector uid="646" angle="92.0918">
-					<from>Cost_of_Extra_Energy_Output_through_Capital_per_Unit_9</from>
+				<connector uid="646" angle="171.87">
+					<from>
+						<alias uid="672"/>
+					</from>
 					<to>average_marginal_net_cost_of_energy_without_historical_cost_adjustment</to>
 				</connector>
 				<connector uid="647" angle="259.455">
@@ -5028,14 +5239,14 @@ https://en.wikipedia.org/wiki/Proportional%E2%80%93integral%E2%80%93derivative_c
 					<from>Gross_Investments_in_wind_Energy_Capacity</from>
 					<to>share_of_GDP_invested_in_solar_and_wind</to>
 				</connector>
-				<aux x="267.292" y="1352.08" name="relative stranded capital"/>
-				<aux font_style="italic" font_weight="bold" x="219.2" y="1183.67" name="stranded capital"/>
+				<aux x="245.625" y="2215.41" name="relative stranded capital"/>
+				<aux font_style="italic" font_weight="bold" x="197.533" y="2047" name="stranded capital"/>
 				<connector uid="656" angle="285.937">
 					<from>stranded_capital</from>
 					<to>relative_stranded_capital</to>
 				</connector>
-				<aux font_style="italic" font_weight="bold" x="75.7143" y="1283.15" name="stranded capital 1"/>
-				<aux font_style="italic" font_weight="bold" x="125.714" y="1485" name="stranded capital 2"/>
+				<aux font_style="italic" font_weight="bold" x="54.0476" y="2146.48" name="stranded capital 1"/>
+				<aux font_style="italic" font_weight="bold" x="104.047" y="2348.33" name="stranded capital 2"/>
 				<connector uid="657" angle="340.211">
 					<from>stranded_capital_1</from>
 					<to>relative_stranded_capital</to>
@@ -5044,49 +5255,285 @@ https://en.wikipedia.org/wiki/Proportional%E2%80%93integral%E2%80%93derivative_c
 					<from>stranded_capital_2</from>
 					<to>relative_stranded_capital</to>
 				</connector>
-				<stock font_style="italic" font_weight="bold" x="279.286" y="1188.57" name="Fossil Energy Capital"/>
+				<stock font_style="italic" font_weight="bold" x="257.619" y="2051.9" name="Fossil Energy Capital"/>
 				<connector uid="659" angle="265.805">
 					<from>Fossil_Energy_Capital</from>
 					<to>relative_stranded_capital</to>
 				</connector>
-				<stock font_style="italic" font_weight="bold" x="93.5714" y="1227.86" name="Fossil Energy Capital 1"/>
+				<stock font_style="italic" font_weight="bold" x="71.9047" y="2091.19" name="Fossil Energy Capital 1"/>
 				<connector uid="660" angle="324.432">
 					<from>Fossil_Energy_Capital_1</from>
 					<to>relative_stranded_capital</to>
 				</connector>
-				<stock font_style="italic" font_weight="bold" x="80.7143" y="1442.86" name="Fossil Energy Capital 2"/>
+				<stock font_style="italic" font_weight="bold" x="59.0476" y="2306.19" name="Fossil Energy Capital 2"/>
 				<connector uid="661" angle="18.6874">
 					<from>Fossil_Energy_Capital_2</from>
 					<to>relative_stranded_capital</to>
 				</connector>
-				<aux x="418.358" y="1352.08" name="investment priority adjustment\nfrom stranded capital"/>
+				<aux x="396.691" y="2215.41" name="investment priority adjustment\nfrom stranded capital"/>
 				<connector uid="662" angle="5.35406">
 					<from>relative_stranded_capital</from>
 					<to>investment_priority_adjustment_from_stranded_capital</to>
 				</connector>
-				<aux x="400.358" y="1434.93" name="sensitivity of cost\nadjustment to relative stranded capital"/>
+				<aux x="378.691" y="2298.26" name="sensitivity of cost\nadjustment to relative stranded capital"/>
 				<connector uid="663" angle="77.7417">
 					<from>sensitivity_of_cost_adjustment_to_relative_stranded_capital</from>
 					<to>investment_priority_adjustment_from_stranded_capital</to>
 				</connector>
-				<aux x="263.571" y="1452.93" name="time to consider\nstranded capital"/>
+				<aux x="241.904" y="2316.26" name="time to consider\nstranded capital"/>
 				<connector uid="664" angle="87.8873">
 					<from>time_to_consider_stranded_capital</from>
 					<to>relative_stranded_capital</to>
-				</connector>
-				<connector uid="667" angle="15.1541">
-					<from>
-						<alias uid="666"/>
-					</from>
-					<to>priority_by_source</to>
 				</connector>
 				<aux font_style="italic" font_weight="bold" x="1371.43" y="253.571" name="UNIT Bc$ to c$"/>
 				<connector uid="668" angle="293.629">
 					<from>&quot;UNIT_Bc$_to_c$&quot;</from>
 					<to>World_GDP</to>
 				</connector>
-				<alias color="blue" background="white" font_style="italic" uid="666" x="1181" y="1408.14" width="18" height="18">
-					<shape type="circle" radius="18"/>
+				<aux x="844.13" y="2034.4" name="priority spread"/>
+				<aux x="935.28" y="2061.22" name="shape"/>
+				<aux x="1014.07" y="2113.44" name="desired investment\nby source"/>
+				<aux x="1096.21" y="2072.48" name="priority by source initial allocation"/>
+				<aux x="1321.29" y="1658.22" name="maximum investments in Coal\nfuel extraction"/>
+				<aux x="1315.89" y="1970.98" name="maximum investments in Hydropower"/>
+				<aux x="1217.89" y="1621.22" name="maximum investments in Coal\nenergy conversion"/>
+				<aux font_style="italic" font_weight="bold" x="1247.89" y="2016.4" name="switch use exogenous maximum\nenergy capacity additions"/>
+				<aux x="1123.92" y="1969.98" name="initial allocation"/>
+				<connector uid="681" angle="77.5562">
+					<from>desired_investment_by_source</from>
+					<to>initial_allocation</to>
+				</connector>
+				<connector uid="682" angle="99.87">
+					<from>priority_by_source_initial_allocation</from>
+					<to>initial_allocation</to>
+				</connector>
+				<connector uid="683" angle="37.966">
+					<from>priority_spread</from>
+					<to>initial_allocation</to>
+				</connector>
+				<connector uid="684" angle="50.8114">
+					<from>shape</from>
+					<to>initial_allocation</to>
+				</connector>
+				<aux x="852.93" y="1816" name="second allocation"/>
+				<connector uid="685" angle="143.447">
+					<from>desired_investment_by_source</from>
+					<to>second_allocation</to>
+				</connector>
+				<connector uid="686" angle="112.694">
+					<from>priority_spread</from>
+					<to>second_allocation</to>
+				</connector>
+				<connector uid="687" angle="133.563">
+					<from>shape</from>
+					<to>second_allocation</to>
+				</connector>
+				<aux x="942.06" y="1843.46" name="reallocated investment"/>
+				<connector uid="688" angle="146.672">
+					<from>reallocated_investment</from>
+					<to>second_allocation</to>
+				</connector>
+				<aux x="1082.85" y="1742.6" name="initial allocation kept"/>
+				<connector uid="689" angle="100.239">
+					<from>initial_allocation</from>
+					<to>initial_allocation_kept</to>
+				</connector>
+				<aux x="1123.92" y="1843.46" name="initial allocation\nto be reallocated"/>
+				<connector uid="690" angle="247.08">
+					<from>maximum_investments_in_Coal_energy_conversion</from>
+					<to>initial_allocation_to_be_reallocated</to>
+				</connector>
+				<connector uid="691" angle="223.185">
+					<from>maximum_investments_in_Coal_fuel_extraction</from>
+					<to>initial_allocation_to_be_reallocated</to>
+				</connector>
+				<connector uid="692" angle="146.406">
+					<from>maximum_investments_in_Hydropower</from>
+					<to>initial_allocation_to_be_reallocated</to>
+				</connector>
+				<connector uid="693" angle="90">
+					<from>initial_allocation</from>
+					<to>initial_allocation_to_be_reallocated</to>
+				</connector>
+				<connector uid="694" angle="125.636">
+					<from>switch_use_exogenous_maximum_energy_capacity_additions</from>
+					<to>initial_allocation_to_be_reallocated</to>
+				</connector>
+				<connector uid="695" angle="109.981">
+					<from>initial_allocation_to_be_reallocated</from>
+					<to>initial_allocation_kept</to>
+				</connector>
+				<connector uid="696" angle="180">
+					<from>initial_allocation_to_be_reallocated</from>
+					<to>reallocated_investment</to>
+				</connector>
+				<aux x="931.78" y="1946.62" name="priority by source second allocation"/>
+				<connector uid="697" angle="132.087">
+					<from>priority_by_source_initial_allocation</from>
+					<to>priority_by_source_second_allocation</to>
+				</connector>
+				<connector uid="698" angle="107.45">
+					<from>priority_by_source_second_allocation</from>
+					<to>second_allocation</to>
+				</connector>
+				<aux x="1375.29" y="1903.62" name="maximum investments\nin Nuclear"/>
+				<aux x="1398.89" y="1755.59" name="maximum investments in Gas\nfuel extraction"/>
+				<aux x="1289.29" y="1721.22" name="maximum investments in Gas\nenergy conversion"/>
+				<aux x="1387.29" y="1843.46" name="maximum investments in Oil\nfuel extraction"/>
+				<aux x="1297.89" y="1795.75" name="maximum investments in Oil\nenergy conversion"/>
+				<connector uid="699" angle="216.472">
+					<from>maximum_investments_in_Gas_energy_conversion</from>
+					<to>initial_allocation_to_be_reallocated</to>
+				</connector>
+				<connector uid="700" angle="222.723">
+					<from>maximum_investments_in_Gas_fuel_extraction</from>
+					<to>initial_allocation_to_be_reallocated</to>
+				</connector>
+				<connector uid="701" angle="205">
+					<from>maximum_investments_in_Oil_fuel_extraction</from>
+					<to>initial_allocation_to_be_reallocated</to>
+				</connector>
+				<connector uid="702" angle="196.355">
+					<from>maximum_investments_in_Oil_energy_conversion</from>
+					<to>initial_allocation_to_be_reallocated</to>
+				</connector>
+				<connector uid="703" angle="191.541">
+					<from>maximum_investments_in_Nuclear</from>
+					<to>initial_allocation_to_be_reallocated</to>
+				</connector>
+				<aux x="1019.19" y="1896.41" name="priority scale factor"/>
+				<connector uid="704" angle="93.4363">
+					<from>priority_by_source_initial_allocation</from>
+					<to>priority_scale_factor</to>
+				</connector>
+				<connector uid="705" angle="174.917">
+					<from>Moratorium_on_fossil_energy_year</from>
+					<to>desired_investment_by_source</to>
+				</connector>
+				<connector uid="706" angle="280.685">
+					<from>All_Gross_Energy_Investments</from>
+					<to>desired_investment_by_source</to>
+				</connector>
+				<connector uid="707" angle="97.0613">
+					<from>cost_to_build_per_unit</from>
+					<to>adjusted_cost</to>
+				</connector>
+				<connector uid="708" angle="124.92">
+					<from>adjusted_cost</from>
+					<to>priority_by_source_initial_allocation</to>
+				</connector>
+				<connector uid="709" angle="64.9187">
+					<from>
+						<alias uid="710"/>
+					</from>
+					<to>priority_by_source_initial_allocation</to>
+				</connector>
+				<connector uid="711" angle="291.557">
+					<from>All_Gross_Energy_Investments</from>
+					<to>initial_allocation</to>
+				</connector>
+				<connector uid="712" angle="49.9626">
+					<from>second_allocation</from>
+					<to>investment_by_source</to>
+				</connector>
+				<connector uid="713" angle="73.6164">
+					<from>initial_allocation_kept</from>
+					<to>investment_by_source</to>
+				</connector>
+				<text_box uid="714" x="277.374" y="3289.18" width="260" height="58">This is a PID controler
+https://en.wikipedia.org/wiki/Proportional%E2%80%93integral%E2%80%93derivative_controller</text_box>
+				<text_box uid="715" x="277.374" y="3246.98" width="260" height="29.6667">PID factors. Negative values dampen deviations, positive values amplify</text_box>
+				<text_box font_size="72pt" uid="716" x="139.413" y="3683.05" width="771.667" height="90.5">Energy Supply Balance</text_box>
+				<stacked_container uid="717" x="648.163" y="3789.88" width="557" height="314.048">
+					<graph width="557" height="314.048" type="time_series" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" isee:show_pie_borders="true" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="3" isee:fill_intensity="0.1" isee:allow_zero_axis="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
+						<plot color="red" pen_style="dot_dashed" isee:keep_zero_visible="false" pen_width="1" index="0" show_y_axis="true">
+							<scale min="0.7" max="1.3"/>
+						</plot>
+						<plot color="blue" isee:keep_zero_visible="true" pen_width="1" index="1" show_y_axis="true">
+							<entity name="energy_supply_vs_demand.Energy_Balance[*]"/>
+						</plot>
+					</graph>
+				</stacked_container>
+				<stacked_container uid="718" x="1221.83" y="3789.87" width="554.666" height="314.054">
+					<graph width="554.666" height="314.054" comparative="true" type="time_series" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" isee:show_pie_borders="true" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="3" isee:fill_intensity="0.1" isee:allow_zero_axis="true" left_axis_multi_scale="false" left_axis_auto_scale="false" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
+						<plot color="blue" isee:keep_zero_visible="false" pen_width="1" index="0" show_y_axis="true">
+							<entity name="energy_supply_vs_demand.Energy_Balance[*]"/>
+							<scale min="0.7" max="1.3"/>
+						</plot>
+					</graph>
+				</stacked_container>
+				<stacked_container uid="719" x="961.297" y="3184.93">
+					<graph width="350" height="250" comparative="true" type="time_series" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" isee:show_pie_borders="true" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="3" isee:fill_intensity="0.1" isee:allow_zero_axis="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
+						<plot color="red" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
+							<entity name="adaptive_change_in_investments[1]"/>
+						</plot>
+					</graph>
+				</stacked_container>
+				<stacked_container uid="720" x="221.012" y="3488.55">
+					<graph width="350" height="250" comparative="true" type="time_series" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" isee:show_pie_borders="true" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="3" isee:fill_intensity="0.1" isee:allow_zero_axis="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
+						<plot color="blue" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
+							<entity name="energy_supply_vs_demand.Relative_Energy_Supply_Missmatch[1]"/>
+						</plot>
+					</graph>
+				</stacked_container>
+				<stacked_container uid="721" x="601.929" y="3488.55">
+					<graph width="350" height="250" comparative="true" type="time_series" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" isee:show_pie_borders="true" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="3" isee:fill_intensity="0.1" isee:allow_zero_axis="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
+						<plot color="blue" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
+							<entity name="Differentiating_Relative_Energy_Supply_Missmatch[1]"/>
+						</plot>
+					</graph>
+				</stacked_container>
+				<stacked_container uid="722" x="991.64" y="3488.55">
+					<graph width="350" height="250" comparative="true" type="time_series" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" isee:show_pie_borders="true" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="3" isee:fill_intensity="0.1" isee:allow_zero_axis="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
+						<plot color="blue" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
+							<entity name="Cumulative_Relative_Energy_Supply_Missmatch[1]"/>
+						</plot>
+					</graph>
+				</stacked_container>
+				<stacked_container uid="723" x="1355.5" y="3286.5" width="790" height="472.5">
+					<graph width="790" height="472.5" type="time_series" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" isee:show_pie_borders="true" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="3" isee:fill_intensity="0.1" isee:allow_zero_axis="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
+						<plot color="blue" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
+							<entity name="Relative_Energy_Supply_Mismatch_with_Buffer[1]"/>
+						</plot>
+						<plot color="red" isee:keep_zero_visible="true" pen_width="1" index="1" show_y_axis="true">
+							<entity name="Differentiating_Relative_Energy_Supply_Missmatch[1]"/>
+						</plot>
+					</graph>
+				</stacked_container>
+				<alias font_style="italic" font_weight="bold" uid="670" x="1934.33" y="1424.33" width="18" height="18">
+					<of>Cost_of_Extra_Energy_Output_through_Capital_per_Unit_7</of>
+				</alias>
+				<alias font_style="italic" font_weight="bold" uid="671" x="2004.33" y="1372.67" width="18" height="18">
+					<of>Cost_of_Extra_Energy_Output_through_Capital_per_Unit_8</of>
+				</alias>
+				<alias font_style="italic" font_weight="bold" uid="672" x="2054.33" y="1321" width="18" height="18">
+					<of>Cost_of_Extra_Energy_Output_through_Capital_per_Unit_9</of>
+				</alias>
+				<alias font_style="italic" font_weight="bold" uid="669" x="1699.33" y="1437.67" width="18" height="18">
+					<of>Cost_of_Extra_Energy_Output_through_Capital_per_Unit_4</of>
+				</alias>
+				<alias font_style="italic" font_weight="bold" uid="678" x="1929.33" y="1546" width="18" height="18">
+					<of>Cost_of_Extra_Energy_Output_through_Capital_per_Unit_6</of>
+				</alias>
+				<alias font_style="italic" font_weight="bold" uid="677" x="2136" y="1504.48" width="18" height="18">
+					<of>Cost_of_Extra_Energy_Output_through_Capital_per_Unit_1</of>
+				</alias>
+				<alias font_style="italic" font_weight="bold" uid="675" x="2256" y="1449.33" width="18" height="18">
+					<of>Cost_of_Extra_Energy_Output_through_Capital_per_Unit_2</of>
+				</alias>
+				<alias font_style="italic" font_weight="bold" uid="676" x="1741" y="1346" width="18" height="18">
+					<of>cost_of_extra_energy_output_through_fuel_extraction_per_unit_1</of>
+				</alias>
+				<alias font_style="italic" font_weight="bold" uid="674" x="1784.33" y="1614.33" width="18" height="18">
+					<of>cost_of_extra_energy_output_through_fuel_extraction_per_unit_2</of>
+				</alias>
+				<alias font_style="italic" font_weight="bold" uid="673" x="1581" y="1561" width="18" height="18">
+					<of>cost_of_extra_energy_output_through_fuel_extraction_per_unit</of>
+				</alias>
+				<alias font_style="italic" font_weight="bold" uid="679" x="1682.67" y="1684.33" width="18" height="18">
+					<of>Cost_of_Extra_Energy_Output_through_Capital_per_Unit</of>
+				</alias>
+				<alias font_style="italic" uid="710" x="1028.19" y="2189.57" width="18" height="18">
 					<of>investment_priority_adjustment_from_stranded_capital</of>
 				</alias>
 			</view>
@@ -5140,6 +5587,8 @@ https://en.wikipedia.org/wiki/Proportional%E2%80%93integral%E2%80%93derivative_c
 				<connect2 to="bio_fuel_energy.deltaEnergy_for_costs" from="deltaEnergy_for_costs"/>
 				<connect to="bio_fuel_energy.Extra_FUEL_needed_for_Extra_delta_Energy" from="fossil_energy_oil.Extra_FUEL_needed_for_Extra_delta_Energy"/>
 				<connect2 to="bio_fuel_energy.Extra_FUEL_needed_for_Extra_delta_Energy" from="fossil_energy_oil.Extra_FUEL_needed_for_Extra_delta_Energy"/>
+				<connect to="bio_fuel_energy.general_capital_cost_factor" from="Energy_Units.general_capital_cost_factor"/>
+				<connect2 to="bio_fuel_energy.general_capital_cost_factor" from="Energy_Units.general_capital_cost_factor"/>
 				<connect to="bio_fuel_energy.GtC_to_MtCO2" from="Emissions.GtC_to_MtCO2"/>
 				<connect2 to="bio_fuel_energy.GtC_to_MtCO2" from="Emissions.GtC_to_MtCO2"/>
 				<connect to="bio_fuel_energy.Investments_in_Other_Capacity" from="energy_investments.Gross_Investments_in_Biofuel_Capacity"/>
@@ -5160,6 +5609,8 @@ https://en.wikipedia.org/wiki/Proportional%E2%80%93integral%E2%80%93derivative_c
 				<connect2 to="bio_fuel_energy.share_of_biofuel_emissions_stored" from="Government_Regulations.share_of_biofuel_emissions_stored"/>
 				<connect to="bio_fuel_energy.share_of_liquid_fuel_that_is_bio" from="fossil_energy_oil.share_of_liquid_fuel_that_is_bio"/>
 				<connect2 to="bio_fuel_energy.share_of_liquid_fuel_that_is_bio" from="fossil_energy_oil.share_of_liquid_fuel_that_is_bio"/>
+				<connect to="bio_fuel_energy.switch_use_exogenous_capital_cost_increase" from="Energy_Units.switch_use_exogenous_capital_cost_increase"/>
+				<connect2 to="bio_fuel_energy.switch_use_exogenous_capital_cost_increase" from="Energy_Units.switch_use_exogenous_capital_cost_increase"/>
 				<connect to="bio_fuel_energy.tax_for_newly_installed_other_energy_capacity" from="Government_Regulations.tax_rate_on_newly_installed_bio_energy_capacity"/>
 				<connect2 to="bio_fuel_energy.tax_for_newly_installed_other_energy_capacity" from="Government_Regulations.tax_rate_on_newly_installed_bio_energy_capacity"/>
 				<connect to="bio_fuel_energy.tax_on_CO2e_emissions" from="Government_Regulations.tax_on_CO2e_emissions"/>
@@ -5176,6 +5627,8 @@ https://en.wikipedia.org/wiki/Proportional%E2%80%93integral%E2%80%93derivative_c
 				<connect2 to="Government.tax_rate_1" from="hydropower_energy.tax_rate"/>
 				<connect to="hydropower_energy.damage_rate_of_energy_capital_from_STA" from="Damages.damage_rate_of_energy_capital_from_STA"/>
 				<connect2 to="hydropower_energy.damage_rate_of_energy_capital_from_STA" from="Damages.damage_rate_of_energy_capital_from_STA"/>
+				<connect to="hydropower_energy.damaged_capital_cost_factor" from="Energy_Units.damaged_capital_cost_factor"/>
+				<connect2 to="hydropower_energy.damaged_capital_cost_factor" from="Energy_Units.damaged_capital_cost_factor"/>
 				<connect to="hydropower_energy.deltaEnergy_for_costs" from="energy_supply.deltaEnergy_for_costs"/>
 				<connect2 to="hydropower_energy.deltaEnergy_for_costs" from="deltaEnergy_for_costs"/>
 				<connect to="hydropower_energy.effect_of_STA_on_hydropower_energy_capacity_efficiency" from="efficiency_reduction_in_power_plants.effect_of_STA_on_hydropower_energy_capacity_efficiency"/>
@@ -5190,6 +5643,8 @@ https://en.wikipedia.org/wiki/Proportional%E2%80%93integral%E2%80%93derivative_c
 				<connect2 to="hydropower_energy.kW_to_TW" from="Energy_Units.UNIT_kW_to_TW"/>
 				<connect to="hydropower_energy.start_year" from="Government_Regulations.start_year"/>
 				<connect2 to="hydropower_energy.start_year" from="Government_Regulations.start_year"/>
+				<connect to="hydropower_energy.switch_use_exogenous_capital_cost_increase" from="Energy_Units.switch_use_exogenous_capital_cost_increase"/>
+				<connect2 to="hydropower_energy.switch_use_exogenous_capital_cost_increase" from="Energy_Units.switch_use_exogenous_capital_cost_increase"/>
 				<connect to="hydropower_energy.tax_for_newly_installed_hydropower_capacity" from="Government_Regulations.tax_rate_on_newly_installed_hydropower_capacity"/>
 				<connect2 to="hydropower_energy.tax_for_newly_installed_hydropower_capacity" from="Government_Regulations.tax_rate_on_newly_installed_hydropower_capacity"/>
 				<connect to="hydropower_energy.TWh_to_kWh" from="Energy_Units.UNIT_TWh_to_kWh"/>
@@ -5204,6 +5659,8 @@ https://en.wikipedia.org/wiki/Proportional%E2%80%93integral%E2%80%93derivative_c
 				<connect2 to="solar_energy.damage_rate_of_energy_capital_from_STA" from="Damages.damage_rate_of_energy_capital_from_STA"/>
 				<connect to="solar_energy.deltaEnergy_for_costs" from="energy_supply.deltaEnergy_for_costs"/>
 				<connect2 to="solar_energy.deltaEnergy_for_costs" from="deltaEnergy_for_costs"/>
+				<connect to="solar_energy.general_capital_cost_factor" from="Energy_Units.general_capital_cost_factor"/>
+				<connect2 to="solar_energy.general_capital_cost_factor" from="Energy_Units.general_capital_cost_factor"/>
 				<connect to="solar_energy.gWh_to_TWh" from="Energy_Units.UNIT_gWh_to_TWh"/>
 				<connect2 to="solar_energy.gWh_to_TWh" from="Energy_Units.UNIT_gWh_to_TWh"/>
 				<connect to="solar_energy.Investments_in_Solar_and_Wind_Energy_Capacity" from="energy_investments.Gross_Investments_in_Solar_Energy_Capacity"/>
@@ -5218,6 +5675,8 @@ https://en.wikipedia.org/wiki/Proportional%E2%80%93integral%E2%80%93derivative_c
 				<connect2 to="solar_energy.start_year" from="Government_Regulations.start_year"/>
 				<connect to="solar_energy.subsidy_for_newly_installed_solar_and_wind_energy_capacity" from="Government_Regulations.tax_rate_on_newly_installed_solar_energy_capacity"/>
 				<connect2 to="solar_energy.subsidy_for_newly_installed_solar_and_wind_energy_capacity" from="Government_Regulations.tax_rate_on_newly_installed_solar_energy_capacity"/>
+				<connect to="solar_energy.switch_use_exogenous_capital_cost_increase" from="Energy_Units.switch_use_exogenous_capital_cost_increase"/>
+				<connect2 to="solar_energy.switch_use_exogenous_capital_cost_increase" from="Energy_Units.switch_use_exogenous_capital_cost_increase"/>
 				<connect to="solar_energy.TWh_to_kWh" from="Energy_Units.UNIT_TWh_to_kWh"/>
 				<connect2 to="solar_energy.TWh_to_kWh" from="Energy_Units.UNIT_TWh_to_kWh"/>
 				<connect to="energy_investments.Cost_of_Extra_Energy_Output_through_Capital_per_Unit_9" from="wind_energy.Cost_of_Extra_Energy_Output_through_Capital_per_Unit_net_of_Tax_and_Subsidies"/>
@@ -5230,6 +5689,8 @@ https://en.wikipedia.org/wiki/Proportional%E2%80%93integral%E2%80%93derivative_c
 				<connect2 to="wind_energy.damage_rate_of_energy_capital_from_STA" from="Damages.damage_rate_of_energy_capital_from_STA"/>
 				<connect to="wind_energy.deltaEnergy_for_costs" from="energy_supply.deltaEnergy_for_costs"/>
 				<connect2 to="wind_energy.deltaEnergy_for_costs" from="deltaEnergy_for_costs"/>
+				<connect to="wind_energy.general_capital_cost_factor" from="Energy_Units.general_capital_cost_factor"/>
+				<connect2 to="wind_energy.general_capital_cost_factor" from="Energy_Units.general_capital_cost_factor"/>
 				<connect to="wind_energy.gWh_to_TWh" from="Energy_Units.UNIT_gWh_to_TWh"/>
 				<connect2 to="wind_energy.gWh_to_TWh" from="Energy_Units.UNIT_gWh_to_TWh"/>
 				<connect to="wind_energy.Investments_in_Solar_and_Wind_Energy_Capacity" from="energy_investments.Gross_Investments_in_wind_Energy_Capacity"/>
@@ -5244,6 +5705,8 @@ https://en.wikipedia.org/wiki/Proportional%E2%80%93integral%E2%80%93derivative_c
 				<connect2 to="wind_energy.start_year" from="Government_Regulations.start_year"/>
 				<connect to="wind_energy.subsidy_for_newly_installed_solar_and_wind_energy_capacity" from="Government_Regulations.tax_rate_on_newly_installed_wind_energy_capacity"/>
 				<connect2 to="wind_energy.subsidy_for_newly_installed_solar_and_wind_energy_capacity" from="Government_Regulations.tax_rate_on_newly_installed_wind_energy_capacity"/>
+				<connect to="wind_energy.switch_use_exogenous_capital_cost_increase" from="Energy_Units.switch_use_exogenous_capital_cost_increase"/>
+				<connect2 to="wind_energy.switch_use_exogenous_capital_cost_increase" from="Energy_Units.switch_use_exogenous_capital_cost_increase"/>
 				<connect to="wind_energy.TWh_to_kWh" from="Energy_Units.UNIT_TWh_to_kWh"/>
 				<connect2 to="wind_energy.TWh_to_kWh" from="Energy_Units.UNIT_TWh_to_kWh"/>
 			</module>
@@ -5328,6 +5791,8 @@ https://en.wikipedia.org/wiki/Proportional%E2%80%93integral%E2%80%93derivative_c
 				<connect2 to="fossil_energy_coal.coupling_factor_of_fossil_fuels_and_SO2_emissions" from="Emissions.coupling_factor_of_fossil_fuels_and_SO2_emissions"/>
 				<connect to="fossil_energy_coal.damage_rate_of_energy_capital_from_STA" from="Damages.damage_rate_of_energy_capital_from_STA"/>
 				<connect2 to="fossil_energy_coal.damage_rate_of_energy_capital_from_STA" from="Damages.damage_rate_of_energy_capital_from_STA"/>
+				<connect to="fossil_energy_coal.damaged_capital_cost_factor" from="Energy_Units.damaged_capital_cost_factor"/>
+				<connect2 to="fossil_energy_coal.damaged_capital_cost_factor" from="Energy_Units.damaged_capital_cost_factor"/>
 				<connect to="fossil_energy_coal.deltaEnergy_for_costs" from="energy_supply.deltaEnergy_for_costs"/>
 				<connect2 to="fossil_energy_coal.deltaEnergy_for_costs" from="deltaEnergy_for_costs"/>
 				<connect to="fossil_energy_coal.effect_of_STA_on_thermal_power_energy_capacity_efficiency" from="efficiency_reduction_in_power_plants.effect_of_STA_on_river_cooled_thermal_power_energy_capacity_efficiency"/>
@@ -5348,6 +5813,8 @@ https://en.wikipedia.org/wiki/Proportional%E2%80%93integral%E2%80%93derivative_c
 				<connect2 to="fossil_energy_coal.rate_of_decommissioning_fossil_fuel_extraction_capital" from="Government_Regulations.rate_of_decommissioning_coal_fossil_fuel_extraction_capital"/>
 				<connect to="fossil_energy_coal.share_of_coal_emissions_stored" from="Government_Regulations.share_of_coal_emissions_stored"/>
 				<connect2 to="fossil_energy_coal.share_of_coal_emissions_stored" from="Government_Regulations.share_of_coal_emissions_stored"/>
+				<connect to="fossil_energy_coal.switch_use_exogenous_energy_capital_cost_increase" from="Energy_Units.switch_use_exogenous_capital_cost_increase"/>
+				<connect2 to="fossil_energy_coal.switch_use_exogenous_energy_capital_cost_increase" from="Energy_Units.switch_use_exogenous_capital_cost_increase"/>
 				<connect to="fossil_energy_coal.tax_for_newly_installed_coal_energy_production_capacity" from="Government_Regulations.tax_rate_on_newly_installed_coal_energy_production_capacity"/>
 				<connect2 to="fossil_energy_coal.tax_for_newly_installed_coal_energy_production_capacity" from="Government_Regulations.tax_rate_on_newly_installed_coal_energy_production_capacity"/>
 				<connect to="fossil_energy_coal.tax_for_newly_installed_coal_extraction_capacity" from="Government_Regulations.tax_rate_on_newly_installed_coal_extraction_capacity"/>
@@ -5392,6 +5859,8 @@ https://en.wikipedia.org/wiki/Proportional%E2%80%93integral%E2%80%93derivative_c
 				<connect2 to="fossil_energy_gas.coupling_factor_of_fossil_fuels_and_SO2_emissions" from="Emissions.coupling_factor_of_fossil_fuels_and_SO2_emissions"/>
 				<connect to="fossil_energy_gas.damage_rate_of_energy_capital_from_STA" from="Damages.damage_rate_of_energy_capital_from_STA"/>
 				<connect2 to="fossil_energy_gas.damage_rate_of_energy_capital_from_STA" from="Damages.damage_rate_of_energy_capital_from_STA"/>
+				<connect to="fossil_energy_gas.damaged_capital_cost_factor" from="Energy_Units.damaged_capital_cost_factor"/>
+				<connect2 to="fossil_energy_gas.damaged_capital_cost_factor" from="Energy_Units.damaged_capital_cost_factor"/>
 				<connect to="fossil_energy_gas.deltaEnergy" from="energy_supply.deltaEnergy_for_costs"/>
 				<connect2 to="fossil_energy_gas.deltaEnergy" from="deltaEnergy_for_costs"/>
 				<connect to="fossil_energy_gas.effect_of_STA_on_thermal_power_energy_capacity_efficiency" from="efficiency_reduction_in_power_plants.effect_of_STA_on_river_cooled_thermal_power_energy_capacity_efficiency"/>
@@ -5418,6 +5887,8 @@ https://en.wikipedia.org/wiki/Proportional%E2%80%93integral%E2%80%93derivative_c
 				<connect2 to="fossil_energy_gas.rate_of_decommissioning_fossil_fuel_extraction_capital" from="Government_Regulations.rate_of_decommissioning_gas_fossil_fuel_extraction_capital"/>
 				<connect to="fossil_energy_gas.share_of_coal_emissions_stored" from="Government_Regulations.share_of_gas_emissions_stored"/>
 				<connect2 to="fossil_energy_gas.share_of_coal_emissions_stored" from="Government_Regulations.share_of_gas_emissions_stored"/>
+				<connect to="fossil_energy_gas.switch_use_exogenous_energy_capital_cost_increase" from="Energy_Units.switch_use_exogenous_capital_cost_increase"/>
+				<connect2 to="fossil_energy_gas.switch_use_exogenous_energy_capital_cost_increase" from="Energy_Units.switch_use_exogenous_capital_cost_increase"/>
 				<connect to="fossil_energy_gas.tax_for_newly_installed_gas_extraction_capacity" from="Government_Regulations.tax_rate_on_newly_installed_gas_extraction_capacity"/>
 				<connect2 to="fossil_energy_gas.tax_for_newly_installed_gas_extraction_capacity" from="Government_Regulations.tax_rate_on_newly_installed_gas_extraction_capacity"/>
 				<connect to="fossil_energy_gas.tax_for_newly_installed_gas_energy_production_capacity" from="Government_Regulations.tax_rate_on_newly_installed_gas_energy_production_capacity"/>
@@ -5468,6 +5939,8 @@ https://en.wikipedia.org/wiki/Proportional%E2%80%93integral%E2%80%93derivative_c
 				<connect2 to="fossil_energy_oil.coupling_factor_of_fossil_fuels_and_SO2_emissions" from="Emissions.coupling_factor_of_fossil_fuels_and_SO2_emissions"/>
 				<connect to="fossil_energy_oil.damage_rate_of_energy_capital_from_STA" from="Damages.damage_rate_of_energy_capital_from_STA"/>
 				<connect2 to="fossil_energy_oil.damage_rate_of_energy_capital_from_STA" from="Damages.damage_rate_of_energy_capital_from_STA"/>
+				<connect to="fossil_energy_oil.damaged_capital_cost_factor" from="Energy_Units.damaged_capital_cost_factor"/>
+				<connect2 to="fossil_energy_oil.damaged_capital_cost_factor" from="Energy_Units.damaged_capital_cost_factor"/>
 				<connect to="fossil_energy_oil.deltaEnergy" from="energy_supply.deltaEnergy_for_costs"/>
 				<connect2 to="fossil_energy_oil.deltaEnergy" from="deltaEnergy_for_costs"/>
 				<connect to="fossil_energy_oil.effect_of_STA_on_thermal_power_energy_capacity_efficiency" from="efficiency_reduction_in_power_plants.effect_of_STA_on_river_cooled_thermal_power_energy_capacity_efficiency"/>
@@ -5494,6 +5967,8 @@ https://en.wikipedia.org/wiki/Proportional%E2%80%93integral%E2%80%93derivative_c
 				<connect2 to="fossil_energy_oil.rate_of_decommissioning_fossil_fuel_extraction_capital" from="Government_Regulations.rate_of_decommissioning_oil_fossil_fuel_extraction_capital"/>
 				<connect to="fossil_energy_oil.share_of_coal_emissions_stored" from="Government_Regulations.share_of_oil_emissions_stored"/>
 				<connect2 to="fossil_energy_oil.share_of_coal_emissions_stored" from="Government_Regulations.share_of_oil_emissions_stored"/>
+				<connect to="fossil_energy_oil.switch_use_exogenous_energy_capital_cost_increase" from="Energy_Units.switch_use_exogenous_capital_cost_increase"/>
+				<connect2 to="fossil_energy_oil.switch_use_exogenous_energy_capital_cost_increase" from="Energy_Units.switch_use_exogenous_capital_cost_increase"/>
 				<connect to="fossil_energy_oil.tax_for_newly_installed_oil_extraction_capacity" from="Government_Regulations.tax_rate_on_newly_installed_oil_extraction_capacity"/>
 				<connect2 to="fossil_energy_oil.tax_for_newly_installed_oil_extraction_capacity" from="Government_Regulations.tax_rate_on_newly_installed_oil_extraction_capacity"/>
 				<connect to="fossil_energy_oil.tax_for_newly_installed_oil_energy_production_capacity" from="Government_Regulations.tax_rate_on_newly_installed_oil_energy_production_capacity"/>
@@ -5523,12 +5998,16 @@ https://en.wikipedia.org/wiki/Proportional%E2%80%93integral%E2%80%93derivative_c
 				<connect2 to="nuclear_energy.deltaEnergy_for_costs" from="deltaEnergy_for_costs"/>
 				<connect to="nuclear_energy.effect_of_STA_on_thermal_power_energy_capacity_efficiency" from="efficiency_reduction_in_power_plants.effect_of_STA_on_river_cooled_thermal_power_energy_capacity_efficiency"/>
 				<connect2 to="nuclear_energy.effect_of_STA_on_thermal_power_energy_capacity_efficiency" from="efficiency_reduction_in_power_plants.effect_of_STA_on_river_cooled_thermal_power_energy_capacity_efficiency"/>
+				<connect to="nuclear_energy.general_capital_cost_factor" from="Energy_Units.general_capital_cost_factor"/>
+				<connect2 to="nuclear_energy.general_capital_cost_factor" from="Energy_Units.general_capital_cost_factor"/>
 				<connect to="nuclear_energy.Investments_in_Nuclear_Capacity" from="energy_investments.Investments_in_Nuclear_Capacity"/>
 				<connect2 to="nuclear_energy.Investments_in_Nuclear_Capacity" from="energy_investments.Investments_in_Nuclear_Capacity"/>
 				<connect to="nuclear_energy.kW_to_GW" from="Energy_Units.UNIT_kW_to_GW"/>
 				<connect2 to="nuclear_energy.kW_to_GW" from="Energy_Units.UNIT_kW_to_GW"/>
 				<connect to="nuclear_energy.start_year" from="Government_Regulations.start_year"/>
 				<connect2 to="nuclear_energy.start_year" from="Government_Regulations.start_year"/>
+				<connect to="nuclear_energy.switch_use_exogenous_capital_cost_increase" from="Energy_Units.switch_use_exogenous_capital_cost_increase"/>
+				<connect2 to="nuclear_energy.switch_use_exogenous_capital_cost_increase" from="Energy_Units.switch_use_exogenous_capital_cost_increase"/>
 				<connect to="nuclear_energy.tax_for_newly_installed_nuclear" from="Government_Regulations.tax_rate_on_newly_installed_nuclear_energy_capacity"/>
 				<connect2 to="nuclear_energy.tax_for_newly_installed_nuclear" from="Government_Regulations.tax_rate_on_newly_installed_nuclear_energy_capacity"/>
 				<connect to="nuclear_energy.TWh_to_kWh" from="Energy_Units.UNIT_TWh_to_kWh"/>
@@ -5688,6 +6167,8 @@ Arbitrary unit of energy used to calculate the differentials of cost to produce 
 				<connect2 to="efficiency_reduction_in_power_plants.Surface_Temperature_Anomaly" from="Energy_Balance_Model.Surface_Temperature_Anomaly"/>
 				<connect to="efficiency_reduction_in_power_plants.switch_energy_damage" from="Climate.switch_energy_damage"/>
 				<connect2 to="efficiency_reduction_in_power_plants.switch_energy_damage" from="Climate.switch_energy_damage"/>
+				<connect to="efficiency_reduction_in_power_plants.switch_use_exogenous_energy_efficiency_damages" from="Energy_Units.switch_use_exogenous_energy_efficiency_damages"/>
+				<connect2 to="efficiency_reduction_in_power_plants.switch_use_exogenous_energy_efficiency_damages" from="Energy_Units.switch_use_exogenous_energy_efficiency_damages"/>
 				<connect to="efficiency_reduction_in_power_plants.today" from="Climate.climate_impact_stoptime"/>
 				<connect2 to="efficiency_reduction_in_power_plants.today" from="Climate.climate_impact_stoptime"/>
 			</module>
@@ -5803,7 +6284,7 @@ Arbitrary unit of energy used to calculate the differentials of cost to produce 
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="1123" page_height="793" isee:page_cols="2" isee:page_rows="2" isee:scroll_y="179" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="768" page_height="588" isee:page_cols="2" isee:page_rows="2" isee:scroll_y="179" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="11pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -6270,7 +6751,10 @@ absolute guess</doc>
 				<dimensions>
 					<dim name="Run"/>
 				</dimensions>
-				<eqn>IF (switch_energy_damage = 0) AND TIME &gt; today THEN
+				<eqn>IF switch_use_exogenous_energy_efficiency_damages THEN 
+exogenous_effect_of_STA_on_river_cooled_thermal_power_energy_capacity_efficiency
+ELSE
+IF (switch_energy_damage = 0) AND TIME &gt; today THEN
 previous_effect_of_STA_on_thermal_power_energy_capacity_efficiency
 ELSE
 1+ (effect_of_STA_on_river_cooled_thermal_powerplant_energy_capacity_efficiency_slope[selected_energy_supply_damages_case]*Surface_Temperature_Anomaly+effect_of_STA_on_river_cooled_thermal_power_energy_capacity_efficiency_quadratic[selected_energy_supply_damages_case]*Surface_Temperature_Anomaly^2)/100</eqn>
@@ -6369,7 +6853,10 @@ ELSE
 				<dimensions>
 					<dim name="Run"/>
 				</dimensions>
-				<eqn>IF (switch_energy_damage = 0) AND TIME &gt; today THEN
+				<eqn>IF switch_use_exogenous_energy_efficiency_damages THEN 
+exogenous_effect_of_STA_on_hydropower_energy_capacity_efficiency
+ELSE
+IF (switch_energy_damage = 0) AND TIME &gt; today THEN
 previous_effect_of_STA_on_hydropower_energy_capacity_efficiency
 ELSE
 1+ (effect_of_STA_on_hydropower_energy_capacity_efficiency_slope[selected_energy_supply_hydroelectric_damages_case]*Surface_Temperature_Anomaly+effect_of_STA_on_hydropower_energy_capacity_efficiency_quadratic[selected_energy_supply_hydroelectric_damages_case]*Surface_Temperature_Anomaly^2)/100</eqn>
@@ -6495,6 +6982,18 @@ ELSE
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>dmnl</units>
 			</aux>
+			<aux name="exogenous effect of STA on river cooled thermal power\nenergy capacity efficiency">
+				<eqn>0</eqn>
+				<units>dmnl</units>
+			</aux>
+			<aux name="switch use exogenous energy efficiency damages" access="input">
+				<eqn>0</eqn>
+				<units>dmnl</units>
+			</aux>
+			<aux name="exogenous effect of STA on hydropower\nenergy capacity efficiency">
+				<eqn>0</eqn>
+				<units>dmnl</units>
+			</aux>
 		</variables>
 		<views>
 			<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
@@ -6544,7 +7043,7 @@ ELSE
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="1123" page_height="793" isee:page_cols="2" isee:page_rows="2" isee:scroll_y="94" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="768" page_height="588" isee:page_cols="2" isee:page_rows="2" isee:scroll_y="94" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="11pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -6586,10 +7085,10 @@ ELSE
 				<aux x="280.165" y="308.956" name="effect of STA on river cooled thermal power\nenergy capacity efficiency"/>
 				<aux x="406.242" y="185.956" name="effect of STA on river cooled thermal powerplant\nenergy capacity\nefficiency slope"/>
 				<aux x="464.011" y="333.956" name="effect of STA on river cooled thermal power\nenergy capacity\nefficiency quadratic"/>
-				<aux x="714.648" y="194.091" name="Surface Temperature Anomaly"/>
-				<aux x="432.308" y="562.385" name="effect of STA on hydropower\nenergy capacity efficiency"/>
-				<aux x="617.154" y="481.182" name="effect of STA on hydropower\nenergy capacity\nefficiency slope"/>
-				<aux x="581.154" y="580.385" name="effect of STA on hydropower\nenergy capacity efficiency quadratic"/>
+				<aux x="528" y="242.091" name="Surface Temperature Anomaly"/>
+				<aux x="974.308" y="335.385" name="effect of STA on hydropower\nenergy capacity efficiency"/>
+				<aux x="1159.15" y="254.182" name="effect of STA on hydropower\nenergy capacity\nefficiency slope"/>
+				<aux x="1123.15" y="353.385" name="effect of STA on hydropower\nenergy capacity efficiency quadratic"/>
 				<connector uid="6" angle="162.233">
 					<from>effect_of_STA_on_hydropower_energy_capacity_efficiency_quadratic</from>
 					<to>effect_of_STA_on_hydropower_energy_capacity_efficiency</to>
@@ -6598,12 +7097,14 @@ ELSE
 					<from>effect_of_STA_on_hydropower_energy_capacity_efficiency_slope</from>
 					<to>effect_of_STA_on_hydropower_energy_capacity_efficiency</to>
 				</connector>
-				<connector uid="9" angle="239.883">
-					<from>Surface_Temperature_Anomaly</from>
+				<connector uid="9" angle="213.035">
+					<from>
+						<alias uid="24"/>
+					</from>
 					<to>effect_of_STA_on_hydropower_energy_capacity_efficiency</to>
 				</connector>
-				<aux font_style="italic" font_weight="bold" x="413.182" y="463.182" name="today"/>
-				<connector uid="5" angle="203.443">
+				<aux font_style="italic" font_weight="bold" x="956.308" y="258.182" name="today"/>
+				<connector uid="5" angle="195.099">
 					<from>Surface_Temperature_Anomaly</from>
 					<to>effect_of_STA_on_river_cooled_thermal_power_energy_capacity_efficiency</to>
 				</connector>
@@ -6624,11 +7125,13 @@ ELSE
 					<from>previous_effect_of_STA_on_thermal_power_energy_capacity_efficiency</from>
 					<to>effect_of_STA_on_river_cooled_thermal_power_energy_capacity_efficiency</to>
 				</connector>
-				<connector uid="14" angle="136.698">
-					<from>today</from>
+				<connector uid="14" angle="134.091">
+					<from>
+						<alias uid="25"/>
+					</from>
 					<to>effect_of_STA_on_river_cooled_thermal_power_energy_capacity_efficiency</to>
 				</connector>
-				<aux x="324.242" y="659.375" name="previous effect of STA on hydropower\nenergy capacity efficiency"/>
+				<aux x="866.242" y="432.375" name="previous effect of STA on hydropower\nenergy capacity efficiency"/>
 				<connector uid="15" angle="175.992">
 					<from>effect_of_STA_on_hydropower_energy_capacity_efficiency</from>
 					<to>previous_effect_of_STA_on_hydropower_energy_capacity_efficiency</to>
@@ -6637,17 +7140,19 @@ ELSE
 					<from>previous_effect_of_STA_on_hydropower_energy_capacity_efficiency</from>
 					<to>effect_of_STA_on_hydropower_energy_capacity_efficiency</to>
 				</connector>
-				<connector uid="19" angle="280.851">
+				<connector uid="19" angle="283.124">
 					<from>today</from>
 					<to>effect_of_STA_on_hydropower_energy_capacity_efficiency</to>
 				</connector>
-				<aux font_style="italic" font_weight="bold" x="262.165" y="463.182" name="switch energy damage"/>
-				<connector uid="20" angle="329.755">
+				<aux font_style="italic" font_weight="bold" x="812.165" y="283.182" name="switch energy damage"/>
+				<connector uid="20" angle="342.154">
 					<from>switch_energy_damage</from>
 					<to>effect_of_STA_on_hydropower_energy_capacity_efficiency</to>
 				</connector>
-				<connector uid="21" angle="83.343">
-					<from>switch_energy_damage</from>
+				<connector uid="21" angle="77.125">
+					<from>
+						<alias uid="26"/>
+					</from>
 					<to>effect_of_STA_on_river_cooled_thermal_power_energy_capacity_efficiency</to>
 				</connector>
 				<aux font_style="italic" font_weight="bold" x="144" y="347" name="selected energy supply damages case"/>
@@ -6655,11 +7160,44 @@ ELSE
 					<from>selected_energy_supply_damages_case</from>
 					<to>effect_of_STA_on_river_cooled_thermal_power_energy_capacity_efficiency</to>
 				</connector>
-				<aux font_style="italic" font_weight="bold" x="528" y="671" name="selected energy\nsupply hydroelectric\ndamages case"/>
+				<aux font_style="italic" font_weight="bold" x="1070" y="444" name="selected energy\nsupply hydroelectric\ndamages case"/>
 				<connector uid="23" angle="115.907">
 					<from>selected_energy_supply_hydroelectric_damages_case</from>
 					<to>effect_of_STA_on_hydropower_energy_capacity_efficiency</to>
 				</connector>
+				<aux x="599.665" y="304.706" name="exogenous effect of STA on river cooled thermal power\nenergy capacity efficiency"/>
+				<aux font_style="italic" font_weight="bold" x="559.5" y="402.75" name="switch use exogenous energy efficiency damages"/>
+				<connector uid="27" angle="186.439">
+					<from>switch_use_exogenous_energy_efficiency_damages</from>
+					<to>effect_of_STA_on_river_cooled_thermal_power_energy_capacity_efficiency</to>
+				</connector>
+				<connector uid="28" angle="176.537">
+					<from>exogenous_effect_of_STA_on_river_cooled_thermal_power_energy_capacity_efficiency</from>
+					<to>effect_of_STA_on_river_cooled_thermal_power_energy_capacity_efficiency</to>
+				</connector>
+				<aux x="1262.81" y="315.706" name="exogenous effect of STA on hydropower\nenergy capacity efficiency"/>
+				<connector uid="29" angle="186.341">
+					<from>
+						<alias uid="30"/>
+					</from>
+					<to>effect_of_STA_on_hydropower_energy_capacity_efficiency</to>
+				</connector>
+				<connector uid="31" angle="208.902">
+					<from>exogenous_effect_of_STA_on_hydropower_energy_capacity_efficiency</from>
+					<to>effect_of_STA_on_hydropower_energy_capacity_efficiency</to>
+				</connector>
+				<alias font_style="italic" font_weight="bold" uid="26" x="225" y="441" width="18" height="18">
+					<of>switch_energy_damage</of>
+				</alias>
+				<alias font_style="italic" font_weight="bold" uid="25" x="416" y="428" width="18" height="18">
+					<of>today</of>
+				</alias>
+				<alias font_style="italic" uid="24" x="1087" y="189" width="18" height="18">
+					<of>Surface_Temperature_Anomaly</of>
+				</alias>
+				<alias uid="30" x="1195.15" y="404" width="18" height="18">
+					<of>switch_use_exogenous_energy_efficiency_damages</of>
+				</alias>
 			</view>
 		</views>
 	</model>
@@ -6701,6 +7239,8 @@ ELSE
 				<connect2 to="fossil_energy_coal.coupling_factor_of_fossil_fuels_and_SO2_emissions" from="Emissions.coupling_factor_of_fossil_fuels_and_SO2_emissions"/>
 				<connect to="fossil_energy_coal.damage_rate_of_energy_capital_from_STA" from="Damages.damage_rate_of_energy_capital_from_STA"/>
 				<connect2 to="fossil_energy_coal.damage_rate_of_energy_capital_from_STA" from="Damages.damage_rate_of_energy_capital_from_STA"/>
+				<connect to="fossil_energy_coal.damaged_capital_cost_factor" from="Energy_Units.damaged_capital_cost_factor"/>
+				<connect2 to="fossil_energy_coal.damaged_capital_cost_factor" from="Energy_Units.damaged_capital_cost_factor"/>
 				<connect to="fossil_energy_coal.deltaEnergy_for_costs" from="energy_supply.deltaEnergy_for_costs"/>
 				<connect2 to="fossil_energy_coal.deltaEnergy_for_costs" from="energy_supply.deltaEnergy_for_costs"/>
 				<connect to="fossil_energy_coal.effect_of_STA_on_thermal_power_energy_capacity_efficiency" from="efficiency_reduction_in_power_plants.effect_of_STA_on_river_cooled_thermal_power_energy_capacity_efficiency"/>
@@ -6721,6 +7261,8 @@ ELSE
 				<connect2 to="fossil_energy_coal.rate_of_decommissioning_fossil_fuel_extraction_capital" from="Government_Regulations.rate_of_decommissioning_coal_fossil_fuel_extraction_capital"/>
 				<connect to="fossil_energy_coal.share_of_coal_emissions_stored" from="Government_Regulations.share_of_coal_emissions_stored"/>
 				<connect2 to="fossil_energy_coal.share_of_coal_emissions_stored" from="Government_Regulations.share_of_coal_emissions_stored"/>
+				<connect to="fossil_energy_coal.switch_use_exogenous_energy_capital_cost_increase" from="Energy_Units.switch_use_exogenous_capital_cost_increase"/>
+				<connect2 to="fossil_energy_coal.switch_use_exogenous_energy_capital_cost_increase" from="Energy_Units.switch_use_exogenous_capital_cost_increase"/>
 				<connect to="fossil_energy_coal.tax_for_newly_installed_coal_energy_production_capacity" from="Government_Regulations.tax_rate_on_newly_installed_coal_energy_production_capacity"/>
 				<connect2 to="fossil_energy_coal.tax_for_newly_installed_coal_energy_production_capacity" from="Government_Regulations.tax_rate_on_newly_installed_coal_energy_production_capacity"/>
 				<connect to="fossil_energy_coal.tax_for_newly_installed_coal_extraction_capacity" from="Government_Regulations.tax_rate_on_newly_installed_coal_extraction_capacity"/>
@@ -6788,6 +7330,8 @@ ELSE
 				<connect2 to="fossil_energy_oil.coupling_factor_of_fossil_fuels_and_SO2_emissions" from="Emissions.coupling_factor_of_fossil_fuels_and_SO2_emissions"/>
 				<connect to="fossil_energy_oil.damage_rate_of_energy_capital_from_STA" from="Damages.damage_rate_of_energy_capital_from_STA"/>
 				<connect2 to="fossil_energy_oil.damage_rate_of_energy_capital_from_STA" from="Damages.damage_rate_of_energy_capital_from_STA"/>
+				<connect to="fossil_energy_oil.damaged_capital_cost_factor" from="Energy_Units.damaged_capital_cost_factor"/>
+				<connect2 to="fossil_energy_oil.damaged_capital_cost_factor" from="Energy_Units.damaged_capital_cost_factor"/>
 				<connect to="fossil_energy_oil.deltaEnergy" from="energy_supply.deltaEnergy_for_costs"/>
 				<connect2 to="fossil_energy_oil.deltaEnergy" from="energy_supply.deltaEnergy_for_costs"/>
 				<connect to="fossil_energy_oil.effect_of_STA_on_thermal_power_energy_capacity_efficiency" from="efficiency_reduction_in_power_plants.effect_of_STA_on_river_cooled_thermal_power_energy_capacity_efficiency"/>
@@ -6814,6 +7358,8 @@ ELSE
 				<connect2 to="fossil_energy_oil.rate_of_decommissioning_fossil_fuel_extraction_capital" from="Government_Regulations.rate_of_decommissioning_oil_fossil_fuel_extraction_capital"/>
 				<connect to="fossil_energy_oil.share_of_coal_emissions_stored" from="Government_Regulations.share_of_oil_emissions_stored"/>
 				<connect2 to="fossil_energy_oil.share_of_coal_emissions_stored" from="Government_Regulations.share_of_oil_emissions_stored"/>
+				<connect to="fossil_energy_oil.switch_use_exogenous_energy_capital_cost_increase" from="Energy_Units.switch_use_exogenous_capital_cost_increase"/>
+				<connect2 to="fossil_energy_oil.switch_use_exogenous_energy_capital_cost_increase" from="Energy_Units.switch_use_exogenous_capital_cost_increase"/>
 				<connect to="fossil_energy_oil.tax_for_newly_installed_oil_extraction_capacity" from="Government_Regulations.tax_rate_on_newly_installed_oil_extraction_capacity"/>
 				<connect2 to="fossil_energy_oil.tax_for_newly_installed_oil_extraction_capacity" from="Government_Regulations.tax_rate_on_newly_installed_oil_extraction_capacity"/>
 				<connect to="fossil_energy_oil.tax_for_newly_installed_oil_energy_production_capacity" from="Government_Regulations.tax_rate_on_newly_installed_oil_energy_production_capacity"/>
@@ -6863,6 +7409,8 @@ ELSE
 				<connect2 to="fossil_energy_gas.coupling_factor_of_fossil_fuels_and_SO2_emissions" from="Emissions.coupling_factor_of_fossil_fuels_and_SO2_emissions"/>
 				<connect to="fossil_energy_gas.damage_rate_of_energy_capital_from_STA" from="Damages.damage_rate_of_energy_capital_from_STA"/>
 				<connect2 to="fossil_energy_gas.damage_rate_of_energy_capital_from_STA" from="Damages.damage_rate_of_energy_capital_from_STA"/>
+				<connect to="fossil_energy_gas.damaged_capital_cost_factor" from="Energy_Units.damaged_capital_cost_factor"/>
+				<connect2 to="fossil_energy_gas.damaged_capital_cost_factor" from="Energy_Units.damaged_capital_cost_factor"/>
 				<connect to="fossil_energy_gas.deltaEnergy" from="energy_supply.deltaEnergy_for_costs"/>
 				<connect2 to="fossil_energy_gas.deltaEnergy" from="energy_supply.deltaEnergy_for_costs"/>
 				<connect to="fossil_energy_gas.effect_of_STA_on_thermal_power_energy_capacity_efficiency" from="efficiency_reduction_in_power_plants.effect_of_STA_on_river_cooled_thermal_power_energy_capacity_efficiency"/>
@@ -6889,6 +7437,8 @@ ELSE
 				<connect2 to="fossil_energy_gas.rate_of_decommissioning_fossil_fuel_extraction_capital" from="Government_Regulations.rate_of_decommissioning_gas_fossil_fuel_extraction_capital"/>
 				<connect to="fossil_energy_gas.share_of_coal_emissions_stored" from="Government_Regulations.share_of_gas_emissions_stored"/>
 				<connect2 to="fossil_energy_gas.share_of_coal_emissions_stored" from="Government_Regulations.share_of_gas_emissions_stored"/>
+				<connect to="fossil_energy_gas.switch_use_exogenous_energy_capital_cost_increase" from="Energy_Units.switch_use_exogenous_capital_cost_increase"/>
+				<connect2 to="fossil_energy_gas.switch_use_exogenous_energy_capital_cost_increase" from="Energy_Units.switch_use_exogenous_capital_cost_increase"/>
 				<connect to="fossil_energy_gas.tax_for_newly_installed_gas_extraction_capacity" from="Government_Regulations.tax_rate_on_newly_installed_gas_extraction_capacity"/>
 				<connect2 to="fossil_energy_gas.tax_for_newly_installed_gas_extraction_capacity" from="Government_Regulations.tax_rate_on_newly_installed_gas_extraction_capacity"/>
 				<connect to="fossil_energy_gas.tax_for_newly_installed_gas_energy_production_capacity" from="Government_Regulations.tax_rate_on_newly_installed_gas_energy_production_capacity"/>
@@ -7082,7 +7632,7 @@ Primary_Fossil_Energy_FUEL_1+
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="1123" page_height="793" isee:page_cols="4" isee:page_rows="4" isee:scroll_y="85.7143" zoom="140" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="768" page_height="588" isee:page_cols="4" isee:page_rows="4" isee:scroll_y="85.7143" zoom="140" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="11pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -7842,16 +8392,19 @@ https://en.wikipedia.org/wiki/British_thermal_unit</doc>
 				<dimensions>
 					<dim name="Run"/>
 				</dimensions>
-				<eqn>Cost_of_Extra_Energy_Output_through_Capital_per_Unit
+				<eqn>(Cost_of_Extra_Energy_Output_through_Capital_per_Unit
 +
-energy_conversion_installation_tax_burden</eqn>
+energy_conversion_installation_tax_burden)
+*
+(IF switch_use_exogenous_energy_capital_cost_increase THEN 
+thermoelectric_adjusted_coal_cost_increase ELSE 1)</eqn>
 				<units>c$*Years/kWh</units>
 			</aux>
 			<aux name="cost net of taxes of extra energy output\nthrough fuel\nextraction per unit" access="output" isee:autocreated="true">
 				<dimensions>
 					<dim name="Run"/>
 				</dimensions>
-				<eqn>cost_of_extra_energy_output_through_fuel_extraction_per_unit
+				<eqn>(cost_of_extra_energy_output_through_fuel_extraction_per_unit
 +
 CO2e_tax_burden_of_extra_energy_output_through_fuel_extraction_per_unit
 +
@@ -7859,7 +8412,10 @@ SO2_tax_burden_of_extra_energy_output_through_fuel_extraction_per_unit
 +
 fuel_extraction_installation_tax_burden
 +
-extra_CO2_storage_cost_burden</eqn>
+extra_CO2_storage_cost_burden)
+*
+(IF switch_use_exogenous_energy_capital_cost_increase THEN 
+thermoelectric_adjusted_coal_cost_increase ELSE 1)</eqn>
 				<units>c$/(kWh/Years)</units>
 			</aux>
 			<aux name="deltaEnergy for costs" access="input">
@@ -8414,6 +8970,18 @@ We apply this independent of fuel for now.</doc>
 				<range min="0.5" max="5"/>
 				<units>dmnl</units>
 			</aux>
+			<aux name="damaged\ncapital cost factor" access="input">
+				<eqn>1.3</eqn>
+				<units>dmnl</units>
+			</aux>
+			<aux name="thermoelectric adjusted\ncoal cost increase">
+				<eqn>1 + (damaged_capital_cost_factor - 1)*share_of_thermal_power_cooled_by_rivers_in_secondary_fossil_energy</eqn>
+				<units>dmnl</units>
+			</aux>
+			<aux name="switch use exogenous energy\ncapital cost increase" access="input">
+				<eqn>0</eqn>
+				<units>dmnl</units>
+			</aux>
 		</variables>
 		<views>
 			<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
@@ -8463,7 +9031,7 @@ We apply this independent of fuel for now.</doc>
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="1123" page_height="793" isee:page_cols="4" isee:page_rows="4" isee:scroll_x="485" isee:scroll_y="650" zoom="120" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="768" page_height="588" isee:page_cols="4" isee:page_rows="4" isee:scroll_x="1265" isee:scroll_y="850" zoom="120" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="11pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -9408,11 +9976,53 @@ We apply this independent of fuel for now.</doc>
 						</plot>
 					</graph>
 				</stacked_container>
+				<aux font_style="italic" font_weight="bold" x="840.213" y="1349.48" name="damaged\ncapital cost factor"/>
+				<aux x="971.88" y="1335.81" name="thermoelectric adjusted\ncoal cost increase"/>
+				<connector uid="290" angle="344.684">
+					<from>
+						<alias uid="291"/>
+					</from>
+					<to>thermoelectric_adjusted_coal_cost_increase</to>
+				</connector>
+				<connector uid="292" angle="20.6761">
+					<from>damaged_capital_cost_factor</from>
+					<to>thermoelectric_adjusted_coal_cost_increase</to>
+				</connector>
+				<aux font_style="italic" font_weight="bold" x="934.117" y="1423.59" name="switch use exogenous energy\ncapital cost increase"/>
+				<connector uid="293" angle="27.3086">
+					<from>thermoelectric_adjusted_coal_cost_increase</from>
+					<to>cost_net_of_taxes_of_extra_energy_output_through_fuel_extraction_per_unit</to>
+				</connector>
+				<connector uid="294" angle="31.2155">
+					<from>switch_use_exogenous_energy_capital_cost_increase</from>
+					<to>cost_net_of_taxes_of_extra_energy_output_through_fuel_extraction_per_unit</to>
+				</connector>
+				<connector uid="295" angle="203.596">
+					<from>
+						<alias uid="296"/>
+					</from>
+					<to>Cost_net_of_taxes_of_Extra_Energy_Output_through_Capital_per_Unit</to>
+				</connector>
+				<connector uid="297" angle="178.849">
+					<from>
+						<alias uid="298"/>
+					</from>
+					<to>Cost_net_of_taxes_of_Extra_Energy_Output_through_Capital_per_Unit</to>
+				</connector>
 				<alias uid="47" x="1592.04" y="153.5" width="18" height="18">
 					<of>damage_rate_of_energy_capital_from_STA</of>
 				</alias>
 				<alias font_style="italic" font_weight="bold" uid="194" x="1459.01" y="1485.21" width="18" height="18">
 					<of>Policy_Start_Year</of>
+				</alias>
+				<alias font_style="italic" uid="291" x="849.213" y="1261.23" width="18" height="18">
+					<of>share_of_thermal_power_cooled_by_rivers_in_secondary_fossil_energy</of>
+				</alias>
+				<alias font_style="italic" uid="298" x="1845.17" y="1065.84" width="18" height="18">
+					<of>thermoelectric_adjusted_coal_cost_increase</of>
+				</alias>
+				<alias uid="296" x="1863.17" y="1007.89" width="18" height="18">
+					<of>switch_use_exogenous_energy_capital_cost_increase</of>
 				</alias>
 			</view>
 		</views>
@@ -9880,16 +10490,19 @@ https://en.wikipedia.org/wiki/British_thermal_unit</doc>
 				<dimensions>
 					<dim name="Run"/>
 				</dimensions>
-				<eqn>Cost_of_Extra_Energy_Output_through_Capital_per_Unit
+				<eqn>(Cost_of_Extra_Energy_Output_through_Capital_per_Unit
 +
-energy_conversion_installation_tax_burden</eqn>
+energy_conversion_installation_tax_burden)
+*
+(IF switch_use_exogenous_energy_capital_cost_increase THEN 
+thermoelectric_adjusted_coal_cost_increase ELSE 1)</eqn>
 				<units>c$*Years/kWh</units>
 			</aux>
 			<aux name="cost net of taxes of extra energy output\nthrough fuel\nextraction per unit" access="output" isee:autocreated="true">
 				<dimensions>
 					<dim name="Run"/>
 				</dimensions>
-				<eqn>cost_of_extra_energy_output_through_fuel_extraction_per_unit
+				<eqn>(cost_of_extra_energy_output_through_fuel_extraction_per_unit
 +
 CO2e_tax_burden_of_extra_energy_output_through_fuel_extraction_per_unit
 +
@@ -9897,7 +10510,9 @@ SO2_tax_burden_of_extra_energy_output_through_fuel_extraction_per_unit
 +
 fuel_extraction_installation_tax_burden
 +
-extra_CO2_storage_cost_burden</eqn>
+extra_CO2_storage_cost_burden)
+*
+(IF switch_use_exogenous_energy_capital_cost_increase THEN thermoelectric_adjusted_coal_cost_increase ELSE 1)</eqn>
 				<units>c$*Years/kWh</units>
 			</aux>
 			<aux name="TWh to kWh" access="input">
@@ -10451,6 +11066,18 @@ We apply this independent of fuel for now.</doc>
 				<range min="0.5" max="5"/>
 				<units>dmnl</units>
 			</aux>
+			<aux name="damaged\ncapital cost factor" access="input">
+				<eqn>1.3</eqn>
+				<units>dmnl</units>
+			</aux>
+			<aux name="thermoelectric adjusted\ncoal cost increase">
+				<eqn>1 + (damaged_capital_cost_factor - 1)*share_of_thermal_power_cooled_by_rivers_in_secondary_fossil_energy</eqn>
+				<units>dmnl</units>
+			</aux>
+			<aux name="switch use exogenous energy\ncapital cost increase" access="input">
+				<eqn>0</eqn>
+				<units>dmnl</units>
+			</aux>
 		</variables>
 		<views>
 			<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
@@ -10500,7 +11127,7 @@ We apply this independent of fuel for now.</doc>
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="1123" page_height="793" isee:page_cols="3" isee:page_rows="4" isee:scroll_x="654.286" isee:scroll_y="771.429" zoom="140" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="768" page_height="588" isee:page_cols="3" isee:page_rows="4" isee:scroll_x="638.571" isee:scroll_y="900" zoom="140" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="11pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -11418,11 +12045,53 @@ We apply this independent of fuel for now.</doc>
 					<from>ratio_of_capital_over_fuel</from>
 					<to>reference_ratio_of_capital_over_fuel</to>
 				</connector>
+				<aux font_style="italic" font_weight="bold" x="722.088" y="1307.11" name="damaged\ncapital cost factor"/>
+				<aux x="853.76" y="1293.44" name="thermoelectric adjusted\ncoal cost increase"/>
+				<connector uid="254" angle="344.684">
+					<from>
+						<alias uid="255"/>
+					</from>
+					<to>thermoelectric_adjusted_coal_cost_increase</to>
+				</connector>
+				<connector uid="256" angle="20.6761">
+					<from>damaged_capital_cost_factor</from>
+					<to>thermoelectric_adjusted_coal_cost_increase</to>
+				</connector>
+				<aux font_style="italic" font_weight="bold" x="815.99" y="1381.22" name="switch use exogenous energy\ncapital cost increase"/>
+				<connector uid="257" angle="15.1917">
+					<from>thermoelectric_adjusted_coal_cost_increase</from>
+					<to>cost_net_of_taxes_of_extra_energy_output_through_fuel_extraction_per_unit</to>
+				</connector>
+				<connector uid="258" angle="35.9876">
+					<from>switch_use_exogenous_energy_capital_cost_increase</from>
+					<to>cost_net_of_taxes_of_extra_energy_output_through_fuel_extraction_per_unit</to>
+				</connector>
+				<connector uid="259" angle="230.855">
+					<from>
+						<alias uid="260"/>
+					</from>
+					<to>Cost_net_of_taxes_of_Extra_Energy_Output_through_Capital_per_Unit</to>
+				</connector>
+				<connector uid="261" angle="244.795">
+					<from>
+						<alias uid="262"/>
+					</from>
+					<to>Cost_net_of_taxes_of_Extra_Energy_Output_through_Capital_per_Unit</to>
+				</connector>
 				<alias uid="47" x="1586.35" y="125.833" width="18" height="18">
 					<of>damage_rate_of_energy_capital_from_STA</of>
 				</alias>
 				<alias font_style="italic" font_weight="bold" uid="170" x="1292.43" y="1317.49" width="18" height="18">
 					<of>Policy_Start_Year</of>
+				</alias>
+				<alias font_style="italic" uid="255" x="731.088" y="1218.86" width="18" height="18">
+					<of>share_of_thermal_power_cooled_by_rivers_in_secondary_fossil_energy</of>
+				</alias>
+				<alias font_style="italic" uid="262" x="1904.17" y="952.84" width="18" height="18">
+					<of>thermoelectric_adjusted_coal_cost_increase</of>
+				</alias>
+				<alias uid="260" x="1922.17" y="894.89" width="18" height="18">
+					<of>switch_use_exogenous_energy_capital_cost_increase</of>
 				</alias>
 			</view>
 		</views>
@@ -11882,16 +12551,19 @@ https://en.wikipedia.org/wiki/British_thermal_unit</doc>
 				<dimensions>
 					<dim name="Run"/>
 				</dimensions>
-				<eqn>Cost_of_Extra_Energy_Output_through_Capital_per_Unit
+				<eqn>(Cost_of_Extra_Energy_Output_through_Capital_per_Unit
 +
-energy_conversion_installation_tax_burden</eqn>
+energy_conversion_installation_tax_burden)
+*
+(IF switch_use_exogenous_energy_capital_cost_increase THEN 
+thermoelectric_adjusted_coal_cost_increase ELSE 1)</eqn>
 				<units>c$*Years/kWh</units>
 			</aux>
 			<aux name="cost net of taxes of extra energy output\nthrough fuel\nextraction per unit" access="output" isee:autocreated="true">
 				<dimensions>
 					<dim name="Run"/>
 				</dimensions>
-				<eqn>cost_of_extra_energy_output_through_fuel_extraction_per_unit
+				<eqn>(cost_of_extra_energy_output_through_fuel_extraction_per_unit
 +
 CO2e_tax_burden_of_extra_energy_output_through_fuel_extraction_per_unit
 +
@@ -11899,7 +12571,9 @@ SO2_tax_burden_of_extra_energy_output_through_fuel_extraction_per_unit
 +
 fuel_extraction_installation_tax_burden
 +
-extra_CO2_storage_cost_burden</eqn>
+extra_CO2_storage_cost_burden)
+*
+(IF switch_use_exogenous_energy_capital_cost_increase THEN thermoelectric_adjusted_coal_cost_increase ELSE 1)</eqn>
 				<units>c$/(kWh/year)</units>
 			</aux>
 			<aux name="TWh to kWh" access="input">
@@ -12493,6 +13167,18 @@ We apply this independent of fuel for now.</doc>
 				<range min="0.5" max="5"/>
 				<units>dmnl</units>
 			</aux>
+			<aux name="damaged\ncapital cost factor" access="input">
+				<eqn>1.3</eqn>
+				<units>dmnl</units>
+			</aux>
+			<aux name="thermoelectric adjusted\ncoal cost increase">
+				<eqn>1 + (damaged_capital_cost_factor - 1)*share_of_thermal_power_cooled_by_rivers_in_secondary_fossil_energy</eqn>
+				<units>dmnl</units>
+			</aux>
+			<aux name="switch use exogenous energy\ncapital cost increase" access="input">
+				<eqn>0</eqn>
+				<units>dmnl</units>
+			</aux>
 		</variables>
 		<views>
 			<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
@@ -12542,7 +13228,7 @@ We apply this independent of fuel for now.</doc>
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="1123" page_height="793" isee:page_cols="4" isee:page_rows="4" isee:scroll_x="618.75" isee:scroll_y="750" zoom="160" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="768" page_height="588" isee:page_cols="4" isee:page_rows="4" isee:scroll_x="1363.13" isee:scroll_y="787.5" zoom="160" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="11pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -13495,11 +14181,53 @@ We apply this independent of fuel for now.</doc>
 					<from>secondary_energy_output_from_liquid_fuels</from>
 					<to>conversion_efficiency_of_fossil_fuels_to_secondary_fossil_energy</to>
 				</connector>
+				<aux font_style="italic" font_weight="bold" x="908.088" y="1326.11" name="damaged\ncapital cost factor"/>
+				<aux x="1039.76" y="1312.44" name="thermoelectric adjusted\ncoal cost increase"/>
+				<connector uid="314" angle="344.684">
+					<from>
+						<alias uid="315"/>
+					</from>
+					<to>thermoelectric_adjusted_coal_cost_increase</to>
+				</connector>
+				<connector uid="316" angle="20.6761">
+					<from>damaged_capital_cost_factor</from>
+					<to>thermoelectric_adjusted_coal_cost_increase</to>
+				</connector>
+				<aux font_style="italic" font_weight="bold" x="1001.99" y="1400.22" name="switch use exogenous energy\ncapital cost increase"/>
+				<connector uid="317" angle="33.1252">
+					<from>switch_use_exogenous_energy_capital_cost_increase</from>
+					<to>cost_net_of_taxes_of_extra_energy_output_through_fuel_extraction_per_unit</to>
+				</connector>
+				<connector uid="318" angle="18.9045">
+					<from>thermoelectric_adjusted_coal_cost_increase</from>
+					<to>cost_net_of_taxes_of_extra_energy_output_through_fuel_extraction_per_unit</to>
+				</connector>
+				<connector uid="319" angle="244.47">
+					<from>
+						<alias uid="320"/>
+					</from>
+					<to>Cost_net_of_taxes_of_Extra_Energy_Output_through_Capital_per_Unit</to>
+				</connector>
+				<connector uid="321" angle="233.517">
+					<from>
+						<alias uid="322"/>
+					</from>
+					<to>Cost_net_of_taxes_of_Extra_Energy_Output_through_Capital_per_Unit</to>
+				</connector>
 				<alias uid="47" x="1552.96" y="134.333" width="18" height="18">
 					<of>damage_rate_of_energy_capital_from_STA</of>
 				</alias>
 				<alias font_style="italic" font_weight="bold" uid="181" x="1408.79" y="1251.11" width="18" height="18">
 					<of>Policy_Start_Year</of>
+				</alias>
+				<alias font_style="italic" uid="315" x="917.088" y="1237.86" width="18" height="18">
+					<of>share_of_thermal_power_cooled_by_rivers_in_secondary_fossil_energy</of>
+				</alias>
+				<alias font_style="italic" uid="320" x="1914.55" y="932.465" width="18" height="18">
+					<of>thermoelectric_adjusted_coal_cost_increase</of>
+				</alias>
+				<alias uid="322" x="1932.55" y="874.515" width="18" height="18">
+					<of>switch_use_exogenous_energy_capital_cost_increase</of>
 				</alias>
 			</view>
 		</views>
@@ -13715,7 +14443,7 @@ We apply this independent of fuel for now.</doc>
 				<dimensions>
 					<dim name="Run"/>
 				</dimensions>
-				<eqn>Floor_Costs+Reducible_Installation_Cost_component</eqn>
+				<eqn>Floor_Costs+Reducible_Installation_Cost_component*(IF switch_use_exogenous_capital_cost_increase THEN general_capital_cost_factor ELSE 1)</eqn>
 				<units>c$/kW</units>
 			</aux>
 			<aux name="Learning Rate">
@@ -13824,6 +14552,14 @@ We apply this independent of fuel for now.</doc>
 				<range min="1000" max="3000"/>
 				<units>c$/kW</units>
 			</aux>
+			<aux name="general capital cost factor" access="input">
+				<eqn>1.05</eqn>
+				<units>dmnl</units>
+			</aux>
+			<aux name="switch use exogenous\ncapital cost increase" access="input">
+				<eqn>0</eqn>
+				<units>dmnl</units>
+			</aux>
 		</variables>
 		<views>
 			<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
@@ -13873,7 +14609,7 @@ We apply this independent of fuel for now.</doc>
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="768" page_height="588" isee:page_cols="2" isee:page_rows="2" isee:scroll_y="94.2857" zoom="140" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="768" page_height="588" isee:page_cols="2" isee:page_rows="2" isee:scroll_y="93.5714" zoom="140" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="11pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -14145,6 +14881,16 @@ We apply this independent of fuel for now.</doc>
 					<from>Installation_of_Nuclear_Capacity</from>
 					<to>accumulating_Nuclear_Energy_Construction</to>
 				</connector>
+				<aux font_style="italic" font_weight="bold" x="83.6253" y="620.5" name="general capital cost factor"/>
+				<aux font_style="italic" font_weight="bold" x="161.429" y="568.545" name="switch use exogenous\ncapital cost increase"/>
+				<connector uid="63" angle="344.175">
+					<from>general_capital_cost_factor</from>
+					<to>Nuclear_Installation_Costs</to>
+				</connector>
+				<connector uid="64" angle="309.265">
+					<from>switch_use_exogenous_capital_cost_increase</from>
+					<to>Nuclear_Installation_Costs</to>
+				</connector>
 				<alias background="#AAAAFF" font_style="italic" uid="60" x="451.714" y="838.857" width="18" height="18">
 					<of>Initial_Nuclear_Capacity</of>
 				</alias>
@@ -14181,6 +14927,8 @@ Wind_Energy_Output+
 				<connect2 to="Government.tax_rate_1" from="hydropower_energy.tax_rate"/>
 				<connect to="hydropower_energy.damage_rate_of_energy_capital_from_STA" from="Damages.damage_rate_of_energy_capital_from_STA"/>
 				<connect2 to="hydropower_energy.damage_rate_of_energy_capital_from_STA" from="Damages.damage_rate_of_energy_capital_from_STA"/>
+				<connect to="hydropower_energy.damaged_capital_cost_factor" from="Energy_Units.damaged_capital_cost_factor"/>
+				<connect2 to="hydropower_energy.damaged_capital_cost_factor" from="Energy_Units.damaged_capital_cost_factor"/>
 				<connect to="hydropower_energy.deltaEnergy_for_costs" from="energy_supply.deltaEnergy_for_costs"/>
 				<connect2 to="hydropower_energy.deltaEnergy_for_costs" from="energy_supply.deltaEnergy_for_costs"/>
 				<connect to="hydropower_energy.effect_of_STA_on_hydropower_energy_capacity_efficiency" from="efficiency_reduction_in_power_plants.effect_of_STA_on_hydropower_energy_capacity_efficiency"/>
@@ -14195,6 +14943,8 @@ Wind_Energy_Output+
 				<connect2 to="hydropower_energy.kW_to_TW" from="Energy_Units.UNIT_kW_to_TW"/>
 				<connect to="hydropower_energy.start_year" from="Government_Regulations.start_year"/>
 				<connect2 to="hydropower_energy.start_year" from="Government_Regulations.start_year"/>
+				<connect to="hydropower_energy.switch_use_exogenous_capital_cost_increase" from="Energy_Units.switch_use_exogenous_capital_cost_increase"/>
+				<connect2 to="hydropower_energy.switch_use_exogenous_capital_cost_increase" from="Energy_Units.switch_use_exogenous_capital_cost_increase"/>
 				<connect to="hydropower_energy.tax_for_newly_installed_hydropower_capacity" from="Government_Regulations.tax_rate_on_newly_installed_hydropower_capacity"/>
 				<connect2 to="hydropower_energy.tax_for_newly_installed_hydropower_capacity" from="Government_Regulations.tax_rate_on_newly_installed_hydropower_capacity"/>
 				<connect to="hydropower_energy.TWh_to_kWh" from="Energy_Units.UNIT_TWh_to_kWh"/>
@@ -14249,6 +14999,8 @@ Wind_Energy_Output+
 				<connect2 to="bio_fuel_energy.deltaEnergy_for_costs" from="energy_supply.deltaEnergy_for_costs"/>
 				<connect to="bio_fuel_energy.Extra_FUEL_needed_for_Extra_delta_Energy" from="fossil_energy_oil.Extra_FUEL_needed_for_Extra_delta_Energy"/>
 				<connect2 to="bio_fuel_energy.Extra_FUEL_needed_for_Extra_delta_Energy" from="fossil_energy_oil.Extra_FUEL_needed_for_Extra_delta_Energy"/>
+				<connect to="bio_fuel_energy.general_capital_cost_factor" from="Energy_Units.general_capital_cost_factor"/>
+				<connect2 to="bio_fuel_energy.general_capital_cost_factor" from="Energy_Units.general_capital_cost_factor"/>
 				<connect to="bio_fuel_energy.GtC_to_MtCO2" from="Emissions.GtC_to_MtCO2"/>
 				<connect2 to="bio_fuel_energy.GtC_to_MtCO2" from="Emissions.GtC_to_MtCO2"/>
 				<connect to="bio_fuel_energy.Investments_in_Other_Capacity" from="energy_investments.Gross_Investments_in_Biofuel_Capacity"/>
@@ -14269,6 +15021,8 @@ Wind_Energy_Output+
 				<connect2 to="bio_fuel_energy.share_of_biofuel_emissions_stored" from="Government_Regulations.share_of_biofuel_emissions_stored"/>
 				<connect to="bio_fuel_energy.share_of_liquid_fuel_that_is_bio" from="fossil_energy_oil.share_of_liquid_fuel_that_is_bio"/>
 				<connect2 to="bio_fuel_energy.share_of_liquid_fuel_that_is_bio" from="fossil_energy_oil.share_of_liquid_fuel_that_is_bio"/>
+				<connect to="bio_fuel_energy.switch_use_exogenous_capital_cost_increase" from="Energy_Units.switch_use_exogenous_capital_cost_increase"/>
+				<connect2 to="bio_fuel_energy.switch_use_exogenous_capital_cost_increase" from="Energy_Units.switch_use_exogenous_capital_cost_increase"/>
 				<connect to="bio_fuel_energy.tax_for_newly_installed_other_energy_capacity" from="Government_Regulations.tax_rate_on_newly_installed_bio_energy_capacity"/>
 				<connect2 to="bio_fuel_energy.tax_for_newly_installed_other_energy_capacity" from="Government_Regulations.tax_rate_on_newly_installed_bio_energy_capacity"/>
 				<connect to="bio_fuel_energy.tax_on_CO2e_emissions" from="Government_Regulations.tax_on_CO2e_emissions"/>
@@ -14308,6 +15062,8 @@ Wind_Energy_Output+
 				<connect2 to="wind_energy.damage_rate_of_energy_capital_from_STA" from="Damages.damage_rate_of_energy_capital_from_STA"/>
 				<connect to="wind_energy.deltaEnergy_for_costs" from="energy_supply.deltaEnergy_for_costs"/>
 				<connect2 to="wind_energy.deltaEnergy_for_costs" from="energy_supply.deltaEnergy_for_costs"/>
+				<connect to="wind_energy.general_capital_cost_factor" from="Energy_Units.general_capital_cost_factor"/>
+				<connect2 to="wind_energy.general_capital_cost_factor" from="Energy_Units.general_capital_cost_factor"/>
 				<connect to="wind_energy.gWh_to_TWh" from="Energy_Units.UNIT_gWh_to_TWh"/>
 				<connect2 to="wind_energy.gWh_to_TWh" from="Energy_Units.UNIT_gWh_to_TWh"/>
 				<connect to="wind_energy.Investments_in_Solar_and_Wind_Energy_Capacity" from="energy_investments.Gross_Investments_in_wind_Energy_Capacity"/>
@@ -14322,6 +15078,8 @@ Wind_Energy_Output+
 				<connect2 to="wind_energy.start_year" from="Government_Regulations.start_year"/>
 				<connect to="wind_energy.subsidy_for_newly_installed_solar_and_wind_energy_capacity" from="Government_Regulations.tax_rate_on_newly_installed_wind_energy_capacity"/>
 				<connect2 to="wind_energy.subsidy_for_newly_installed_solar_and_wind_energy_capacity" from="Government_Regulations.tax_rate_on_newly_installed_wind_energy_capacity"/>
+				<connect to="wind_energy.switch_use_exogenous_capital_cost_increase" from="Energy_Units.switch_use_exogenous_capital_cost_increase"/>
+				<connect2 to="wind_energy.switch_use_exogenous_capital_cost_increase" from="Energy_Units.switch_use_exogenous_capital_cost_increase"/>
 				<connect to="wind_energy.TWh_to_kWh" from="Energy_Units.UNIT_TWh_to_kWh"/>
 				<connect2 to="wind_energy.TWh_to_kWh" from="Energy_Units.UNIT_TWh_to_kWh"/>
 			</module>
@@ -14355,6 +15113,8 @@ Wind_Energy_Output+
 				<connect2 to="solar_energy.damage_rate_of_energy_capital_from_STA" from="Damages.damage_rate_of_energy_capital_from_STA"/>
 				<connect to="solar_energy.deltaEnergy_for_costs" from="energy_supply.deltaEnergy_for_costs"/>
 				<connect2 to="solar_energy.deltaEnergy_for_costs" from="energy_supply.deltaEnergy_for_costs"/>
+				<connect to="solar_energy.general_capital_cost_factor" from="Energy_Units.general_capital_cost_factor"/>
+				<connect2 to="solar_energy.general_capital_cost_factor" from="Energy_Units.general_capital_cost_factor"/>
 				<connect to="solar_energy.gWh_to_TWh" from="Energy_Units.UNIT_gWh_to_TWh"/>
 				<connect2 to="solar_energy.gWh_to_TWh" from="Energy_Units.UNIT_gWh_to_TWh"/>
 				<connect to="solar_energy.Investments_in_Solar_and_Wind_Energy_Capacity" from="energy_investments.Gross_Investments_in_Solar_Energy_Capacity"/>
@@ -14369,6 +15129,8 @@ Wind_Energy_Output+
 				<connect2 to="solar_energy.start_year" from="Government_Regulations.start_year"/>
 				<connect to="solar_energy.subsidy_for_newly_installed_solar_and_wind_energy_capacity" from="Government_Regulations.tax_rate_on_newly_installed_solar_energy_capacity"/>
 				<connect2 to="solar_energy.subsidy_for_newly_installed_solar_and_wind_energy_capacity" from="Government_Regulations.tax_rate_on_newly_installed_solar_energy_capacity"/>
+				<connect to="solar_energy.switch_use_exogenous_capital_cost_increase" from="Energy_Units.switch_use_exogenous_capital_cost_increase"/>
+				<connect2 to="solar_energy.switch_use_exogenous_capital_cost_increase" from="Energy_Units.switch_use_exogenous_capital_cost_increase"/>
 				<connect to="solar_energy.TWh_to_kWh" from="Energy_Units.UNIT_TWh_to_kWh"/>
 				<connect2 to="solar_energy.TWh_to_kWh" from="Energy_Units.UNIT_TWh_to_kWh"/>
 			</module>
@@ -14797,7 +15559,8 @@ CO2e_tax_burden_of_extra_energy_output_through_fuel_extraction_per_unit</eqn>
 				<dimensions>
 					<dim name="Run"/>
 				</dimensions>
-				<eqn>(Floor_Costs+Reducible_Installation_Cost_component)</eqn>
+				<eqn>(Floor_Costs+Reducible_Installation_Cost_component)
+*(IF switch_use_exogenous_capital_cost_increase THEN general_capital_cost_factor ELSE 1)</eqn>
 				<units>c$/(Mt of fuel/year)</units>
 			</aux>
 			<aux name="Floor Costs">
@@ -15153,6 +15916,14 @@ ELSE
 				</dimensions>
 				<eqn>bio_fuel_primary_energy_content*bio_fuel_production</eqn>
 				<units>zJ/Year</units>
+			</aux>
+			<aux name="switch use exogenous\ncapital cost increase" access="input">
+				<eqn>0</eqn>
+				<units>dmnl</units>
+			</aux>
+			<aux name="general capital cost factor" access="input">
+				<eqn>1.05</eqn>
+				<units>dmnl</units>
 			</aux>
 		</variables>
 		<views>
@@ -15707,6 +16478,16 @@ ELSE
 					<from>bio_fuel_primary_energy_content</from>
 					<to>bio_fuel_primary_energy</to>
 				</connector>
+				<aux font_style="italic" font_weight="bold" x="164" y="253" name="switch use exogenous\ncapital cost increase"/>
+				<aux font_style="italic" font_weight="bold" x="266" y="227" name="general capital cost factor"/>
+				<connector uid="136" angle="304.916">
+					<from>switch_use_exogenous_capital_cost_increase</from>
+					<to>Installation_Cost</to>
+				</connector>
+				<connector uid="137" angle="239.812">
+					<from>general_capital_cost_factor</from>
+					<to>Installation_Cost</to>
+				</connector>
 			</view>
 		</views>
 	</model>
@@ -15782,7 +16563,10 @@ Data from 2010 to 2021 specified on the range of 1600c$/kW </doc>
 					<dim name="Run"/>
 				</dimensions>
 				<eqn>Base_Hydropower_Installation_Costs+
-Slope_of_Hydropower_Installation_Costs_wrt_Capacity*(Hydropower_Energy_Capacity/kW_to_GW)</eqn>
+Slope_of_Hydropower_Installation_Costs_wrt_Capacity*(Hydropower_Energy_Capacity/kW_to_GW) *
+(IF switch_use_exogenous_capital_cost_increase THEN
+damaged_capital_cost_factor
+ELSE 1)</eqn>
 				<units>c$/kW</units>
 			</aux>
 			<aux name="Hydropower Energy Output" access="output" isee:autocreated="true">
@@ -15930,6 +16714,14 @@ ELSE
 				<eqn>2025</eqn>
 				<units>Year</units>
 			</aux>
+			<aux name="switch use exogenous\ncapital cost increase" access="input">
+				<eqn>0</eqn>
+				<units>dmnl</units>
+			</aux>
+			<aux name="damaged\ncapital cost factor" access="input">
+				<eqn>1.3</eqn>
+				<units>dmnl</units>
+			</aux>
 		</variables>
 		<views>
 			<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
@@ -16060,9 +16852,9 @@ ELSE
 					<from>kW_to_GW</from>
 					<to>Installation_of_Hydropower_Capacity</to>
 				</connector>
-				<aux x="280.78" y="175.685" name="Base Hydropower\nInstallation Costs"/>
+				<aux x="98.28" y="254.435" name="Base Hydropower\nInstallation Costs"/>
 				<aux x="154.855" y="164.435" name="Slope of Hydropower\nInstallation Costs\nwrt Capacity"/>
-				<connector uid="7" angle="275.922">
+				<connector uid="7" angle="347.546">
 					<from>Base_Hydropower_Installation_Costs</from>
 					<to>Hydropower_Installation_Costs</to>
 				</connector>
@@ -16185,6 +16977,16 @@ ELSE
 					<from>Cost_of_Extra_Energy_Output_through_Capital_per_Unit</from>
 					<to>tax_burden_on_installing_capacity</to>
 				</connector>
+				<aux font_style="italic" font_weight="bold" x="361.045" y="93.477" name="switch use exogenous\ncapital cost increase"/>
+				<aux font_style="italic" font_weight="bold" x="228.25" y="89.417" name="damaged\ncapital cost factor"/>
+				<connector uid="45" angle="287.388">
+					<from>damaged_capital_cost_factor</from>
+					<to>Hydropower_Installation_Costs</to>
+				</connector>
+				<connector uid="46" angle="251.665">
+					<from>switch_use_exogenous_capital_cost_increase</from>
+					<to>Hydropower_Installation_Costs</to>
+				</connector>
 			</view>
 		</views>
 	</model>
@@ -16299,7 +17101,8 @@ from MIND</doc>
 				<dimensions>
 					<dim name="Run"/>
 				</dimensions>
-				<eqn>(actual_renewable_energy_floor_costs+Renewable_Energy_Reducible_Installation_Cost_component)</eqn>
+				<eqn>(actual_renewable_energy_floor_costs+Renewable_Energy_Reducible_Installation_Cost_component)
+*(IF switch_use_exogenous_capital_cost_increase THEN general_capital_cost_factor ELSE 1)</eqn>
 				<units>c$/kW</units>
 			</aux>
 			<aux name="Solar Energy\nLearning Rate">
@@ -16642,6 +17445,14 @@ These parameters are set so that the effect of having to build grid energy stora
 </doc>
 				<eqn>0.000001</eqn>
 				<units>GW/kW</units>
+			</aux>
+			<aux name="general capital cost factor" access="input">
+				<eqn>1.2</eqn>
+				<units>dmnl</units>
+			</aux>
+			<aux name="switch use exogenous\ncapital cost increase" access="input">
+				<eqn>0</eqn>
+				<units>dmnl</units>
 			</aux>
 		</variables>
 		<views>
@@ -17013,6 +17824,16 @@ These parameters are set so that the effect of having to build grid energy stora
 					<from>kW_to_GW</from>
 					<to>Renewable_Energy_Capacity_Construction</to>
 				</connector>
+				<aux font_style="italic" font_weight="bold" x="65" y="579.503" name="general capital cost factor"/>
+				<aux font_style="italic" font_weight="bold" x="163.5" y="520.363" name="switch use exogenous\ncapital cost increase"/>
+				<connector uid="63" angle="279.023">
+					<from>switch_use_exogenous_capital_cost_increase</from>
+					<to>Installation_Cost_of_Solar_capacity</to>
+				</connector>
+				<connector uid="64" angle="294.658">
+					<from>general_capital_cost_factor</from>
+					<to>Installation_Cost_of_Solar_capacity</to>
+				</connector>
 			</view>
 		</views>
 	</model>
@@ -17127,7 +17948,8 @@ from MIND</doc>
 				<dimensions>
 					<dim name="Run"/>
 				</dimensions>
-				<eqn>(actual_renewable_energy_floor_costs+Renewable_Energy_Reducible_Installation_Cost_component)</eqn>
+				<eqn>(actual_renewable_energy_floor_costs+Renewable_Energy_Reducible_Installation_Cost_component)
+*(IF switch_use_exogenous_capital_cost_increase THEN general_capital_cost_factor ELSE 1)</eqn>
 				<units>c$/kW</units>
 			</aux>
 			<aux name="Wind Energy\nLearning Rate">
@@ -17472,6 +18294,14 @@ Wind_Energy_Capacity * gWh_to_TWh
 				<range min="5" max="20"/>
 				<units>years</units>
 			</aux>
+			<aux name="general capital cost factor" access="input">
+				<eqn>1.2</eqn>
+				<units>dmnl</units>
+			</aux>
+			<aux name="switch use exogenous\ncapital cost increase" access="input">
+				<eqn>0</eqn>
+				<units>dmnl</units>
+			</aux>
 		</variables>
 		<views>
 			<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
@@ -17521,7 +18351,7 @@ Wind_Energy_Capacity * gWh_to_TWh
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="768" page_height="588" isee:page_cols="2" isee:page_rows="3" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="768" page_height="588" isee:page_cols="2" isee:page_rows="3" isee:scroll_y="180" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="11pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -17842,6 +18672,16 @@ Wind_Energy_Capacity * gWh_to_TWh
 					<from>reference_installation_cost</from>
 					<to>actual_renewable_energy_floor_costs</to>
 				</connector>
+				<aux font_style="italic" font_weight="bold" x="57" y="553.503" name="general capital cost factor"/>
+				<aux font_style="italic" font_weight="bold" x="155.5" y="494.363" name="switch use exogenous\ncapital cost increase"/>
+				<connector uid="61" angle="278.773">
+					<from>switch_use_exogenous_capital_cost_increase</from>
+					<to>Installation_Cost_of_Wind_capacity</to>
+				</connector>
+				<connector uid="62" angle="315.469">
+					<from>general_capital_cost_factor</from>
+					<to>Installation_Cost_of_Wind_capacity</to>
+				</connector>
 			</view>
 		</views>
 	</model>
@@ -18119,6 +18959,38 @@ https://en.wikipedia.org/wiki/British_thermal_unit</doc>
 				<eqn>1</eqn>
 				<units>1/(deg C)</units>
 			</aux>
+			<aux name="switch use exogenous energy efficiency damages" access="output" isee:autocreated="true">
+				<eqn>1</eqn>
+				<units>dmnl</units>
+			</aux>
+			<aux name="switch use exogenous energy\ndemand" access="output" isee:autocreated="true">
+				<eqn>0</eqn>
+				<units>dmnl</units>
+			</aux>
+			<aux name="switch use exogenous\ncapital cost increase" access="output" isee:autocreated="true">
+				<eqn>0</eqn>
+				<units>dmnl</units>
+			</aux>
+			<aux name="switch use exogenous maximum\nenergy capacity additions" access="output" isee:autocreated="true">
+				<eqn>1</eqn>
+				<units>dmnl</units>
+			</aux>
+			<aux name="UNIT Mp to p" access="output" isee:autocreated="true">
+				<eqn>1e6</eqn>
+				<units>p/Mp</units>
+			</aux>
+			<aux name="UNIT EJ to GJ" access="output" isee:autocreated="true">
+				<eqn>1e9</eqn>
+				<units>GJ/EJ</units>
+			</aux>
+			<aux name="general capital cost factor" access="output" isee:autocreated="true">
+				<eqn>1.2</eqn>
+				<units>dmnl</units>
+			</aux>
+			<aux name="damaged\ncapital cost factor" access="output">
+				<eqn>1.3</eqn>
+				<units>dmnl</units>
+			</aux>
 		</variables>
 		<views>
 			<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
@@ -18168,7 +19040,7 @@ https://en.wikipedia.org/wiki/British_thermal_unit</doc>
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="1123" page_height="793" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="768" page_height="588" isee:page_cols="2" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="11pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -18217,6 +19089,14 @@ https://en.wikipedia.org/wiki/British_thermal_unit</doc>
 				<aux x="205.161" y="324.375" name="UNIT GJ to MWh"/>
 				<aux x="375.55" y="125.6" name="UNIT kW to GW"/>
 				<aux x="362" y="32" name="UNIT deg C to dmnl"/>
+				<aux x="674" y="260" name="switch use exogenous energy efficiency damages"/>
+				<aux x="674" y="331.785" name="switch use exogenous energy\ndemand"/>
+				<aux x="666" y="411.375" name="switch use exogenous\ncapital cost increase"/>
+				<aux x="844" y="278" name="switch use exogenous maximum\nenergy capacity additions"/>
+				<aux x="679.003" y="125" name="UNIT Mp to p"/>
+				<aux x="679.003" y="192" name="UNIT EJ to GJ"/>
+				<aux x="837" y="168.503" name="general capital cost factor"/>
+				<aux x="829.5" y="84.667" name="damaged\ncapital cost factor"/>
 			</view>
 		</views>
 	</model>

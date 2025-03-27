@@ -85,7 +85,14 @@
 	<isee:number_format_extenders/>
 	<default_format scale_by="1"/>
 	<data>
+		<export enabled="false" frequency="on_demand" resource="r../DERP/data/intermediate_outputs/baseline_energy_investments_by_source.csv" precomputed="false" isee:format="numbers">
+			<table name="Energy investments by source" use_settings="true"/>
+		</export>
 		<import isee:overwrite="false" isee:timevarying="true" resource="r../Data/frida_input_data.csv"/>
+		<import isee:overwrite="false" isee:timevarying="true" resource="r../DERP/data/inputs/energy_supply_efficiency_rcp85_1x.csv"/>
+		<import isee:overwrite="false" isee:timevarying="true" resource="r../DERP/data/inputs/cooling_energy_demand.csv"/>
+		<import isee:overwrite="false" isee:timevarying="true" resource="r../DERP/data/inputs/energy_investments_max_by_source.csv"/>
+		<import frequency="on_demand" isee:overwrite="true" resource="r../DERP/data/inputs/capital_costs_30_20.csv"/>
 	</data>
 	<isee:sensi_specs_list active_index="0">
 		<isee:sensi_specs name="Climate Sensitivity" method="grid">
