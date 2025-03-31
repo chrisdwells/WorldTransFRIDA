@@ -883,7 +883,7 @@
 			<isee:placeholder name="Economy 2 Outputs">
 				<eqn>GDP.Nominal_GDP[1] + GDP.&quot;Real_GDP_in_2021c$&quot;[1] + Circular_Flow.private_consumption[1] + Government.government_consumption[1] + Finance.total_investment[1] + Employment.annual_aggregate_wages[1] + Circular_Flow.Labour_share_of_GDP[1] + Employment.Employed[1] + Employment.Unemployed[1] + Employment.unemployment_rate[1] + Government.debt_to_GDP_ratio[1] + GDP.nominal_gdp_growth_rate_deviation_from_average_in_calibration_period_summed[1] + GDP.real_gdp_growth_rate_deviation_from_average_in_calibration_period_summed[1] + Inflation.gdp_difference[1] + Circular_Flow.bottom_40_share_of_real_income[1]</eqn>
 			</isee:placeholder>
-			<module name="Sea level rise Impacts\nand Adaptation" isee:label="" url="/Users/bschoenberg/code/WorldTrans/clones/me/WorldTransFRIDA/FRIDA_Modules/Sea level rise Impacts and Adaptation.itmx">
+			<module name="Sea level rise Impacts\nand Adaptation" isee:label="" url="C:/Users/earcwel/Documents/WorldTransPostdoc/Github/chrisdwells/WorldTransFRIDA/FRIDA_Modules/Sea level rise Impacts and Adaptation.itmx">
 				<format scale_by="auto"/>
 				<connect to="Sea_level_rise_Impacts_and_Adaptation.No_SLR_adaptation_strategy" from="Government_Regulations.No_SLR_adaptation_strategy"/>
 				<connect2 to="Sea_level_rise_Impacts_and_Adaptation.No_SLR_adaptation_strategy" from="Government_Regulations.No_SLR_adaptation_strategy"/>

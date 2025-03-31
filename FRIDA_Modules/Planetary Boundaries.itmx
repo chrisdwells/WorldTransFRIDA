@@ -234,7 +234,6 @@
 				<entity name='"PB1:1_High_risk_boundary_value"'/>
 				<entity name='"PB1:1_Holocene_value"'/>
 				<entity name='"PB1:1_Normalised_control_variable"'/>
-				<entity name='"PB1:1_Reference_data"'/>
 				<entity name='"Total_NPP_consumed_by_human-induced_fires_2000"'/>
 				<entity name="Cropland_actual_NPP_per_unit_area_2000"/>
 				<entity name="cropland_net_primary_production"/>
@@ -272,7 +271,6 @@
 				<entity name='"PB2:1_High_risk_boundary_value"'/>
 				<entity name='"PB2:1_Holocene_value"'/>
 				<entity name='"PB2:1_Normalized_control_variable"'/>
-				<entity name='"PB2:1_Reference_data"'/>
 				<entity name="Forested_area"/>
 				<entity name="Holocene_forested_area"/>
 				<entity name="Mature_Forest"/>
