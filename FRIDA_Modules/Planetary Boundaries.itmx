@@ -5,7 +5,7 @@
 		<name>Planetary Boundaries</name>
 		<uuid>4cfa77a7-34c5-4df6-92d8-556eb00b1dd9</uuid>
 		<vendor>isee systems, inc.</vendor>
-		<product version="3.8" isee:build_number="3578" isee:saved_by_v1="true" lang="en">Stella Architect</product>
+		<product version="3.8.1" isee:build_number="3613" isee:saved_by_v1="true" lang="en">Stella Architect</product>
 	</header>
 	<sim_specs isee:sim_duration="0" isee:run_prefix="Run" isee:simulation_delay="0" isee:restore_on_start="false" isee:save_interval="1" method="RK4" time_units="Year" isee:instantaneous_flows="false" isee:ignore_module_errors="false" isee:strict_units="false" isee:loop_scores="false" isee:loop_exhaustive_allowed="1000">
 		<start>1980</start>
@@ -33,7 +33,7 @@
 		<isee:time_format name="Builtin" type="adaptive"/>
 	</isee:time_formats>
 	<isee:number_format_extenders/>
-	<default_format scale_by="1"/>
+	<default_format precision="full" scale_by="1"/>
 	<model_units>
 		<unit name="Gh">
 			<eqn>Giga*h</eqn>
@@ -227,7 +227,7 @@
 	<model name="Planetary_Boundaries">
 		<variables>
 			<group name="PB 1 - Biosphere Integrity" run="false">
-				<format scale_by="auto"/>
+				<format precision="auto" scale_by="auto"/>
 				<entity name='"Fraction_of_NPP_consumed_by_human-induced_fires"'/>
 				<entity name='"PB1:1_Boundary_value"'/>
 				<entity name='"PB1:1_HANPP_as_fraction_of_Holocene_net_primary_production"'/>
@@ -265,7 +265,7 @@
 				<entity name="UNIT_Percent_to_decimal"/>
 			</group>
 			<group name="PB 2 - Land System Change" run="false">
-				<format scale_by="auto"/>
+				<format precision="auto" scale_by="auto"/>
 				<entity name='"PB2:1_Boundary_value"'/>
 				<entity name='"PB2:1_Fraction_forest_removed"'/>
 				<entity name='"PB2:1_High_risk_boundary_value"'/>
@@ -277,7 +277,7 @@
 				<entity name="Young_Forest"/>
 			</group>
 			<group name="PB 3 - Freshwater Use, 2015 def" run="false">
-				<format scale_by="auto"/>
+				<format precision="auto" scale_by="auto"/>
 				<entity name='"PB3:1_Boundary_value"'/>
 				<entity name='"PB3:1_High_risk_boundary_value"'/>
 				<entity name='"PB3:1_Holocene_value"'/>
@@ -290,7 +290,7 @@
 				<entity name="UNIT_km3_to_m3"/>
 			</group>
 			<group name="PB 4 - Biogeochemical Flows" run="false">
-				<format scale_by="auto"/>
+				<format precision="auto" scale_by="auto"/>
 				<entity name='"Cropland_net_primary_production_2000-2020"'/>
 				<entity name='"Intended_biological_nitrogen_fixation_2000-2020"'/>
 				<entity name='"PB4:1_Boundary_value"'/>
@@ -591,7 +591,7 @@ Source: Richardson et al., 2023 (https://www.science.org/doi/10.1126/sciadv.adh2
 				<units>MtP/year</units>
 			</aux>
 			<group name="PB 5 - Climate Change" run="false">
-				<format scale_by="auto"/>
+				<format precision="auto" scale_by="auto"/>
 				<entity name='"PB5:1_Atmospheric_CO2_concentration"'/>
 				<entity name='"PB5:1_Boundary_value"'/>
 				<entity name='"PB5:1_High_risk_boundary_value"'/>

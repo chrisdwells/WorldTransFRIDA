@@ -9,7 +9,7 @@ derps = ['eroded', 'incremental']
 
 for derp in derps:
     
-    df_in = pd.read_csv(f'../../data/sheets/Cooling_demand_pop_WA_FRIDA_gcam_{derp}.csv')
+    df_in = pd.read_csv(f'../../data/sheets/Cooling_demand_pop_WA_gcam_{derp}.csv')
     
     df_in = df_in[['region', 'year', 'e_cool_delta', 'GCAM Region']]
     

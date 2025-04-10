@@ -1,13 +1,13 @@
 import pandas as pd
 import numpy as np
 
+# data from data/sheets/H&D_Capacity_factors(Impact numbers - Multiples).csv
+
 y1 = 1980
 y2 = 2150
 nt = y2 - y1 + 1
 
-# use multiple=0 for baseline
-
-multiples = [0, 1, 2, 3, 4, 5]
+multiples = [1, 2, 3, 4, 5]
 
 # bring in as percentage damages
 damage_pcts = {}
