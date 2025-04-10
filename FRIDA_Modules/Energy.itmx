@@ -4140,14 +4140,14 @@ SUM(priority_by_source_initial_allocation[Run,*])</eqn>
 				<eqn>2020</eqn>
 				<units>year</units>
 			</aux>
-			<aux name="historical initial allocation">
+			<aux name="maximum allowed allocation">
 				<dimensions>
 					<dim name="Run"/>
 					<dim name="EnergySource"/>
 				</dimensions>
 				<eqn>IF switch_use_exogenous_maximum_energy_capacity_additions = 0
 THEN
-NAN
+initial_allocation
 ELSE
 HISTORY(initial_allocation,  TIME,  count,  1)</eqn>
 				<units>c$/year</units>
@@ -4164,8 +4164,16 @@ HISTORY(initial_allocation,  TIME,  count,  1)</eqn>
 				<eqn>IF switch_use_exogenous_maximum_energy_capacity_additions = 0 THEN
 0
 ELSE
-MAX(0, initial_allocation[Run,EnergySource] - historical_initial_allocation[Run,EnergySource])</eqn>
+PREVIOUS(raw_over_allocation, 0)</eqn>
 				<units>c$/year</units>
+			</aux>
+			<aux name="raw over allocation">
+				<dimensions>
+					<dim name="Run"/>
+					<dim name="EnergySource"/>
+				</dimensions>
+				<eqn>MAX(0, initial_allocation[Run,EnergySource] - maximum_allowed_allocation[Run,EnergySource])</eqn>
+				<units>c$/Year</units>
 			</aux>
 		</variables>
 		<views>
@@ -4216,7 +4224,7 @@ MAX(0, initial_allocation[Run,EnergySource] - historical_initial_allocation[Run,
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="768" page_height="588" isee:page_cols="8" isee:page_rows="8" isee:scroll_x="120" isee:scroll_y="1305" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="768" page_height="588" isee:page_cols="8" isee:page_rows="8" isee:scroll_x="874" isee:scroll_y="1365" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="11pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -5298,7 +5306,7 @@ MAX(0, initial_allocation[Run,EnergySource] - historical_initial_allocation[Run,
 				<aux x="935.28" y="2061.22" name="shape"/>
 				<aux x="1014.07" y="2113.44" name="desired investment\nby source"/>
 				<aux x="1096.21" y="2072.48" name="priority by source initial allocation"/>
-				<aux font_style="italic" font_weight="bold" x="1265.89" y="1928.62" name="switch use exogenous maximum\nenergy capacity additions"/>
+				<aux font_style="italic" font_weight="bold" x="1313.25" y="1951.98" name="switch use exogenous maximum\nenergy capacity additions"/>
 				<aux x="1123.92" y="1969.98" name="initial allocation"/>
 				<connector uid="681" angle="77.5562">
 					<from>desired_investment_by_source</from>
@@ -5340,7 +5348,7 @@ MAX(0, initial_allocation[Run,EnergySource] - historical_initial_allocation[Run,
 					<to>initial_allocation_kept</to>
 				</connector>
 				<aux x="1123.92" y="1843.46" name="initial allocation\nto be reallocated"/>
-				<connector uid="694" angle="149.043">
+				<connector uid="694" angle="150.18">
 					<from>switch_use_exogenous_maximum_energy_capacity_additions</from>
 					<to>initial_allocation_to_be_reallocated</to>
 				</connector>
@@ -5494,40 +5502,45 @@ https://en.wikipedia.org/wiki/Proportional%E2%80%93integral%E2%80%93derivative_c
 					<from>priority_scale_factor</from>
 					<to>priority_by_source_second_allocation</to>
 				</connector>
-				<aux font_style="italic" font_weight="bold" x="1207" y="1715.25" name="damages start time"/>
-				<connector uid="726" angle="249.134">
+				<aux font_style="italic" font_weight="bold" x="1141.92" y="1654.36" name="damages start time"/>
+				<connector uid="726" angle="276.64">
 					<from>damages_start_time</from>
 					<to>initial_allocation_to_be_reallocated</to>
 				</connector>
-				<aux x="1272.89" y="1864.74" name="historical initial allocation"/>
-				<connector uid="754" angle="58.8034">
+				<aux x="1374.05" y="1852.94" name="maximum allowed allocation"/>
+				<connector uid="754" angle="48.6407">
 					<from>initial_allocation</from>
-					<to>historical_initial_allocation</to>
+					<to>maximum_allowed_allocation</to>
 				</connector>
-				<aux x="1325.83" y="1816" name="count"/>
-				<connector uid="757" angle="227.114">
+				<aux x="1590" y="1843.46" name="count"/>
+				<connector uid="757" angle="182.513">
 					<from>count</from>
-					<to>historical_initial_allocation</to>
+					<to>maximum_allowed_allocation</to>
 				</connector>
-				<aux x="1247.89" y="1786.25" name="over allocation"/>
-				<connector uid="758" angle="80.9909">
-					<from>initial_allocation</from>
-					<to>over_allocation</to>
-				</connector>
-				<connector uid="759" angle="103.178">
-					<from>historical_initial_allocation</from>
-					<to>over_allocation</to>
-				</connector>
-				<connector uid="763" angle="73.0536">
+				<aux x="1210.91" y="1777.17" name="over allocation"/>
+				<connector uid="763" angle="47.7655">
 					<from>switch_use_exogenous_maximum_energy_capacity_additions</from>
-					<to>historical_initial_allocation</to>
+					<to>maximum_allowed_allocation</to>
 				</connector>
-				<connector uid="768" angle="177.968">
+				<connector uid="768" angle="190.503">
 					<from>over_allocation</from>
 					<to>initial_allocation_to_be_reallocated</to>
 				</connector>
-				<connector uid="769" angle="122.206">
+				<connector uid="769" angle="98.1075">
 					<from>switch_use_exogenous_maximum_energy_capacity_additions</from>
+					<to>over_allocation</to>
+				</connector>
+				<aux x="1313.25" y="1795.17" name="raw over allocation"/>
+				<connector uid="772" angle="104.63">
+					<from>maximum_allowed_allocation</from>
+					<to>raw_over_allocation</to>
+				</connector>
+				<connector uid="773" angle="67.7158">
+					<from>initial_allocation</from>
+					<to>raw_over_allocation</to>
+				</connector>
+				<connector uid="774" angle="147.656">
+					<from>raw_over_allocation</from>
 					<to>over_allocation</to>
 				</connector>
 				<alias font_style="italic" font_weight="bold" uid="670" x="1934.33" y="1424.33" width="18" height="18">
@@ -19151,7 +19164,7 @@ ELSE
 				<units>dmnl</units>
 			</aux>
 			<aux name="switch use exogenous maximum\nenergy capacity additions" access="output" isee:autocreated="true">
-				<eqn>1</eqn>
+				<eqn>0</eqn>
 				<units>dmnl</units>
 			</aux>
 			<aux name="UNIT Mp to p" access="output" isee:autocreated="true">
