@@ -5,7 +5,7 @@
 		<name>Energy</name>
 		<uuid>53030c2e-cd2f-4ffd-b370-dc25b4a09591</uuid>
 		<vendor>isee systems, inc.</vendor>
-		<product version="3.8.1" isee:build_number="3614" isee:saved_by_v1="true" lang="en">Stella Architect</product>
+		<product version="3.8" isee:build_number="3578" isee:saved_by_v1="true" lang="en">Stella Architect</product>
 	</header>
 	<sim_specs isee:sim_duration="1.5" isee:run_prefix="Run" isee:simulation_delay="0.125" isee:restore_on_start="false" isee:save_interval="2" method="Euler" time_units="Months" isee:instantaneous_flows="false" isee:ignore_module_errors="false" isee:strict_units="false" isee:loop_scores="true" isee:loop_exhaustive_allowed="1000">
 		<start>0</start>
@@ -959,7 +959,7 @@
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="1123" page_height="793" isee:page_cols="12" isee:page_rows="7" isee:scroll_x="118.75" zoom="80" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="768" page_height="588" isee:page_cols="12" isee:page_rows="7" isee:scroll_x="118.75" zoom="80" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -4161,25 +4161,10 @@ HISTORY(initial_allocation,  TIME,  count,  1)</eqn>
 					<dim name="Run"/>
 					<dim name="EnergySource"/>
 				</dimensions>
-				<eqn>initial_allocation[Run,EnergySource] - historical_initial_allocation[Run,EnergySource]</eqn>
-				<units>c$/year</units>
-			</aux>
-			<aux name="initial allocation\nto be reallocated 1">
-				<dimensions>
-					<dim name="Run"/>
-					<dim name="EnergySource"/>
-				</dimensions>
-				<eqn>IF TIME &gt;= damages_start_time AND switch_use_exogenous_maximum_energy_capacity_additions = 1
-THEN 
-(IF EnergySource=EnergySource.Coal_fuel_extraction OR EnergySource=EnergySource.Coal_energy_conversion OR EnergySource=EnergySource.Oil_fuel_extraction OR EnergySource=EnergySource.Oil_energy_conversion OR EnergySource=EnergySource.Gas_fuel_extraction OR EnergySource=EnergySource.Gas_energy_conversion OR EnergySource=EnergySource.Hydropower OR EnergySource=EnergySource.Nuclear
-THEN
-over_allocation[Run,EnergySource]
-ELSE
+				<eqn>IF switch_use_exogenous_maximum_energy_capacity_additions = 0 THEN
 0
-)
-ELSE 
-0</eqn>
-				<format precision="max"/>
+ELSE
+MAX(0, initial_allocation[Run,EnergySource] - historical_initial_allocation[Run,EnergySource])</eqn>
 				<units>c$/year</units>
 			</aux>
 		</variables>
@@ -4231,7 +4216,7 @@ ELSE
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="1123" page_height="793" isee:page_cols="8" isee:page_rows="8" isee:scroll_x="794" isee:scroll_y="1605" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="768" page_height="588" isee:page_cols="8" isee:page_rows="8" isee:scroll_x="120" isee:scroll_y="1305" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="11pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -5533,26 +5518,17 @@ https://en.wikipedia.org/wiki/Proportional%E2%80%93integral%E2%80%93derivative_c
 					<from>historical_initial_allocation</from>
 					<to>over_allocation</to>
 				</connector>
-				<connector uid="763" angle="66.1915">
+				<connector uid="763" angle="73.0536">
 					<from>switch_use_exogenous_maximum_energy_capacity_additions</from>
 					<to>historical_initial_allocation</to>
-				</connector>
-				<aux x="1357.92" y="1752.46" name="initial allocation\nto be reallocated 1"/>
-				<connector uid="765" angle="11.1497">
-					<from>damages_start_time</from>
-					<to>initial_allocation_to_be_reallocated_1</to>
-				</connector>
-				<connector uid="766" angle="87.4164">
-					<from>switch_use_exogenous_maximum_energy_capacity_additions</from>
-					<to>initial_allocation_to_be_reallocated_1</to>
-				</connector>
-				<connector uid="767" angle="42.0716">
-					<from>over_allocation</from>
-					<to>initial_allocation_to_be_reallocated_1</to>
 				</connector>
 				<connector uid="768" angle="177.968">
 					<from>over_allocation</from>
 					<to>initial_allocation_to_be_reallocated</to>
+				</connector>
+				<connector uid="769" angle="122.206">
+					<from>switch_use_exogenous_maximum_energy_capacity_additions</from>
+					<to>over_allocation</to>
 				</connector>
 				<alias font_style="italic" font_weight="bold" uid="670" x="1934.33" y="1424.33" width="18" height="18">
 					<of>Cost_of_Extra_Energy_Output_through_Capital_per_Unit_7</of>
@@ -19175,9 +19151,7 @@ ELSE
 				<units>dmnl</units>
 			</aux>
 			<aux name="switch use exogenous maximum\nenergy capacity additions" access="output" isee:autocreated="true">
-				<eqn>IF TIME &lt;= damages_start_time THEN 0
-ELSE
-1</eqn>
+				<eqn>1</eqn>
 				<units>dmnl</units>
 			</aux>
 			<aux name="UNIT Mp to p" access="output" isee:autocreated="true">
@@ -19318,10 +19292,6 @@ ELSE
 				<connector uid="4" angle="325.408">
 					<from>damages_start_time</from>
 					<to>switch_use_exogenous_capital_cost_increase</to>
-				</connector>
-				<connector uid="5" angle="214.875">
-					<from>damages_start_time</from>
-					<to>switch_use_exogenous_maximum_energy_capacity_additions</to>
 				</connector>
 			</view>
 		</views>
