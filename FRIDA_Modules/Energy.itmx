@@ -5,7 +5,7 @@
 		<name>Energy</name>
 		<uuid>53030c2e-cd2f-4ffd-b370-dc25b4a09591</uuid>
 		<vendor>isee systems, inc.</vendor>
-		<product version="3.8" isee:build_number="3578" isee:saved_by_v1="true" lang="en">Stella Architect</product>
+		<product version="3.8.1" isee:build_number="development" isee:saved_by_v1="true" lang="en">Stella Architect</product>
 	</header>
 	<sim_specs isee:sim_duration="1.5" isee:run_prefix="Run" isee:simulation_delay="0.125" isee:restore_on_start="false" isee:save_interval="2" method="Euler" time_units="Months" isee:instantaneous_flows="false" isee:ignore_module_errors="false" isee:strict_units="false" isee:loop_scores="true" isee:loop_exhaustive_allowed="1000">
 		<start>0</start>
@@ -263,6 +263,8 @@
 				<connect2 to="Inflation.demand_for_energy" from="energy_demand.demand_for_energy"/>
 				<connect to="energy_demand.average_marginal_net_cost_of_energy_with_historical_cost_adjustment" from="energy_investments.average_marginal_net_cost_of_energy_with_historical_cost_adjustment"/>
 				<connect2 to="energy_demand.average_marginal_net_cost_of_energy_with_historical_cost_adjustment" from="energy_investments.average_marginal_net_cost_of_energy_with_historical_cost_adjustment"/>
+				<connect to="energy_demand.damages_start_time" from="Energy_Units.damages_start_time"/>
+				<connect2 to="energy_demand.damages_start_time" from="Energy_Units.damages_start_time"/>
 				<connect to="energy_demand.per_person_use_of_energy_policy" from="Behavioral_Choices.per_person_use_of_energy_policy"/>
 				<connect2 to="energy_demand.per_person_use_of_energy_policy" from="Behavioral_Choices.per_person_use_of_energy_policy"/>
 				<connect to="energy_demand.Policy_Start_Year" from="Behavioral_Choices.start_year"/>
@@ -449,6 +451,8 @@
 				<connect2 to="Damages.today" from="Climate.climate_impact_stoptime"/>
 				<connect to="Damages.UNIT_deg_C_to_dmnl" from="Energy_Units.UNIT_deg_C_to_dmnl"/>
 				<connect2 to="Damages.UNIT_deg_C_to_dmnl" from="Energy_Units.UNIT_deg_C_to_dmnl"/>
+				<connect to="efficiency_reduction_in_power_plants.damages_start_time" from="Energy_Units.damages_start_time"/>
+				<connect2 to="efficiency_reduction_in_power_plants.damages_start_time" from="Energy_Units.damages_start_time"/>
 				<connect to="efficiency_reduction_in_power_plants.selected_energy_supply_hydroelectric_damages_case" from="Climate_Units.selected_energy_supply_hydroelectric_damages_case"/>
 				<connect2 to="efficiency_reduction_in_power_plants.selected_energy_supply_hydroelectric_damages_case" from="Climate_Units.selected_energy_supply_hydroelectric_damages_case"/>
 				<connect to="efficiency_reduction_in_power_plants.selected_energy_supply_damages_case" from="Climate_Units.selected_energy_supply_thermoelectric_damages_case"/>
@@ -813,6 +817,10 @@
 				<connect2 to="fossil_energy_oil.damaged_capital_cost_factor" from="Energy_Units.damaged_capital_cost_factor"/>
 				<connect to="hydropower_energy.damaged_capital_cost_factor" from="Energy_Units.damaged_capital_cost_factor"/>
 				<connect2 to="hydropower_energy.damaged_capital_cost_factor" from="Energy_Units.damaged_capital_cost_factor"/>
+				<connect to="efficiency_reduction_in_power_plants.damages_start_time" from="Energy_Units.damages_start_time"/>
+				<connect2 to="efficiency_reduction_in_power_plants.damages_start_time" from="Energy_Units.damages_start_time"/>
+				<connect to="energy_demand.damages_start_time" from="Energy_Units.damages_start_time"/>
+				<connect2 to="energy_demand.damages_start_time" from="Energy_Units.damages_start_time"/>
 				<connect to="energy_investments.damages_start_time" from="Energy_Units.damages_start_time"/>
 				<connect2 to="energy_investments.damages_start_time" from="Energy_Units.damages_start_time"/>
 				<connect to="bio_fuel_energy.general_capital_cost_factor" from="Energy_Units.general_capital_cost_factor"/>
@@ -2008,10 +2016,9 @@ Based on GCM output of the past</doc>
 				<eqn>IF switch_use_exogenous_energy_demand 
 THEN
 exogenous_Change_in_energy_used_for_cooling_due_to_climate_change
-ELSE IF switch_use_exogenous_energy_demand = 0
+ELSE IF switch_use_exogenous_energy_demand = 0 OR TIME &lt;= damages_start_time
 THEN
 0
-
 ELSE
 energy_use_per_CDD*CDD_change_to_preindustrial</eqn>
 				<units>GJ/(Person*Year)</units>
@@ -2228,6 +2235,10 @@ Change_in_energy_used_for_Heating_due_to_climate_change_in_MWh + Change_in_energ
 				<eqn>0</eqn>
 				<units>dmnl</units>
 			</aux>
+			<aux name="damages start time" access="input">
+				<eqn>2020</eqn>
+				<units>year</units>
+			</aux>
 		</variables>
 		<views>
 			<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
@@ -2277,7 +2288,7 @@ Change_in_energy_used_for_Heating_due_to_climate_change_in_MWh + Change_in_energ
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="1123" page_height="793" isee:page_cols="3" isee:page_rows="3" isee:scroll_y="68.75" zoom="80" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="768" page_height="588" isee:page_cols="3" isee:page_rows="3" isee:scroll_x="381.25" zoom="80" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="11pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -2630,6 +2641,11 @@ This affects the energy use per CCD, energy use per HDD variables. Any change in
 				</connector>
 				<connector uid="141" angle="356.245">
 					<from>exogenous_Change_in_energy_used_for_cooling_due_to_climate_change</from>
+					<to>Change_in_energy_used_for_cooling_due_to_climate_change</to>
+				</connector>
+				<aux font_style="italic" font_weight="bold" x="642.271" y="156.416" name="damages start time"/>
+				<connector uid="142" angle="284.185">
+					<from>damages_start_time</from>
 					<to>Change_in_energy_used_for_cooling_due_to_climate_change</to>
 				</connector>
 				<alias font_style="italic" font_weight="bold" uid="139" x="633" y="254.75" width="18" height="18">
@@ -4091,7 +4107,7 @@ initial_allocation_to_be_reallocated[Run,Hydropower] + initial_allocation_to_be_
 					<dim name="Run"/>
 					<dim name="EnergySource"/>
 				</dimensions>
-				<eqn>initial_allocation - initial_allocation_to_be_reallocated</eqn>
+				<eqn>MAX(0, initial_allocation - initial_allocation_to_be_reallocated)</eqn>
 				<units>c$/year</units>
 			</aux>
 			<aux name="initial allocation\nto be reallocated">
@@ -4224,7 +4240,7 @@ PREVIOUS(raw_over_allocation, 0)</eqn>
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="768" page_height="588" isee:page_cols="8" isee:page_rows="8" isee:scroll_x="874" isee:scroll_y="1365" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="768" page_height="588" isee:page_cols="8" isee:page_rows="8" isee:scroll_x="850" isee:scroll_y="1125" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="11pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -6202,6 +6218,8 @@ Arbitrary unit of energy used to calculate the differentials of cost to produce 
 				<connect2 to="fossil_energy_oil.effect_of_STA_on_thermal_power_energy_capacity_efficiency" from="efficiency_reduction_in_power_plants.effect_of_STA_on_river_cooled_thermal_power_energy_capacity_efficiency"/>
 				<connect to="nuclear_energy.effect_of_STA_on_thermal_power_energy_capacity_efficiency" from="efficiency_reduction_in_power_plants.effect_of_STA_on_river_cooled_thermal_power_energy_capacity_efficiency"/>
 				<connect2 to="nuclear_energy.effect_of_STA_on_thermal_power_energy_capacity_efficiency" from="efficiency_reduction_in_power_plants.effect_of_STA_on_river_cooled_thermal_power_energy_capacity_efficiency"/>
+				<connect to="efficiency_reduction_in_power_plants.damages_start_time" from="Energy_Units.damages_start_time"/>
+				<connect2 to="efficiency_reduction_in_power_plants.damages_start_time" from="Energy_Units.damages_start_time"/>
 				<connect to="efficiency_reduction_in_power_plants.selected_energy_supply_hydroelectric_damages_case" from="Climate_Units.selected_energy_supply_hydroelectric_damages_case"/>
 				<connect2 to="efficiency_reduction_in_power_plants.selected_energy_supply_hydroelectric_damages_case" from="Climate_Units.selected_energy_supply_hydroelectric_damages_case"/>
 				<connect to="efficiency_reduction_in_power_plants.selected_energy_supply_damages_case" from="Climate_Units.selected_energy_supply_thermoelectric_damages_case"/>
@@ -6327,7 +6345,7 @@ Arbitrary unit of energy used to calculate the differentials of cost to produce 
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="1123" page_height="793" isee:page_cols="2" isee:page_rows="2" zoom="60" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="768" page_height="588" isee:page_cols="2" isee:page_rows="2" zoom="60" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="11pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -6796,15 +6814,9 @@ absolute guess</doc>
 				<dimensions>
 					<dim name="Run"/>
 				</dimensions>
-				<eqn>IF switch_use_exogenous_energy_efficiency_damages THEN 
-exogenous_effect_of_STA_on_river_cooled_thermal_power_energy_capacity_efficiency
-ELSE IF 
-switch_use_exogenous_energy_efficiency_damages = 0 THEN 
-1
-
-
-ELSE
-IF (switch_energy_damage = 0) AND TIME &gt; today THEN
+				<eqn>IF switch_use_exogenous_energy_efficiency_damages THEN  exogenous_effect_of_STA_on_river_cooled_thermal_power_energy_capacity_efficiency
+ELSE IF switch_use_exogenous_energy_efficiency_damages = 0 OR TIME &lt;= damages_start_time THEN 1
+ELSE IF (switch_energy_damage = 0) AND TIME &gt; today THEN
 previous_effect_of_STA_on_thermal_power_energy_capacity_efficiency
 ELSE
 1+ (effect_of_STA_on_river_cooled_thermal_powerplant_energy_capacity_efficiency_slope[selected_energy_supply_damages_case]*Surface_Temperature_Anomaly+effect_of_STA_on_river_cooled_thermal_power_energy_capacity_efficiency_quadratic[selected_energy_supply_damages_case]*Surface_Temperature_Anomaly^2)/100</eqn>
@@ -6906,11 +6918,8 @@ ELSE
 				<eqn>IF switch_use_exogenous_energy_efficiency_damages THEN 
 exogenous_effect_of_STA_on_hydropower_energy_capacity_efficiency
 ELSE IF 
-switch_use_exogenous_energy_efficiency_damages = 0 THEN 
+switch_use_exogenous_energy_efficiency_damages = 0 OR TIME &lt;= damages_start_time THEN 
 1
-
-
-
 ELSE
 IF (switch_energy_damage = 0) AND TIME &gt; today THEN
 previous_effect_of_STA_on_hydropower_energy_capacity_efficiency
@@ -7050,6 +7059,10 @@ ELSE
 				<eqn>0</eqn>
 				<units>dmnl</units>
 			</aux>
+			<aux name="damages start time" access="input">
+				<eqn>2020</eqn>
+				<units>year</units>
+			</aux>
 		</variables>
 		<views>
 			<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
@@ -7099,7 +7112,7 @@ ELSE
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="1123" page_height="793" isee:page_cols="2" isee:page_rows="2" isee:scroll_y="20" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="768" page_height="588" isee:page_cols="2" isee:page_rows="2" isee:scroll_x="71" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="11pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -7242,6 +7255,17 @@ ELSE
 					<from>exogenous_effect_of_STA_on_hydropower_energy_capacity_efficiency</from>
 					<to>effect_of_STA_on_hydropower_energy_capacity_efficiency</to>
 				</connector>
+				<aux font_style="italic" font_weight="bold" x="765" y="83" name="damages start time"/>
+				<connector uid="32" angle="310.732">
+					<from>damages_start_time</from>
+					<to>effect_of_STA_on_hydropower_energy_capacity_efficiency</to>
+				</connector>
+				<connector uid="33" angle="275.356">
+					<from>
+						<alias uid="34"/>
+					</from>
+					<to>effect_of_STA_on_river_cooled_thermal_power_energy_capacity_efficiency</to>
+				</connector>
 				<alias font_style="italic" font_weight="bold" uid="26" x="225" y="441" width="18" height="18">
 					<of>switch_energy_damage</of>
 				</alias>
@@ -7253,6 +7277,9 @@ ELSE
 				</alias>
 				<alias uid="30" x="1195.15" y="404" width="18" height="18">
 					<of>switch_use_exogenous_energy_efficiency_damages</of>
+				</alias>
+				<alias font_style="italic" font_weight="bold" uid="34" x="280" y="126" width="18" height="18">
+					<of>damages_start_time</of>
 				</alias>
 			</view>
 		</views>
@@ -7688,7 +7715,7 @@ Primary_Fossil_Energy_FUEL_1+
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="1123" page_height="793" isee:page_cols="4" isee:page_rows="4" zoom="140" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="768" page_height="588" isee:page_cols="4" isee:page_rows="4" zoom="140" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="11pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -9108,7 +9135,7 @@ We apply this independent of fuel for now.</doc>
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="1123" page_height="793" isee:page_cols="4" isee:page_rows="4" isee:scroll_x="905" isee:scroll_y="21.25" zoom="80" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="768" page_height="588" isee:page_cols="4" isee:page_rows="4" isee:scroll_x="27.5" zoom="80" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="11pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -19146,21 +19173,15 @@ https://en.wikipedia.org/wiki/British_thermal_unit</doc>
 				<units>1/(deg C)</units>
 			</aux>
 			<aux name="switch use exogenous energy efficiency damages" access="output" isee:autocreated="true">
-				<eqn>IF TIME &lt;= damages_start_time THEN 0
-ELSE
-0</eqn>
+				<eqn>0</eqn>
 				<units>dmnl</units>
 			</aux>
 			<aux name="switch use exogenous energy\ndemand" access="output" isee:autocreated="true">
-				<eqn>IF TIME &lt;= damages_start_time THEN 0
-ELSE
-0</eqn>
+				<eqn>0</eqn>
 				<units>dmnl</units>
 			</aux>
 			<aux name="switch use exogenous\ncapital cost increase" access="output" isee:autocreated="true">
-				<eqn>IF TIME &lt;= damages_start_time THEN 0
-ELSE
-0</eqn>
+				<eqn>IF TIME &lt;= damages_start_time THEN 0 ELSE 0</eqn>
 				<units>dmnl</units>
 			</aux>
 			<aux name="switch use exogenous maximum\nenergy capacity additions" access="output" isee:autocreated="true">
@@ -19236,7 +19257,7 @@ ELSE
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="1123" page_height="793" isee:page_cols="2" isee:scroll_x="365" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="768" page_height="588" isee:page_cols="2" isee:scroll_x="365" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="11pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -19294,15 +19315,7 @@ ELSE
 				<aux x="795.5" y="111.503" name="general capital cost factor"/>
 				<aux x="795.5" y="41.667" name="damaged\ncapital cost factor"/>
 				<aux x="717" y="253" name="damages start time"/>
-				<connector uid="1" angle="150.841">
-					<from>damages_start_time</from>
-					<to>switch_use_exogenous_energy_efficiency_damages</to>
-				</connector>
-				<connector uid="2" angle="28.3667">
-					<from>damages_start_time</from>
-					<to>switch_use_exogenous_energy_demand</to>
-				</connector>
-				<connector uid="4" angle="325.408">
+				<connector uid="1" angle="328.15">
 					<from>damages_start_time</from>
 					<to>switch_use_exogenous_capital_cost_increase</to>
 				</connector>
