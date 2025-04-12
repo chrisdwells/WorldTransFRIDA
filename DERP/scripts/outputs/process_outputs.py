@@ -66,7 +66,10 @@ for scen in scenarios:
     if scen == 'NDC_EI_DERP2_HD':
         offset = 0
     
-    df_out = copy.deepcopy(df_template)
+    df_out_50 = copy.deepcopy(df_template)
+    df_out_5 = copy.deepcopy(df_template)
+    df_out_95 = copy.deepcopy(df_template)
+
     
     df_scen = pd.read_csv(f'../../data/outputs/raw/{scen}.csv')
     df_scen = df_scen.loc[df_scen['Year'].isin(years)]
@@ -78,15 +81,32 @@ for scen in scenarios:
             in_data[:,i] = df_scen[f'="Run {i+1 + offset}: {var}"']
             
         median_data = np.nanpercentile(in_data[:,keep], 50, axis=1)
+        perc_data_5 = np.nanpercentile(in_data[:,keep], 5, axis=1)
+        perc_data_95 = np.nanpercentile(in_data[:,keep], 95, axis=1)
+
         
-        row_out = ['FRIDAv2.1', scen, 'World', 
+        row_out_med = ['FRIDAv2.1', scen, 'World', 
                  frida_to_iamc.loc[frida_to_iamc['FRIDA name'] == var]['IAMC name'].values[0],
                  frida_to_iamc.loc[frida_to_iamc['FRIDA name'] == var]['Units'].values[0],
                  ] + list(median_data)
 
-        df_out.loc[len(df_out)] = row_out
+        row_out_5 = ['FRIDAv2.1', scen, 'World', 
+                 frida_to_iamc.loc[frida_to_iamc['FRIDA name'] == var]['IAMC name'].values[0],
+                 frida_to_iamc.loc[frida_to_iamc['FRIDA name'] == var]['Units'].values[0],
+                 ] + list(perc_data_5)
 
-    df_out.to_csv(f'../../data/outputs/processed/FRIDA_{scen}.csv', index=False)
+        row_out_95 = ['FRIDAv2.1', scen, 'World', 
+                 frida_to_iamc.loc[frida_to_iamc['FRIDA name'] == var]['IAMC name'].values[0],
+                 frida_to_iamc.loc[frida_to_iamc['FRIDA name'] == var]['Units'].values[0],
+                 ] + list(perc_data_95)        
+
+        df_out_50.loc[len(df_out_50)] = row_out_med
+        df_out_5.loc[len(df_out_5)] = row_out_5
+        df_out_95.loc[len(df_out_95)] = row_out_95
+
+    df_out_50.to_csv(f'../../data/outputs/processed/FRIDA_{scen}.csv', index=False)
+    df_out_5.to_csv(f'../../data/outputs/processed/FRIDA_{scen}_5th.csv', index=False)
+    df_out_95.to_csv(f'../../data/outputs/processed/FRIDA_{scen}_95th.csv', index=False)
             
         
     

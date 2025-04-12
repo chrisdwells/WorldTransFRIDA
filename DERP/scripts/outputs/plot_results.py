@@ -30,8 +30,6 @@ baseline_data =  pd.read_csv("../../data/outputs/raw/NDC_EI_DERP2_HD.csv", index
 
 n_members = 1000
 
-# remove_nans = False
-
 varlist = [
      'Energy Balance Model.Surface Temperature Anomaly[1]',
      'Emissions.Total CO2 Emissions[1]',
@@ -58,10 +56,9 @@ varlist = [
          ]
     
 #%%
-
 remove_nans = True
 plot_diff = False
-plot_uncertainties = True
+plot_uncertainties = False
 # find the indices where all the runs have full data. 
 # we have to make sure we're plotting the same members for each scenario, so
 # if the member has nans for any scenario then it has to be discarded - if we
@@ -104,7 +101,7 @@ name_str = ''
 if remove_nans:
     name_str = name_str + '_no_nans'
 if plot_uncertainties:
-    name_str = name_str + 'with 16-84%'    
+    name_str = name_str + 'with 5-95%'    
     
 perc_removed = 100*((n_members - (len(keep)))/n_members)
 
@@ -127,8 +124,8 @@ for var in varlist:
              color='black', alpha=1, label='NDC')
     
     if plot_uncertainties:
-        plt.fill_between(baseline_data['Year'], np.nanpercentile(base_data[:,keep], 16, axis=1),
-                 np.nanpercentile(base_data[:,keep], 84, axis=1),
+        plt.fill_between(baseline_data['Year'], np.nanpercentile(base_data[:,keep], 5, axis=1),
+                 np.nanpercentile(base_data[:,keep], 95, axis=1),
                  color='black', alpha=0.3, linewidth=0)
         
     
@@ -145,8 +142,8 @@ for var in varlist:
                  color=plt.cm.tab20(s_i), alpha=1, label=scenario)
         
         if plot_uncertainties:
-            plt.fill_between(scenario_data[scenario]['Year'], np.nanpercentile(var_data[:,keep], 16, axis=1),
-                     np.nanpercentile(var_data[:,keep], 84, axis=1),
+            plt.fill_between(scenario_data[scenario]['Year'], np.nanpercentile(var_data[:,keep], 5, axis=1),
+                     np.nanpercentile(var_data[:,keep], 95, axis=1),
                      color=plt.cm.tab20(s_i), alpha=0.3, linewidth=0)
             
         
@@ -158,8 +155,8 @@ for var in varlist:
                       color='red', alpha=1, label='Difference')
             
             if plot_uncertainties:
-                plt.fill_between(scenario_data[scenario]['Year'], np.nanpercentile(diff, 16, axis=1),
-                          np.nanpercentile(diff, 84, axis=1),
+                plt.fill_between(scenario_data[scenario]['Year'], np.nanpercentile(diff, 5, axis=1),
+                          np.nanpercentile(diff, 95, axis=1),
                           color='red', alpha=0.3, linewidth=0)
                 
         
