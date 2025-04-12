@@ -1,0 +1,23 @@
+FRIDA name,IAMC name,Units,Consistent with vars_list.txt ,Extended based on vars_list.txt,Added extra,Notes
+Energy Balance Model.Surface Temperature Anomaly[1],Temperature Anomaly,K,,,x,Guessed
+Emissions.Total CO2 Emissions[1],CO2 Emissions,MtCO2/Year,,,x,Guessed
+Emissions.CO2 emissions from Energy[1],CO2 Emissions|Energy,MtCO2/Year,,,x,Guessed
+Emissions.CO2 Emissions from Food and Land Use[1],CO2 Emissions|Food and Land Use,MtCO2/Year,,,x,Guessed
+solar energy.Current Solar Capacity[1],Capacity|Electricity|Solar,GW,x,,,
+wind energy.Current Wind Capacity[1],Capacity|Electricity|Wind,GW,x,,,
+bio fuel energy.bio fuel production Capacity[1],Capacity|Biomass,Mt/Year,,x,,Should be biofuel?
+bio fuel energy.bio fuel production[1],Production|Biomass,Mt/Year,,x,,"Should be biofuel? And ""production""?"
+fossil energy coal.Fossil Energy and Fuel Capital[1],Capacity|Coal,c$,,x,,Units aren't traditional capacity - are real 2021 $
+fossil energy gas.Fossil Energy and Fuel Capital[1],Capacity|Gas,c$,,x,,Units aren't traditional capacity - are real 2021 $
+fossil energy oil.Fossil Energy and Fuel Capital[1],Capacity|Oil,c$,,x,,Units aren't traditional capacity - are real 2021 $
+hydropower energy.Hydropower Energy Capacity[1],Capacity|Electricity|Hydro,GW,x,,,
+nuclear energy.Nuclear Energy Capacity[1],Capacity|Electricity|Nuclear,GW,x,,,
+energy supply.Total Energy Output[1],Secondary Energy,TWh/Year,x,,,
+fossil energy coal.Secondary Fossil Energy Output[1],Secondary Energy|Coal,TWh/Year,,x,,
+fossil energy gas.Secondary Fossil Energy Output[1],Secondary Energy|Gas,TWh/Year,,x,,
+fossil energy oil.Secondary Fossil Energy Output[1],Secondary Energy|Oil,TWh/Year,,x,,
+nuclear energy.Nuclear Energy Output[1],Secondary Energy|Electricity|Nuclear,TWh/Year,x,,,
+bio fuel energy.bio fuel secondary energy output[1],Secondary Energy|Biomass,TWh/Year,,x,,Should be biofuel?
+hydropower energy.Hydropower Energy Output[1],Secondary Energy|Electricity|Hydro,TWh/Year,x,,,
+solar energy.Solar Energy Output[1],Secondary Energy|Electricity|Solar,TWh/Year,x,,,
+wind energy.Wind Energy Output[1],Secondary Energy|Electricity|Wind,TWh/Year,x,,,
