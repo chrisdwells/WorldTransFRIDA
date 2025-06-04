@@ -1,3 +1,4 @@
 *.DS_Store
 DERP/data/outputs/raw/*.csv
+DERP/figures/
 *.isdb
