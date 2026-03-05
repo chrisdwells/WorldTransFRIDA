@@ -1,12 +1,10 @@
 import pandas as pd
 # import numpy as np
 
-# numbers from Scenario_runs(Heatwaves&Drought_Scens_post_GA).csv
-
 # 1st value is cost increase of the damaged capital (ie thermoelectric plants
 # and hydro); 2nd is the general capital cost increase
 cost_combinations = [
-    [30, 20],
+    # [30, 20], # removed in v2
     [20, 10],
     ]
 

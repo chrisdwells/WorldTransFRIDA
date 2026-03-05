@@ -7,8 +7,8 @@ y1 = 1980
 y2 = 2150
 nt = y2 - y1 + 1
 
-multiples = [1, 2, 3, 4, 5]
-
+multiples = [1]#, 2, 3, 4, 5] # removed multiples in v2
+scens = ['rcp85'] #'rcp26' # remove rcp26 in v2
 # bring in as percentage damages
 damage_pcts = {}
 damage_pcts['Hydro'] = {}
@@ -53,7 +53,7 @@ for var in damage_pcts.keys():
 
 
 # make a csv for each scenario and multiple
-for scen in ['rcp26', 'rcp85']:
+for scen in scens:
     for multiple in multiples:
             
         data_dict = {

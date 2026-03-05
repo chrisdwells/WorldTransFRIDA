@@ -1,44 +1,32 @@
 import pandas as pd
 import numpy as np
+import matplotlib.pyplot as plt
 
 y1 = 1980
 y2 = 2150
 nt = y2 - y1 + 1
 
-derps = ['eroded', 'incremental']
+derps = ['Derailment', 'Inertia']
+
+n_regions = 11
 
 for derp in derps:
     
-    df_in = pd.read_csv(f'../../data/sheets/Cooling_demand_pop_WA_gcam_{derp}.csv')
+    df_in = pd.read_csv(f'../../data/sheets/Cooling_demand_{derp}.csv')
     
-    df_in = df_in[['region', 'year', 'e_cool_delta', 'GCAM Region']]
+    df_in = df_in[['year', 'e_cool_delta']]
     
-    regions = set(list(df_in['region']))
     years = set(list(df_in['year']))
     
     global_totals = {}
     for year in years:
-        global_totals[year] = 0
-        for region in regions:
-            
-            df_cropped = df_in.loc[(df_in['year'] == year) & (df_in['region'] == region)]
-            
-            # We need when GCAM region is nan, because that's where the aggregate
-            # regional data is held. But China has its own region, so there isn't
-            # a row with nan in this broader region. Instead, we take the broader
-            # regional value - and check it still has the right shape.
-    
-            df_cropped_delta = df_cropped.loc[pd.isna(df_cropped['GCAM Region']) == True]['e_cool_delta']
-            
-            if len(df_cropped_delta) == 1:
-                global_totals[year] += df_cropped_delta.values[0]
-    
-            else:
-                if len(df_cropped) == 1:
-                    global_totals[year] += df_cropped['e_cool_delta'].values[0]
-                else:
-                    raise Exception(f'Check data; wrong shape: {region} {year}')
-    
+        year_data = df_in.loc[(df_in['year'] == year)]
+        
+        if len(year_data) != n_regions:
+            raise Exception('Wrong # regions?')
+        
+        global_totals[year] = year_data['e_cool_delta'].sum()
+        
     
     data_dict = {
         'Years':np.arange(y1, y2+1, 1),
@@ -64,3 +52,7 @@ for derp in derps:
     
     df_frida = df_frida.set_index('Years')
     df_frida.to_csv(f'../../data/inputs/cooling_energy_demand_{derp}.csv')
+    
+    plt.plot(np.arange(y1, y2+1, 1), df_frida['energy demand.exogenous total Change in energy used for cooling due to climate change'
+          ], label=derp)
+plt.legend()
