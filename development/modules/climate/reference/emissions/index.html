@@ -23,7 +23,7 @@
       
       
       <link rel="icon" href="../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -31,7 +31,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -2704,6 +2704,28 @@
     <span class="md-ellipsis">
       
         Emissions.Kyoto_gas_emissions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#emissions-ch4-emissions-from-biofuels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Emissions.CH4_emissions_from_biofuels
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#emissions-n2o-emissions-from-biofuels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Emissions.N2O_emissions_from_biofuels
       
     </span>
   </a>
@@ -6369,6 +6391,28 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#emissions-ch4-emissions-from-biofuels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Emissions.CH4_emissions_from_biofuels
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#emissions-n2o-emissions-from-biofuels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Emissions.N2O_emissions_from_biofuels
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -6395,7 +6439,7 @@
 
 
 <h1 id="emissions">Emissions<a class="headerlink" href="#emissions" title="Permanent link">&para;</a></h1>
-<p><code>0</code> stocks · <code>0</code> flows · <code>97</code> auxiliaries/parameters · <code>44</code> inputs · source: <code>Emissions.itmx</code></p>
+<p><code>0</code> stocks · <code>0</code> flows · <code>99</code> auxiliaries/parameters · <code>44</code> inputs · source: <code>Emissions.itmx</code></p>
 <p>Auto-generated reference. Variable names are fully qualified as <code>Module.variable</code>. Each entry shows the variable type, classification tags, units, range, the modeller's notes, and the model equation.</p>
 <h2 id="inputs-from-other-modules">Inputs (from other modules)<a class="headerlink" href="#inputs-from-other-modules" title="Permanent link">&para;</a></h2>
 <p>Variables this sub-model reads from elsewhere in FRIDA, shown as their fully-qualified source.</p>
@@ -6473,7 +6517,7 @@
 <p><span class="badge badge-aux">aux</span> <span class="tag tag-calibrated" title="Calibrated against data.">Calibrated</span></p>
 <p><strong>Units:</strong> MtCO2/Year  ·  <strong>Dimensions:</strong> Run</p>
 <p><em>Equation:</em>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>Emissions.Realized_CO2_emissions_from_Energy + Concrete.CO2_emissions + Emissions.CO2_Emissions_from_Food_and_Land_Use + CCS.CO2_Emissions_from_Leakage
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>Emissions.Realized_CO2_emissions_from_Energy + Concrete.CO2_emissions + Emissions.CO2_Emissions_from_Food_and_Land_Use + CCS.CO2_Emissions_from_Leakage - Emissions.CO2_emissions_from_burning_biofuels
 </code></pre></div></p>
 <h3 id="emissions-ch4-baseline-emissions">Emissions.CH4_Baseline_Emissions<a class="headerlink" href="#emissions-ch4-baseline-emissions" title="Permanent link">&para;</a></h3>
 <p><span class="badge badge-aux">aux</span></p>
@@ -6781,7 +6825,8 @@
 <p><em>Equation:</em>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-54-1" name="__codelineno-54-1" href="#__codelineno-54-1"></a>Emissions.N2O_emissions_by_coal[Run]+
 <a id="__codelineno-54-2" name="__codelineno-54-2" href="#__codelineno-54-2"></a>Emissions.N2O_emissions_by_oil[Run]+
-<a id="__codelineno-54-3" name="__codelineno-54-3" href="#__codelineno-54-3"></a>Emissions.N2O_emissions_by_gas[Run]
+<a id="__codelineno-54-3" name="__codelineno-54-3" href="#__codelineno-54-3"></a>Emissions.N2O_emissions_by_gas[Run]+
+<a id="__codelineno-54-4" name="__codelineno-54-4" href="#__codelineno-54-4"></a>Emissions.N2O_emissions_from_biofuels[Run]
 </code></pre></div></p>
 <h3 id="emissions-so2-emissions-from-energy">Emissions.SO2_Emissions_from_Energy<a class="headerlink" href="#emissions-so2-emissions-from-energy" title="Permanent link">&para;</a></h3>
 <p><span class="badge badge-aux">aux</span> <span class="tag tag-calibrated" title="Calibrated against data.">Calibrated</span></p>
@@ -6901,7 +6946,8 @@ Calibration from FRIDA 0.1 or from MIND</p>
 <p><em>Equation:</em>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-69-1" name="__codelineno-69-1" href="#__codelineno-69-1"></a>Emissions.CH4_emissions_from_coal[Run]+
 <a id="__codelineno-69-2" name="__codelineno-69-2" href="#__codelineno-69-2"></a>Emissions.CH4_emissions_from_oil[Run]+
-<a id="__codelineno-69-3" name="__codelineno-69-3" href="#__codelineno-69-3"></a>Emissions.CH4_emissions_by_gas[Run]
+<a id="__codelineno-69-3" name="__codelineno-69-3" href="#__codelineno-69-3"></a>Emissions.CH4_emissions_by_gas[Run]+
+<a id="__codelineno-69-4" name="__codelineno-69-4" href="#__codelineno-69-4"></a>Emissions.CH4_emissions_from_biofuels
 </code></pre></div></p>
 <h3 id="emissions-ch4-emissions-from-coal">Emissions.CH4_emissions_from_coal<a class="headerlink" href="#emissions-ch4-emissions-from-coal" title="Permanent link">&para;</a></h3>
 <p><span class="badge badge-aux">aux</span></p>
@@ -7091,6 +7137,22 @@ Calibration from FRIDA 0.1 or from MIND</p>
 <p><em>Equation:</em>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-96-1" name="__codelineno-96-1" href="#__codelineno-96-1"></a>Emissions.HFC134a_eq_Emissions*Climate_Units.&quot;UNIT_kt_HFC134a-eq_to_tCO2e&quot; + Emissions.Total_N2O_Emissions*Climate_Units.UNIT_ktN2O_to_tCO2e + Emissions.Total_CH4_Emissions*Climate_Units.UNIT_MtCH4_to_tCO2e + Emissions.Total_CO2_Emissions*Climate_Units.UNIT_MtCO2_to_tCO2e
 </code></pre></div></p>
+<h3 id="emissions-ch4-emissions-from-biofuels">Emissions.CH4_emissions_from_biofuels<a class="headerlink" href="#emissions-ch4-emissions-from-biofuels" title="Permanent link">&para;</a></h3>
+<p><span class="badge badge-aux">aux</span></p>
+<p><strong>Units:</strong> MtCH4/year  ·  <strong>Dimensions:</strong> Run</p>
+<p><em>Equation:</em>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-97-1" name="__codelineno-97-1" href="#__codelineno-97-1"></a>Bio_fuel_energy.Carbon_content_of_crops_going_into_biofuel_production
+<a id="__codelineno-97-2" name="__codelineno-97-2" href="#__codelineno-97-2"></a>*
+<a id="__codelineno-97-3" name="__codelineno-97-3" href="#__codelineno-97-3"></a>Emissions.coupling_factor_of_fossil_fuels_and_CH4_emissions[Run,Oil]
+</code></pre></div></p>
+<h3 id="emissions-n2o-emissions-from-biofuels">Emissions.N2O_emissions_from_biofuels<a class="headerlink" href="#emissions-n2o-emissions-from-biofuels" title="Permanent link">&para;</a></h3>
+<p><span class="badge badge-aux">aux</span></p>
+<p><strong>Units:</strong> ktN2O/yr  ·  <strong>Dimensions:</strong> Run</p>
+<p><em>Equation:</em>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-98-1" name="__codelineno-98-1" href="#__codelineno-98-1"></a>Bio_fuel_energy.Carbon_content_of_crops_going_into_biofuel_production
+<a id="__codelineno-98-2" name="__codelineno-98-2" href="#__codelineno-98-2"></a>*
+<a id="__codelineno-98-3" name="__codelineno-98-3" href="#__codelineno-98-3"></a>Emissions.coupling_factor_of_fossil_fuels_and_N2O_emissions[Run,Oil]
+</code></pre></div></p>
 
 
 
@@ -7153,7 +7215,7 @@ Calibration from FRIDA 0.1 or from MIND</p>
       <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.sections", "navigation.top", "navigation.indexes", "toc.follow", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
     
   </body>
