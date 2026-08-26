@@ -24,6 +24,18 @@
 			<elem name="Coal"/>
 		</dim>
 		<dim name="Run" size="1"/>
+		<dim name="Tipping_Points">
+			<elem name="AMOC"/>
+			<elem name="GIS"/>
+			<elem name="WAIS"/>
+			<elem name="AMAZ"/>
+		</dim>
+		<dim name="Tipping_Points_j">
+			<elem name="AMOC"/>
+			<elem name="GIS"/>
+			<elem name="WAIS"/>
+			<elem name="AMAZ"/>
+		</dim>
 	</dimensions>
 	<isee:prefs saved_runs="10" keep="false" show_module_prefix="true" live_update_on_drag="true" show_restore_buttons="false" layer="model" isee:design="Deluxe Prev-Next Blue Green Pastel" isee:design_custom="false" interface_secure_mode="true" interface_scale_ui="true" interface_max_page_width="10000" interface_max_page_height="10000" interface_min_page_width="0" interface_min_page_height="0" rifp="true">
 		<isee:tag_styles>
@@ -299,6 +311,8 @@ Carbon" url="C:/Users/earcwel/Documents/code/Github/chrisdwells/WorldTransFRIDA/
 				<connect2 to="CO2_Forcing.Air_sea_co2_flux_1" from="Ocean.Air_sea_co2_flux"/>
 				<connect to="Ocean.Atmospheric_CO2_Concentration" from="CO2_Forcing.Atmospheric_CO2_Concentration"/>
 				<connect2 to="Ocean.Atmospheric_CO2_Concentration" from="CO2_Forcing.Atmospheric_CO2_Concentration"/>
+				<connect to="Ocean.Ocean_uptake_weakening_due_to_AMOC" from="Tipping.Ocean_uptake_weakening_due_to_AMOC"/>
+				<connect2 to="Ocean.Ocean_uptake_weakening_due_to_AMOC" from="Tipping.Ocean_uptake_weakening_due_to_AMOC"/>
 				<connect to="Ocean.selected_climate_case" from="Climate_Units.selected_climate_case"/>
 				<connect2 to="Ocean.selected_climate_case" from="Climate_Units.selected_climate_case"/>
 				<connect to="Ocean.selected_climate_case_1" from="Climate_Units.selected_climate_case"/>
@@ -639,6 +653,8 @@ Carbon" url="C:/Users/earcwel/Documents/code/Github/chrisdwells/WorldTransFRIDA/
 				<connect2 to="Ocean.Surface_Temperature_Anomaly" from="Energy_Balance_Model.Surface_Temperature_Anomaly"/>
 				<connect to="Sea_Level.Surface_Temperature_Anomaly" from="Energy_Balance_Model.Surface_Temperature_Anomaly"/>
 				<connect2 to="Sea_Level.Surface_Temperature_Anomaly" from="Energy_Balance_Model.Surface_Temperature_Anomaly"/>
+				<connect to="Tipping.Surface_Temperature_Anomaly" from="Energy_Balance_Model.Surface_Temperature_Anomaly"/>
+				<connect2 to="Tipping.Surface_Temperature_Anomaly" from="Energy_Balance_Model.Surface_Temperature_Anomaly"/>
 				<connect to="Wind_energy.Surface_Temperature_Anomaly" from="Energy_Balance_Model.Surface_Temperature_Anomaly"/>
 				<connect2 to="Wind_energy.Surface_Temperature_Anomaly" from="Energy_Balance_Model.Surface_Temperature_Anomaly"/>
 				<connect to="Forest.Surface_Temperature_Anomaly_relative_to_1750" from="Energy_Balance_Model.Surface_Temperature_Anomaly_relative_to_1750"/>
@@ -1214,6 +1230,19 @@ Forcing" url="C:/Users/earcwel/Documents/code/Github/chrisdwells/WorldTransFRIDA
 				<range min="0" max="1"/>
 				<units>dmnl</units>
 			</aux>
+			<module name="Tipping" isee:label="">
+				<format scale_by="auto"/>
+				<connect to="Freshwater.AMOC_Agri_water_scaling" from="Tipping.AMOC_Agri_water_scaling"/>
+				<connect2 to="Freshwater.AMOC_Agri_water_scaling" from="Tipping.AMOC_Agri_water_scaling"/>
+				<connect to="Crop.AMOC_Agri_scaling" from="Tipping.AMOC_Agri_yield_scaling"/>
+				<connect2 to="Crop.AMOC_Agri_scaling" from="Tipping.AMOC_Agri_yield_scaling"/>
+				<connect to="Finance.AMOC_Econ_scaling" from="Tipping.AMOC_Econ_scaling"/>
+				<connect2 to="Finance.AMOC_Econ_scaling" from="Tipping.AMOC_Econ_scaling"/>
+				<connect to="Ocean.Ocean_uptake_weakening_due_to_AMOC" from="Tipping.Ocean_uptake_weakening_due_to_AMOC"/>
+				<connect2 to="Ocean.Ocean_uptake_weakening_due_to_AMOC" from="Tipping.Ocean_uptake_weakening_due_to_AMOC"/>
+				<connect to="Tipping.Surface_Temperature_Anomaly" from="Energy_Balance_Model.Surface_Temperature_Anomaly"/>
+				<connect2 to="Tipping.Surface_Temperature_Anomaly" from="Energy_Balance_Model.Surface_Temperature_Anomaly"/>
+			</module>
 		</variables>
 		<views>
 			<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
@@ -1263,7 +1292,7 @@ Forcing" url="C:/Users/earcwel/Documents/code/Github/chrisdwells/WorldTransFRIDA
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="1123" page_height="793" isee:page_cols="2" isee:page_rows="3" isee:scroll_x="167.5" zoom="120" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="1123" page_height="793" isee:page_cols="2" isee:page_rows="3" zoom="120" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -1385,6 +1414,15 @@ Forcing" url="C:/Users/earcwel/Documents/code/Github/chrisdwells/WorldTransFRIDA
 				<connector uid="56" color="#F3F5F5" font_color="#F3F5F5" isee:thickness="2" angle="217.949" isee:autocreated="true">
 					<from>Climate_Units</from>
 					<to>Terrestrial_Carbon_Balance</to>
+				</connector>
+				<module x="555.833" y="429.167" name="Tipping"/>
+				<connector uid="57" isee:thickness="2" angle="297.975" isee:autocreated="true">
+					<from>Energy_Balance_Model</from>
+					<to>Tipping</to>
+				</connector>
+				<connector uid="58" isee:thickness="2" angle="134.447" isee:autocreated="true">
+					<from>Tipping</from>
+					<to>Ocean</to>
 				</connector>
 			</view>
 		</views>
@@ -5814,7 +5852,7 @@ N = -k1T1 + (1-epsilon)*k3*(T2-T3)</doc>
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="1123" page_height="793" isee:page_cols="2" isee:page_rows="2" isee:scroll_x="215" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="1123" page_height="793" isee:page_cols="2" isee:page_rows="2" isee:scroll_x="55" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="11pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -9288,6 +9326,579 @@ FUTURE: peatland carbon sink should maybe depend on global mean temperature and 
 				<connector uid="16" angle="356.82">
 					<from>soil_carbon_balance_grassland_1</from>
 					<to>Grassland_carbon_balance_over_time</to>
+				</connector>
+			</view>
+		</views>
+	</model>
+	<model name="Tipping">
+		<variables>
+			<stock name="State">
+				<dimensions>
+					<dim name="Run"/>
+					<dim name="Tipping_Points"/>
+				</dimensions>
+				<element subscript="1, AMOC">
+					<eqn>-1</eqn>
+				</element>
+				<element subscript="1, GIS">
+					<eqn>-1</eqn>
+				</element>
+				<element subscript="1, WAIS">
+					<eqn>-1</eqn>
+				</element>
+				<element subscript="1, AMAZ">
+					<eqn>-1</eqn>
+				</element>
+				<inflow>Change_in_state</inflow>
+				<units>dmnl</units>
+			</stock>
+			<flow name="Change in state">
+				<dimensions>
+					<dim name="Run"/>
+					<dim name="Tipping_Points"/>
+				</dimensions>
+				<eqn>((-State^3 + State + CUSPc + Interaction_scaling_factor*Coupling[Run]*Interaction_sum)/(tau_amaz_norm*conv_fac[Run]))</eqn>
+				<units>Per Year</units>
+			</flow>
+			<aux name="scaling constant">
+				<eqn>SQRT(4/27)</eqn>
+				<units>dmnl</units>
+			</aux>
+			<aux name="Tcrit">
+				<dimensions>
+					<dim name="Run"/>
+					<dim name="Tipping_Points"/>
+				</dimensions>
+				<element subscript="1, AMOC">
+					<eqn>2</eqn>
+				</element>
+				<element subscript="1, GIS">
+					<eqn>2</eqn>
+				</element>
+				<element subscript="1, WAIS">
+					<eqn>2</eqn>
+				</element>
+				<element subscript="1, AMAZ">
+					<eqn>2</eqn>
+				</element>
+				<units>deg C</units>
+			</aux>
+			<aux name="tau">
+				<dimensions>
+					<dim name="Run"/>
+					<dim name="Tipping_Points"/>
+				</dimensions>
+				<element subscript="1, AMOC">
+					<eqn>50</eqn>
+				</element>
+				<element subscript="1, GIS">
+					<eqn>50</eqn>
+				</element>
+				<element subscript="1, WAIS">
+					<eqn>50</eqn>
+				</element>
+				<element subscript="1, AMAZ">
+					<eqn>50</eqn>
+				</element>
+				<units>Years</units>
+			</aux>
+			<aux name="Tipping state">
+				<dimensions>
+					<dim name="Run"/>
+					<dim name="Tipping_Points"/>
+				</dimensions>
+				<eqn>IF State &lt; -1
+THEN
+-1
+ELSE IF State &gt; 1
+THEN 1
+ELSE State</eqn>
+				<units>dmnl</units>
+			</aux>
+			<aux name="Tipping damages scaling factor" access="output" isee:autocreated="true">
+				<dimensions>
+					<dim name="Run"/>
+					<dim name="Tipping_Points"/>
+				</dimensions>
+				<eqn>MAX(0, Tipping_state*((6 + SQRT(3))/11) + (5 - SQRT(3))/11)</eqn>
+				<units>dmnl</units>
+			</aux>
+			<aux name="Coupling">
+				<doc>d</doc>
+				<dimensions>
+					<dim name="Run"/>
+				</dimensions>
+				<element subscript="1">
+					<eqn>0.5</eqn>
+				</element>
+				<units>dmnl</units>
+			</aux>
+			<aux name="Interaction strengths">
+				<doc>s_ij</doc>
+				<dimensions>
+					<dim name="Run"/>
+					<dim name="Tipping_Points"/>
+					<dim name="Tipping_Points_j"/>
+				</dimensions>
+				<element subscript="1, AMOC, AMOC">
+					<eqn>0</eqn>
+				</element>
+				<element subscript="1, AMOC, GIS">
+					<eqn>0</eqn>
+				</element>
+				<element subscript="1, AMOC, WAIS">
+					<eqn>0</eqn>
+				</element>
+				<element subscript="1, AMOC, AMAZ">
+					<eqn>0</eqn>
+				</element>
+				<element subscript="1, GIS, AMOC">
+					<eqn>0</eqn>
+				</element>
+				<element subscript="1, GIS, GIS">
+					<eqn>0</eqn>
+				</element>
+				<element subscript="1, GIS, WAIS">
+					<eqn>0</eqn>
+				</element>
+				<element subscript="1, GIS, AMAZ">
+					<eqn>0</eqn>
+				</element>
+				<element subscript="1, WAIS, AMOC">
+					<eqn>0</eqn>
+				</element>
+				<element subscript="1, WAIS, GIS">
+					<eqn>0</eqn>
+				</element>
+				<element subscript="1, WAIS, WAIS">
+					<eqn>0</eqn>
+				</element>
+				<element subscript="1, WAIS, AMAZ">
+					<eqn>0</eqn>
+				</element>
+				<element subscript="1, AMAZ, AMOC">
+					<eqn>0</eqn>
+				</element>
+				<element subscript="1, AMAZ, GIS">
+					<eqn>0</eqn>
+				</element>
+				<element subscript="1, AMAZ, WAIS">
+					<eqn>0</eqn>
+				</element>
+				<element subscript="1, AMAZ, AMAZ">
+					<eqn>0</eqn>
+				</element>
+				<units>dmnl</units>
+			</aux>
+			<aux name="Interaction sum">
+				<dimensions>
+					<dim name="Run"/>
+					<dim name="Tipping_Points"/>
+				</dimensions>
+				<eqn>SUM(
+Interaction_strengths[Run,Tipping_Points,Tipping_Points_j.*]*
+(State[Run,Tipping_Points_j.*]+1)
+ ) - 
+Interaction_strengths[Run,Tipping_Points,Tipping_Points]*
+(State+1)</eqn>
+				<units>dmnl</units>
+			</aux>
+			<aux name="Interaction scaling factor">
+				<doc>/10 under s_ij</doc>
+				<eqn>0.1</eqn>
+				<units>dmnl</units>
+			</aux>
+			<aux name="CUSPc">
+				<dimensions>
+					<dim name="Run"/>
+					<dim name="Tipping_Points"/>
+				</dimensions>
+				<eqn>IF Surface_Temperature_Anomaly[Run] &lt; 0 THEN
+0
+ELSE
+scaling_constant*(Surface_Temperature_Anomaly[Run]/Tcrit)</eqn>
+				<units>dmnl</units>
+			</aux>
+			<aux name="tau amaz norm">
+				<dimensions>
+					<dim name="Run"/>
+					<dim name="Tipping_Points"/>
+				</dimensions>
+				<eqn>tau/tau[Run,AMAZ]</eqn>
+				<units>dmnl</units>
+			</aux>
+			<aux name="conv fac">
+				<dimensions>
+					<dim name="Run"/>
+				</dimensions>
+				<eqn>19.0331176</eqn>
+				<units>Years</units>
+			</aux>
+			<aux name="Surface Temperature Anomaly" access="input">
+				<dimensions>
+					<dim name="Run"/>
+				</dimensions>
+				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
+				<units>deg C</units>
+			</aux>
+			<aux name="SWITCH AMOC Agri yield damage" access="output" isee:autocreated="true">
+				<eqn>0</eqn>
+				<units>dmnl</units>
+			</aux>
+			<aux name="AMOC tipping damages\nscaling factor">
+				<dimensions>
+					<dim name="Run"/>
+				</dimensions>
+				<eqn>Tipping_damages_scaling_factor[Run,AMOC]</eqn>
+				<units>dmnl</units>
+			</aux>
+			<aux name="SWITCH AMOC Agri water damage">
+				<eqn>0</eqn>
+				<units>dmnl</units>
+			</aux>
+			<aux name="SWITCH AMOC Econ damage">
+				<eqn>0</eqn>
+				<units>dmnl</units>
+			</aux>
+			<aux name="SWITCH AMOC Energy damage">
+				<eqn>0</eqn>
+				<units>dmnl</units>
+			</aux>
+			<aux name="AMOC Agri yield max damage">
+				<dimensions>
+					<dim name="Run"/>
+				</dimensions>
+				<eqn>0.2</eqn>
+				<units>dmnl</units>
+			</aux>
+			<aux name="AMOC Agri yield scaling" access="output" isee:autocreated="true">
+				<dimensions>
+					<dim name="Run"/>
+				</dimensions>
+				<eqn>1 - AMOC_Agri_yield_max_damage*AMOC_tipping_damages_scaling_factor*SWITCH_AMOC_Agri_yield_damage</eqn>
+				<units>dmnl</units>
+			</aux>
+			<aux name="AMOC Agri water max damage">
+				<dimensions>
+					<dim name="Run"/>
+				</dimensions>
+				<eqn>0.1</eqn>
+				<units>dmnl</units>
+			</aux>
+			<aux name="AMOC Agri water scaling" access="output" isee:autocreated="true">
+				<dimensions>
+					<dim name="Run"/>
+				</dimensions>
+				<eqn>1 - AMOC_Agri_water_max_damage*AMOC_tipping_damages_scaling_factor*SWITCH_AMOC_Agri_water_damage</eqn>
+				<units>dmnl</units>
+			</aux>
+			<aux name="AMOC Econ max damage">
+				<dimensions>
+					<dim name="Run"/>
+				</dimensions>
+				<eqn>0.2</eqn>
+				<units>dmnl</units>
+			</aux>
+			<aux name="AMOC Econ scaling" access="output" isee:autocreated="true">
+				<dimensions>
+					<dim name="Run"/>
+				</dimensions>
+				<eqn>1 - AMOC_Econ_max_damage*AMOC_tipping_damages_scaling_factor*SWITCH_AMOC_Econ_damage</eqn>
+				<units>dmnl</units>
+			</aux>
+			<aux name="AMOC Energy max damage">
+				<dimensions>
+					<dim name="Run"/>
+				</dimensions>
+				<eqn>0.2</eqn>
+				<units>dmnl</units>
+			</aux>
+			<aux name="AMOC Energy scaling">
+				<dimensions>
+					<dim name="Run"/>
+				</dimensions>
+				<eqn>1 - AMOC_Energy_max_damage*AMOC_tipping_damages_scaling_factor*SWITCH_AMOC_Energy_damage</eqn>
+				<units>dmnl</units>
+			</aux>
+			<aux name="Baseline AMOC strength">
+				<eqn>17</eqn>
+				<units>Sv</units>
+			</aux>
+			<aux name="Tipped AMOC strength">
+				<eqn>6</eqn>
+				<units>Sv</units>
+			</aux>
+			<aux name="Weakened ocean uptake\nper Sv AMOC weakening">
+				<eqn>0.023</eqn>
+				<units>GtC/yr/Sv</units>
+			</aux>
+			<aux name="Ocean uptake\nweakening due to AMOC" access="output" isee:autocreated="true">
+				<dimensions>
+					<dim name="Run"/>
+				</dimensions>
+				<eqn>SWITCH_AMOC_Ocean_carbon_damage*Weakened_ocean_uptake_per_Sv_AMOC_weakening*AMOC_tipping_damages_scaling_factor*(Baseline_AMOC_strength - Tipped_AMOC_strength)</eqn>
+				<units>GtC/Year</units>
+			</aux>
+			<aux name="SWITCH AMOC Ocean carbon damage" access="output" isee:autocreated="true">
+				<eqn>1</eqn>
+				<units>dmnl</units>
+			</aux>
+		</variables>
+		<views>
+			<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
+				<text_box color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt"/>
+				<isee:loop_indicator color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt"/>
+				<numeric_display color="white" background="white" font_size="12pt" border_width="thin" border_style="solid" isee:transparent="false" isee:show_divider="true" isee:show_bounding_box="true" label_side="left"/>
+				<graph color="black" background="white" font_size="12pt" axis_color="#666666" grid_color="#C8C8C8" isee:graph_area_color="white" legend_position="bottom" isee:transparent="false" isee:hide_border="false" axis_title_font_style="normal" axis_title_font_weight="normal" axis_title_text_decoration="none" axis_title_text_align="center" axis_title_vertical_text_align="center" axis_title_font_color="black" axis_title_font_family="Arial" axis_title_font_size="12pt" axis_title_text_padding="2" axis_title_text_border_color="black" axis_title_text_border_width="thin" axis_title_text_border_style="none" axis_label_font_style="normal" axis_label_font_weight="normal" axis_label_text_decoration="none" axis_label_text_align="center" axis_label_vertical_text_align="center" axis_label_font_color="black" axis_label_font_family="Arial" axis_label_font_size="9pt" axis_label_text_padding="2" axis_label_text_border_color="black" axis_label_text_border_width="thin" axis_label_text_border_style="none">
+					<isee:series_styles>
+						<isee:series_style color="blue" thickness="1"/>
+						<isee:series_style color="red" thickness="1" pen_style="dot_dashed"/>
+						<isee:series_style color="fuchsia" thickness="1" pen_style="dotted"/>
+						<isee:series_style color="#008F44" thickness="1" pen_style="dashed"/>
+						<isee:series_style color="#FF7F00" thickness="1"/>
+						<isee:series_style color="#7F00FF" thickness="1" pen_style="dot_dashed"/>
+						<isee:series_style color="#0CA0FF" thickness="1" pen_style="dotted"/>
+						<isee:series_style color="lime" thickness="1" pen_style="dashed"/>
+						<isee:series_style color="#FF007F" thickness="1"/>
+						<isee:series_style color="aqua" thickness="1" pen_style="dot_dashed"/>
+						<isee:series_style color="#F586FF" thickness="1" pen_style="dotted"/>
+						<isee:series_style color="black" thickness="1" pen_style="dashed"/>
+						<isee:series_style color="#C8C8C8" thickness="1"/>
+					</isee:series_styles>
+				</graph>
+				<table color="black" background="#E0E0E0" text_align="right" font_size="12pt" orientation="vertical" wrap_text="false" isee:auto_fit="true" isee:use_alternate_row_colors="false" isee:unlimited_table_length="false" blank_column_width="80" column_width="160" interval="1" report_balances="beginning" report_flows="instantaneous" header_font_style="normal" header_font_weight="normal" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="12pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
+				<button color="black" background="#E0E0E0" font_size="12pt" border_width="thin" border_style="solid" transparent="false" corner_radius="0" isee:flat="false" icon_side="top" isee:highlight_on_hover="false" isee:highlight_color="#959595"/>
+				<isee:annotation color="black" background="#E0E0E0" font_size="12pt" border_width="thin" border_style="solid" transparent="false" corner_radius="0" isee:flat="false" icon_side="top" isee:highlight_on_hover="false" isee:highlight_color="#959595" popup_corner_radius="0" popup_background_color="#FFFECF"/>
+				<slider color="#0075FF" background="#E0E0E0" font_size="12pt" num_ticks="3" label_side="top" wrap_title="true" vertical="false" isee:fancy_appearance="false" isee:show_hover_tip="when_deciding" input_expands="true" input_width="100"/>
+				<isee:stacked_container color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" padding="6 8" border_color="#999999" border_width="thin" border_style="solid" item_spacing="0" corner_radius="4" selected_item_color="black" selected_item_background="white" item_background="#DDDDDD" transparent_bg="false"/>
+				<isee:dual_slider color="#66CC66" background="silver" font_size="12pt" num_ticks="3" label_side="top" wrap_title="true" isee:show_hover_tip="when_deciding" input_expands="true" input_width="100"/>
+				<isee:sim_speed_slider color="black" background="white"/>
+				<isee:time_slider color="#E95F74" background="silver"/>
+				<isee:pie_input color="black" background="white" font_size="12pt" legend_position="bottom" isee:transparent="false"/>
+				<knob color="#66CC66" background="#E0E0E0" font_size="12pt" label_side="bottom" wrap_title="true"/>
+				<numeric_input color="black" background="#E0E0E0" font_size="12pt" label_side="left" wrap_title="true" input_expands="false" input_width="100"/>
+				<isee:dropdown_input color="black" background="white" font_size="12pt" label_side="left" wrap_title="true" input_expands="false" input_width="100"/>
+				<switch color="black" background="#E0E0E0" font_size="12pt" label_side="top" wrap_title="true" isee:appearance="switch" isee:on_color="green"/>
+				<options color="black" background="white" appearance="radio-buttons" arrangement="vertical"/>
+				<graphical_input color="black" background="#E0E0E0" font_size="12pt" isee:show_hover_tip="true"/>
+				<group_input color="black" background="#E0E0E0" font_size="12pt"/>
+				<lamp color="black" background="white" font_size="9pt"/>
+				<gauge color="black" background="white" font_size="9pt" needle_color="#F09F72" bar_color="#EEEEEE" bar_progress_color="black" appearance="radial" num_major_ticks="11" num_minor_ticks="11" show_numeric_value="true"/>
+				<isee:spatial_map color="black" background="white" font_size="12pt"/>
+				<isee:animation_object color="black" background="white" font_size="12pt"/>
+				<isee:navigation_widget color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" padding="6 8" border_color="#999999" border_width="thin" border_style="solid" item_spacing="6" appearance="tabs" corner_radius="4" selected_item_color="black" selected_item_background="white" item_background="#DDDDDD" transparent_bg="false"/>
+				<isee:shape color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid" opacity="1" transparent_background="true" corner_radius="1"/>
+				<isee:selector color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt"/>
+				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
+				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
+			</style>
+			<view isee:show_pages="false" background="white" page_width="1123" page_height="793" isee:page_rows="2" isee:scroll_y="272.143" zoom="140" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
+					<stock color="blue" background="white" font_color="blue" font_size="11pt" label_side="top">
+						<shape type="rectangle" width="45" height="35"/>
+					</stock>
+					<flow color="blue" background="white" font_color="blue" font_size="11pt" label_side="bottom">
+						<shape type="circle" radius="18"/>
+					</flow>
+					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="11pt" label_side="bottom"/>
+					<module color="blue" background="white" font_color="blue" font_size="11pt" label_side="top">
+						<shape type="rectangle" width="67" height="55"/>
+					</module>
+					<aux color="blue" background="white" font_color="blue" font_size="11pt" label_side="bottom">
+						<shape type="circle" radius="18"/>
+					</aux>
+					<group color="red" background="white" font_color="red" font_size="11pt"/>
+					<connector color="#FF007F" background="white" font_color="#FF007F" font_size="9pt" isee:thickness="1"/>
+					<text_box color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt"/>
+					<isee:loop_indicator color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt"/>
+					<numeric_display color="white" background="white" font_size="12pt" border_width="thin" border_style="solid" isee:transparent="false" isee:show_divider="true" isee:show_bounding_box="true" label_side="left"/>
+					<graph color="black" background="white" font_size="12pt" axis_color="#666666" grid_color="#C8C8C8" isee:graph_area_color="white" legend_position="bottom" isee:transparent="false" isee:hide_border="false" axis_title_font_style="normal" axis_title_font_weight="normal" axis_title_text_decoration="none" axis_title_text_align="center" axis_title_vertical_text_align="center" axis_title_font_color="black" axis_title_font_family="Arial" axis_title_font_size="12pt" axis_title_text_padding="2" axis_title_text_border_color="black" axis_title_text_border_width="thin" axis_title_text_border_style="none" axis_label_font_style="normal" axis_label_font_weight="normal" axis_label_text_decoration="none" axis_label_text_align="center" axis_label_vertical_text_align="center" axis_label_font_color="black" axis_label_font_family="Arial" axis_label_font_size="9pt" axis_label_text_padding="2" axis_label_text_border_color="black" axis_label_text_border_width="thin" axis_label_text_border_style="none">
+						<isee:series_styles>
+							<isee:series_style color="blue" thickness="1"/>
+							<isee:series_style color="red" thickness="1"/>
+							<isee:series_style color="#008F44" thickness="1"/>
+							<isee:series_style color="#FF7F00" thickness="1"/>
+							<isee:series_style color="#7F00FF" thickness="1"/>
+							<isee:series_style color="#0CA0FF" thickness="1"/>
+							<isee:series_style color="lime" thickness="1"/>
+							<isee:series_style color="#FF007F" thickness="1"/>
+							<isee:series_style color="aqua" thickness="1"/>
+							<isee:series_style color="#F586FF" thickness="1"/>
+							<isee:series_style color="black" thickness="1"/>
+							<isee:series_style color="#C8C8C8" thickness="1"/>
+						</isee:series_styles>
+					</graph>
+					<table color="black" background="#E0E0E0" text_align="right" font_size="12pt" orientation="vertical" wrap_text="false" isee:auto_fit="true" isee:use_alternate_row_colors="false" isee:unlimited_table_length="false" blank_column_width="80" column_width="160" interval="1" report_balances="beginning" report_flows="instantaneous" header_font_style="normal" header_font_weight="normal" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="12pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
+				</style>
+				<stock x="271.167" y="252.834" name="State"/>
+				<flow x="380.083" y="246.167" name="Change in state">
+					<pts>
+						<pt x="478.5" y="246.167"/>
+						<pt x="293.667" y="246.167"/>
+					</pts>
+				</flow>
+				<connector uid="1" angle="54.2525">
+					<from>State</from>
+					<to>Change_in_state</to>
+				</connector>
+				<aux x="528.5" y="356.167" name="scaling constant"/>
+				<aux x="597.723" y="332.056" name="Tcrit"/>
+				<aux x="661.278" y="299.056" name="tau"/>
+				<aux x="201.278" y="270.834" name="Tipping state"/>
+				<connector uid="2" angle="194.443">
+					<from>State</from>
+					<to>Tipping_state</to>
+				</connector>
+				<aux x="139.056" y="299.056" name="Tipping damages scaling factor"/>
+				<connector uid="3" angle="204.398">
+					<from>Tipping_state</from>
+					<to>Tipping_damages_scaling_factor</to>
+				</connector>
+				<aux x="398.084" y="161.389" name="Coupling"/>
+				<aux x="257.667" y="63.3889" name="Interaction strengths"/>
+				<aux x="280.778" y="161.389" name="Interaction sum"/>
+				<aux x="346.278" y="95.9447" name="Interaction scaling factor"/>
+				<connector uid="4" angle="84.0002">
+					<from>State</from>
+					<to>Interaction_sum</to>
+				</connector>
+				<connector uid="5" angle="300.652">
+					<from>Interaction_strengths</from>
+					<to>Interaction_sum</to>
+				</connector>
+				<connector uid="6" angle="340.472">
+					<from>Interaction_sum</from>
+					<to>Change_in_state</to>
+				</connector>
+				<connector uid="7" angle="274.409">
+					<from>Coupling</from>
+					<to>Change_in_state</to>
+				</connector>
+				<connector uid="8" angle="282.682">
+					<from>Interaction_scaling_factor</from>
+					<to>Change_in_state</to>
+				</connector>
+				<aux x="403.084" y="292.056" name="CUSPc"/>
+				<connector uid="10" angle="152.924">
+					<from>scaling_constant</from>
+					<to>CUSPc</to>
+				</connector>
+				<connector uid="11" angle="147.08">
+					<from>Tcrit</from>
+					<to>CUSPc</to>
+				</connector>
+				<connector uid="12" angle="133.635">
+					<from>CUSPc</from>
+					<to>Change_in_state</to>
+				</connector>
+				<aux x="626" y="228.167" name="tau amaz norm"/>
+				<connector uid="13" angle="91.8875">
+					<from>tau</from>
+					<to>tau_amaz_norm</to>
+				</connector>
+				<aux x="339.278" y="338.167" name="conv fac"/>
+				<connector uid="14" angle="154.894">
+					<from>tau_amaz_norm</from>
+					<to>Change_in_state</to>
+				</connector>
+				<connector uid="15" angle="66.0809">
+					<from>conv_fac</from>
+					<to>Change_in_state</to>
+				</connector>
+				<aux font_style="italic" font_weight="bold" x="449.001" y="390.833" name="Surface Temperature Anomaly"/>
+				<connector uid="16" angle="114.931">
+					<from>Surface_Temperature_Anomaly</from>
+					<to>CUSPc</to>
+				</connector>
+				<aux x="165.722" y="482.833" name="SWITCH AMOC Agri yield damage"/>
+				<aux x="128.223" y="350.056" name="AMOC tipping damages\nscaling factor"/>
+				<connector uid="17" angle="250.565">
+					<from>Tipping_damages_scaling_factor</from>
+					<to>AMOC_tipping_damages_scaling_factor</to>
+				</connector>
+				<aux x="164.889" y="559.5" name="SWITCH AMOC Agri water damage"/>
+				<aux x="164.889" y="612.833" name="SWITCH AMOC Econ damage"/>
+				<aux x="164.889" y="667.166" name="SWITCH AMOC Energy damage"/>
+				<aux x="497.278" y="486.167" name="AMOC Agri yield max damage"/>
+				<aux x="339.278" y="486.167" name="AMOC Agri yield scaling"/>
+				<connector uid="18" angle="180">
+					<from>AMOC_Agri_yield_max_damage</from>
+					<to>AMOC_Agri_yield_scaling</to>
+				</connector>
+				<connector uid="19" angle="358.9">
+					<from>SWITCH_AMOC_Agri_yield_damage</from>
+					<to>AMOC_Agri_yield_scaling</to>
+				</connector>
+				<connector uid="20" angle="327.182">
+					<from>AMOC_tipping_damages_scaling_factor</from>
+					<to>AMOC_Agri_yield_scaling</to>
+				</connector>
+				<aux x="495.611" y="559.5" name="AMOC Agri water max damage"/>
+				<aux x="337.611" y="559.5" name="AMOC Agri water scaling"/>
+				<connector uid="21" angle="180">
+					<from>AMOC_Agri_water_max_damage</from>
+					<to>AMOC_Agri_water_scaling</to>
+				</connector>
+				<aux x="495.944" y="611.666" name="AMOC Econ max damage"/>
+				<aux x="337.945" y="611.667" name="AMOC Econ scaling"/>
+				<connector uid="22" angle="180">
+					<from>AMOC_Econ_max_damage</from>
+					<to>AMOC_Econ_scaling</to>
+				</connector>
+				<aux label_side="bottom" x="497.611" y="665.166" name="AMOC Energy max damage"/>
+				<aux x="339.611" y="665.167" name="AMOC Energy scaling"/>
+				<connector uid="23" angle="180">
+					<from>AMOC_Energy_max_damage</from>
+					<to>AMOC_Energy_scaling</to>
+				</connector>
+				<connector uid="24" angle="314.992">
+					<from>AMOC_tipping_damages_scaling_factor</from>
+					<to>AMOC_Agri_water_scaling</to>
+				</connector>
+				<connector uid="25" angle="308.718">
+					<from>AMOC_tipping_damages_scaling_factor</from>
+					<to>AMOC_Econ_scaling</to>
+				</connector>
+				<connector uid="26" angle="297.933">
+					<from>AMOC_tipping_damages_scaling_factor</from>
+					<to>AMOC_Energy_scaling</to>
+				</connector>
+				<connector uid="27" angle="360">
+					<from>SWITCH_AMOC_Agri_water_damage</from>
+					<to>AMOC_Agri_water_scaling</to>
+				</connector>
+				<connector uid="28" angle="0.386037">
+					<from>SWITCH_AMOC_Econ_damage</from>
+					<to>AMOC_Econ_scaling</to>
+				</connector>
+				<connector uid="29" angle="0.655602">
+					<from>SWITCH_AMOC_Energy_damage</from>
+					<to>AMOC_Energy_scaling</to>
+				</connector>
+				<aux x="362.603" y="738.571" name="Baseline AMOC strength"/>
+				<aux x="363.436" y="789.714" name="Tipped AMOC strength"/>
+				<aux x="491.429" y="745" name="Weakened ocean uptake\nper Sv AMOC weakening"/>
+				<aux x="505" y="832.143" name="Ocean uptake\nweakening due to AMOC"/>
+				<connector uid="30" angle="335.516">
+					<from>Tipped_AMOC_strength</from>
+					<to>Ocean_uptake_weakening_due_to_AMOC</to>
+				</connector>
+				<connector uid="31" angle="325.129">
+					<from>Baseline_AMOC_strength</from>
+					<to>Ocean_uptake_weakening_due_to_AMOC</to>
+				</connector>
+				<connector uid="32" angle="280.176">
+					<from>Weakened_ocean_uptake_per_Sv_AMOC_weakening</from>
+					<to>Ocean_uptake_weakening_due_to_AMOC</to>
+				</connector>
+				<connector uid="33" angle="236.583">
+					<from>AMOC_tipping_damages_scaling_factor</from>
+					<to>Ocean_uptake_weakening_due_to_AMOC</to>
+				</connector>
+				<aux x="164.889" y="727" name="SWITCH AMOC Ocean carbon damage"/>
+				<connector uid="35" angle="312.957">
+					<from>SWITCH_AMOC_Ocean_carbon_damage</from>
+					<to>Ocean_uptake_weakening_due_to_AMOC</to>
 				</connector>
 			</view>
 		</views>

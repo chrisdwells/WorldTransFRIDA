@@ -231,6 +231,18 @@
 			<alias>dmnl</alias>
 			<alias>unitless</alias>
 		</unit>
+		<unit name="G">
+			<eqn>Giga</eqn>
+		</unit>
+		<unit name="GtCO2">
+			<eqn>Giga*tCO2</eqn>
+		</unit>
+		<unit name="GtCH4">
+			<eqn>Giga*tCH4</eqn>
+		</unit>
+		<unit name="GtN2O">
+			<eqn>Giga*tN2O</eqn>
+		</unit>
 	</model_units>
 	<model name="Land_Use_and_Agriculture">
 		<variables>
@@ -582,6 +594,8 @@ This isn&apos;t in the uncertainty analysis b/c it needs to be integrated with t
 				<connect2 to="Biosphere_Indicators.total_water_withdrawal" from="Freshwater.total_water_withdrawal"/>
 				<connect to="Sea_Level.total_groundwater_anomaly" from="Freshwater.total_groundwater_anomaly"/>
 				<connect2 to="Sea_Level.total_groundwater_anomaly" from="Freshwater.total_groundwater_anomaly"/>
+				<connect to="Freshwater.AMOC_Agri_water_scaling" from="Tipping.AMOC_Agri_water_scaling"/>
+				<connect2 to="Freshwater.AMOC_Agri_water_scaling" from="Tipping.AMOC_Agri_water_scaling"/>
 				<connect to="Freshwater.Cropland" from="Land_Use.Cropland"/>
 				<connect2 to="Freshwater.Cropland" from="Land_Use.Cropland"/>
 				<connect to="Freshwater.irrigation_efficiency_multiplier" from="Government_Regulations.irrigation_efficiency_multiplier"/>
@@ -675,6 +689,8 @@ This isn&apos;t in the uncertainty analysis b/c it needs to be integrated with t
 				<connect2 to="Crop.Absolute_Surface_Temperature" from="Energy_Balance_Model.Absolute_Surface_Temperature"/>
 				<connect to="Crop.agricultural_water_withdrawal" from="Freshwater.agricultural_water_withdrawal"/>
 				<connect2 to="Crop.agricultural_water_withdrawal" from="Freshwater.agricultural_water_withdrawal"/>
+				<connect to="Crop.AMOC_Agri_scaling" from="Tipping.AMOC_Agri_yield_scaling"/>
+				<connect2 to="Crop.AMOC_Agri_scaling" from="Tipping.AMOC_Agri_yield_scaling"/>
 				<connect to="Crop.Atmospheric_CO2_Concentration_1" from="CO2_Forcing.Atmospheric_CO2_Concentration"/>
 				<connect2 to="Crop.Atmospheric_CO2_Concentration_1" from="CO2_Forcing.Atmospheric_CO2_Concentration"/>
 				<connect to="Crop.crop_demand_1" from="Food_Demand.crop_demand"/>
@@ -997,7 +1013,7 @@ This isn&apos;t in the uncertainty analysis b/c it needs to be integrated with t
 				<connect to="Forest.young_forest_burned_due_to_cc" from="Land_Use.young_forest_burned_due_to_cc"/>
 				<connect2 to="Forest.young_forest_burned_due_to_cc" from="Land_Use.young_forest_burned_due_to_cc"/>
 			</module>
-			<module name="Biosphere\nIndicators" isee:label="" url="/home/benjamin/Documents/UHH/FNU/FNK/WordTrans/FRIDA/fridaGitWD-mainline development/FRIDA_Modules/Biosphere Indicators.itmx">
+			<module name="Biosphere\nIndicators" isee:label="" url="C:/Users/earcwel/Documents/code/Github/chrisdwells/WorldTransFRIDA/FRIDA_Modules/Biosphere Indicators.itmx">
 				<doc>This module contains quantifications of planetary boundaries (PBs). The PB framework emphasises the many different components of the Earth system that are strongly influenced by human activities. To quantify each PB, one or more control variables are selected, for which a safe operating space, a zone of increasing risk and a high risk zone are defined, delimited by the boundary value (transition from safe operating space to zone of increasing risk) and the high risk value (transition from zone of increasing risk to high risk zone), as defined in the module. Each PB is quantified in a separate sector within the module. For more details, consult the documentation of variables within the module.
 
 Reference: Eriksson, A. (n.d.). Using the FRIDA systems dynamics model to simulate planetary boundary interactions. In Prep.
@@ -2002,7 +2018,7 @@ Food and Agriculture Organization of the United Nations (2023)</doc>
 				<dimensions>
 					<dim name="Run"/>
 				</dimensions>
-				<eqn>initial_crop_yield + change_in_crop_yield_from_fertilizer_use+change_in_crop_yield_from_soil_carbon+change_in_crop_yield_from_irrigation + change_in_crop_yield_from_climate</eqn>
+				<eqn>(initial_crop_yield + change_in_crop_yield_from_fertilizer_use+change_in_crop_yield_from_soil_carbon+change_in_crop_yield_from_irrigation + change_in_crop_yield_from_climate)*AMOC_Agri_scaling</eqn>
 				<units>PCal/(Mha*year)</units>
 			</aux>
 			<aux name="soil carbon cropland 1" access="input">
@@ -5305,6 +5321,13 @@ harvest_index_for_food_crops * (1 - Fraction_of_crop_production_for_energy - Fra
 				<eqn>0</eqn>
 				<units>dmnl</units>
 			</aux>
+			<aux name="AMOC Agri scaling" access="input">
+				<dimensions>
+					<dim name="Run"/>
+				</dimensions>
+				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
+				<units>dmnl</units>
+			</aux>
 		</variables>
 		<views>
 			<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
@@ -5354,7 +5377,7 @@ harvest_index_for_food_crops * (1 - Fraction_of_crop_production_for_energy - Fra
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="1123" page_height="793" isee:page_cols="5" isee:page_rows="6" isee:scroll_x="1205" isee:scroll_y="1037.5" zoom="120" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="1123" page_height="793" isee:page_cols="5" isee:page_rows="6" isee:scroll_x="935" isee:scroll_y="978.333" zoom="120" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="11pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -5921,6 +5944,11 @@ harvest_index_for_food_crops * (1 - Fraction_of_crop_production_for_energy - Fra
 				<connector uid="254" angle="199.138">
 					<from>switch_sustainable_farming_policy</from>
 					<to>sustainable_farming_fraction</to>
+				</connector>
+				<aux font_style="italic" font_weight="bold" x="1387.5" y="1322.5" name="AMOC Agri scaling"/>
+				<connector uid="255" angle="0">
+					<from>AMOC_Agri_scaling</from>
+					<to>crop_yield</to>
 				</connector>
 				<alias font_style="italic" uid="72" x="2249.19" y="1887.51" width="18" height="18">
 					<of>crop_production</of>
@@ -11177,7 +11205,7 @@ ELSE
 				<dimensions>
 					<dim name="Run"/>
 				</dimensions>
-				<eqn>natural_water_recharge</eqn>
+				<eqn>natural_water_recharge*AMOC_Agri_water_scaling</eqn>
 				<non_negative/>
 				<units>m^3/year</units>
 			</flow>
@@ -11618,6 +11646,13 @@ ELSE
 				<eqn>1-Residue_coverage*sensitivity_residue_coverage_effect</eqn>
 				<units>dmnl</units>
 			</aux>
+			<aux name="AMOC Agri water scaling" access="input">
+				<dimensions>
+					<dim name="Run"/>
+				</dimensions>
+				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
+				<units>dmnl</units>
+			</aux>
 		</variables>
 		<views>
 			<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
@@ -11706,10 +11741,10 @@ ELSE
 					</graph>
 					<table color="black" background="#E0E0E0" text_align="right" font_size="12pt" orientation="vertical" wrap_text="false" isee:auto_fit="true" isee:use_alternate_row_colors="false" isee:unlimited_table_length="false" blank_column_width="80" column_width="160" interval="1" report_balances="beginning" report_flows="instantaneous" header_font_style="normal" header_font_weight="normal" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="12pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 				</style>
-				<stock x="537.917" y="651.25" name="available\nwater supply"/>
-				<flow x="638.459" y="650" name="total\nwater\nwithdrawal">
+				<stock x="540.917" y="650" name="available\nwater supply"/>
+				<flow x="639.959" y="650" name="total\nwater\nwithdrawal">
 					<pts>
-						<pt x="560.417" y="650"/>
+						<pt x="563.417" y="650"/>
 						<pt x="740.5" y="650"/>
 					</pts>
 				</flow>
@@ -11729,18 +11764,18 @@ ELSE
 					<from>non_agricultural_water_withdrawal_per_million_person</from>
 					<to>non_agricultural_water_withdrawl</to>
 				</connector>
-				<connector uid="4" angle="102.63">
+				<connector uid="4" angle="102.191">
 					<from>non_agricultural_water_withdrawl</from>
 					<to>total_water_withdrawal</to>
 				</connector>
-				<flow label_side="bottom" x="429.834" y="653" name="natural water\nrecharge flow">
+				<flow label_side="bottom" x="431.334" y="653" name="natural water\nrecharge flow">
 					<pts>
 						<pt x="344.25" y="653"/>
-						<pt x="515.417" y="653"/>
+						<pt x="518.417" y="653"/>
 					</pts>
 				</flow>
 				<aux x="712" y="499.67" name="agricultural water\nwithdrawal"/>
-				<connector uid="5" angle="243.932">
+				<connector uid="5" angle="244.395">
 					<from>agricultural_water_withdrawal</from>
 					<to>total_water_withdrawal</to>
 				</connector>
@@ -11749,7 +11784,7 @@ ELSE
 					<from>agricultural_water_withdrawal</from>
 					<to>fraction_of_water_withdrawal_for_agriculture</to>
 				</connector>
-				<connector uid="7" angle="340.768">
+				<connector uid="7" angle="340.638">
 					<from>total_water_withdrawal</from>
 					<to>fraction_of_water_withdrawal_for_agriculture</to>
 				</connector>
@@ -11794,10 +11829,10 @@ ELSE
 					<from>sensitivity_of_effect_of_available_water_supply_on_land_irrigated</from>
 					<to>effect_of_available_water_supply_on_land_irrigated</to>
 				</connector>
-				<flow x="537.444" y="733.93" name="technological\nwater discovery">
+				<flow x="537.444" y="733.305" name="technological\nwater discovery">
 					<pts>
 						<pt x="537.444" y="799.11"/>
-						<pt x="537.444" y="668.75"/>
+						<pt x="537.444" y="667.5"/>
 					</pts>
 				</flow>
 				<aux x="296.5" y="891.5" name="technological water\ndiscovery 1980"/>
@@ -11807,20 +11842,20 @@ ELSE
 					<from>rate_of_change_in_technological_water_discovery</from>
 					<to>effect_of_technology_on_available_water_supply</to>
 				</connector>
-				<connector uid="17" angle="33.1835">
+				<connector uid="17" angle="33.2874">
 					<from>technological_water_discovery_1980</from>
 					<to>technological_water_discovery</to>
 				</connector>
-				<connector uid="18" angle="54.0543">
+				<connector uid="18" angle="54.1443">
 					<from>effect_of_technology_on_available_water_supply</from>
 					<to>technological_water_discovery</to>
 				</connector>
 				<aux x="226.825" y="653" name="pressure to expand\navailable water supply"/>
-				<connector uid="19" angle="143.031">
+				<connector uid="19" angle="143.256">
 					<from>available_water_supply</from>
 					<to>pressure_to_expand_available_water_supply</to>
 				</connector>
-				<connector uid="20" angle="291.262">
+				<connector uid="20" angle="291.37">
 					<from>pressure_to_expand_available_water_supply</from>
 					<to>technological_water_discovery</to>
 				</connector>
@@ -11830,7 +11865,7 @@ ELSE
 					<to>pressure_to_expand_available_water_supply</to>
 				</connector>
 				<aux x="250.778" y="752.53" name="initial available water supply"/>
-				<connector uid="22" angle="128.896">
+				<connector uid="22" angle="129.941">
 					<from>available_water_supply</from>
 					<to>effect_of_available_water_supply_on_land_irrigated</to>
 				</connector>
@@ -11916,11 +11951,11 @@ the less future investment due to crowding out of more profitable forms of inves
 					<from>initial_fraction_of_unsustainable_water_withdrawal</from>
 					<to>unsustainable_fraction_of_water_withdrawal</to>
 				</connector>
-				<connector uid="43" angle="309.27">
+				<connector uid="43" angle="309.177">
 					<from>total_water_withdrawal</from>
 					<to>unsustainable_fraction_of_water_withdrawal</to>
 				</connector>
-				<connector uid="44" angle="337.543">
+				<connector uid="44" angle="337.469">
 					<from>technological_water_discovery</from>
 					<to>unsustainable_fraction_of_water_withdrawal</to>
 				</connector>
@@ -11928,7 +11963,7 @@ the less future investment due to crowding out of more profitable forms of inves
 					<from>unsustainable_fraction_of_water_withdrawal</from>
 					<to>unsustainable_groundwater_withdrawal</to>
 				</connector>
-				<connector uid="46" angle="3.27049">
+				<connector uid="46" angle="3.63584">
 					<from>
 						<alias uid="47"/>
 					</from>
@@ -12060,6 +12095,11 @@ the less future investment due to crowding out of more profitable forms of inves
 				<connector uid="80" angle="42.1376">
 					<from>residue_coverage_effect_on_evapotranspiration</from>
 					<to>effect_of_surface_temperature_anomaly_on_water_lost_to_evapotranspiration</to>
+				</connector>
+				<aux font_style="italic" font_weight="bold" x="357" y="715" name="AMOC Agri water scaling"/>
+				<connector uid="81" angle="39.8308">
+					<from>AMOC_Agri_water_scaling</from>
+					<to>natural_water_recharge_flow</to>
 				</connector>
 				<alias font_style="italic" uid="36" x="1328.66" y="844.667" width="18" height="18">
 					<of>total_water_withdrawal</of>

@@ -86,6 +86,18 @@
 		</dim>
 		<dim name="Renewable_Age_Group" size="7"/>
 		<dim name="Run" size="1"/>
+		<dim name="Tipping_Points">
+			<elem name="AMOC"/>
+			<elem name="GIS"/>
+			<elem name="WAIS"/>
+			<elem name="AMAZ"/>
+		</dim>
+		<dim name="Tipping_Points_j">
+			<elem name="AMOC"/>
+			<elem name="GIS"/>
+			<elem name="WAIS"/>
+			<elem name="AMAZ"/>
+		</dim>
 	</dimensions>
 	<isee:prefs saved_runs="10" keep="false" show_module_prefix="true" live_update_on_drag="true" show_restore_buttons="false" layer="model" isee:design="Deluxe Prev-Next Blue Green Pastel" isee:design_custom="false" interface_secure_mode="true" interface_scale_ui="true" interface_max_page_width="10000" interface_max_page_height="10000" interface_min_page_width="0" interface_min_page_height="0" rifp="true">
 		<isee:tag_styles>
@@ -125,8 +137,705 @@
 		<import isee:overwrite="false" isee:timevarying="true" resource="r../Data/frida_input_data.csv"/>
 	</data>
 	<isee:sensi_specs_list active_index="0">
-		<isee:sensi_specs name="Climate Sensitivity" method="grid">
-			<isee:variable starting_value="1" ending_value="100" type="incremental" min="1" max="100" seed="12345" name="Climate_Units.selected_climate_case[1]" num_samples="100"/>
+		<isee:sensi_specs name="Climate Sensitivity" method="external" path="C:/Users/earcwel/Documents/code/Github/chrisdwells/frida-amoc/Data/input_parameters/combined_params_1000.csv">
+			<isee:variable type="adhoc" name="Animal_Products_Demand.average_daily_demand_per_capita_in_1980[1]"/>
+			<isee:variable type="adhoc" name="Animal_Products_Demand.elasticity_of_demand_to_GDP[1]"/>
+			<isee:variable type="adhoc" name="Animal_Products_Demand.growth_rate_of_socioeconomic_effect[1]"/>
+			<isee:variable type="adhoc" name="Animal_Products_Demand.initial_share_of_demand_from_consumption_domain[1]"/>
+			<isee:variable type="adhoc" name="Animal_Products_Demand.normal_sensitivity_of_personal_norm_to_climate_risk[1]"/>
+			<isee:variable type="adhoc" name="Animal_Products_Demand.range_of_socioeconomic_effect[1]"/>
+			<isee:variable type="adhoc" name="Animal_Products_Demand.reference_GDP_per_person_for_socioeconomic_effect[1]"/>
+			<isee:variable type="adhoc" name="Animal_Products_Demand.sensitivity_of_demand_to_relative_scarcity[1]"/>
+			<isee:variable type="adhoc" name="Animal_Products_Demand.sensitivity_of_personal_norm_to_consumption_risk[1]"/>
+			<isee:variable type="adhoc" name="Animal_Products_Demand.sensitivity_of_personal_norm_to_social_value[1]"/>
+			<isee:variable type="adhoc" name="Animal_Products_Demand.sensitivity_of_social_value_perception[1]"/>
+			<isee:variable type="adhoc" name="Animal_Products_Demand.time_horizon_for_long_term_perception[1]"/>
+			<isee:variable type="adhoc" name="Animal_Products_Demand.time_horizon_for_short_term_perception[1]"/>
+			<isee:variable type="adhoc" name="Animal_Products_Demand.time_to_adjust_consumption_pattern[1]"/>
+			<isee:variable type="adhoc" name="Animal_Products_Demand.time_to_adjust_desired_demand_from_accessibility[1]"/>
+			<isee:variable type="adhoc" name="Animal_Products_Demand.time_to_adjust_value_perception[1]"/>
+			<isee:variable type="adhoc" name="Animal_Products_Demand.time_to_observe_consequences[1]"/>
+			<isee:variable type="adhoc" name="Animal_Products_Demand.time_to_perceive_average_consumption[1]"/>
+			<isee:variable type="adhoc" name="Climate_Risk_Perception.additional_time_horizon_of_reference_climate_extremes_exposure[1]"/>
+			<isee:variable type="adhoc" name="Climate_Risk_Perception.minimum_reference_for_SLR_flooding_exposure[1]"/>
+			<isee:variable type="adhoc" name="Climate_Risk_Perception.normal_additional_time_horizon_of_reference_temperature_anomaly[1]"/>
+			<isee:variable type="adhoc" name="Climate_Risk_Perception.normal_sensitivity_to_climate_information[1]"/>
+			<isee:variable type="adhoc" name="Climate_Risk_Perception.sensitivity_to_climatic_events_exposure[1]"/>
+			<isee:variable type="adhoc" name="Climate_Risk_Perception.time_to_perceive_climate_extremes_exposure[1]"/>
+			<isee:variable type="adhoc" name="Climate_Risk_Perception.time_to_perceive_SLR_flooding_exposure[1]"/>
+			<isee:variable type="adhoc" name="Climate_Risk_Perception.time_to_report_and_perceive_climate_information[1]"/>
+			<isee:variable type="adhoc" name="Fertilizer_Demand.elasticity_of_demand_to_GDP[1]"/>
+			<isee:variable type="adhoc" name="Fertilizer_Demand.elasticity_of_demand_to_natural_gas[1]"/>
+			<isee:variable type="adhoc" name="Fertilizer_Demand.growth_rate_of_socioeconomic_effect[1]"/>
+			<isee:variable type="adhoc" name="Fertilizer_Demand.initial_fertilizer_demand_in_1980[1]"/>
+			<isee:variable type="adhoc" name="Fertilizer_Demand.initial_ten_year_growth_rate_demand[1]"/>
+			<isee:variable type="adhoc" name="Fertilizer_Demand.initial_yearly_growth_rate_demand[1]"/>
+			<isee:variable type="adhoc" name="Fertilizer_Demand.maximum_useful_fertilizer_per_Mha[1]"/>
+			<isee:variable type="adhoc" name="Fertilizer_Demand.range_of_socioeconomic_effect[1]"/>
+			<isee:variable type="adhoc" name="Fertilizer_Demand.sensitivity_of_personal_norm_to_consumption_risk[1]"/>
+			<isee:variable type="adhoc" name="Fertilizer_Demand.sensitivity_of_personal_norm_to_social_value[1]"/>
+			<isee:variable type="adhoc" name="Fertilizer_Demand.sensitivity_of_social_value_perception[1]"/>
+			<isee:variable type="adhoc" name="Fertilizer_Demand.sensitivity_scarcity_to_changes_in_demand[1]"/>
+			<isee:variable type="adhoc" name="Fertilizer_Demand.supplier_forecasting_adjustment_time[1]"/>
+			<isee:variable type="adhoc" name="Fertilizer_Demand.time_horizon_for_long_term_perception[1]"/>
+			<isee:variable type="adhoc" name="Fertilizer_Demand.time_horizon_for_short_term_perception[1]"/>
+			<isee:variable type="adhoc" name="Fertilizer_Demand.time_to_adjust_demand_pattern[1]"/>
+			<isee:variable type="adhoc" name="Fertilizer_Demand.time_to_adjust_desired_demand_from_accessibility[1]"/>
+			<isee:variable type="adhoc" name="Fertilizer_Demand.time_to_adjust_value_perception[1]"/>
+			<isee:variable type="adhoc" name="Fertilizer_Demand.time_to_observe_consequences[1]"/>
+			<isee:variable type="adhoc" name="Fertilizer_Demand.time_to_perceive_yearly_consumption[1]"/>
+			<isee:variable type="adhoc" name="Total_Food_Demand.average_daily_demand_per_capita_in_1980[1]"/>
+			<isee:variable type="adhoc" name="Total_Food_Demand.elasticity_of_demand_to_GDP[1]"/>
+			<isee:variable type="adhoc" name="Total_Food_Demand.growth_rate_of_socioeconomic_effect[1]"/>
+			<isee:variable type="adhoc" name="Total_Food_Demand.range_of_socioeconomic_effect[1]"/>
+			<isee:variable type="adhoc" name="Total_Food_Demand.reference_GDP_per_person_for_socioeconomic_effect[1]"/>
+			<isee:variable type="adhoc" name="Total_Food_Demand.sensitivity_of_demand_to_scarcity[1]"/>
+			<isee:variable type="adhoc" name="Total_Food_Demand.sensitivity_of_personal_norm_to_climate_risk[1]"/>
+			<isee:variable type="adhoc" name="Total_Food_Demand.sensitivity_of_personal_norm_to_consumption_risk[1]"/>
+			<isee:variable type="adhoc" name="Total_Food_Demand.sensitivity_of_personal_norm_to_social_value[1]"/>
+			<isee:variable type="adhoc" name="Total_Food_Demand.sensitivity_of_social_value_perception[1]"/>
+			<isee:variable type="adhoc" name="Total_Food_Demand.time_horizon_for_long_term_perception[1]"/>
+			<isee:variable type="adhoc" name="Total_Food_Demand.time_horizon_for_short_term_perception[1]"/>
+			<isee:variable type="adhoc" name="Total_Food_Demand.time_to_adjust_consumption_pattern[1]"/>
+			<isee:variable type="adhoc" name="Total_Food_Demand.time_to_adjust_desired_demand_from_accessibility[1]"/>
+			<isee:variable type="adhoc" name="Total_Food_Demand.time_to_adjust_value_perception[1]"/>
+			<isee:variable type="adhoc" name="Total_Food_Demand.time_to_observe_consequences[1]"/>
+			<isee:variable type="adhoc" name="Total_Food_Demand.time_to_perceive_average_consumption[1]"/>
+			<isee:variable type="adhoc" name="Transportation_Energy_Demand.average_daily_demand_per_capita_in_1980[1]"/>
+			<isee:variable type="adhoc" name="Transportation_Energy_Demand.base_of_health_risk_of_emissions[1]"/>
+			<isee:variable type="adhoc" name="Transportation_Energy_Demand.elasticity_of_demand_to_GDP[1]"/>
+			<isee:variable type="adhoc" name="Transportation_Energy_Demand.growth_rate_of_socioeconomic_effect[1]"/>
+			<isee:variable type="adhoc" name="Transportation_Energy_Demand.range_of_socioeconomic_effect[1]"/>
+			<isee:variable type="adhoc" name="Transportation_Energy_Demand.reference_GDP_per_person_for_socioeconomic_effect[1]"/>
+			<isee:variable type="adhoc" name="Transportation_Energy_Demand.sensitivity_of_demand_to_scarcity[1]"/>
+			<isee:variable type="adhoc" name="Transportation_Energy_Demand.sensitivity_of_personal_norm_to_climate_risk[1]"/>
+			<isee:variable type="adhoc" name="Transportation_Energy_Demand.sensitivity_of_personal_norm_to_consumption_risk[1]"/>
+			<isee:variable type="adhoc" name="Transportation_Energy_Demand.sensitivity_of_personal_norm_to_social_value[1]"/>
+			<isee:variable type="adhoc" name="Transportation_Energy_Demand.sensitivity_of_social_value_perception[1]"/>
+			<isee:variable type="adhoc" name="Transportation_Energy_Demand.start_value_of_Health_risk_of_emissions[1]"/>
+			<isee:variable type="adhoc" name="Transportation_Energy_Demand.time_horizon_for_long_term_perception[1]"/>
+			<isee:variable type="adhoc" name="Transportation_Energy_Demand.time_horizon_for_short_term_perception[1]"/>
+			<isee:variable type="adhoc" name="Transportation_Energy_Demand.time_to_adjust_consumption_pattern[1]"/>
+			<isee:variable type="adhoc" name="Transportation_Energy_Demand.time_to_adjust_desired_demand_from_accessibility[1]"/>
+			<isee:variable type="adhoc" name="Transportation_Energy_Demand.time_to_adjust_value_perception[1]"/>
+			<isee:variable type="adhoc" name="Transportation_Energy_Demand.time_to_perceive_average_consumption[1]"/>
+			<isee:variable type="adhoc" name="Emissions.baseline_Food_and_Land_use_CH4_emissions[1]"/>
+			<isee:variable type="adhoc" name="Emissions.baseline_Food_and_Land_Use_N2O_emissions[1]"/>
+			<isee:variable type="adhoc" name="Emissions.baseline_GDP_per_person[1]"/>
+			<isee:variable type="adhoc" name="Emissions.baseline_HFC134a_eq_per_person[1]"/>
+			<isee:variable type="adhoc" name="Emissions.baseline_N2O_per_person[1]"/>
+			<isee:variable type="adhoc" name="Emissions.baseline_non_fossil_CH4_per_person[1]"/>
+			<isee:variable type="adhoc" name="Emissions.desulphurisation_rate_of_energy_related_emissions[1, Gas]"/>
+			<isee:variable type="adhoc" name="Emissions.desulphurisation_rate_of_energy_related_emissions[1, Oil]"/>
+			<isee:variable type="adhoc" name="Emissions.desulphurisation_rate_of_energy_related_emissions[1, Coal]"/>
+			<isee:variable type="adhoc" name="Emissions.effective_CDD_logistic_speed[1]"/>
+			<isee:variable type="adhoc" name="Emissions.Initial_Fossil_Energy_CH4_Intensity[1, Gas]"/>
+			<isee:variable type="adhoc" name="Emissions.Initial_Fossil_Energy_CH4_Intensity[1, Oil]"/>
+			<isee:variable type="adhoc" name="Emissions.Initial_Fossil_Energy_CH4_Intensity[1, Coal]"/>
+			<isee:variable type="adhoc" name="Emissions.Initial_Fossil_Energy_N2O_Intensity[1, Gas]"/>
+			<isee:variable type="adhoc" name="Emissions.Initial_Fossil_Energy_N2O_Intensity[1, Oil]"/>
+			<isee:variable type="adhoc" name="Emissions.Initial_Fossil_Energy_N2O_Intensity[1, Coal]"/>
+			<isee:variable type="adhoc" name="Emissions.Initial_Fossil_Energy_Sulfur_Intensity[1, Gas]"/>
+			<isee:variable type="adhoc" name="Emissions.Initial_Fossil_Energy_Sulfur_Intensity[1, Oil]"/>
+			<isee:variable type="adhoc" name="Emissions.Initial_Fossil_Energy_Sulfur_Intensity[1, Coal]"/>
+			<isee:variable type="adhoc" name="Emissions.MtCH4_emission_per_PCal_animal_products_1980[1]"/>
+			<isee:variable type="adhoc" name="Emissions.MtN2O_emission_per_PCal_animal_products_1980[1]"/>
+			<isee:variable type="adhoc" name="Emissions.rate_of_change_in_energy_related_CH4_emissions[1, Gas]"/>
+			<isee:variable type="adhoc" name="Emissions.rate_of_change_in_energy_related_CH4_emissions[1, Oil]"/>
+			<isee:variable type="adhoc" name="Emissions.rate_of_change_in_energy_related_CH4_emissions[1, Coal]"/>
+			<isee:variable type="adhoc" name="Emissions.rate_of_change_in_energy_related_N2O_emissions[1, Gas]"/>
+			<isee:variable type="adhoc" name="Emissions.rate_of_change_in_energy_related_N2O_emissions[1, Oil]"/>
+			<isee:variable type="adhoc" name="Emissions.rate_of_change_in_energy_related_N2O_emissions[1, Coal]"/>
+			<isee:variable type="adhoc" name="Emissions.rate_of_decline_in_MtCH4_emission_per_PCal_animal_products[1]"/>
+			<isee:variable type="adhoc" name="Emissions.rate_of_decline_in_MtN2O_emission_per_PCal_animal_products[1]"/>
+			<isee:variable type="adhoc" name="Emissions.rate_of_decline_in_tN2O_emission_per_tN_fertilizer[1]"/>
+			<isee:variable type="adhoc" name="Emissions.sensitivity_of_HFC134a_eq_per_person_to_relative_CDD[1]"/>
+			<isee:variable type="adhoc" name="Emissions.sensitivity_of_non_fossil_CH4_per_person_to_GDP_per_capita[1]"/>
+			<isee:variable type="adhoc" name="Emissions.sensitivity_of_Other_N2O_per_person_to_GDP_per_capita[1]"/>
+			<isee:variable type="adhoc" name="Emissions.tN2O_emission_per_tN_fertilizer_1980[1]"/>
+			<isee:variable type="adhoc" name="Sea_Level.scale_factor_Antarctic_ice_sheet[1]"/>
+			<isee:variable type="adhoc" name="Sea_Level.scale_factor_Greenland_ice_sheet[1]"/>
+			<isee:variable type="adhoc" name="Sea_Level.scale_factor_mountain_glaciers[1]"/>
+			<isee:variable type="adhoc" name="Sea_Level.scale_factor_thermosteric_SLR[1]"/>
+			<isee:variable type="adhoc" name="Sea_Level.Water_catchment_per_GW_of_hydropower[1]"/>
+			<isee:variable type="adhoc" name="Terrestrial_Carbon_Balance.Global_peatland_carbon_uptake_rate[1]"/>
+			<isee:variable type="adhoc" name='Demographics."1_to_20_mortality_gamma"[1]'/>
+			<isee:variable type="adhoc" name='Demographics."20_to_40_mortality_alpha"[1]'/>
+			<isee:variable type="adhoc" name='Demographics."20_to_40_mortality_gamma"[1]'/>
+			<isee:variable type="adhoc" name='Demographics."40_to_60_mortality_alpha"[1]'/>
+			<isee:variable type="adhoc" name='Demographics."40_to_60_mortality_gamma"[1]'/>
+			<isee:variable type="adhoc" name='Demographics."60_to_65_mortality_alpha"[1]'/>
+			<isee:variable type="adhoc" name='Demographics."60_to_65_mortality_gamma"[1]'/>
+			<isee:variable type="adhoc" name='Demographics."65_to_75_mortality_alpha"[1]'/>
+			<isee:variable type="adhoc" name='Demographics."65_to_75_mortality_gamma"[1]'/>
+			<isee:variable type="adhoc" name="Demographics.averaging_time[1]"/>
+			<isee:variable type="adhoc" name="Demographics.effect_of_GDP_on_female_population_literacy_percentage_constant[1]"/>
+			<isee:variable type="adhoc" name="Demographics.effect_of_GDP_on_female_population_literacy_percentage_scale_factor[1]"/>
+			<isee:variable type="adhoc" name="Demographics.infant_mortality_alpha[1]"/>
+			<isee:variable type="adhoc" name="Demographics.infant_mortality_gamma[1]"/>
+			<isee:variable type="adhoc" name="Demographics.initial_average_relative_real_gdp_per_person[1]"/>
+			<isee:variable type="adhoc" name="Demographics.initial_fertility[1]"/>
+			<isee:variable type="adhoc" name="Demographics.Over_75_mortality_alpha[1]"/>
+			<isee:variable type="adhoc" name="Demographics.Over_75_mortality_gamma[1]"/>
+			<isee:variable type="adhoc" name="Demographics.sensitivity_of_fertility_to_inverse_GDP_per_person[1]"/>
+			<isee:variable type="adhoc" name="Demographics.sensitivity_of_fertility_to_literacy[1]"/>
+			<isee:variable type="adhoc" name="Demographics.time_to_change_fertility[1]"/>
+			<isee:variable type="adhoc" name="Circular_Flow.consumption_habits_adjustment_time[1]"/>
+			<isee:variable type="adhoc" name="Circular_Flow.desired_savings_as_multiple_of_profits[1]"/>
+			<isee:variable type="adhoc" name="Circular_Flow.desired_savings_as_multiple_of_wages[1]"/>
+			<isee:variable type="adhoc" name="Circular_Flow.fraction_of_income_to_consumption[1]"/>
+			<isee:variable type="adhoc" name="Circular_Flow.fraction_of_owner_income_to_consumption[1]"/>
+			<isee:variable type="adhoc" name="Circular_Flow.initial_firms_checking_accounts[1]"/>
+			<isee:variable type="adhoc" name="Circular_Flow.initial_owner_savings[1]"/>
+			<isee:variable type="adhoc" name="Circular_Flow.initial_worker_savings[1]"/>
+			<isee:variable type="adhoc" name="Circular_Flow.normal_bottom_40_wages[1]"/>
+			<isee:variable type="adhoc" name="Circular_Flow.profit_tax_rate[1]"/>
+			<isee:variable type="adhoc" name="Circular_Flow.time_for_bottom_40_to_be_affected[1]"/>
+			<isee:variable type="adhoc" name="Circular_Flow.time_to_consider_desired_savings[1]"/>
+			<isee:variable type="adhoc" name="Circular_Flow.time_to_pay_out_profits[1]"/>
+			<isee:variable type="adhoc" name="Circular_Flow.time_to_reach_savings_goal[1]"/>
+			<isee:variable type="adhoc" name="Circular_Flow.wage_tax_rate[1]"/>
+			<isee:variable type="adhoc" name="Circular_Flow.xmiddle[1]"/>
+			<isee:variable type="adhoc" name="Circular_Flow.xspeed[1]"/>
+			<isee:variable type="adhoc" name="Circular_Flow.yfrom[1]"/>
+			<isee:variable type="adhoc" name="Circular_Flow.yto[1]"/>
+			<isee:variable type="adhoc" name="Employment.average_development_completion_time[1]"/>
+			<isee:variable type="adhoc" name="Employment.fraction_of_productivity_gains_translating_to_firing[1]"/>
+			<isee:variable type="adhoc" name="Employment.hiring_to_investment_ratio[1]"/>
+			<isee:variable type="adhoc" name="Employment.initial_productivity_growth[1]"/>
+			<isee:variable type="adhoc" name="Employment.initial_unemployment_rate[1]"/>
+			<isee:variable type="adhoc" name="Employment.Initial_Wage_Rate[1]"/>
+			<isee:variable type="adhoc" name="Employment.labour_force_participation_fixed[1]"/>
+			<isee:variable type="adhoc" name="Employment.max_change_in_fractional_wage_growth[1]"/>
+			<isee:variable type="adhoc" name="Employment.negotiation_effectiveness[1]"/>
+			<isee:variable type="adhoc" name="Employment.productivity_yield_of_exploratory_investment[1]"/>
+			<isee:variable type="adhoc" name="Employment.productivity_yield_of_non_bank_innovation[1]"/>
+			<isee:variable type="adhoc" name="Employment.profit_threshold_multiplier[1]"/>
+			<isee:variable type="adhoc" name="Employment.rent_to_investment_ratio[1]"/>
+			<isee:variable type="adhoc" name="Employment.sensitivity_of_firing_to_profit_discrepancy[1]"/>
+			<isee:variable type="adhoc" name="Employment.sensitivity_of_hiring_to_unemployment_rate[1]"/>
+			<isee:variable type="adhoc" name="Employment.share_of_employment_in_agriculture_intercept[1]"/>
+			<isee:variable type="adhoc" name="Employment.share_of_employment_in_industry_intercept[1]"/>
+			<isee:variable type="adhoc" name="Employment.share_of_employment_in_industry_slope[1]"/>
+			<isee:variable type="adhoc" name="Employment.share_of_employment_in_services_intercept[1]"/>
+			<isee:variable type="adhoc" name="Employment.share_of_employment_in_services_slope[1]"/>
+			<isee:variable type="adhoc" name="Employment.Temperature_effect_on_high_exposure_productivity[1]"/>
+			<isee:variable type="adhoc" name="Employment.Temperature_effect_on_low_exposure_productivity[1]"/>
+			<isee:variable type="adhoc" name="Employment.Temperature_squared_effect_on_high_exposure_productivity[1]"/>
+			<isee:variable type="adhoc" name="Employment.Temperature_squared_effect_on_low_exposure_productivity[1]"/>
+			<isee:variable type="adhoc" name="Employment.threshold_unemployment_rate[1]"/>
+			<isee:variable type="adhoc" name="Employment.time_for_defaults_to_affect_firing[1]"/>
+			<isee:variable type="adhoc" name="Employment.time_for_productivity_to_affect_firing[1]"/>
+			<isee:variable type="adhoc" name="Employment.time_seeking_employees[1]"/>
+			<isee:variable type="adhoc" name="Employment.time_to_fire_from_missed_profits[1]"/>
+			<isee:variable type="adhoc" name="Employment.Urgency_with_which_wage_growth_is_demanded[1]"/>
+			<isee:variable type="adhoc" name="Employment.wage_adjustment_negotiation_time[1]"/>
+			<isee:variable type="adhoc" name="Finance.average_time_private_refinances_debt[1]"/>
+			<isee:variable type="adhoc" name="Finance.bank_desired_asset_to_liability_ratio[1]"/>
+			<isee:variable type="adhoc" name="Finance.bank_reference_formation_time[1]"/>
+			<isee:variable type="adhoc" name="Finance.effect_of_default_rate_on_lending_standards_curvature[1]"/>
+			<isee:variable type="adhoc" name="Finance.effect_of_default_rate_on_lending_standards_range[1]"/>
+			<isee:variable type="adhoc" name="Finance.effect_of_lending_standards_on_failure_rate_curvature[1]"/>
+			<isee:variable type="adhoc" name="Finance.effect_of_lending_standards_on_failure_rate_range[1]"/>
+			<isee:variable type="adhoc" name="Finance.elasticity_of_bankruptcy_rate_on_risk_premium[1]"/>
+			<isee:variable type="adhoc" name="Finance.elasticity_of_desired_bank_growth_rate_to_changes_in_lending_standards[1]"/>
+			<isee:variable type="adhoc" name="Finance.equity_gap_above_min_effect[1]"/>
+			<isee:variable type="adhoc" name="Finance.equity_gap_below_max_effect[1]"/>
+			<isee:variable type="adhoc" name="Finance.equity_gap_effect_max_x_magnitude[1]"/>
+			<isee:variable type="adhoc" name="Finance.equity_ratio_gap_effect_above_exponent[1]"/>
+			<isee:variable type="adhoc" name="Finance.equity_ratio_gap_effect_below_exponent[1]"/>
+			<isee:variable type="adhoc" name="Finance.exploration_effect_midpoint[1]"/>
+			<isee:variable type="adhoc" name="Finance.exploratory_premium[1]"/>
+			<isee:variable type="adhoc" name="Finance.exponential_effect_of_interest_on_defaults[1]"/>
+			<isee:variable type="adhoc" name="Finance.failure_rate_floor[1]"/>
+			<isee:variable type="adhoc" name="Finance.initial_annual_bank_negative_profit_fractional_growth[1]"/>
+			<isee:variable type="adhoc" name="Finance.initial_bad_loans[1]"/>
+			<isee:variable type="adhoc" name="Finance.initial_bank_investment_growth_rate[1]"/>
+			<isee:variable type="adhoc" name="Finance.initial_fraction_of_safe_loans_financing_innovation[1]"/>
+			<isee:variable type="adhoc" name="Finance.initial_fraction_of_safe_loans_that_are_exploratory[1]"/>
+			<isee:variable type="adhoc" name="Finance.initial_good_loans[1]"/>
+			<isee:variable type="adhoc" name="Finance.initial_net_bank_asset_fractional_growth[1]"/>
+			<isee:variable type="adhoc" name="Finance.initial_non_energy_bank_investment[1]"/>
+			<isee:variable type="adhoc" name="Finance.initial_risk_premium[1]"/>
+			<isee:variable type="adhoc" name="Finance.Initial_safe_assets[1]"/>
+			<isee:variable type="adhoc" name="Finance.loan_maturation_time[1]"/>
+			<isee:variable type="adhoc" name="Finance.max_change_in_failure_rate[1]"/>
+			<isee:variable type="adhoc" name="Finance.max_change_in_lending_standards[1]"/>
+			<isee:variable type="adhoc" name="Finance.max_risk_premium_increase_rate[1]"/>
+			<isee:variable type="adhoc" name="Finance.minimum_reference_stranded_energy_capital[1]"/>
+			<isee:variable type="adhoc" name="Finance.normal_bank_profit_payment_fraction[1]"/>
+			<isee:variable type="adhoc" name="Finance.normal_exploration_rate[1]"/>
+			<isee:variable type="adhoc" name="Finance.normal_failure_rate[1]"/>
+			<isee:variable type="adhoc" name="Finance.normal_growth_rate_of_GDP_growth_rate[1]"/>
+			<isee:variable type="adhoc" name="Finance.normal_rate_of_converting_safe_loans_to_safe_loans_for_financing_innovation[1]"/>
+			<isee:variable type="adhoc" name="Finance.renegotiation_time[1]"/>
+			<isee:variable type="adhoc" name="Finance.reporting_delay[1]"/>
+			<isee:variable type="adhoc" name="Finance.safe_asset_default_rate_threshold[1]"/>
+			<isee:variable type="adhoc" name="Finance.scale_of_exploratory_loan_failure[1]"/>
+			<isee:variable type="adhoc" name="Finance.sensitivity_of_bank_exploration_to_profit_decline[1]"/>
+			<isee:variable type="adhoc" name="Finance.sensitivity_of_bank_profit_payment_to_net_asset_growth[1]"/>
+			<isee:variable type="adhoc" name="Finance.sensitivity_of_defaults_to_changes_in_risky_interest[1]"/>
+			<isee:variable type="adhoc" name="Finance.sensitivity_of_effect_of_safe_default_rate_on_lending_standards[1]"/>
+			<isee:variable type="adhoc" name="Finance.sensitivity_of_effect_of_sta_on_failure_rate[1]"/>
+			<isee:variable type="adhoc" name="Finance.sensitivity_of_effect_of_stranded_energy_capital_on_other_assets[1]"/>
+			<isee:variable type="adhoc" name="Finance.sensitivity_of_exploratory_loan_failure_to_GDP_growth[1]"/>
+			<isee:variable type="adhoc" name="Finance.sensitivity_of_failure_rate_to_investment_to_gdp_ratio[1]"/>
+			<isee:variable type="adhoc" name="Finance.sensitivity_of_investment_and_GDP_difference[1]"/>
+			<isee:variable type="adhoc" name="Finance.time_for_safe_loans_that_will_fail_to_actually_fail[1]"/>
+			<isee:variable type="adhoc" name="Finance.time_to_change_lending_standards[1]"/>
+			<isee:variable type="adhoc" name="Finance.tolerance_of_the_cap_on_indicated_risk_premium[1]"/>
+			<isee:variable type="adhoc" name="GDP.initial_nominal_GDP_growth_rate[1]"/>
+			<isee:variable type="adhoc" name="GDP.initial_real_GDP_growth_rate[1]"/>
+			<isee:variable type="adhoc" name="Government.average_time_government_refinances_debt[1]"/>
+			<isee:variable type="adhoc" name="Government.averaging_time_to_adjust_tax_based_on_income[1]"/>
+			<isee:variable type="adhoc" name="Government.baseline_interest[1]"/>
+			<isee:variable type="adhoc" name="Government.central_bank_adjustment_time[1]"/>
+			<isee:variable type="adhoc" name="Government.central_bank_interest_rate_reactivity[1]"/>
+			<isee:variable type="adhoc" name="Government.fraction_of_wages_as_child_transfer_payments[1]"/>
+			<isee:variable type="adhoc" name="Government.fraction_of_wages_as_pension[1]"/>
+			<isee:variable type="adhoc" name="Government.fraction_of_wages_as_unemployment_payments[1]"/>
+			<isee:variable type="adhoc" name="Government.inflation_weight[1]"/>
+			<isee:variable type="adhoc" name="Government.initial_government_debt[1]"/>
+			<isee:variable type="adhoc" name="Government.initial_measured_GDP[1]"/>
+			<isee:variable type="adhoc" name="Government.initial_safe_interest[1]"/>
+			<isee:variable type="adhoc" name="Government.initial_smoothed_total_public_tax_income[1]"/>
+			<isee:variable type="adhoc" name="Government.maximum_effect_of_debt_to_GDP_ratio_on_government_spending[1]"/>
+			<isee:variable type="adhoc" name="Government.normal_share_of_public_expenditure_available_for_investment_and_consumption_to_consumption[1]"/>
+			<isee:variable type="adhoc" name="Government.sensitivity_of_banks_gov_debt_risk_perception[1]"/>
+			<isee:variable type="adhoc" name="Government.sensitivity_of_STA_on_public_consumption[1]"/>
+			<isee:variable type="adhoc" name="Government.time_for_government_to_change_transfers[1]"/>
+			<isee:variable type="adhoc" name="Government.time_to_measure_unemployment[1]"/>
+			<isee:variable type="adhoc" name="Government.unemployment_weight[1]"/>
+			<isee:variable type="adhoc" name="Inflation.Agriculture_share_of_GDP_intercept[1]"/>
+			<isee:variable type="adhoc" name="Inflation.agriculture_share_of_GDP_slope[1]"/>
+			<isee:variable type="adhoc" name="Inflation.agriculture_share_of_GDP_starting_point_determinant[1]"/>
+			<isee:variable type="adhoc" name="Inflation.deflation_adjustment_time[1]"/>
+			<isee:variable type="adhoc" name="Inflation.indirect_impacts_of_energy_costs_weight[1]"/>
+			<isee:variable type="adhoc" name="Inflation.inflation_adjustment_time[1]"/>
+			<isee:variable type="adhoc" name="Inflation.initial_animal_products_demand_growth_rate[1]"/>
+			<isee:variable type="adhoc" name="Inflation.initial_animal_products_production_growth_rate[1]"/>
+			<isee:variable type="adhoc" name="Inflation.initial_crop_demand_growth_rate[1]"/>
+			<isee:variable type="adhoc" name="Inflation.initial_crop_supply_growth_rate[1]"/>
+			<isee:variable type="adhoc" name="Inflation.initial_employed_growth[1]"/>
+			<isee:variable type="adhoc" name="Inflation.initial_energy_demand_growth_rate[1]"/>
+			<isee:variable type="adhoc" name="Inflation.initial_energy_supply_growth_rate[1]"/>
+			<isee:variable type="adhoc" name="Inflation.initial_growth_rate_in_cropland[1]"/>
+			<isee:variable type="adhoc" name="Inflation.initial_growth_rate_in_grazing_land[1]"/>
+			<isee:variable type="adhoc" name="Inflation.initial_income_growth_rate[1]"/>
+			<isee:variable type="adhoc" name="Inflation.initial_inflation_index[1]"/>
+			<isee:variable type="adhoc" name="Inflation.initial_inflation_rate[1]"/>
+			<isee:variable type="adhoc" name="Inflation.time_to_measure_growth_rate[1]"/>
+			<isee:variable type="adhoc" name="Inflation.weight_of_cropland_inflation_contribution[1]"/>
+			<isee:variable type="adhoc" name="Inflation.weight_of_fertilizer_used_per_unit_of_crop_production[1]"/>
+			<isee:variable type="adhoc" name="Inflation.weight_of_grazing_land_inflation_contribution[1]"/>
+			<isee:variable type="adhoc" name="Inflation.weight_of_irrigation_water_used_per_unit_of_crop_production_inflation_contribution[1]"/>
+			<isee:variable type="adhoc" name="Inflation.weight_of_marginal_energy_cost_inflation[1]"/>
+			<isee:variable type="adhoc" name="Innovation.firms_reference_formation_time[1]"/>
+			<isee:variable type="adhoc" name="Innovation.reference_cash_reserve_growth_rate[1]"/>
+			<isee:variable type="adhoc" name="Innovation.sensitivity_of_effect_of_cash_reserve_growth_rate_on_firms_innovation_orientation[1]"/>
+			<isee:variable type="adhoc" name="Innovation.time_for_firms_to_adjust_innovation_orientation[1]"/>
+			<isee:variable type="adhoc" name="Coastal_Assets.Fraction_of_assets_that_has_to_stay_at_the_coast[1]"/>
+			<isee:variable type="adhoc" name="Coastal_Assets.Fraction_of_storm_damages_that_is_repaired[1]"/>
+			<isee:variable type="adhoc" name="Coastal_Assets.Maxmium_fraction_of_assets_destroyed_in_a_storm_surge[1]"/>
+			<isee:variable type="adhoc" name="Coastal_population.Fatality_rate_in_flood_events[1]"/>
+			<isee:variable type="adhoc" name="Sea_level_rise_costs_and_impacts.Asset_demolition_cost_factor[1]"/>
+			<isee:variable type="adhoc" name="Sea_level_rise_costs_and_impacts.Asset_relocation_cost_factor[1]"/>
+			<isee:variable type="adhoc" name="Sea_level_rise_costs_and_impacts.Increase_factor_for_costs_of_reactive_retreat[1]"/>
+			<isee:variable type="adhoc" name="Sea_level_rise_costs_and_impacts.Mobile_assets_fraction[1]"/>
+			<isee:variable type="adhoc" name="Sea_level_rise_costs_and_impacts.Relative_productivity_loss_of_people_being_flooded[1]"/>
+			<isee:variable type="adhoc" name="Energy_demand.CDD_linear_coefficient[1]"/>
+			<isee:variable type="adhoc" name="Energy_demand.effect_of_GDP_on_Buildings_energy_demand_alpha[1]"/>
+			<isee:variable type="adhoc" name="Energy_demand.effect_of_GDP_on_Buildings_energy_demand_beta[1]"/>
+			<isee:variable type="adhoc" name="Energy_demand.effect_of_GDP_on_Industry_and_Other_energy_demand_alpha[1]"/>
+			<isee:variable type="adhoc" name="Energy_demand.effect_of_GDP_on_Industry_and_Other_energy_demand_beta[1]"/>
+			<isee:variable type="adhoc" name="Energy_demand.Energy_use_per_HDD[1]"/>
+			<isee:variable type="adhoc" name="Energy_demand.HDD_exponential_coefficient[1]"/>
+			<isee:variable type="adhoc" name="Energy_demand.initial_aggregate_per_unit_energy_prices[1]"/>
+			<isee:variable type="adhoc" name="Energy_demand.initial_reference_aggregate_per_unit_energy_prices[1]"/>
+			<isee:variable type="adhoc" name="Energy_demand.normal_per_sector_energy_demand_for_Industry_and_Other[1]"/>
+			<isee:variable type="adhoc" name="Energy_demand.reference_change_in_energy_prices[1]"/>
+			<isee:variable type="adhoc" name="Energy_demand.reference_formation_time[1]"/>
+			<isee:variable type="adhoc" name="Energy_demand.sensitivity_of_effect_of_energy_prices_on_energy_demand_of_Buildings[1]"/>
+			<isee:variable type="adhoc" name="Energy_demand.sensitivity_of_effect_of_energy_prices_on_energy_demand_of_Industry_and_Other[1]"/>
+			<isee:variable type="adhoc" name="Energy_demand.time_for_competition_to_change_prices[1]"/>
+			<isee:variable type="adhoc" name="Energy_investments.adaptive_energy_investments_differntiating_factor[1]"/>
+			<isee:variable type="adhoc" name="Energy_investments.adaptive_energy_investments_integrating_factor[1]"/>
+			<isee:variable type="adhoc" name="Energy_investments.adaptive_energy_investments_proportional_factor[1]"/>
+			<isee:variable type="adhoc" name="Energy_investments.baseline_energy_investments[1]"/>
+			<isee:variable type="adhoc" name="Energy_investments.cost_perception_time[1]"/>
+			<isee:variable type="adhoc" name="Energy_investments.historical_cost_adjustment[1, Coal_fuel_extraction, 1]"/>
+			<isee:variable type="adhoc" name="Energy_investments.historical_cost_adjustment[1, Coal_fuel_extraction, 2]"/>
+			<isee:variable type="adhoc" name="Energy_investments.historical_cost_adjustment[1, Coal_fuel_extraction, 3]"/>
+			<isee:variable type="adhoc" name="Energy_investments.historical_cost_adjustment[1, Coal_fuel_extraction, 4]"/>
+			<isee:variable type="adhoc" name="Energy_investments.historical_cost_adjustment[1, Coal_fuel_extraction, 5]"/>
+			<isee:variable type="adhoc" name="Energy_investments.historical_cost_adjustment[1, Coal_fuel_extraction, 6]"/>
+			<isee:variable type="adhoc" name="Energy_investments.historical_cost_adjustment[1, Coal_fuel_extraction, 7]"/>
+			<isee:variable type="adhoc" name="Energy_investments.historical_cost_adjustment[1, Coal_fuel_extraction, 8]"/>
+			<isee:variable type="adhoc" name="Energy_investments.historical_cost_adjustment[1, Coal_fuel_extraction, 9]"/>
+			<isee:variable type="adhoc" name="Energy_investments.historical_cost_adjustment[1, Coal_energy_conversion, 1]"/>
+			<isee:variable type="adhoc" name="Energy_investments.historical_cost_adjustment[1, Coal_energy_conversion, 2]"/>
+			<isee:variable type="adhoc" name="Energy_investments.historical_cost_adjustment[1, Coal_energy_conversion, 3]"/>
+			<isee:variable type="adhoc" name="Energy_investments.historical_cost_adjustment[1, Coal_energy_conversion, 4]"/>
+			<isee:variable type="adhoc" name="Energy_investments.historical_cost_adjustment[1, Coal_energy_conversion, 5]"/>
+			<isee:variable type="adhoc" name="Energy_investments.historical_cost_adjustment[1, Coal_energy_conversion, 6]"/>
+			<isee:variable type="adhoc" name="Energy_investments.historical_cost_adjustment[1, Coal_energy_conversion, 7]"/>
+			<isee:variable type="adhoc" name="Energy_investments.historical_cost_adjustment[1, Coal_energy_conversion, 8]"/>
+			<isee:variable type="adhoc" name="Energy_investments.historical_cost_adjustment[1, Coal_energy_conversion, 9]"/>
+			<isee:variable type="adhoc" name="Energy_investments.historical_cost_adjustment[1, Oil_fuel_extraction, 1]"/>
+			<isee:variable type="adhoc" name="Energy_investments.historical_cost_adjustment[1, Oil_fuel_extraction, 2]"/>
+			<isee:variable type="adhoc" name="Energy_investments.historical_cost_adjustment[1, Oil_fuel_extraction, 3]"/>
+			<isee:variable type="adhoc" name="Energy_investments.historical_cost_adjustment[1, Oil_fuel_extraction, 4]"/>
+			<isee:variable type="adhoc" name="Energy_investments.historical_cost_adjustment[1, Oil_fuel_extraction, 5]"/>
+			<isee:variable type="adhoc" name="Energy_investments.historical_cost_adjustment[1, Oil_fuel_extraction, 6]"/>
+			<isee:variable type="adhoc" name="Energy_investments.historical_cost_adjustment[1, Oil_fuel_extraction, 7]"/>
+			<isee:variable type="adhoc" name="Energy_investments.historical_cost_adjustment[1, Oil_fuel_extraction, 8]"/>
+			<isee:variable type="adhoc" name="Energy_investments.historical_cost_adjustment[1, Oil_fuel_extraction, 9]"/>
+			<isee:variable type="adhoc" name="Energy_investments.historical_cost_adjustment[1, Oil_energy_conversion, 1]"/>
+			<isee:variable type="adhoc" name="Energy_investments.historical_cost_adjustment[1, Oil_energy_conversion, 2]"/>
+			<isee:variable type="adhoc" name="Energy_investments.historical_cost_adjustment[1, Oil_energy_conversion, 3]"/>
+			<isee:variable type="adhoc" name="Energy_investments.historical_cost_adjustment[1, Oil_energy_conversion, 4]"/>
+			<isee:variable type="adhoc" name="Energy_investments.historical_cost_adjustment[1, Oil_energy_conversion, 5]"/>
+			<isee:variable type="adhoc" name="Energy_investments.historical_cost_adjustment[1, Oil_energy_conversion, 6]"/>
+			<isee:variable type="adhoc" name="Energy_investments.historical_cost_adjustment[1, Oil_energy_conversion, 7]"/>
+			<isee:variable type="adhoc" name="Energy_investments.historical_cost_adjustment[1, Oil_energy_conversion, 8]"/>
+			<isee:variable type="adhoc" name="Energy_investments.historical_cost_adjustment[1, Oil_energy_conversion, 9]"/>
+			<isee:variable type="adhoc" name="Energy_investments.historical_cost_adjustment[1, Gas_fuel_extraction, 1]"/>
+			<isee:variable type="adhoc" name="Energy_investments.historical_cost_adjustment[1, Gas_fuel_extraction, 2]"/>
+			<isee:variable type="adhoc" name="Energy_investments.historical_cost_adjustment[1, Gas_fuel_extraction, 3]"/>
+			<isee:variable type="adhoc" name="Energy_investments.historical_cost_adjustment[1, Gas_fuel_extraction, 4]"/>
+			<isee:variable type="adhoc" name="Energy_investments.historical_cost_adjustment[1, Gas_fuel_extraction, 5]"/>
+			<isee:variable type="adhoc" name="Energy_investments.historical_cost_adjustment[1, Gas_fuel_extraction, 6]"/>
+			<isee:variable type="adhoc" name="Energy_investments.historical_cost_adjustment[1, Gas_fuel_extraction, 7]"/>
+			<isee:variable type="adhoc" name="Energy_investments.historical_cost_adjustment[1, Gas_fuel_extraction, 8]"/>
+			<isee:variable type="adhoc" name="Energy_investments.historical_cost_adjustment[1, Gas_fuel_extraction, 9]"/>
+			<isee:variable type="adhoc" name="Energy_investments.historical_cost_adjustment[1, Gas_energy_conversion, 1]"/>
+			<isee:variable type="adhoc" name="Energy_investments.historical_cost_adjustment[1, Gas_energy_conversion, 2]"/>
+			<isee:variable type="adhoc" name="Energy_investments.historical_cost_adjustment[1, Gas_energy_conversion, 3]"/>
+			<isee:variable type="adhoc" name="Energy_investments.historical_cost_adjustment[1, Gas_energy_conversion, 4]"/>
+			<isee:variable type="adhoc" name="Energy_investments.historical_cost_adjustment[1, Gas_energy_conversion, 5]"/>
+			<isee:variable type="adhoc" name="Energy_investments.historical_cost_adjustment[1, Gas_energy_conversion, 6]"/>
+			<isee:variable type="adhoc" name="Energy_investments.historical_cost_adjustment[1, Gas_energy_conversion, 7]"/>
+			<isee:variable type="adhoc" name="Energy_investments.historical_cost_adjustment[1, Gas_energy_conversion, 8]"/>
+			<isee:variable type="adhoc" name="Energy_investments.historical_cost_adjustment[1, Gas_energy_conversion, 9]"/>
+			<isee:variable type="adhoc" name="Energy_investments.historical_cost_adjustment[1, Hydropower, 1]"/>
+			<isee:variable type="adhoc" name="Energy_investments.historical_cost_adjustment[1, Hydropower, 2]"/>
+			<isee:variable type="adhoc" name="Energy_investments.historical_cost_adjustment[1, Hydropower, 3]"/>
+			<isee:variable type="adhoc" name="Energy_investments.historical_cost_adjustment[1, Hydropower, 4]"/>
+			<isee:variable type="adhoc" name="Energy_investments.historical_cost_adjustment[1, Hydropower, 5]"/>
+			<isee:variable type="adhoc" name="Energy_investments.historical_cost_adjustment[1, Hydropower, 6]"/>
+			<isee:variable type="adhoc" name="Energy_investments.historical_cost_adjustment[1, Hydropower, 7]"/>
+			<isee:variable type="adhoc" name="Energy_investments.historical_cost_adjustment[1, Hydropower, 8]"/>
+			<isee:variable type="adhoc" name="Energy_investments.historical_cost_adjustment[1, Hydropower, 9]"/>
+			<isee:variable type="adhoc" name="Energy_investments.historical_cost_adjustment[1, Nuclear, 1]"/>
+			<isee:variable type="adhoc" name="Energy_investments.historical_cost_adjustment[1, Nuclear, 2]"/>
+			<isee:variable type="adhoc" name="Energy_investments.historical_cost_adjustment[1, Nuclear, 3]"/>
+			<isee:variable type="adhoc" name="Energy_investments.historical_cost_adjustment[1, Nuclear, 4]"/>
+			<isee:variable type="adhoc" name="Energy_investments.historical_cost_adjustment[1, Nuclear, 5]"/>
+			<isee:variable type="adhoc" name="Energy_investments.historical_cost_adjustment[1, Nuclear, 6]"/>
+			<isee:variable type="adhoc" name="Energy_investments.historical_cost_adjustment[1, Nuclear, 7]"/>
+			<isee:variable type="adhoc" name="Energy_investments.historical_cost_adjustment[1, Nuclear, 8]"/>
+			<isee:variable type="adhoc" name="Energy_investments.historical_cost_adjustment[1, Nuclear, 9]"/>
+			<isee:variable type="adhoc" name="Energy_investments.historical_cost_adjustment[1, Bio, 1]"/>
+			<isee:variable type="adhoc" name="Energy_investments.historical_cost_adjustment[1, Bio, 2]"/>
+			<isee:variable type="adhoc" name="Energy_investments.historical_cost_adjustment[1, Bio, 3]"/>
+			<isee:variable type="adhoc" name="Energy_investments.historical_cost_adjustment[1, Bio, 4]"/>
+			<isee:variable type="adhoc" name="Energy_investments.historical_cost_adjustment[1, Bio, 5]"/>
+			<isee:variable type="adhoc" name="Energy_investments.historical_cost_adjustment[1, Bio, 6]"/>
+			<isee:variable type="adhoc" name="Energy_investments.historical_cost_adjustment[1, Bio, 7]"/>
+			<isee:variable type="adhoc" name="Energy_investments.historical_cost_adjustment[1, Bio, 8]"/>
+			<isee:variable type="adhoc" name="Energy_investments.historical_cost_adjustment[1, Bio, 9]"/>
+			<isee:variable type="adhoc" name="Energy_investments.historical_cost_adjustment[1, Solar, 1]"/>
+			<isee:variable type="adhoc" name="Energy_investments.historical_cost_adjustment[1, Solar, 2]"/>
+			<isee:variable type="adhoc" name="Energy_investments.historical_cost_adjustment[1, Solar, 3]"/>
+			<isee:variable type="adhoc" name="Energy_investments.historical_cost_adjustment[1, Solar, 4]"/>
+			<isee:variable type="adhoc" name="Energy_investments.historical_cost_adjustment[1, Solar, 5]"/>
+			<isee:variable type="adhoc" name="Energy_investments.historical_cost_adjustment[1, Solar, 6]"/>
+			<isee:variable type="adhoc" name="Energy_investments.historical_cost_adjustment[1, Solar, 7]"/>
+			<isee:variable type="adhoc" name="Energy_investments.historical_cost_adjustment[1, Solar, 8]"/>
+			<isee:variable type="adhoc" name="Energy_investments.historical_cost_adjustment[1, Solar, 9]"/>
+			<isee:variable type="adhoc" name="Energy_investments.historical_cost_adjustment[1, Wind, 1]"/>
+			<isee:variable type="adhoc" name="Energy_investments.historical_cost_adjustment[1, Wind, 2]"/>
+			<isee:variable type="adhoc" name="Energy_investments.historical_cost_adjustment[1, Wind, 3]"/>
+			<isee:variable type="adhoc" name="Energy_investments.historical_cost_adjustment[1, Wind, 4]"/>
+			<isee:variable type="adhoc" name="Energy_investments.historical_cost_adjustment[1, Wind, 5]"/>
+			<isee:variable type="adhoc" name="Energy_investments.historical_cost_adjustment[1, Wind, 6]"/>
+			<isee:variable type="adhoc" name="Energy_investments.historical_cost_adjustment[1, Wind, 7]"/>
+			<isee:variable type="adhoc" name="Energy_investments.historical_cost_adjustment[1, Wind, 8]"/>
+			<isee:variable type="adhoc" name="Energy_investments.historical_cost_adjustment[1, Wind, 9]"/>
+			<isee:variable type="adhoc" name="Energy_investments.historical_cost_adjustment_smoothing_time[1]"/>
+			<isee:variable type="adhoc" name="Energy_investments.initial_perceived_marginal_energy_supply_cost[1]"/>
+			<isee:variable type="adhoc" name="Energy_investments.initial_relative_supply_missmatch[1]"/>
+			<isee:variable type="adhoc" name="Energy_investments.priority_spread[1]"/>
+			<isee:variable type="adhoc" name="Energy_investments.Relative_Energy_Supply_Mismatch_Buffer[1]"/>
+			<isee:variable type="adhoc" name="Energy_investments.sensitivity_of_cost_adjustment_to_relative_stranded_capital[1]"/>
+			<isee:variable type="adhoc" name="Energy_investments.sensitivity_of_effect_of_perceived_marginal_energy_supply_cost_on_investment[1]"/>
+			<isee:variable type="adhoc" name="Energy_investments.time_to_consider_stranded_capital[1]"/>
+			<isee:variable type="adhoc" name="Energy_investments.time_to_perceive_energy_supply_missmatch[1]"/>
+			<isee:variable type="adhoc" name="Damages.Exponent_of_Capital_Damage_Function[1]"/>
+			<isee:variable type="adhoc" name="Damages.Slope_of_Capital_Damage_Function[1]"/>
+			<isee:variable type="adhoc" name="Fossil_energy_coal.carbon_intensity_in_btu[1]"/>
+			<isee:variable type="adhoc" name="Fossil_energy_coal.depreciation_rate_of_fossil_energy_capital[1]"/>
+			<isee:variable type="adhoc" name="Fossil_energy_coal.Depreciation_rate_of_Fuel_Extraction_Capital[1]"/>
+			<isee:variable type="adhoc" name="Fossil_energy_coal.Elasticity_of_Substitution_in_Fossil_Energy_Output[1]"/>
+			<isee:variable type="adhoc" name="Fossil_energy_coal.Fossil_Energy_Capital_Scaling_Parameter[1]"/>
+			<isee:variable type="adhoc" name="Fossil_energy_coal.Initial_extraction_costs[1]"/>
+			<isee:variable type="adhoc" name="Fossil_energy_coal.initial_fossil_energy_capital[1]"/>
+			<isee:variable type="adhoc" name="Fossil_energy_coal.initial_fossil_extraction_knowledge[1]"/>
+			<isee:variable type="adhoc" name="Fossil_energy_coal.initial_fossil_fuel_extraction_capital[1]"/>
+			<isee:variable type="adhoc" name="Fossil_energy_coal.learning_elasticity_of_the_resource_sector[1]"/>
+			<isee:variable type="adhoc" name="Fossil_energy_coal.learning_time_in_resource_sector[1]"/>
+			<isee:variable type="adhoc" name="Fossil_energy_coal.maximum_increase_of_capital_coefficient_in_fossil_resource_sector[1]"/>
+			<isee:variable type="adhoc" name="Fossil_energy_coal.PM_per_fuel_extracted[1]"/>
+			<isee:variable type="adhoc" name="Fossil_energy_coal.Primary_Fossil_Energy_Scaling_Parameter[1]"/>
+			<isee:variable type="adhoc" name="Fossil_energy_coal.productivity_per_extractionknowledge[1]"/>
+			<isee:variable type="adhoc" name="Fossil_energy_coal.reference_formation_time[1]"/>
+			<isee:variable type="adhoc" name="Fossil_energy_coal.sensitivity_of_effect_of_capital_to_fuel_ratio_on_stranded_capital[1]"/>
+			<isee:variable type="adhoc" name="Fossil_energy_coal.share_of_primary_energy_in_fossil_energy[1]"/>
+			<isee:variable type="adhoc" name="Fossil_energy_coal.Slope_of_cost_curve[1]"/>
+			<isee:variable type="adhoc" name="Fossil_energy_coal.TFP_in_1980[1]"/>
+			<isee:variable type="adhoc" name="Fossil_energy_coal.TFP_Max[1]"/>
+			<isee:variable type="adhoc" name="Fossil_energy_coal.TFP_Max_Ramp_Year[1]"/>
+			<isee:variable type="adhoc" name="Fossil_energy_coal.TFP_Ramp_Speed[1]"/>
+			<isee:variable type="adhoc" name="Fossil_energy_coal.TFP_Slope_Start[1]"/>
+			<isee:variable type="adhoc" name="Fossil_energy_coal.time_to_strand_capital[1]"/>
+			<isee:variable type="adhoc" name="Fossil_energy_gas.carbon_intensity_in_btu[1]"/>
+			<isee:variable type="adhoc" name="Fossil_energy_gas.depreciation_rate_of_fossil_energy_capital[1]"/>
+			<isee:variable type="adhoc" name="Fossil_energy_gas.Depreciation_rate_of_Fuel_Extraction_Capital[1]"/>
+			<isee:variable type="adhoc" name="Fossil_energy_gas.Elasticity_of_Substitution_in_Fossil_Energy_Output[1]"/>
+			<isee:variable type="adhoc" name="Fossil_energy_gas.Fossil_Energy_Capital_Scaling_Parameter[1]"/>
+			<isee:variable type="adhoc" name="Fossil_energy_gas.Initial_extraction_costs[1]"/>
+			<isee:variable type="adhoc" name="Fossil_energy_gas.initial_fossil_energy_capital[1]"/>
+			<isee:variable type="adhoc" name="Fossil_energy_gas.initial_fossil_extraction_knowledge[1]"/>
+			<isee:variable type="adhoc" name="Fossil_energy_gas.initial_fossil_fuel_extraction_capital[1]"/>
+			<isee:variable type="adhoc" name="Fossil_energy_gas.learning_elasticity_of_the_resource_sector[1]"/>
+			<isee:variable type="adhoc" name="Fossil_energy_gas.learning_time_in_resource_sector[1]"/>
+			<isee:variable type="adhoc" name="Fossil_energy_gas.maximum_increase_of_capital_coefficient_in_fossil_resource_sector[1]"/>
+			<isee:variable type="adhoc" name="Fossil_energy_gas.PM_per_fuel_extracted[1]"/>
+			<isee:variable type="adhoc" name="Fossil_energy_gas.Primary_Fossil_Energy_Scaling_Parameter[1]"/>
+			<isee:variable type="adhoc" name="Fossil_energy_gas.productivity_per_extractionknowledge[1]"/>
+			<isee:variable type="adhoc" name="Fossil_energy_gas.sensitivity_of_effect_of_capital_to_fuel_ratio_on_stranded_capital[1]"/>
+			<isee:variable type="adhoc" name="Fossil_energy_gas.share_of_primary_energy_in_fossil_energy[1]"/>
+			<isee:variable type="adhoc" name="Fossil_energy_gas.Slope_of_cost_curve[1]"/>
+			<isee:variable type="adhoc" name="Fossil_energy_gas.TFP_in_1980[1]"/>
+			<isee:variable type="adhoc" name="Fossil_energy_gas.TFP_Max[1]"/>
+			<isee:variable type="adhoc" name="Fossil_energy_gas.TFP_Max_Ramp_Year[1]"/>
+			<isee:variable type="adhoc" name="Fossil_energy_gas.TFP_Ramp_Speed[1]"/>
+			<isee:variable type="adhoc" name="Fossil_energy_gas.TFP_Slope_Start[1]"/>
+			<isee:variable type="adhoc" name="Fossil_energy_gas.time_to_strand_capital[1]"/>
+			<isee:variable type="adhoc" name="Fossil_energy_oil.carbon_intensity_in_btu[1]"/>
+			<isee:variable type="adhoc" name="Fossil_energy_oil.depreciation_rate_of_fossil_energy_capital[1]"/>
+			<isee:variable type="adhoc" name="Fossil_energy_oil.Depreciation_rate_of_Fuel_Extraction_Capital[1]"/>
+			<isee:variable type="adhoc" name="Fossil_energy_oil.Elasticity_of_Substitution_in_Fossil_Energy_Output[1]"/>
+			<isee:variable type="adhoc" name="Fossil_energy_oil.Fossil_Energy_Capital_Scaling_Parameter[1]"/>
+			<isee:variable type="adhoc" name="Fossil_energy_oil.Initial_extraction_costs[1]"/>
+			<isee:variable type="adhoc" name="Fossil_energy_oil.initial_fossil_energy_capital[1]"/>
+			<isee:variable type="adhoc" name="Fossil_energy_oil.initial_fossil_extraction_knowledge[1]"/>
+			<isee:variable type="adhoc" name="Fossil_energy_oil.initial_fossil_fuel_extraction_capital[1]"/>
+			<isee:variable type="adhoc" name="Fossil_energy_oil.learning_elasticity_of_the_resource_sector[1]"/>
+			<isee:variable type="adhoc" name="Fossil_energy_oil.learning_time_in_resource_sector[1]"/>
+			<isee:variable type="adhoc" name="Fossil_energy_oil.maximum_increase_of_capital_coefficient_in_fossil_resource_sector[1]"/>
+			<isee:variable type="adhoc" name="Fossil_energy_oil.PM_per_fuel_extracted[1]"/>
+			<isee:variable type="adhoc" name="Fossil_energy_oil.Primary_Fossil_Energy_Scaling_Parameter[1]"/>
+			<isee:variable type="adhoc" name="Fossil_energy_oil.productivity_per_extractionknowledge[1]"/>
+			<isee:variable type="adhoc" name="Fossil_energy_oil.reference_formation_time[1]"/>
+			<isee:variable type="adhoc" name="Fossil_energy_oil.sensitivity_of_effect_of_capital_to_fuel_ratio_on_stranded_capital[1]"/>
+			<isee:variable type="adhoc" name="Fossil_energy_oil.share_of_primary_energy_in_fossil_energy[1]"/>
+			<isee:variable type="adhoc" name="Fossil_energy_oil.Slope_of_cost_curve[1]"/>
+			<isee:variable type="adhoc" name="Fossil_energy_oil.TFP_in_1980[1]"/>
+			<isee:variable type="adhoc" name="Fossil_energy_oil.TFP_Max[1]"/>
+			<isee:variable type="adhoc" name="Fossil_energy_oil.TFP_Max_Ramp_Year[1]"/>
+			<isee:variable type="adhoc" name="Fossil_energy_oil.TFP_Ramp_Speed[1]"/>
+			<isee:variable type="adhoc" name="Fossil_energy_oil.TFP_Slope_Start[1]"/>
+			<isee:variable type="adhoc" name="Fossil_energy_oil.time_to_strand_capital[1]"/>
+			<isee:variable type="adhoc" name="Nuclear_energy.baseline_nuclear_energy_capacity_efficiency[1]"/>
+			<isee:variable type="adhoc" name="Nuclear_energy.depreciation_rate_of_Nuclear_capital[1]"/>
+			<isee:variable type="adhoc" name="Nuclear_energy.Floor_Costs[1]"/>
+			<isee:variable type="adhoc" name="Nuclear_energy.Initial_Installation_Costs[1]"/>
+			<isee:variable type="adhoc" name="Nuclear_energy.Initial_Nuclear_Capacity[1]"/>
+			<isee:variable type="adhoc" name="Nuclear_energy.Learning_Rate[1]"/>
+			<isee:variable type="adhoc" name="Nuclear_energy.stepping_on_toes_parameter[1]"/>
+			<isee:variable type="adhoc" name="Bio_fuel_energy.bio_fuel_primary_energy_content[1]"/>
+			<isee:variable type="adhoc" name="Bio_fuel_energy.depreciation_rate_of_bio_capital[1]"/>
+			<isee:variable type="adhoc" name="Bio_fuel_energy.Floor_Costs[1]"/>
+			<isee:variable type="adhoc" name="Bio_fuel_energy.Initial_biofuel_production_Capacity[1]"/>
+			<isee:variable type="adhoc" name="Bio_fuel_energy.Initial_Installation_Costs[1]"/>
+			<isee:variable type="adhoc" name="Bio_fuel_energy.Learning_Rate[1]"/>
+			<isee:variable type="adhoc" name="Bio_fuel_energy.PCal_per_Mt_of_fuel[1]"/>
+			<isee:variable type="adhoc" name="Bio_fuel_energy.stepping_on_toes_parameter[1]"/>
+			<isee:variable type="adhoc" name="Hydropower_energy.Base_Hydropower_Installation_Costs[1]"/>
+			<isee:variable type="adhoc" name="Hydropower_energy.baseline_hydropower_energy_capacity_efficiency[1]"/>
+			<isee:variable type="adhoc" name="Hydropower_energy.depreciation_rate_of_hydropower_capital[1]"/>
+			<isee:variable type="adhoc" name="Hydropower_energy.Initial_Hydropower_Capacity[1]"/>
+			<isee:variable type="adhoc" name="Hydropower_energy.Slope_of_Hydropower_Installation_Costs_wrt_Capacity[1]"/>
+			<isee:variable type="adhoc" name="Solar_energy.Initial_Solar_Energy_Installation_Costs[1]"/>
+			<isee:variable type="adhoc" name="Solar_energy.reference_formation_time[1]"/>
+			<isee:variable type="adhoc" name="Solar_energy.reference_share_of_cost_for_grid_storage[1]"/>
+			<isee:variable type="adhoc" name="Solar_energy.Renewable_Energy_Floor_Costs[1]"/>
+			<isee:variable type="adhoc" name="Solar_energy.sensitivity_of_renewable_floor_costs_to_grid_storage_needs[1]"/>
+			<isee:variable type="adhoc" name="Solar_energy.sensitivity_of_renewable_floor_costs_to_grid_storage_needs_non_linear_part[1]"/>
+			<isee:variable type="adhoc" name="Solar_energy.Solar_Energy_Full_Load_Hours[1]"/>
+			<isee:variable type="adhoc" name="Solar_energy.Solar_Energy_Learning_Rate[1]"/>
+			<isee:variable type="adhoc" name="Solar_energy.stepping_on_toes_parameter_in_renewable_energy_sector[1]"/>
+			<isee:variable type="adhoc" name="Wind_energy.Initial_Wind_Energy_Full_Load_Hours[1]"/>
+			<isee:variable type="adhoc" name="Wind_energy.Initial_Wind_Energy_Installation_Costs[1]"/>
+			<isee:variable type="adhoc" name="Wind_energy.reference_formation_time[1]"/>
+			<isee:variable type="adhoc" name="Wind_energy.reference_share_of_cost_for_grid_storage[1]"/>
+			<isee:variable type="adhoc" name="Wind_energy.Renewable_Energy_Floor_Costs[1]"/>
+			<isee:variable type="adhoc" name="Wind_energy.sensitivity_of_renewable_floor_costs_to_grid_storage_needs[1]"/>
+			<isee:variable type="adhoc" name="Wind_energy.sensitivity_of_renewable_floor_costs_to_grid_storage_needs_non_linear_part[1]"/>
+			<isee:variable type="adhoc" name="Wind_energy.stepping_on_toes_parameter_in_renewable_energy_sector[1]"/>
+			<isee:variable type="adhoc" name="Wind_energy.Wind_Energy_Learning_Rate[1]"/>
+			<isee:variable type="adhoc" name="Government_Regulations.historical_inflation_goal[1]"/>
+			<isee:variable type="adhoc" name="Government_Regulations.historical_unemployment_goal[1]"/>
+			<isee:variable type="adhoc" name="Animal_Products.Animal_Products_Yield_in_1980[1]"/>
+			<isee:variable type="adhoc" name="Animal_Products.aquatic_animal_product_share_1980[1]"/>
+			<isee:variable type="adhoc" name="Animal_Products.average_animal_product_growth_efficiency[1]"/>
+			<isee:variable type="adhoc" name="Animal_Products.averaging_time[1]"/>
+			<isee:variable type="adhoc" name="Animal_Products.desired_animal_products_reserve_capacity[1]"/>
+			<isee:variable type="adhoc" name="Animal_Products.elasticity_of_aquatic_animal_product_share_to_GDP_per_person[1]"/>
+			<isee:variable type="adhoc" name="Animal_Products.normal_rate_of_change_in_grazing_land_yield[1]"/>
+			<isee:variable type="adhoc" name="Animal_Products.sensitivity_of_rate_of_change_in_animal_products_balance_to_growth_rate_in_yield[1]"/>
+			<isee:variable type="adhoc" name="Crop.desired_crop_reserve_capacity[1]"/>
+			<isee:variable type="adhoc" name="Crop.fertilizer_use_crop_yield_parameter[1]"/>
+			<isee:variable type="adhoc" name="Crop.initial_crop_yield[1]"/>
+			<isee:variable type="adhoc" name="Crop.irrigation_crop_yield_parameter[1]"/>
+			<isee:variable type="adhoc" name="Crop.soil_carbon_crop_yield_parameter[1]"/>
+			<isee:variable type="adhoc" name="Crop.tolerance_of_the_cap_on_harvest_index_and_residue_on_field_fraction[1]"/>
+			<isee:variable type="adhoc" name="Food_Demand.crops_used_for_non_energy_other_per_person[1]"/>
+			<isee:variable type="adhoc" name="Food_Demand.elasticity_of_crops_used_for_non_energy_other_to_GDP_per_person[1]"/>
+			<isee:variable type="adhoc" name="Food_Demand.elasticity_of_crops_used_for_seed_or_lost_to_GDP_per_person[1]"/>
+			<isee:variable type="adhoc" name="Food_Demand.initial_crop_demand_for_feed_offset[1]"/>
+			<isee:variable type="adhoc" name="Food_Demand.time_to_change_crop_demand_components[1]"/>
+			<isee:variable type="adhoc" name="Food_Demand.time_to_change_demand_for_feed[1]"/>
+			<isee:variable type="adhoc" name="Forest.Mature_forest_aboveground_biomass_adaptation_time[1]"/>
+			<isee:variable type="adhoc" name="Forest.Reduction_factor_for_initial_value_of_maximum_mature_forest_aboveground_biomass_per_area[1]"/>
+			<isee:variable type="adhoc" name="Freshwater.average_deep_groundwater_infiltration_time[1]"/>
+			<isee:variable type="adhoc" name="Freshwater.base_fraction_of_cropland_irrigated[1]"/>
+			<isee:variable type="adhoc" name="Freshwater.elasticity_of_non_agricultural_water_withdrawal_per_capita_to_GDP_per_person[1]"/>
+			<isee:variable type="adhoc" name="Freshwater.initial_available_water_supply[1]"/>
+			<isee:variable type="adhoc" name="Freshwater.initial_average_relative_real_gdp_per_person[1]"/>
+			<isee:variable type="adhoc" name="Freshwater.initial_fraction_of_unsustainable_water_withdrawal[1]"/>
+			<isee:variable type="adhoc" name="Freshwater.non_agricultural_water_withdrawal_1980[1]"/>
+			<isee:variable type="adhoc" name="Freshwater.rate_of_change_in_irrigation_efficiency[1]"/>
+			<isee:variable type="adhoc" name="Freshwater.rate_of_change_in_technological_water_discovery[1]"/>
+			<isee:variable type="adhoc" name="Freshwater.sensitivity_of_effect_of_available_water_supply_on_land_irrigated[1]"/>
+			<isee:variable type="adhoc" name="Freshwater.sensitivity_of_fraction_of_cropland_irrigated_indicated_to_GDP_per_person[1]"/>
+			<isee:variable type="adhoc" name="Freshwater.sensitivity_of_pressure_to_expand_water_supply_to_available_water_supply[1]"/>
+			<isee:variable type="adhoc" name="Freshwater.sensitivity_of_surface_temperature_anomaly_on_water_used_per_Mtcrop[1]"/>
+			<isee:variable type="adhoc" name="Freshwater.sensitivity_residue_coverage_effect[1]"/>
+			<isee:variable type="adhoc" name="Freshwater.technological_water_discovery_1980[1]"/>
+			<isee:variable type="adhoc" name="Freshwater.time_for_GDP_to_impact_irrigation[1]"/>
+			<isee:variable type="adhoc" name="Freshwater.water_withdrawal_per_MHa_irrigated_1980[1]"/>
+			<isee:variable type="adhoc" name="Grass.GtC_per_PCal_of_grazing_multiplier[1]"/>
+			<isee:variable type="adhoc" name="Land_Nutrients.elasticity_of_effect_of_animal_products_on_manure_fertilizer_use[1]"/>
+			<isee:variable type="adhoc" name="Land_Nutrients.manure_fertilizer_use_1980[1]"/>
+			<isee:variable type="adhoc" name="Land_Use.cropland_expansion_time[1]"/>
+			<isee:variable type="adhoc" name="Land_Use.elasticity_of_effect_of_animal_products_yield_on_fraction_of_grassland_degrading[1]"/>
+			<isee:variable type="adhoc" name="Land_Use.elasticity_of_effect_of_crop_yield_on_fraction_cropland_degrading[1]"/>
+			<isee:variable type="adhoc" name="Land_Use.fraction_cropland_degrading_1980[1]"/>
+			<isee:variable type="adhoc" name="Land_Use.fraction_of_depleting_cropland_to_grassland[1]"/>
+			<isee:variable type="adhoc" name="Land_Use.fraction_of_grassland_degrading_1980[1]"/>
+			<isee:variable type="adhoc" name="Land_Use.fraction_of_grassland_for_grazing[1]"/>
+			<isee:variable type="adhoc" name="Land_Use.fraction_of_new_cropland_from_forests[1]"/>
+			<isee:variable type="adhoc" name="Land_Use.Initial_Cropland[1]"/>
+			<isee:variable type="adhoc" name="Land_Use.Initial_Degraded_Land[1]"/>
+			<isee:variable type="adhoc" name="Land_Use.Initial_Grassland[1]"/>
+			<isee:variable type="adhoc" name="Land_Use.normal_average_cutting_time[1]"/>
+			<isee:variable type="adhoc" name="Land_Use.normal_average_time_cropland_in_use[1]"/>
+			<isee:variable type="adhoc" name="Land_Use.sensitivity_of_crop_land_use_time_to_cropland_size[1]"/>
+			<isee:variable type="adhoc" name="Land_Use.sensitivity_of_cutting_time_to_forest_size[1]"/>
+			<isee:variable type="adhoc" name="Land_Use.sensitivity_of_effect_of_animal_products_balance_on_grassland_expansion_rate[1]"/>
+			<isee:variable type="adhoc" name="Land_Use.sensitivity_of_effect_of_crop_balance_on_crop_land_expansion_rate[1]"/>
+			<isee:variable type="adhoc" name="Land_Use.time_to_close_grassland_gap[1]"/>
+			<isee:variable type="adhoc" name='CCS."Baseline_Government_funded_R&amp;D_for_BECC"[1]'/>
+			<isee:variable type="adhoc" name='CCS."Baseline_Government_funded_R&amp;D_for_end_of_pipe_carbon_capture"[1]'/>
+			<isee:variable type="adhoc" name='CCS."Baseline_Government_funded_R&amp;D_in_direct_air_carbon_capture"[1]'/>
+			<isee:variable type="adhoc" name="CCS.BECC_Initial_Installation_Costs[1]"/>
+			<isee:variable type="adhoc" name="CCS.DACC_energy_usage_per_tCO2[1]"/>
+			<isee:variable type="adhoc" name="CCS.depreciation_rate_of_BECC_capital[1]"/>
+			<isee:variable type="adhoc" name="CCS.depreciation_rate_of_direct_air_carbon_capture_capital[1]"/>
+			<isee:variable type="adhoc" name="CCS.depreciation_rate_of_end_of_pipe_Carbon_Capture_capital[1]"/>
+			<isee:variable type="adhoc" name="CCS.direct_air_carbon_capture_Floor_Costs[1]"/>
+			<isee:variable type="adhoc" name="CCS.direct_air_carbon_capture_Initial_Installation_Costs[1]"/>
+			<isee:variable type="adhoc" name="CCS.end_of_pipe_capture_Initial_Installation_Costs[1]"/>
+			<isee:variable type="adhoc" name="CCS.Floor_Costs_BECC[1]"/>
+			<isee:variable type="adhoc" name="CCS.Floor_Costs_carbon_storage[1]"/>
+			<isee:variable type="adhoc" name="CCS.Floor_Costs_end_of_pipe_carbon_capture[1]"/>
+			<isee:variable type="adhoc" name="CCS.Initial_BECC[1]"/>
+			<isee:variable type="adhoc" name="CCS.initial_BECC_for_the_consideration_of_cost_effects[1]"/>
+			<isee:variable type="adhoc" name="CCS.Initial_carbon_storage_capacity[1]"/>
+			<isee:variable type="adhoc" name="CCS.initial_carbon_storage_for_the_consideration_of_cost_effects[1]"/>
+			<isee:variable type="adhoc" name="CCS.Initial_direct_air_carbon_capture_Capacity[1]"/>
+			<isee:variable type="adhoc" name="CCS.initial_direct_air_carbon_capture_for_the_consideration_of_cost_effects[1]"/>
+			<isee:variable type="adhoc" name="CCS.Initial_end_of_pipe_Carbon_Capture_Capacity[1]"/>
+			<isee:variable type="adhoc" name="CCS.initial_end_of_pipe_for_the_consideration_of_cost_effects[1]"/>
+			<isee:variable type="adhoc" name="CCS.Initial_Installation_Costs_carbon_storage[1]"/>
+			<isee:variable type="adhoc" name="CCS.initial_stepping_on_toes_parameter_in_storage[1]"/>
+			<isee:variable type="adhoc" name="CCS.Learning_Rate_BECC[1]"/>
+			<isee:variable type="adhoc" name="CCS.Learning_Rate_carbon_storage[1]"/>
+			<isee:variable type="adhoc" name="CCS.Learning_Rate_direct_air_carbon_capture[1]"/>
+			<isee:variable type="adhoc" name="CCS.Learning_Rate_end_of_pipe_capture[1]"/>
+			<isee:variable type="adhoc" name="CCS.Relative_initial_step_for_effect[1]"/>
+			<isee:variable type="adhoc" name="CCS.share_of_coal_used_non_capturable[1]"/>
+			<isee:variable type="adhoc" name="CCS.Slope_of_cost_curve[1]"/>
+			<isee:variable type="adhoc" name="CCS.stepping_on_toes_parameter_BECC[1]"/>
+			<isee:variable type="adhoc" name="CCS.stepping_on_toes_parameter_direct_air_carbon_capture[1]"/>
+			<isee:variable type="adhoc" name="CCS.stepping_on_toes_parameter_end_of_pipe_capture[1]"/>
+			<isee:variable type="adhoc" name="CCS.time_to_perceive_changes_in_construction_of_carbon_storage[1]"/>
+			<isee:variable type="adhoc" name="Concrete.BASE_AVERAGE_LIFETIME_OF_BUILDINGS[1]"/>
+			<isee:variable type="adhoc" name="Concrete.BASE_AVERAGE_LIFETIME_OF_INFRASTRUCTURE[1]"/>
+			<isee:variable type="adhoc" name="Concrete.CLIMATE_IMPACT_ON_CONCRETE_LIFETIME[1]"/>
+			<isee:variable type="adhoc" name="Concrete.CO2_INTENSITY_OF_INFRASTRUCTURE_CONCRETE[1]"/>
+			<isee:variable type="adhoc" name="Concrete.CO2_INTENSITY_OF_RS_BUILDINGS_CONCRETE[1]"/>
+			<isee:variable type="adhoc" name="Concrete.CONCRETE_PER_m2_UFA[1]"/>
+			<isee:variable type="adhoc" name="Concrete.GAP_ADJUSTMENT_TIME_FOR_BUILDINGS[1]"/>
+			<isee:variable type="adhoc" name="Concrete.GAP_ADJUSTMENT_TIME_FOR_INFRASTRUCTURE[1]"/>
+			<isee:variable type="adhoc" name="Concrete.INFRA_ALPHA[1]"/>
+			<isee:variable type="adhoc" name="Concrete.INFRA_BETA[1]"/>
+			<isee:variable type="adhoc" name="Concrete.INFRA_GAMMA[1]"/>
+			<isee:variable type="adhoc" name="Concrete.INIT_CONCRETE_IN_NEW_BUILDINGS[1]"/>
+			<isee:variable type="adhoc" name="Concrete.INIT_CONCRETE_IN_NEW_INFRASTRUCTURE[1]"/>
+			<isee:variable type="adhoc" name="Concrete.INIT_CONCRETE_IN_OLD_BUILDINGS[1]"/>
+			<isee:variable type="adhoc" name="Concrete.INIT_CONCRETE_IN_OLD_INFRASTRUCTURE[1]"/>
+			<isee:variable type="adhoc" name="Concrete.INTERCEPT[1]"/>
+			<isee:variable type="adhoc" name="Concrete.NORMAL_CONCRETE_DETERIORATION_RATE[1]"/>
+			<isee:variable type="adhoc" name="Concrete.TIME_TO_ADJUST_DESIRED_FLOOR_AREA[1]"/>
+			<isee:variable type="adhoc" name="Concrete.TIME_TO_ADJUST_DESIRED_INFRASTRUCTURE_AREA[1]"/>
+			<isee:variable type="adhoc" name="Concrete.UFA_alpha[1]"/>
+			<isee:variable type="adhoc" name="Concrete.UFA_intercept[1]"/>
+			<isee:variable type="adhoc" name="Climate_Units.selected_climate_case[1]"/>
+			<isee:variable type="adhoc" name="Climate_Units.selected_energy_supply_thermoelectric_damages_case[1]"/>
+			<isee:variable type="adhoc" name="Climate_Units.selected_energy_supply_hydroelectric_damages_case[1]"/>
+			<isee:variable type="adhoc" name="Climate_Units.selected_cold_mortality_impact_case[1]"/>
+			<isee:variable type="adhoc" name="Climate_Units.selected_hot_mortality_impact_case[1]"/>
+			<isee:variable type="adhoc" name="Climate_Units.selected_extremes_exposure_damages_case[1]"/>
+			<isee:variable type="adhoc" name="Climate_Units.selected_crops_damages_case[1]"/>
+			<isee:variable type="adhoc" name="Tipping.tau[1, AMOC]"/>
+			<isee:variable type="adhoc" name="Tipping.tau[1, GIS]"/>
+			<isee:variable type="adhoc" name="Tipping.tau[1, WAIS]"/>
+			<isee:variable type="adhoc" name="Tipping.tau[1, AMAZ]"/>
+			<isee:variable type="adhoc" name="Tipping.Tcrit[1, AMOC]"/>
+			<isee:variable type="adhoc" name="Tipping.Tcrit[1, GIS]"/>
+			<isee:variable type="adhoc" name="Tipping.Tcrit[1, WAIS]"/>
+			<isee:variable type="adhoc" name="Tipping.Tcrit[1, AMAZ]"/>
+			<isee:variable type="adhoc" name="Tipping.Interaction_strengths[1, AMOC, AMOC]"/>
+			<isee:variable type="adhoc" name="Tipping.Interaction_strengths[1, AMOC, GIS]"/>
+			<isee:variable type="adhoc" name="Tipping.Interaction_strengths[1, AMOC, AMAZ]"/>
+			<isee:variable type="adhoc" name="Tipping.Interaction_strengths[1, GIS, AMOC]"/>
+			<isee:variable type="adhoc" name="Tipping.Interaction_strengths[1, GIS, GIS]"/>
+			<isee:variable type="adhoc" name="Tipping.Interaction_strengths[1, GIS, WAIS]"/>
+			<isee:variable type="adhoc" name="Tipping.Interaction_strengths[1, GIS, AMAZ]"/>
+			<isee:variable type="adhoc" name="Tipping.Interaction_strengths[1, WAIS, AMOC]"/>
+			<isee:variable type="adhoc" name="Tipping.Interaction_strengths[1, WAIS, GIS]"/>
+			<isee:variable type="adhoc" name="Tipping.Interaction_strengths[1, WAIS, WAIS]"/>
+			<isee:variable type="adhoc" name="Tipping.Interaction_strengths[1, WAIS, AMAZ]"/>
+			<isee:variable type="adhoc" name="Tipping.Interaction_strengths[1, AMAZ, GIS]"/>
+			<isee:variable type="adhoc" name="Tipping.Interaction_strengths[1, AMAZ, WAIS]"/>
+			<isee:variable type="adhoc" name="Tipping.Interaction_strengths[1, AMAZ, AMAZ]"/>
+			<isee:variable type="adhoc" name="Tipping.Interaction_strengths[1, AMAZ, AMOC]"/>
+			<isee:variable type="adhoc" name="Tipping.Interaction_strengths[1, AMOC, WAIS]"/>
+			<isee:variable type="adhoc" name="Tipping.conv_fac[1]"/>
+			<isee:variable type="adhoc" name="Tipping.Coupling[1]"/>
 		</isee:sensi_specs>
 	</isee:sensi_specs_list>
 	<isee:optimizer_specs_list active_index="17">
@@ -2801,6 +3510,12 @@
 				<connect2 to="Grassland_carbon_balance.soil_carbon_balance_grassland_1" from="grassland_soil_carbon.soil_carbon_balance_grassland"/>
 				<connect to="Grassland_carbon_balance.soil_carbon_emissions_grassland_GtC" from="grassland_soil_carbon.soil_carbon_emissions_grassland_GtC"/>
 				<connect2 to="Grassland_carbon_balance.soil_carbon_emissions_grassland_GtC" from="grassland_soil_carbon.soil_carbon_emissions_grassland_GtC"/>
+				<connect to="Freshwater.AMOC_Agri_water_scaling" from="Tipping.AMOC_Agri_water_scaling"/>
+				<connect2 to="Freshwater.AMOC_Agri_water_scaling" from="Tipping.AMOC_Agri_water_scaling"/>
+				<connect to="Crop.AMOC_Agri_scaling" from="Tipping.AMOC_Agri_yield_scaling"/>
+				<connect2 to="Crop.AMOC_Agri_scaling" from="Tipping.AMOC_Agri_yield_scaling"/>
+				<connect to="Finance.AMOC_Econ_scaling" from="Tipping.AMOC_Econ_scaling"/>
+				<connect2 to="Finance.AMOC_Econ_scaling" from="Tipping.AMOC_Econ_scaling"/>
 			</module>
 			<module name="Land Use\nand\nAgriculture" isee:label="" url="r../FRIDA_Modules/Land Use and Agriculture.itmx">
 				<format scale_by="auto"/>
@@ -2862,6 +3577,8 @@
 				<connect2 to="Terrestrial_Carbon_Balance.UNIT_GtC_per_PCal" from="Crop.UNIT_GtC_per_PCal_crop"/>
 				<connect to="Crop.Absolute_Surface_Temperature" from="Energy_Balance_Model.Absolute_Surface_Temperature"/>
 				<connect2 to="Crop.Absolute_Surface_Temperature" from="Energy_Balance_Model.Absolute_Surface_Temperature"/>
+				<connect to="Crop.AMOC_Agri_scaling" from="Tipping.AMOC_Agri_yield_scaling"/>
+				<connect2 to="Crop.AMOC_Agri_scaling" from="Tipping.AMOC_Agri_yield_scaling"/>
 				<connect to="Crop.Atmospheric_CO2_Concentration_1" from="CO2_Forcing.Atmospheric_CO2_Concentration"/>
 				<connect2 to="Crop.Atmospheric_CO2_Concentration_1" from="CO2_Forcing.Atmospheric_CO2_Concentration"/>
 				<connect to="Crop.selected_climate_case" from="Climate_Units.selected_climate_case"/>
@@ -2972,6 +3689,8 @@
 				<connect2 to="Land_Use_Forcing.agricultural_water_withdrawal" from="Freshwater.agricultural_water_withdrawal"/>
 				<connect to="Sea_Level.total_groundwater_anomaly" from="Freshwater.total_groundwater_anomaly"/>
 				<connect2 to="Sea_Level.total_groundwater_anomaly" from="Freshwater.total_groundwater_anomaly"/>
+				<connect to="Freshwater.AMOC_Agri_water_scaling" from="Tipping.AMOC_Agri_water_scaling"/>
+				<connect2 to="Freshwater.AMOC_Agri_water_scaling" from="Tipping.AMOC_Agri_water_scaling"/>
 				<connect to="Freshwater.irrigation_efficiency_multiplier" from="Government_Regulations.irrigation_efficiency_multiplier"/>
 				<connect2 to="Freshwater.irrigation_efficiency_multiplier" from="Government_Regulations.irrigation_efficiency_multiplier"/>
 				<connect to="Freshwater.irrigation_fraction_policy" from="Government_Regulations.irrigation_fraction_policy"/>
@@ -3741,6 +4460,8 @@
 				<connect2 to="CCS.real_private_investment_1" from="Finance.real_private_investment"/>
 				<connect to='CCS."UNIT_c$_per_Bc$"' from='Finance."UNIT_c$_per_Bc$"'/>
 				<connect2 to='CCS."UNIT_c$_per_Bc$"' from='Finance."UNIT_c$_per_Bc$"'/>
+				<connect to="Finance.AMOC_Econ_scaling" from="Tipping.AMOC_Econ_scaling"/>
+				<connect2 to="Finance.AMOC_Econ_scaling" from="Tipping.AMOC_Econ_scaling"/>
 				<connect to="Finance.Energy_Investments_with_Taxes_and_Subsidies" from="Energy_investments.Energy_Investments_with_Taxes_and_Subsidies"/>
 				<connect2 to="Finance.Energy_Investments_with_Taxes_and_Subsidies" from="Energy_investments.Energy_Investments_with_Taxes_and_Subsidies"/>
 				<connect to="Finance.fraction_of_loans_insured" from="Government_Regulations.fraction_of_loans_insured"/>
@@ -4123,7 +4844,7 @@ This is what determines when the model stops calculating</doc>
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="768" page_height="588" isee:page_cols="5" isee:page_rows="9" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="1123" page_height="793" isee:page_cols="5" isee:page_rows="9" isee:scroll_y="120" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="11pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -5006,7 +5727,7 @@ Lorem ipsum dolor sit amet</text_box>
 					</style>
 					<isee:shape background="#F7F7F7" border_width="thin" border_style="none" transparent_background="false" x="0" y="0" width="1066" height="600" kind="rectangle"/>
 					<graphics_frame z_index="2" fill="none" x="12.4806" y="16.9825" width="166" height="34">
-						<image width="121" height="20" size_to_parent="false" isee:transparency="0" isee:fixed_aspect_ratio="true">/Applications/Stella Architect.app/Contents/Resources/designs/Deluxe Prev-Next Blue Green Pastel_Graphics/Your logo dark.png</image>
+						<image width="121" height="20" size_to_parent="false" isee:transparency="0" isee:fixed_aspect_ratio="true">C:/Users/earcwel/AppData/Local/Programs/isee systems/Stella Architect/designs/Deluxe Prev-Next Blue Green Pastel_Graphics/Your logo dark.png</image>
 					</graphics_frame>
 				</view>
 			</isee:templates>
