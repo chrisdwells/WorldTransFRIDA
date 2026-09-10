@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xmile version="1.0" xmlns="http://docs.oasis-open.org/xmile/ns/XMILE/v1.0" xmlns:isee="http://iseesystems.com/XMILE">
 	<header>
-		<smile version="1.0" namespace="std, isee" uses_arrays="2" uses_submodels=""/>
+		<smile version="1.0" namespace="std, isee" uses_arrays="3" uses_submodels=""/>
 		<name>Climate</name>
 		<uuid>0c8314dd-e357-43f9-8ae2-c746fdbc0f8d</uuid>
 		<vendor>isee systems, inc.</vendor>
-		<product version="4.4" isee:build_number="4016" isee:saved_by_v1="true" lang="en">Stella Architect</product>
+		<product version="4.3.1" isee:build_number="3962" isee:saved_by_v1="true" lang="en">Stella Architect</product>
 	</header>
 	<ai_information>
 		<status verified="false"/>
@@ -263,7 +263,7 @@
 	</model_units>
 	<model name="Climate">
 		<variables>
-			<module name="Sea Level" isee:label="" url="/Users/bschoenberg/code/WorldTrans/Frida/FRIDA_Modules/Sea Level.itmx">
+			<module name="Sea Level" isee:label="" url="C:/Users/earcwel/Documents/code/Github/chrisdwells/WorldTransFRIDA/FRIDA_Modules/Sea Level.itmx">
 				<format scale_by="auto"/>
 				<connect to="Freshwater.Land_water_storage_from_water_impoundment" from="Sea_Level.Land_water_storage_from_water_impoundment"/>
 				<connect2 to="Freshwater.Land_water_storage_from_water_impoundment" from="Sea_Level.Land_water_storage_from_water_impoundment"/>
@@ -305,7 +305,7 @@
 				<connect2 to="Sea_Level.total_groundwater_anomaly" from="Freshwater.total_groundwater_anomaly"/>
 			</module>
 			<module name="Ocean" isee:label="Ocean
-Carbon" url="/Users/bschoenberg/code/WorldTrans/Frida/FRIDA_Modules/Ocean.itmx">
+Carbon" url="C:/Users/earcwel/Documents/code/Github/chrisdwells/WorldTransFRIDA/FRIDA_Modules/Ocean.itmx">
 				<format scale_by="auto"/>
 				<connect to="CO2_Forcing.Air_sea_co2_flux_1" from="Ocean.Air_sea_co2_flux"/>
 				<connect2 to="CO2_Forcing.Air_sea_co2_flux_1" from="Ocean.Air_sea_co2_flux"/>
@@ -670,7 +670,7 @@ Carbon" url="/Users/bschoenberg/code/WorldTrans/Frida/FRIDA_Modules/Ocean.itmx">
 				<connect to="Energy_Balance_Model.Total_Effective_Radiative_Forcing" from="Forcing.Total_Effective_Radiative_Forcing"/>
 				<connect2 to="Energy_Balance_Model.Total_Effective_Radiative_Forcing" from="Forcing.Total_Effective_Radiative_Forcing"/>
 			</module>
-			<module name="Emissions" isee:label="" url="/Users/bschoenberg/code/WorldTrans/Frida/FRIDA_Modules/Emissions.itmx">
+			<module name="Emissions" isee:label="" url="C:/Users/earcwel/Documents/code/Github/chrisdwells/WorldTransFRIDA/FRIDA_Modules/Emissions.itmx">
 				<format scale_by="auto"/>
 				<connect to="Ozone_Forcing.Baseline_CO_emissions" from="Emissions.Baseline_CO_Emissions"/>
 				<connect2 to="Ozone_Forcing.Baseline_CO_emissions" from="Emissions.Baseline_CO_Emissions"/>
@@ -834,7 +834,7 @@ Carbon" url="/Users/bschoenberg/code/WorldTrans/Frida/FRIDA_Modules/Ocean.itmx">
 				<connect2 to="Emissions.UNIT_MtCO2_to_tCO2e" from="Climate_Units.UNIT_MtCO2_to_tCO2e"/>
 			</module>
 			<module name="Forcing" isee:label="Radiative
-Forcing" url="/Users/bschoenberg/code/WorldTrans/Frida/FRIDA_Modules/Forcing.itmx">
+Forcing" url="C:/Users/earcwel/Documents/code/Github/chrisdwells/WorldTransFRIDA/FRIDA_Modules/Forcing.itmx">
 				<format scale_by="auto"/>
 				<connect to="Biosphere_Indicators.Anthropogenic_Effective_Radiative_Forcing" from="Forcing.Anthropogenic_Effective_Radiative_Forcing"/>
 				<connect2 to="Biosphere_Indicators.Anthropogenic_Effective_Radiative_Forcing" from="Forcing.Anthropogenic_Effective_Radiative_Forcing"/>
@@ -1294,7 +1294,7 @@ Forcing" url="/Users/bschoenberg/code/WorldTrans/Frida/FRIDA_Modules/Forcing.itm
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="1123" page_height="793" isee:page_cols="2" isee:page_rows="3" zoom="120" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="1100" page_height="771" isee:page_cols="2" isee:page_rows="3" zoom="120" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -9556,7 +9556,7 @@ scaling_constant*(Surface_Temperature_Anomaly[Run]/Tcrit)</eqn>
 				<units>deg C</units>
 			</aux>
 			<aux name="SWITCH AMOC Agri yield damage" access="output" isee:autocreated="true">
-				<eqn>0</eqn>
+				<eqn>1</eqn>
 				<units>dmnl</units>
 			</aux>
 			<aux name="AMOC tipping damages\nscaling factor">
@@ -9567,14 +9567,10 @@ scaling_constant*(Surface_Temperature_Anomaly[Run]/Tcrit)</eqn>
 				<units>dmnl</units>
 			</aux>
 			<aux name="SWITCH AMOC Agri water damage">
-				<eqn>0</eqn>
+				<eqn>1</eqn>
 				<units>dmnl</units>
 			</aux>
 			<aux name="SWITCH AMOC Econ damage">
-				<eqn>0</eqn>
-				<units>dmnl</units>
-			</aux>
-			<aux name="SWITCH AMOC Energy damage">
 				<eqn>0</eqn>
 				<units>dmnl</units>
 			</aux>
@@ -9606,32 +9602,11 @@ scaling_constant*(Surface_Temperature_Anomaly[Run]/Tcrit)</eqn>
 				<eqn>1 - AMOC_Agri_water_max_damage*AMOC_tipping_damages_scaling_factor*SWITCH_AMOC_Agri_water_damage</eqn>
 				<units>dmnl</units>
 			</aux>
-			<aux name="AMOC Econ max damage">
-				<dimensions>
-					<dim name="Run"/>
-				</dimensions>
-				<eqn>0.2</eqn>
-				<units>dmnl</units>
-			</aux>
 			<aux name="AMOC Econ scaling" access="output" isee:autocreated="true">
 				<dimensions>
 					<dim name="Run"/>
 				</dimensions>
-				<eqn>1 - AMOC_Econ_max_damage*AMOC_tipping_damages_scaling_factor*SWITCH_AMOC_Econ_damage</eqn>
-				<units>dmnl</units>
-			</aux>
-			<aux name="AMOC Energy max damage">
-				<dimensions>
-					<dim name="Run"/>
-				</dimensions>
-				<eqn>0.2</eqn>
-				<units>dmnl</units>
-			</aux>
-			<aux name="AMOC Energy scaling">
-				<dimensions>
-					<dim name="Run"/>
-				</dimensions>
-				<eqn>1 - AMOC_Energy_max_damage*AMOC_tipping_damages_scaling_factor*SWITCH_AMOC_Energy_damage</eqn>
+				<eqn>1 - AMOC_tipping_damages_scaling_factor*SWITCH_AMOC_Econ_damage</eqn>
 				<units>dmnl</units>
 			</aux>
 			<aux name="Baseline AMOC strength">
@@ -9706,7 +9681,7 @@ scaling_constant*(Surface_Temperature_Anomaly[Run]/Tcrit)</eqn>
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="1123" page_height="793" isee:page_rows="2" isee:scroll_y="272.143" zoom="140" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="1100" page_height="771" isee:page_rows="2" isee:scroll_y="50" zoom="120" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="11pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -9832,7 +9807,6 @@ scaling_constant*(Surface_Temperature_Anomaly[Run]/Tcrit)</eqn>
 				</connector>
 				<aux x="164.889" y="559.5" name="SWITCH AMOC Agri water damage"/>
 				<aux x="164.889" y="612.833" name="SWITCH AMOC Econ damage"/>
-				<aux x="164.889" y="667.166" name="SWITCH AMOC Energy damage"/>
 				<aux x="497.278" y="486.167" name="AMOC Agri yield max damage"/>
 				<aux x="339.278" y="486.167" name="AMOC Agri yield scaling"/>
 				<connector uid="18" angle="180">
@@ -9853,18 +9827,7 @@ scaling_constant*(Surface_Temperature_Anomaly[Run]/Tcrit)</eqn>
 					<from>AMOC_Agri_water_max_damage</from>
 					<to>AMOC_Agri_water_scaling</to>
 				</connector>
-				<aux x="495.944" y="611.666" name="AMOC Econ max damage"/>
 				<aux x="337.945" y="611.667" name="AMOC Econ scaling"/>
-				<connector uid="22" angle="180">
-					<from>AMOC_Econ_max_damage</from>
-					<to>AMOC_Econ_scaling</to>
-				</connector>
-				<aux label_side="bottom" x="497.611" y="665.166" name="AMOC Energy max damage"/>
-				<aux x="339.611" y="665.167" name="AMOC Energy scaling"/>
-				<connector uid="23" angle="180">
-					<from>AMOC_Energy_max_damage</from>
-					<to>AMOC_Energy_scaling</to>
-				</connector>
 				<connector uid="24" angle="314.992">
 					<from>AMOC_tipping_damages_scaling_factor</from>
 					<to>AMOC_Agri_water_scaling</to>
@@ -9873,21 +9836,13 @@ scaling_constant*(Surface_Temperature_Anomaly[Run]/Tcrit)</eqn>
 					<from>AMOC_tipping_damages_scaling_factor</from>
 					<to>AMOC_Econ_scaling</to>
 				</connector>
-				<connector uid="26" angle="297.933">
-					<from>AMOC_tipping_damages_scaling_factor</from>
-					<to>AMOC_Energy_scaling</to>
-				</connector>
-				<connector uid="27" angle="360">
+				<connector uid="27" angle="0">
 					<from>SWITCH_AMOC_Agri_water_damage</from>
 					<to>AMOC_Agri_water_scaling</to>
 				</connector>
 				<connector uid="28" angle="0.386037">
 					<from>SWITCH_AMOC_Econ_damage</from>
 					<to>AMOC_Econ_scaling</to>
-				</connector>
-				<connector uid="29" angle="0.655602">
-					<from>SWITCH_AMOC_Energy_damage</from>
-					<to>AMOC_Energy_scaling</to>
 				</connector>
 				<aux x="362.603" y="738.571" name="Baseline AMOC strength"/>
 				<aux x="363.436" y="789.714" name="Tipped AMOC strength"/>

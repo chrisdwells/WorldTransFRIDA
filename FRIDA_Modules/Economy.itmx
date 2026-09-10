@@ -5,7 +5,7 @@
 		<name>Economy</name>
 		<uuid>656dacef-005e-41a3-aedc-d19f6fd6e9f6</uuid>
 		<vendor>isee systems, inc.</vendor>
-		<product version="4.4" isee:build_number="4016" isee:saved_by_v1="true" lang="en">Stella Architect</product>
+		<product version="4.3.1" isee:build_number="3962" isee:saved_by_v1="true" lang="en">Stella Architect</product>
 	</header>
 	<ai_information>
 		<status verified="false"/>
@@ -1383,7 +1383,7 @@
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="1123" page_height="793" isee:page_cols="2" isee:page_rows="3" isee:scroll_y="61" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="1123" page_height="793" isee:page_cols="2" isee:page_rows="3" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="12.51pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -11196,14 +11196,12 @@ STA = 3°C → effect = 1 + 3*sensitivity</doc>
 				<eqn>IF (switch_economy_damage=0) AND TIME &gt; today THEN
 PREVIOUS(SELF, 1)
 ELSE
-1+sensitivity_of_effect_of_sta_on_failure_rate*ABS(AMOC_impacted_region_Surface_Temperature_Anomaly)</eqn>
+1+sensitivity_of_effect_of_sta_on_failure_rate*ABS(AMOC_impacted_region_Net_anomaly)</eqn>
 				<units>dmnl</units>
 			</aux>
-			<aux name="AMOC impacted region\nSurface Temperature Anomaly">
-				<dimensions>
-					<dim name="Run"/>
-				</dimensions>
-				<eqn>-5</eqn>
+			<aux name="AMOC impacted region\nCooling anomaly">
+				<doc>Using mask -2.5,_-1.0 (see frida-amoc repo for info).</doc>
+				<eqn>-4.3256</eqn>
 				<units>deg C</units>
 			</aux>
 			<aux name="AMOC potentially impacted\nregion share of GDP">
@@ -11307,6 +11305,28 @@ ELSE
 				<range min="8" max="15"/>
 				<units>years</units>
 			</aux>
+			<aux name="AMOC impacted region\nWarming anomaly">
+				<dimensions>
+					<dim name="Run"/>
+				</dimensions>
+				<eqn>Surface_Temperature_Anomaly*AMOC_impacted_region_Warming_per_GMST</eqn>
+				<units>deg C</units>
+			</aux>
+			<aux name="AMOC impacted region\nWarming per GMST">
+				<doc>From patterns (https://zenodo.org/records/7557622) with the mask; see frida-amoc repo</doc>
+				<dimensions>
+					<dim name="Run"/>
+				</dimensions>
+				<eqn>1</eqn>
+				<units>dmnl</units>
+			</aux>
+			<aux name="AMOC impacted region\nNet anomaly">
+				<dimensions>
+					<dim name="Run"/>
+				</dimensions>
+				<eqn>AMOC_impacted_region_Warming_anomaly + AMOC_impacted_region_Cooling_anomaly</eqn>
+				<units>deg C</units>
+			</aux>
 		</variables>
 		<views>
 			<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
@@ -11356,7 +11376,7 @@ ELSE
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="1123" page_height="793" isee:page_cols="7" isee:page_rows="9" isee:scroll_x="1797.5" isee:scroll_y="1974.17" zoom="120" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="1123" page_height="793" isee:page_cols="7" isee:page_rows="9" isee:scroll_x="2156.67" isee:scroll_y="2008.33" zoom="120" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="11pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -11498,7 +11518,7 @@ ELSE
 				<aux label_side="bottom" x="2003.89" y="3737.51" name="measured\ndefault rate of risky assets for interest rate"/>
 				<aux label_side="top" x="2019.19" y="2359.68" name="failure rate"/>
 				<aux label_side="top" x="2475.19" y="2307.95" name="normal\nfailure rate"/>
-				<connector uid="21" angle="219.625">
+				<connector uid="21" angle="272.482">
 					<from>normal_failure_rate</from>
 					<to>climate_adjusted_failure_rate</to>
 				</connector>
@@ -11556,7 +11576,7 @@ ELSE
 					<from>initial_risk_premium</from>
 					<to>indicated_risk_premium</to>
 				</connector>
-				<aux label_side="bottom" x="2412.72" y="2359.68" name="climate adjusted\nfailure rate"/>
+				<aux label_side="bottom" x="2478.55" y="2385.55" name="climate adjusted\nfailure rate"/>
 				<aux background="#0433FF" label_side="bottom" x="1202.79" y="1775.78" name="initial\nnon energy\nbank investment"/>
 				<aux background="#0433FF" label_side="bottom" x="2297.19" y="1996.33" name="initial good loans"/>
 				<aux background="#0433FF" x="2205.07" y="2724.75" name="initial bad loans"/>
@@ -11620,9 +11640,9 @@ ELSE
 					<to>effect_of_investment_to_gdp_ratio_on_failure_rate</to>
 				</connector>
 				<stock background="#00F900" font_style="italic" font_weight="bold" label_side="bottom" x="4681.9" y="2523.29" name="Government\nDebt"/>
-				<aux label_side="bottom" x="2659.49" y="2347.56" name="effect of STA\non failure rate"/>
-				<aux label_side="right" x="2745.81" y="2314.36" name="sensitivity of effect\nof sta on failure rate"/>
-				<connector uid="78" angle="182.812">
+				<aux label_side="bottom" x="2714.38" y="2356.32" name="effect of STA\non failure rate"/>
+				<aux label_side="right" x="2832.48" y="2326.03" name="sensitivity of effect\nof sta on failure rate"/>
+				<connector uid="78" angle="187.067">
 					<from>effect_of_STA_on_failure_rate</from>
 					<to>climate_adjusted_failure_rate</to>
 				</connector>
@@ -11652,12 +11672,12 @@ ELSE
 					<from>Government_Debt</from>
 					<to>Bank_Assets</to>
 				</connector>
-				<aux font_style="italic" font_weight="bold" label_side="right" x="2752.06" y="2360.06" name="Surface Temperature Anomaly"/>
-				<connector uid="89" angle="172.31">
+				<aux font_style="italic" font_weight="bold" label_side="right" x="2838.73" y="2371.73" name="Surface Temperature Anomaly"/>
+				<connector uid="89" angle="172.937">
 					<from>Surface_Temperature_Anomaly</from>
 					<to>effect_of_STA_on_failure_rate</to>
 				</connector>
-				<connector uid="90" angle="201.038">
+				<connector uid="90" angle="194.387">
 					<from>sensitivity_of_effect_of_sta_on_failure_rate</from>
 					<to>effect_of_STA_on_failure_rate</to>
 				</connector>
@@ -11681,13 +11701,13 @@ ELSE
 					<from>Firms_Checking_Accounts</from>
 					<to>Bank_Liabilities</to>
 				</connector>
-				<flow x="2750.9" y="2065.46" name="safe loans\naffected innovation">
+				<flow x="2865.9" y="2065.46" name="safe loans\naffected innovation">
 					<pts>
 						<pt x="2632.49" y="2065.46"/>
-						<pt x="2881.32" y="2065.46"/>
+						<pt x="3111.32" y="2065.46"/>
 					</pts>
 				</flow>
-				<connector uid="97" angle="35.6927">
+				<connector uid="97" angle="36.3537">
 					<from>Safe_Loans</from>
 					<to>safe_loans_affected_innovation</to>
 				</connector>
@@ -11766,14 +11786,14 @@ ELSE
 					<to>exploratory_loans_failure_rate</to>
 				</connector>
 				<aux label_side="left" label_angle="135" x="1795.12" y="1205.64" name="normal growth rate of GDP growth rate"/>
-				<stock label_side="center" x="2881.32" y="2040.72" width="128.902" height="51.6436" name="safe loans\nfor financing\ninnovation"/>
-				<flow label_side="bottom" x="3131.43" y="2071.51" name="actual safe\ninvestment failure">
+				<stock label_side="center" x="3111.32" y="2040.72" width="128.902" height="51.6436" name="safe loans\nfor financing\ninnovation"/>
+				<flow label_side="bottom" x="3361.44" y="2071.51" name="actual safe\ninvestment failure">
 					<pts>
-						<pt x="3010.22" y="2071.51"/>
-						<pt x="3276.65" y="2071.51"/>
+						<pt x="3240.22" y="2071.51"/>
+						<pt x="3506.65" y="2071.51"/>
 					</pts>
 				</flow>
-				<aux label_side="top" x="3135.7" y="2007.31" name="time for safe loans that will fail to actually fail"/>
+				<aux label_side="top" x="3365.7" y="2007.31" name="time for safe loans that will fail to actually fail"/>
 				<connector uid="125" angle="34.7123">
 					<from>safe_loans_for_financing_innovation</from>
 					<to>actual_safe_investment_failure</to>
@@ -11859,7 +11879,7 @@ ELSE
 					<from>initial_annual_bank_negative_profit_fractional_growth</from>
 					<to>annual_bank_negative_profit_fractional_growth</to>
 				</connector>
-				<aux background="white" label_side="top" x="2945.77" y="2018.02" name="initial fraction of safe\nloans financing innovation"/>
+				<aux background="white" label_side="top" x="3175.77" y="2018.02" name="initial fraction of safe\nloans financing innovation"/>
 				<aux label_side="right" x="2531.01" y="1988.23" name="initial fraction of safe\nloans that are exploratory"/>
 				<stock label_side="center" x="1003.42" y="1045.81" width="94.1006" height="56.4531" name="Bank\nExploration\nOrientation"/>
 				<aux label_side="right" x="1106.52" y="930.536" name="max\nbank exploration\norientation"/>
@@ -11957,8 +11977,8 @@ ELSE
 					<from>GDP_growth_rate_over_the_last_year</from>
 					<to>growth_rate_of_GDP_growth</to>
 				</connector>
-				<aux font_style="italic" font_weight="bold" label_side="top" x="2752.06" y="2459.9" name="today"/>
-				<connector uid="176" angle="129.489">
+				<aux font_style="italic" font_weight="bold" label_side="top" x="2838.73" y="2471.57" name="today"/>
+				<connector uid="176" angle="137.176">
 					<from>today</from>
 					<to>effect_of_STA_on_failure_rate</to>
 				</connector>
@@ -11994,8 +12014,8 @@ ELSE
 					<from>bank_reference_formation_time</from>
 					<to>reference_bank_investment_growth_rate</to>
 				</connector>
-				<aux font_style="italic" font_weight="bold" label_side="right" x="2752.06" y="2406.58" name="switch economy damage"/>
-				<connector uid="194" angle="147.48">
+				<aux font_style="italic" font_weight="bold" label_side="right" x="2838.73" y="2418.25" name="switch economy damage"/>
+				<connector uid="194" angle="153.527">
 					<from>switch_economy_damage</from>
 					<to>effect_of_STA_on_failure_rate</to>
 				</connector>
@@ -12046,7 +12066,7 @@ ELSE
 					<from>Good_Loans</from>
 					<to>good_loan_defaults_from_from_interest</to>
 				</connector>
-				<aux x="3001.73" y="2376.34" width="18.4297" height="18.4297" name="default rate from\ninterest rate increase"/>
+				<aux x="3231.73" y="2376.34" width="18.4297" height="18.4297" name="default rate from\ninterest rate increase"/>
 				<aux x="2612.89" y="3827.69" name="risky interest at loan\norigination time"/>
 				<connector uid="266" angle="242.416">
 					<from>risky_interest</from>
@@ -12067,17 +12087,17 @@ ELSE
 					<from>risky_interest_at_loan_origination_time</from>
 					<to>extra_risky_interest_above_interest_at_origination</to>
 				</connector>
-				<aux x="3006.73" y="2491.38" name="sensitivity of\ndefaults\nto changes in\nrisky interest"/>
-				<connector uid="280" angle="152.181">
+				<aux x="3236.73" y="2491.38" name="sensitivity of\ndefaults\nto changes in\nrisky interest"/>
+				<connector uid="280" angle="156.323">
 					<from>default_rate_from_interest_rate_increase</from>
 					<to>good_loan_defaults_from_from_interest</to>
 				</connector>
-				<aux label_side="top" x="3063.18" y="2491.38" name="exponential effect\nof interest\non defaults"/>
+				<aux label_side="top" x="3293.18" y="2491.38" name="exponential effect\nof interest\non defaults"/>
 				<connector uid="284" angle="116.269">
 					<from>exponential_effect_of_interest_on_defaults</from>
 					<to>default_rate_from_interest_rate_increase</to>
 				</connector>
-				<aux label_side="top" x="3163.68" y="2491.38" name="time to measure\nchanges in\nrisky interest"/>
+				<aux label_side="top" x="3393.68" y="2491.38" name="time to measure\nchanges in\nrisky interest"/>
 				<connector uid="285" angle="145.283">
 					<from>time_to_measure_changes_in_risky_interest</from>
 					<to>default_rate_from_interest_rate_increase</to>
@@ -12098,7 +12118,7 @@ ELSE
 					<from>Bad_Loans</from>
 					<to>converting_to_good_because_of_reduced_interest_rates</to>
 				</connector>
-				<aux x="3001.02" y="2601.37" name="conversion rate from\ninterest rate decrease"/>
+				<aux x="3231.02" y="2601.37" name="conversion rate from\ninterest rate decrease"/>
 				<connector uid="294" angle="267.033">
 					<from>sensitivity_of_defaults_to_changes_in_risky_interest</from>
 					<to>conversion_rate_from_interest_rate_decrease</to>
@@ -12117,7 +12137,7 @@ ELSE
 					<from>exponential_effect_of_interest_on_defaults</from>
 					<to>conversion_rate_from_interest_rate_decrease</to>
 				</connector>
-				<connector uid="298" angle="187.88">
+				<connector uid="298" angle="191.802">
 					<from>conversion_rate_from_interest_rate_decrease</from>
 					<to>converting_to_good_because_of_reduced_interest_rates</to>
 				</connector>
@@ -12177,7 +12197,7 @@ ELSE
 					<from>converting_to_good_because_of_reduced_interest_rates</from>
 					<to>bad_loans_defaults</to>
 				</connector>
-				<connector uid="324" angle="223.455">
+				<connector uid="324" angle="217.714">
 					<from>default_rate_from_interest_rate_increase</from>
 					<to>bad_loan_defaults_from_from_interest</to>
 				</connector>
@@ -12267,8 +12287,8 @@ ELSE
 					<from>Risk_Premium</from>
 					<to>max_indicated_risk_premium</to>
 				</connector>
-				<aux label_side="top" x="2949.69" y="2493.68" name="maximum default\nrate from interest rate increases"/>
-				<aux x="2890.71" y="2498.3" name="tolerance of the cap\non default rate\nfrom interest rate\nincreases"/>
+				<aux label_side="top" x="3179.69" y="2493.68" name="maximum default\nrate from interest rate increases"/>
+				<aux x="3120.71" y="2498.3" name="tolerance of the cap\non default rate\nfrom interest rate\nincreases"/>
 				<connector uid="376" angle="60.4662">
 					<from>maximum_default_rate_from_interest_rate_increases</from>
 					<to>default_rate_from_interest_rate_increase</to>
@@ -12318,8 +12338,8 @@ ELSE
 					<from>initial_non_energy_bank_investment</from>
 					<to>private_investment</to>
 				</connector>
-				<aux font_style="italic" font_weight="bold" label_side="top" x="3478.88" y="2665.98" name="stranded capital"/>
-				<aux x="3289.95" y="2647.98" name="stranded energy\ncapital"/>
+				<aux font_style="italic" font_weight="bold" label_side="top" x="3708.88" y="2665.98" name="stranded capital"/>
+				<aux x="3519.95" y="2647.98" name="stranded energy\ncapital"/>
 				<connector uid="422" angle="190.648">
 					<from>
 						<alias uid="423"/>
@@ -12336,19 +12356,19 @@ ELSE
 					</from>
 					<to>stranded_energy_capital</to>
 				</connector>
-				<aux x="3181.68" y="2614.89" name="stranded energy\nrelated capital"/>
-				<aux x="3121.43" y="2695.75" name="effect of stranded energy\ncapital on other\nassets"/>
-				<aux x="3360.92" y="2735.21" name="reference stranded\nenergy capital"/>
+				<aux x="3411.68" y="2614.89" name="stranded energy\nrelated capital"/>
+				<aux x="3351.43" y="2695.75" name="effect of stranded energy\ncapital on other\nassets"/>
+				<aux x="3590.92" y="2735.21" name="reference stranded\nenergy capital"/>
 				<connector uid="430" angle="338.184">
 					<from>stranded_energy_capital</from>
 					<to>reference_stranded_energy_capital</to>
 				</connector>
-				<aux x="3263.59" y="2828.13" name="stranded energy capital reference formation time"/>
+				<aux x="3493.59" y="2828.13" name="stranded energy capital reference formation time"/>
 				<connector uid="431" angle="43.672">
 					<from>stranded_energy_capital_reference_formation_time</from>
 					<to>reference_stranded_energy_capital</to>
 				</connector>
-				<aux x="3248.4" y="2735.21" name="relative stranded\nenergy capital"/>
+				<aux x="3478.4" y="2735.21" name="relative stranded\nenergy capital"/>
 				<connector uid="432" angle="209.858">
 					<from>stranded_energy_capital</from>
 					<to>relative_stranded_energy_capital</to>
@@ -12369,12 +12389,12 @@ ELSE
 					<from>stranded_energy_capital</from>
 					<to>stranded_energy_related_capital</to>
 				</connector>
-				<aux x="3048.98" y="2799.56" name="sensitivity of effect of stranded energy\ncapital on other\nassets"/>
+				<aux x="3278.98" y="2799.56" name="sensitivity of effect of stranded energy\ncapital on other\nassets"/>
 				<connector uid="437" angle="55.0902">
 					<from>sensitivity_of_effect_of_stranded_energy_capital_on_other_assets</from>
 					<to>effect_of_stranded_energy_capital_on_other_assets</to>
 				</connector>
-				<aux label_side="bottom" x="3425.98" y="2781.56" name="minimum reference stranded\nenergy capital"/>
+				<aux label_side="bottom" x="3655.98" y="2781.56" name="minimum reference stranded\nenergy capital"/>
 				<connector uid="438" angle="144.533">
 					<from>minimum_reference_stranded_energy_capital</from>
 					<to>reference_stranded_energy_capital</to>
@@ -12385,7 +12405,7 @@ ELSE
 				<aux font_style="italic" font_weight="bold" x="2301.7" y="3936.67" name="real GDP growth rate 2"/>
 				<aux font_style="italic" font_weight="bold" x="1757.3" y="3863.09" name="Real GDP in 2021c$ 1"/>
 				<aux font_style="italic" font_weight="bold" x="2049.26" y="2808.84" name="unemployment rate"/>
-				<aux label_side="top" x="3281.59" y="2540.1" name="stranded capital\nrelated defaults"/>
+				<aux label_side="top" x="3511.59" y="2540.1" name="stranded capital\nrelated defaults"/>
 				<connector uid="441" angle="66.1698">
 					<from>stranded_energy_related_capital</from>
 					<to>stranded_capital_related_defaults</to>
@@ -12533,7 +12553,7 @@ SDG 10.5.1</text_box>
 					</from>
 					<to>stranded_capital_related_defaults</to>
 				</connector>
-				<aux label_side="right" x="3397.5" y="2554.9" name="max safe loan defaults\ncaused by stranded capital"/>
+				<aux label_side="right" x="3627.5" y="2554.9" name="max safe loan defaults\ncaused by stranded capital"/>
 				<aux x="330.884" y="2166.39" name="equity gap effect\nzero effect x"/>
 				<aux x="284.104" y="2094.61" name="equity gap effect\nmax x magnitude"/>
 				<aux x="377.884" y="2236.14" name="equity gap zero effect y"/>
@@ -12597,7 +12617,7 @@ SDG 10.5.1</text_box>
 				</connector>
 				<aux font_style="italic" font_weight="bold" x="735.686" y="3164.47" name="initial nominal GDP growth rate"/>
 				<aux label_side="top" x="2227.31" y="2307.95" name="indicated failure rate"/>
-				<connector uid="524" angle="145.266">
+				<connector uid="524" angle="143.69">
 					<from>climate_adjusted_failure_rate</from>
 					<to>indicated_failure_rate</to>
 				</connector>
@@ -12645,17 +12665,17 @@ SDG 10.5.1</text_box>
 					</from>
 					<to>Investment_growth_rate</to>
 				</connector>
-				<aux x="3642.93" y="2406.34" name="perceived defaults\nof safe assets not caused\nby energy transition"/>
-				<connector uid="550" angle="21.1528">
+				<aux x="3872.93" y="2406.34" name="perceived defaults\nof safe assets not caused\nby energy transition"/>
+				<connector uid="550" angle="15.7812">
 					<from>reporting_delay</from>
 					<to>perceived_defaults_of_safe_assets_not_caused_by_energy_transition</to>
 				</connector>
-				<connector uid="553" angle="17.2273">
+				<connector uid="553" angle="17.2272">
 					<from>actual_safe_investment_failure</from>
 					<to>perceived_defaults_of_safe_assets_not_caused_by_energy_transition</to>
 				</connector>
 				<aux label_side="bottom" x="1829.16" y="3363.12" name="measured default rate\nof safe assets"/>
-				<connector uid="554" angle="263.625">
+				<connector uid="554" angle="260.899">
 					<from>perceived_defaults_of_safe_assets_not_caused_by_energy_transition</from>
 					<to>measured_default_rate_of_safe_assets</to>
 				</connector>
@@ -12715,7 +12735,7 @@ SDG 10.5.1</text_box>
 					<from>normal_rate_of_converting_safe_loans_to_safe_loans_for_financing_innovation</from>
 					<to>rate_of_converting_safe_loans_to_safe_loans_for_financing_innovation</to>
 				</connector>
-				<connector uid="589" angle="264.316">
+				<connector uid="589" angle="324.476">
 					<from>rate_of_converting_safe_loans_to_safe_loans_for_financing_innovation</from>
 					<to>safe_loans_affected_innovation</to>
 				</connector>
@@ -12745,11 +12765,11 @@ SDG 10.5.1</text_box>
 						<pt x="2583.57" y="2198.1"/>
 					</pts>
 				</flow>
-				<connector uid="618" angle="33.4987">
+				<connector uid="618" angle="25.3961">
 					<from>safe_loan_defaults</from>
 					<to>safe_loans_affected_innovation</to>
 				</connector>
-				<connector uid="628" angle="8.95694">
+				<connector uid="628" angle="11.489">
 					<from>safe_loan_defaults</from>
 					<to>perceived_defaults_of_safe_assets_not_caused_by_energy_transition</to>
 				</connector>
@@ -12789,7 +12809,7 @@ SDG 10.5.1</text_box>
 					<to>total_climate_caused_risky_defaults</to>
 				</connector>
 				<aux x="2569.41" y="2591.22" name="climate adjusted failure\nrate when default originated"/>
-				<connector uid="633" angle="340.061">
+				<connector uid="633" angle="329.808">
 					<from>climate_adjusted_failure_rate</from>
 					<to>climate_adjusted_failure_rate_when_default_originated</to>
 				</connector>
@@ -12948,7 +12968,7 @@ SDG 10.5.1</text_box>
 					<from>CB_Bad_Loans</from>
 					<to>CB_bad_loan_defaults_from_from_interest</to>
 				</connector>
-				<connector uid="674" angle="88.463">
+				<connector uid="674" angle="99.4072">
 					<from>default_rate_from_interest_rate_increase</from>
 					<to>CB_bad_loan_defaults_from_from_interest</to>
 				</connector>
@@ -13137,7 +13157,7 @@ SDG 10.5.1</text_box>
 					</from>
 					<to>CB_safe_loan_defaults</to>
 				</connector>
-				<aux font_style="italic" font_weight="bold" label_side="right" x="3109.02" y="2297.16" name="Total nominal loss of assets from SLR"/>
+				<aux font_style="italic" font_weight="bold" label_side="right" x="3339.02" y="2297.16" name="Total nominal loss of assets from SLR"/>
 				<connector uid="728" angle="87.8222">
 					<from>
 						<alias uid="710"/>
@@ -13253,35 +13273,31 @@ SDG 10.5.1</text_box>
 					<from>fraction_of_loans_insured</from>
 					<to>fraction_of_insurance_payouts_not_influencing_risk_premium</to>
 				</connector>
-				<aux x="2569.41" y="2307.95" name="AMOC impacted region\nshare of GDP"/>
-				<aux label_side="bottom" x="2601.57" y="2436.16" name="AMOC impacted region\neffect of STA\non failure rate"/>
-				<aux label_side="bottom" x="2673.21" y="2509.38" name="AMOC impacted region\nSurface Temperature Anomaly"/>
-				<connector uid="771" angle="134.377">
-					<from>AMOC_impacted_region_Surface_Temperature_Anomaly</from>
-					<to>AMOC_impacted_region_effect_of_STA_on_failure_rate</to>
-				</connector>
-				<connector uid="775" angle="171.037">
+				<aux x="2586.08" y="2308.53" name="AMOC impacted region\nshare of GDP"/>
+				<aux label_side="bottom" x="2628.02" y="2430.33" name="AMOC impacted region\neffect of STA\non failure rate"/>
+				<aux label_side="bottom" x="2879.14" y="2609.22" name="AMOC impacted region\nCooling anomaly"/>
+				<connector uid="775" angle="168.926">
 					<from>today</from>
 					<to>AMOC_impacted_region_effect_of_STA_on_failure_rate</to>
 				</connector>
-				<connector uid="776" angle="191.121">
+				<connector uid="776" angle="183.281">
 					<from>switch_economy_damage</from>
 					<to>AMOC_impacted_region_effect_of_STA_on_failure_rate</to>
 				</connector>
-				<aux x="2673.21" y="2222.26" name="AMOC potentially impacted\nregion share of GDP"/>
-				<connector uid="782" angle="219.541">
+				<aux x="2732.38" y="2216.43" name="AMOC potentially impacted\nregion share of GDP"/>
+				<connector uid="782" angle="212.192">
 					<from>AMOC_potentially_impacted_region_share_of_GDP</from>
 					<to>AMOC_impacted_region_share_of_GDP</to>
 				</connector>
-				<connector uid="783" angle="220.18">
+				<connector uid="783" angle="207.028">
 					<from>sensitivity_of_effect_of_sta_on_failure_rate</from>
 					<to>AMOC_impacted_region_effect_of_STA_on_failure_rate</to>
 				</connector>
-				<connector uid="784" angle="198.27">
+				<connector uid="784" angle="215.617">
 					<from>AMOC_impacted_region_share_of_GDP</from>
 					<to>climate_adjusted_failure_rate</to>
 				</connector>
-				<connector uid="785" angle="154.242">
+				<connector uid="785" angle="163.325">
 					<from>AMOC_impacted_region_effect_of_STA_on_failure_rate</from>
 					<to>climate_adjusted_failure_rate</to>
 				</connector>
@@ -13416,10 +13432,33 @@ SDG 10.5.1</text_box>
 					</from>
 					<to>measured_default_rate_of_all_assets</to>
 				</connector>
-				<aux font_style="italic" font_weight="bold" x="2710.83" y="2279.16" name="AMOC Econ scaling"/>
-				<connector uid="819" angle="191.507">
+				<aux font_style="italic" font_weight="bold" x="2770" y="2273.33" name="AMOC Econ scaling"/>
+				<connector uid="831" angle="190.835">
 					<from>AMOC_Econ_scaling</from>
 					<to>AMOC_impacted_region_share_of_GDP</to>
+				</connector>
+				<aux label_side="bottom" x="2865.9" y="2534.3" name="AMOC impacted region\nWarming anomaly"/>
+				<aux label_side="bottom" x="2973.35" y="2516.3" name="AMOC impacted region\nWarming per GMST"/>
+				<connector uid="832" angle="189.511">
+					<from>AMOC_impacted_region_Warming_per_GMST</from>
+					<to>AMOC_impacted_region_Warming_anomaly</to>
+				</connector>
+				<aux x="2714.38" y="2511.68" name="AMOC impacted region\nNet anomaly"/>
+				<connector uid="833" angle="169.59">
+					<from>AMOC_impacted_region_Warming_anomaly</from>
+					<to>AMOC_impacted_region_Net_anomaly</to>
+				</connector>
+				<connector uid="834" angle="149.375">
+					<from>AMOC_impacted_region_Cooling_anomaly</from>
+					<to>AMOC_impacted_region_Net_anomaly</to>
+				</connector>
+				<connector uid="835" angle="136.709">
+					<from>AMOC_impacted_region_Net_anomaly</from>
+					<to>AMOC_impacted_region_effect_of_STA_on_failure_rate</to>
+				</connector>
+				<connector uid="836" angle="356.062">
+					<from>Surface_Temperature_Anomaly</from>
+					<to>AMOC_impacted_region_Warming_anomaly</to>
 				</connector>
 				<alias label_side="right" uid="27" x="2212.67" y="2150.55" width="18" height="18">
 					<of>loan_maturation_time</of>
@@ -13475,17 +13514,17 @@ SDG 10.5.1</text_box>
 				<alias font_style="italic" uid="270" x="2663.76" y="3915.69" width="18" height="18">
 					<of>average_time_private_refinances_debt</of>
 				</alias>
-				<alias color="blue" background="white" font_style="italic" uid="274" x="3110.39" y="2484.68" width="18" height="18">
+				<alias color="blue" background="white" font_style="italic" uid="274" x="3340.39" y="2484.68" width="18" height="18">
 					<shape type="circle" radius="18"/>
 					<of>extra_risky_interest_above_interest_at_origination</of>
 				</alias>
 				<alias font_style="italic" uid="315" x="1783.18" y="1705.81" width="18" height="18">
 					<of>default_rate_from_interest_rate_increase</of>
 				</alias>
-				<alias font_style="italic" font_weight="bold" uid="420" x="3491.04" y="2699.3" width="18" height="18">
+				<alias font_style="italic" font_weight="bold" uid="420" x="3721.04" y="2699.3" width="18" height="18">
 					<of>&quot;inflation_adjustment_b$_per_bc$_2&quot;</of>
 				</alias>
-				<alias font_style="italic" label_side="top" uid="423" x="3361.21" y="2623.89" width="18" height="18">
+				<alias font_style="italic" label_side="top" uid="423" x="3591.21" y="2623.89" width="18" height="18">
 					<of>&quot;UNIT_c$_per_Bc$&quot;</of>
 				</alias>
 				<alias font_style="italic" font_weight="bold" uid="440" x="2040.26" y="2756" width="18" height="18">
@@ -13509,7 +13548,7 @@ SDG 10.5.1</text_box>
 				<alias font_style="italic" label_side="top" uid="493" x="414.104" y="2299.45" width="18" height="18">
 					<of>equity_ratio_gap</of>
 				</alias>
-				<alias font_style="italic" uid="471" x="3384.52" y="2489.37" width="45" height="35">
+				<alias font_style="italic" uid="471" x="3614.52" y="2489.37" width="45" height="35">
 					<of>Safe_Loans</of>
 				</alias>
 				<alias font_style="italic" uid="523" x="481.634" y="2127.14" width="18" height="18">
