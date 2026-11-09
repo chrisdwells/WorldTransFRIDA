@@ -9379,6 +9379,8 @@ FUTURE: peatland carbon sink should maybe depend on global mean temperature and 
 				<units>dmnl</units>
 			</aux>
 			<aux name="Tcrit">
+				<doc>${No Sensi}
+</doc>
 				<dimensions>
 					<dim name="Run"/>
 					<dim name="Tipping_Points"/>
@@ -9398,6 +9400,8 @@ FUTURE: peatland carbon sink should maybe depend on global mean temperature and 
 				<units>deg C</units>
 			</aux>
 			<aux name="tau">
+				<doc>${No Sensi}
+</doc>
 				<dimensions>
 					<dim name="Run"/>
 					<dim name="Tipping_Points"/>
@@ -9438,7 +9442,8 @@ ELSE State</eqn>
 				<units>dmnl</units>
 			</aux>
 			<aux name="Coupling">
-				<doc>d</doc>
+				<doc>${No Sensi}
+d</doc>
 				<dimensions>
 					<dim name="Run"/>
 				</dimensions>
@@ -9448,7 +9453,8 @@ ELSE State</eqn>
 				<units>dmnl</units>
 			</aux>
 			<aux name="Interaction strengths">
-				<doc>s_ij</doc>
+				<doc>${No Sensi}
+s_ij</doc>
 				<dimensions>
 					<dim name="Run"/>
 					<dim name="Tipping_Points"/>
@@ -9542,6 +9548,8 @@ scaling_constant*(Surface_Temperature_Anomaly[Run]/Tcrit)</eqn>
 				<units>dmnl</units>
 			</aux>
 			<aux name="conv fac">
+				<doc>${No Sensi}
+</doc>
 				<dimensions>
 					<dim name="Run"/>
 				</dimensions>
@@ -9681,7 +9689,7 @@ scaling_constant*(Surface_Temperature_Anomaly[Run]/Tcrit)</eqn>
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="1100" page_height="771" isee:page_rows="2" isee:scroll_y="50" zoom="120" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="1100" page_height="771" isee:page_rows="2" zoom="120" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="11pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -9743,7 +9751,7 @@ scaling_constant*(Surface_Temperature_Anomaly[Run]/Tcrit)</eqn>
 					<from>Tipping_state</from>
 					<to>Tipping_damages_scaling_factor</to>
 				</connector>
-				<aux x="398.084" y="161.389" name="Coupling"/>
+				<aux x="398.083" y="161.389" name="Coupling"/>
 				<aux x="257.667" y="63.3889" name="Interaction strengths"/>
 				<aux x="280.778" y="161.389" name="Interaction sum"/>
 				<aux x="346.278" y="95.9447" name="Interaction scaling factor"/>
@@ -9759,7 +9767,7 @@ scaling_constant*(Surface_Temperature_Anomaly[Run]/Tcrit)</eqn>
 					<from>Interaction_sum</from>
 					<to>Change_in_state</to>
 				</connector>
-				<connector uid="7" angle="274.409">
+				<connector uid="7" angle="274.41">
 					<from>Coupling</from>
 					<to>Change_in_state</to>
 				</connector>
